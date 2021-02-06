@@ -1,0 +1,215 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "QueueIsSubscribedToTopicStack": {
+        "id": "QueueIsSubscribedToTopicStack",
+        "path": "QueueIsSubscribedToTopicStack",
+        "children": {
+          "myTopic": {
+            "id": "myTopic",
+            "path": "QueueIsSubscribedToTopicStack/myTopic",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "QueueIsSubscribedToTopicStack/myTopic/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::SNS::Topic",
+                  "aws:cdk:cloudformation:props": {}
+                }
+              }
+            }
+          },
+          "queue1": {
+            "id": "queue1",
+            "path": "QueueIsSubscribedToTopicStack/queue1",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "QueueIsSubscribedToTopicStack/queue1/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::SQS::Queue",
+                  "aws:cdk:cloudformation:props": {}
+                }
+              },
+              "Policy": {
+                "id": "Policy",
+                "path": "QueueIsSubscribedToTopicStack/queue1/Policy",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "QueueIsSubscribedToTopicStack/queue1/Policy/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SQS::QueuePolicy",
+                      "aws:cdk:cloudformation:props": {
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sqs:SendMessage",
+                              "Condition": {
+                                "ArnEquals": {
+                                  "aws:SourceArn": {
+                                    "Ref": "myTopicDE69997A"
+                                  }
+                                }
+                              },
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "sns.amazonaws.com"
+                              },
+                              "Resource": {
+                                "Fn::GetAtt": [
+                                  "queue1A6429D98",
+                                  "Arn"
+                                ]
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "queues": [
+                          {
+                            "Ref": "queue1A6429D98"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "QueueIsSubscribedToTopicStackmyTopicD9B86344": {
+                "id": "QueueIsSubscribedToTopicStackmyTopicD9B86344",
+                "path": "QueueIsSubscribedToTopicStack/queue1/QueueIsSubscribedToTopicStackmyTopicD9B86344",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "QueueIsSubscribedToTopicStack/queue1/QueueIsSubscribedToTopicStackmyTopicD9B86344/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SNS::Subscription",
+                      "aws:cdk:cloudformation:props": {
+                        "protocol": "sqs",
+                        "topicArn": {
+                          "Ref": "myTopicDE69997A"
+                        },
+                        "endpoint": {
+                          "Fn::GetAtt": [
+                            "queue1A6429D98",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "queue2": {
+            "id": "queue2",
+            "path": "QueueIsSubscribedToTopicStack/queue2",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "QueueIsSubscribedToTopicStack/queue2/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::SQS::Queue",
+                  "aws:cdk:cloudformation:props": {}
+                }
+              },
+              "Policy": {
+                "id": "Policy",
+                "path": "QueueIsSubscribedToTopicStack/queue2/Policy",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "QueueIsSubscribedToTopicStack/queue2/Policy/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SQS::QueuePolicy",
+                      "aws:cdk:cloudformation:props": {
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sqs:SendMessage",
+                              "Condition": {
+                                "ArnEquals": {
+                                  "aws:SourceArn": {
+                                    "Ref": "myTopicDE69997A"
+                                  }
+                                }
+                              },
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "sns.amazonaws.com"
+                              },
+                              "Resource": {
+                                "Fn::GetAtt": [
+                                  "queue20D18E0EC",
+                                  "Arn"
+                                ]
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "queues": [
+                          {
+                            "Ref": "queue20D18E0EC"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "QueueIsSubscribedToTopicStackmyTopicD9B86344": {
+                "id": "QueueIsSubscribedToTopicStackmyTopicD9B86344",
+                "path": "QueueIsSubscribedToTopicStack/queue2/QueueIsSubscribedToTopicStackmyTopicD9B86344",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "QueueIsSubscribedToTopicStack/queue2/QueueIsSubscribedToTopicStackmyTopicD9B86344/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SNS::Subscription",
+                      "aws:cdk:cloudformation:props": {
+                        "protocol": "sqs",
+                        "topicArn": {
+                          "Ref": "myTopicDE69997A"
+                        },
+                        "endpoint": {
+                          "Fn::GetAtt": [
+                            "queue20D18E0EC",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "QueueIsSubscribedToTopicStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "QueueIsSubscribedToTopicStack/CDKMetadata/Default"
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "QueueIsSubscribedToTopicStack/CDKMetadata/Condition"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

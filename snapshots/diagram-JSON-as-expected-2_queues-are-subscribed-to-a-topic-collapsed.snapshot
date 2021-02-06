@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagram JSON as expected src/test-fixtures/ - 2_queues-are-subscribed-to-a-topic - collapsed 1`] = `
+Object {
+  "_image": null,
+  "children": Array [
+    Object {
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Notification-Service_64@5x.png",
+      },
+      "children": Array [],
+      "edges": Array [],
+      "id": "QueueIsSubscribedToTopicStack/myTopic",
+      "isGroup": false,
+      "label": Array [
+        "myTopic",
+      ],
+    },
+    Object {
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
+      },
+      "children": Array [],
+      "edges": Array [
+        "QueueIsSubscribedToTopicStack/myTopic",
+      ],
+      "id": "QueueIsSubscribedToTopicStack/queue1",
+      "isGroup": false,
+      "label": Array [
+        "queue1",
+      ],
+    },
+    Object {
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
+      },
+      "children": Array [],
+      "edges": Array [
+        "QueueIsSubscribedToTopicStack/myTopic",
+      ],
+      "id": "QueueIsSubscribedToTopicStack/queue2",
+      "isGroup": false,
+      "label": Array [
+        "queue2",
+      ],
+    },
+  ],
+  "edges": Array [],
+  "id": "QueueIsSubscribedToTopicStack",
+  "isGroup": true,
+  "label": Array [
+    "QueueIsSubscribedToTopicStack",
+  ],
+}
+`;

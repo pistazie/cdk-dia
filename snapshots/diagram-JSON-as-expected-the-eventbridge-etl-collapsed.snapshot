@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagram JSON as expected src/test-fixtures/ - the-eventbridge-etl - collapsed 1`] = `
+Object {
+  "_image": null,
+  "children": Array [
+    Object {
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png",
+      },
+      "children": Array [],
+      "edges": Array [],
+      "id": "TheEventbridgeEtlStack/FargateTaskDefinition",
+      "isGroup": false,
+      "label": Array [
+        "FargateTaskDefinition",
+      ],
+    },
+    Object {
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+      },
+      "children": Array [],
+      "edges": Array [
+        "TheEventbridgeEtlStack/FargateTaskDefinition",
+      ],
+      "id": "TheEventbridgeEtlStack/extractLambdaHandler",
+      "isGroup": false,
+      "label": Array [
+        "extractLambdaHandler",
+      ],
+    },
+  ],
+  "edges": Array [],
+  "id": "TheEventbridgeEtlStack",
+  "isGroup": true,
+  "label": Array [
+    "TheEventbridgeEtlStack",
+  ],
+}
+`;

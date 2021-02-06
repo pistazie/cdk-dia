@@ -1,0 +1,50 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Unit/Snapshot tests
+        run: |
+            npm run test
+            npx eslint . --ext .ts || true
+
+      - name: Package and CLI usage in a CDK Project - Smoke Test
+        run: |
+            # Publish to local npm registry
+            npm install -g verdaccio
+            npm run build
+            npm prune --production
+            verdaccio --config smoke-test-npm-local-repo-config.yml &
+            npm version 9.9.${GITHUB_RUN_NUMBER} --commit-hooks false --git-tag-version false
+            npm publish --registry http://localhost:4873
+
+            # Use in a CDK project
+            npm install -g typescript
+            npm install -g aws-cdk
+            sudo apt install graphviz
+            mkdir package-smoke-test
+            cd package-smoke-test
+            cdk init sample-app --language typescript
+            npm install cdk-dia@9.9.${GITHUB_RUN_NUMBER} --registry http://localhost:4873
+
+            # Use CLI and test expected PNG
+            cdk synth
+            npx cdk-dia
+            test -s diagram.png && echo "diagram.png exists and has size > 0"
+            ls -la

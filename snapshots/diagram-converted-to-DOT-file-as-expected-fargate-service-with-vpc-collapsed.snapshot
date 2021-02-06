@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagram converted to DOT file as expected src/test-fixtures/ - fargate-service-with-vpc - collapsed 1`] = `
+"digraph \\"Diagram\\" {
+  splines = \\"ortho\\";
+  pad = \\"1.0\\";
+  nodesep = \\"0.60\\";
+  ranksep = \\"0.75\\";
+  fontname = \\"Sans-Serif\\";
+  fontsize = \\"15\\";
+  dpi = \\"200\\";
+  rankdir = \\"BT\\";
+  compound = \\"true\\";
+  fontcolor = \\"#222222\\";
+  edge [
+    color = \\"#D5871488\\",
+    penwidth = 2,
+    arrowhead = \\"dot\\",
+    arrowtail = \\"dot\\",
+  ];
+  node [
+    shape = \\"box\\",
+    style = \\"rounded\\",
+    fixedsize = true,
+    width = 1.7,
+    height = 1.7,
+    labelloc = \\"c\\",
+    imagescale = true,
+    fontname = \\"Sans-Serif\\",
+    fontsize = 8,
+    margin = 8,
+  ];
+  subgraph \\"QueueIsSubscribedToTopicStack\\" {
+    subgraph \\"cluster-SubGraph.QueueIsSubscribedToTopicStack\\" {
+      graph [
+        label = \\"QueueIsSubscribedToTopicStack\\",
+        labelloc = \\"b\\",
+        labeljust = \\"l\\",
+        margin = \\"10\\",
+        fontsize = \\"16\\",
+        penwidth = \\"2\\",
+        pencolor = \\"#888888\\",
+        style = \\"filled,rounded\\",
+        fillcolor = \\"#e4e4e4\\",
+      ];
+      \\"QueueIsSubscribedToTopicStack/MyVpc\\" [
+        label = \\" MyVpc\\",
+        fontsize = 12,
+        image = \\"icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png\\",
+        imagescale = \\"true\\",
+        imagepos = \\"tc\\",
+        penwidth = \\"0\\",
+        shape = \\"node\\",
+        fixedsize = \\"true\\",
+        labelloc = \\"b\\",
+        width = 2,
+        height = 2.266,
+      ];
+      \\"QueueIsSubscribedToTopicStack/MyCluster\\" [
+        label = \\" MyCluster\\",
+        fontsize = 12,
+        image = \\"icons/aws/Service/Arch_Compute/64/Arch_Amazon-Elastic-Container-Service_64@5x.png\\",
+        imagescale = \\"true\\",
+        imagepos = \\"tc\\",
+        penwidth = \\"0\\",
+        shape = \\"node\\",
+        fixedsize = \\"true\\",
+        labelloc = \\"b\\",
+        width = 2,
+        height = 2.266,
+      ];
+      subgraph \\"cluster-SubGraph.MyFargateService\\" {
+        graph [
+          label = \\"MyFargateService\\",
+          labelloc = \\"b\\",
+          labeljust = \\"l\\",
+          margin = \\"10\\",
+          fontsize = \\"16\\",
+          penwidth = \\"2\\",
+          pencolor = \\"#888888\\",
+          style = \\"filled,rounded\\",
+          fillcolor = \\"#d6d6d6\\",
+        ];
+        \\"QueueIsSubscribedToTopicStack/MyFargateService/LB\\" [
+          label = \\" LB\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
+        ];
+        \\"QueueIsSubscribedToTopicStack/MyFargateService/TaskDef\\" [
+          label = \\" TaskDef\\",
+          fontsize = 12,
+          image = \\"icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
+        ];
+        subgraph \\"cluster-SubGraph.Service\\" {
+          graph [
+            label = \\"Service\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#c7c7c7\\",
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyFargateService/Service/Service\\" [
+            label = \\" ECS Service Service\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Service_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.266,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup\\" [
+            label = \\" SecurityGroup\\",
+            fontsize = 12,
+          ];
+        }
+      }
+    }
+  }
+  \\"QueueIsSubscribedToTopicStack/MyFargateService/LB\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyFargateService/LB\\" -> \\"QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyFargateService/Service/Service\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyFargateService/Service/Service\\" -> \\"QueueIsSubscribedToTopicStack/MyCluster\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyFargateService/Service/Service\\" -> \\"QueueIsSubscribedToTopicStack/MyFargateService/LB\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyFargateService/Service/Service\\" -> \\"QueueIsSubscribedToTopicStack/MyFargateService/TaskDef\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyFargateService/Service/Service\\" -> \\"QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup\\" -> \\"QueueIsSubscribedToTopicStack/MyFargateService/LB\\" [
+    dir = \\"both\\",
+  ];
+}"
+`;

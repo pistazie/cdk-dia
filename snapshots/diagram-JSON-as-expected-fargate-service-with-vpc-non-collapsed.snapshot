@@ -1,0 +1,744 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagram JSON as expected src/test-fixtures/ - fargate-service-with-vpc - non-collapsed 1`] = `
+Object {
+  "_image": null,
+  "children": Array [
+    Object {
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [],
+          "id": "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+          "isGroup": false,
+          "label": Array [
+            "EC2 VPC",
+          ],
+        },
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/Subnet",
+              "isGroup": false,
+              "label": Array [
+                "EC2 Subnet",
+                "Subnet",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTable",
+              "isGroup": false,
+              "label": Array [
+                "EC2 RouteTable",
+                "RouteTable",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": null,
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTable",
+                "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/Subnet",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTableAssociation",
+              "isGroup": false,
+              "label": Array [
+                "EC2 SubnetRouteTableAssociation",
+                "RouteTableAssociation",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTable",
+                "QueueIsSubscribedToTopicStack/MyVpc/IGW",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/DefaultRoute",
+              "isGroup": false,
+              "label": Array [
+                "EC2 Route",
+                "DefaultRoute",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": null,
+              },
+              "children": Array [],
+              "edges": Array [],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/EIP",
+              "isGroup": false,
+              "label": Array [
+                "EC2 EIP",
+                "EIP",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": null,
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/EIP",
+                "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/Subnet",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/NATGateway",
+              "isGroup": false,
+              "label": Array [
+                "EC2 NatGateway",
+                "NATGateway",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
+          "isGroup": true,
+          "label": Array [
+            "PublicSubnet1",
+          ],
+        },
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/Subnet",
+              "isGroup": false,
+              "label": Array [
+                "EC2 Subnet",
+                "Subnet",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTable",
+              "isGroup": false,
+              "label": Array [
+                "EC2 RouteTable",
+                "RouteTable",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": null,
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTable",
+                "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/Subnet",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTableAssociation",
+              "isGroup": false,
+              "label": Array [
+                "EC2 SubnetRouteTableAssociation",
+                "RouteTableAssociation",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTable",
+                "QueueIsSubscribedToTopicStack/MyVpc/IGW",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/DefaultRoute",
+              "isGroup": false,
+              "label": Array [
+                "EC2 Route",
+                "DefaultRoute",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": null,
+              },
+              "children": Array [],
+              "edges": Array [],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/EIP",
+              "isGroup": false,
+              "label": Array [
+                "EC2 EIP",
+                "EIP",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": null,
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/EIP",
+                "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/Subnet",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/NATGateway",
+              "isGroup": false,
+              "label": Array [
+                "EC2 NatGateway",
+                "NATGateway",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
+          "isGroup": true,
+          "label": Array [
+            "PublicSubnet2",
+          ],
+        },
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/Subnet",
+              "isGroup": false,
+              "label": Array [
+                "EC2 Subnet",
+                "Subnet",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTable",
+              "isGroup": false,
+              "label": Array [
+                "EC2 RouteTable",
+                "RouteTable",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": null,
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTable",
+                "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/Subnet",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTableAssociation",
+              "isGroup": false,
+              "label": Array [
+                "EC2 SubnetRouteTableAssociation",
+                "RouteTableAssociation",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTable",
+                "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/NATGateway",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/DefaultRoute",
+              "isGroup": false,
+              "label": Array [
+                "EC2 Route",
+                "DefaultRoute",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1",
+          "isGroup": true,
+          "label": Array [
+            "PrivateSubnet1",
+          ],
+        },
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/Subnet",
+              "isGroup": false,
+              "label": Array [
+                "EC2 Subnet",
+                "Subnet",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTable",
+              "isGroup": false,
+              "label": Array [
+                "EC2 RouteTable",
+                "RouteTable",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": null,
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTable",
+                "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/Subnet",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTableAssociation",
+              "isGroup": false,
+              "label": Array [
+                "EC2 SubnetRouteTableAssociation",
+                "RouteTableAssociation",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTable",
+                "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/NATGateway",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/DefaultRoute",
+              "isGroup": false,
+              "label": Array [
+                "EC2 Route",
+                "DefaultRoute",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2",
+          "isGroup": true,
+          "label": Array [
+            "PrivateSubnet2",
+          ],
+        },
+        Object {
+          "_image": ComponentIcon {
+            "format": "SMALLER",
+            "path": null,
+          },
+          "children": Array [],
+          "edges": Array [],
+          "id": "QueueIsSubscribedToTopicStack/MyVpc/IGW",
+          "isGroup": false,
+          "label": Array [
+            "EC2 InternetGateway",
+            "IGW",
+          ],
+        },
+        Object {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-VPC_Customer-Gateway_48_Dark_gen.png",
+          },
+          "children": Array [],
+          "edges": Array [
+            "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+            "QueueIsSubscribedToTopicStack/MyVpc/IGW",
+          ],
+          "id": "QueueIsSubscribedToTopicStack/MyVpc/VPCGW",
+          "isGroup": false,
+          "label": Array [
+            "EC2 VPCGatewayAttachment",
+            "VPCGW",
+          ],
+        },
+      ],
+      "edges": Array [],
+      "id": "QueueIsSubscribedToTopicStack/MyVpc",
+      "isGroup": true,
+      "label": Array [
+        "MyVpc",
+      ],
+    },
+    Object {
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyFargateService/LB/SecurityGroup/Resource",
+                "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/Subnet",
+                "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/Subnet",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyFargateService/LB/Resource",
+              "isGroup": false,
+              "label": Array [
+                "ElasticLoadBalancingV2 LoadBalancer",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": null,
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+                  ],
+                  "id": "QueueIsSubscribedToTopicStack/MyFargateService/LB/SecurityGroup/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "EC2 SecurityGroup",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": null,
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "QueueIsSubscribedToTopicStack/MyFargateService/LB/SecurityGroup/Resource",
+                    "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup/Resource",
+                  ],
+                  "id": "QueueIsSubscribedToTopicStack/MyFargateService/LB/SecurityGroup/to QueueIsSubscribedToTopicStackMyFargateServiceSecurityGroupB3618F23_80",
+                  "isGroup": false,
+                  "label": Array [
+                    "EC2 SecurityGroupEgress",
+                    "to QueueIsSubscribedToTopicStackMyFargateServiceSecurityGroupB3618F23:80",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "QueueIsSubscribedToTopicStack/MyFargateService/LB/SecurityGroup",
+              "isGroup": true,
+              "label": Array [
+                "SecurityGroup",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Elastic-Load-Balancing_Application-Load-Balancer_48_Dark_gen.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "QueueIsSubscribedToTopicStack/MyFargateService/LB/PublicListener/ECSGroup/Resource",
+                    "QueueIsSubscribedToTopicStack/MyFargateService/LB/Resource",
+                  ],
+                  "id": "QueueIsSubscribedToTopicStack/MyFargateService/LB/PublicListener/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "ElasticLoadBalancingV2 Listener",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Elastic-Load-Balancing_Application-Load-Balancer_48_Dark_gen.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+                  ],
+                  "id": "QueueIsSubscribedToTopicStack/MyFargateService/LB/PublicListener/ECSGroup/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "ElasticLoadBalancingV2 TargetGroup",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "QueueIsSubscribedToTopicStack/MyFargateService/LB/PublicListener",
+              "isGroup": true,
+              "label": Array [
+                "PublicListener",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "QueueIsSubscribedToTopicStack/MyFargateService/LB",
+          "isGroup": true,
+          "label": Array [
+            "LB",
+          ],
+        },
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/web/LogGroup/Resource",
+                "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/ExecutionRole/Resource",
+                "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/TaskRole/Resource",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/Resource",
+              "isGroup": false,
+              "label": Array [
+                "ECS TaskDefinition",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [],
+                  "id": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/ExecutionRole/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Role",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/web/LogGroup/Resource",
+                    "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/ExecutionRole/Resource",
+                  ],
+                  "id": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/ExecutionRole/DefaultPolicy/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Policy",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/ExecutionRole",
+              "isGroup": true,
+              "label": Array [
+                "ExecutionRole",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [],
+              "id": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/TaskRole/Resource",
+              "isGroup": false,
+              "label": Array [
+                "IAM Role",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [],
+              "edges": Array [],
+              "id": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/web/LogGroup/Resource",
+              "isGroup": false,
+              "label": Array [
+                "LOGS",
+                "LOGGROUP",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef",
+          "isGroup": true,
+          "label": Array [
+            "TaskDef",
+          ],
+        },
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Service_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "QueueIsSubscribedToTopicStack/MyCluster/Resource",
+                "QueueIsSubscribedToTopicStack/MyFargateService/LB/PublicListener/ECSGroup/Resource",
+                "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/Subnet",
+                "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/Subnet",
+                "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup/Resource",
+                "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/Resource",
+              ],
+              "id": "QueueIsSubscribedToTopicStack/MyFargateService/Service/Service",
+              "isGroup": false,
+              "label": Array [
+                "ECS Service",
+                "Service",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": null,
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+                  ],
+                  "id": "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "EC2 SecurityGroup",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": null,
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup/Resource",
+                    "QueueIsSubscribedToTopicStack/MyFargateService/LB/SecurityGroup/Resource",
+                  ],
+                  "id": "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup/from QueueIsSubscribedToTopicStackMyFargateServiceLBSecurityGroupE6D6C06E_80",
+                  "isGroup": false,
+                  "label": Array [
+                    "EC2 SecurityGroupIngress",
+                    "from QueueIsSubscribedToTopicStackMyFargateServiceLBSecurityGroupE6D6C06E:80",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup",
+              "isGroup": true,
+              "label": Array [
+                "SecurityGroup",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "QueueIsSubscribedToTopicStack/MyFargateService/Service",
+          "isGroup": true,
+          "label": Array [
+            "Service",
+          ],
+        },
+      ],
+      "edges": Array [],
+      "id": "QueueIsSubscribedToTopicStack/MyFargateService",
+      "isGroup": true,
+      "label": Array [
+        "MyFargateService",
+      ],
+    },
+    Object {
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Service/Arch_Compute/64/Arch_Amazon-Elastic-Container-Service_64@5x.png",
+      },
+      "children": Array [],
+      "edges": Array [],
+      "id": "QueueIsSubscribedToTopicStack/MyCluster/Resource",
+      "isGroup": false,
+      "label": Array [
+        "ECS Cluster",
+      ],
+    },
+  ],
+  "edges": Array [],
+  "id": "QueueIsSubscribedToTopicStack",
+  "isGroup": true,
+  "label": Array [
+    "QueueIsSubscribedToTopicStack",
+  ],
+}
+`;

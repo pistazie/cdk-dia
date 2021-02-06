@@ -1,0 +1,70 @@
+{
+  "name": "cdk-dia",
+  "version": "0.0.1",
+  "description": "🎡 Automated diagrams of CDK provisioned infrastructure",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && jest"
+  },
+  "bin": {
+    "cdk-dia": "bin/cli.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "files": [
+    "src/**/*",
+    "icons/**/*",
+    "bin/**/*"
+  ],
+  "author": "Tom Roshko @pistazie",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "chalk": "^4.1.0",
+    "colors": "^1.4.0",
+    "hasbin": "^1.2.3",
+    "terminal-link": "^2.1.1",
+    "ts-graphviz": "^0.13.2",
+    "values.js": "^2.0.0",
+    "word-wrap": "^1.2.3",
+    "yargs": "^16.2.0"
+  },
+  "peerDependencies": {
+    "@aws-cdk/core": "^1.40.0"
+  },
+  "devDependencies": {
+    "@aws-cdk/core": "^1.40.0",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/glob": "^7.1.3",
+    "@types/hasbin": "^1.2.0",
+    "@types/jest": "^26.0.15",
+    "@types/jest-specific-snapshot": "^0.5.5",
+    "@types/lodash": "^4.14.165",
+    "@types/node": "^10.12.18",
+    "@types/yargs": "^15.0.12",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "aws-cdk": "1.74.0",
+    "eslint": "^7.18.0",
+    "fast-glob": "^3.2.5",
+    "glob": "^7.1.6",
+    "jest": "^26.6.2",
+    "jest-file-snapshot": "^0.5.0",
+    "jest-junit": "^12.0.0",
+    "jest-specific-snapshot": "^4.0.0",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.4.3",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pistazie/cdk-dia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pistazie/cdk-dia/issues"
+  },
+  "homepage": "https://github.com/pistazie/cdk-dia#readme"
+}

@@ -1,0 +1,531 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagram converted to DOT file as expected src/test-fixtures/ - cloudstructs-static-website - non-collapsed 1`] = `
+"digraph \\"Diagram\\" {
+  splines = \\"ortho\\";
+  pad = \\"1.0\\";
+  nodesep = \\"0.60\\";
+  ranksep = \\"0.75\\";
+  fontname = \\"Sans-Serif\\";
+  fontsize = \\"15\\";
+  dpi = \\"200\\";
+  rankdir = \\"BT\\";
+  compound = \\"true\\";
+  fontcolor = \\"#222222\\";
+  edge [
+    color = \\"#D5871488\\",
+    penwidth = 2,
+    arrowhead = \\"dot\\",
+    arrowtail = \\"dot\\",
+  ];
+  node [
+    shape = \\"box\\",
+    style = \\"rounded\\",
+    fixedsize = true,
+    width = 1.7,
+    height = 1.7,
+    labelloc = \\"c\\",
+    imagescale = true,
+    fontname = \\"Sans-Serif\\",
+    fontsize = 8,
+    margin = 8,
+  ];
+  subgraph \\"StaticWebSite\\" {
+    subgraph \\"cluster-SubGraph.StaticWebSite\\" {
+      graph [
+        label = \\"StaticWebSite\\",
+        labelloc = \\"b\\",
+        labeljust = \\"l\\",
+        margin = \\"10\\",
+        fontsize = \\"16\\",
+        penwidth = \\"2\\",
+        pencolor = \\"#888888\\",
+        style = \\"filled,rounded\\",
+        fillcolor = \\"#e4e4e4\\",
+      ];
+      \\"StaticWebSite/dns/Resource\\" [
+        label = \\" Route53 HostedZone\\",
+        fontsize = 12,
+        image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png\\",
+        imagescale = \\"true\\",
+        imagepos = \\"tc\\",
+        penwidth = \\"0\\",
+        shape = \\"node\\",
+        fixedsize = \\"true\\",
+        labelloc = \\"b\\",
+        width = 2,
+        height = 2.266,
+      ];
+      subgraph \\"cluster-SubGraph.StaticWebsite\\" {
+        graph [
+          label = \\"StaticWebsite\\",
+          labelloc = \\"b\\",
+          labeljust = \\"l\\",
+          margin = \\"10\\",
+          fontsize = \\"16\\",
+          penwidth = \\"2\\",
+          pencolor = \\"#888888\\",
+          style = \\"filled,rounded\\",
+          fillcolor = \\"#d6d6d6\\",
+        ];
+        \\"StaticWebSite/StaticWebsite/ARecord/Resource\\" [
+          label = \\" Route53 RecordSet\\",
+          fontsize = 12,
+          image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 1.2,
+          height = 1.466,
+        ];
+        \\"StaticWebSite/StaticWebsite/AaaaRecord/Resource\\" [
+          label = \\" Route53 RecordSet\\",
+          fontsize = 12,
+          image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 1.2,
+          height = 1.466,
+        ];
+        \\"StaticWebSite/StaticWebsite/PutConfig/CustomResourcePolicy/Resource\\" [
+          label = \\" IAM Policy\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 1.2,
+          height = 1.466,
+        ];
+        subgraph \\"cluster-SubGraph.Bucket\\" {
+          graph [
+            label = \\"Bucket\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#c7c7c7\\",
+          ];
+          \\"StaticWebSite/StaticWebsite/Bucket/Resource\\" [
+            label = \\" S3 Bucket\\",
+            fontsize = 12,
+            image = \\"icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.266,
+          ];
+          \\"StaticWebSite/StaticWebsite/Bucket/Policy/Resource\\" [
+            label = \\" S3 BucketPolicy\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.266,
+          ];
+        }
+        subgraph \\"cluster-SubGraph.Distribution\\" {
+          graph [
+            label = \\"Distribution\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#c7c7c7\\",
+          ];
+          \\"StaticWebSite/StaticWebsite/Distribution/Resource\\" [
+            label = \\" CloudFront\\\\nDistribution\\",
+            fontsize = 12,
+            image = \\"icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-CloudFront_64@5x.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          \\"StaticWebSite/StaticWebsite/Distribution/Origin1/S3Origin/Resource\\" [
+            label = \\" CloudFront\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.266,
+          ];
+        }
+        subgraph \\"cluster-SubGraph.HttpsRedirect\\" {
+          graph [
+            label = \\"HttpsRedirect\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#c7c7c7\\",
+          ];
+          \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectBucket/Resource\\" [
+            label = \\" S3 Bucket\\",
+            fontsize = 12,
+            image = \\"icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.266,
+          ];
+          \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution\\" [
+            label = \\" CloudFront\\\\nDistribution\\\\nCFDistribution\\",
+            fontsize = 12,
+            image = \\"icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-CloudFront_64@5x.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.6979999999999995,
+          ];
+          \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecord2591f3/Resource\\" [
+            label = \\" Route53 RecordSet\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 1.2,
+            height = 1.466,
+          ];
+          \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecordSix2591f3/Resource\\" [
+            label = \\" Route53 RecordSet\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 1.2,
+            height = 1.466,
+          ];
+          subgraph \\"cluster-SubGraph.CertificateRequestorFunction\\" {
+            graph [
+              label = \\"CertificateRequestorFunction\\",
+              labelloc = \\"b\\",
+              labeljust = \\"l\\",
+              margin = \\"10\\",
+              fontsize = \\"16\\",
+              penwidth = \\"2\\",
+              pencolor = \\"#888888\\",
+              style = \\"filled,rounded\\",
+              fillcolor = \\"#aaaaaa\\",
+            ];
+            \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/Resource\\" [
+              label = \\" Lambda Function\\",
+              fontsize = 12,
+              image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.266,
+            ];
+            subgraph \\"cluster-SubGraph.ServiceRole\\" {
+              graph [
+                label = \\"ServiceRole\\",
+                labelloc = \\"b\\",
+                labeljust = \\"l\\",
+                margin = \\"10\\",
+                fontsize = \\"16\\",
+                penwidth = \\"2\\",
+                pencolor = \\"#888888\\",
+                style = \\"filled,rounded\\",
+                fillcolor = \\"#9c9c9c\\",
+              ];
+              \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/Resource\\" [
+                label = \\" IAM Role\\",
+                fontsize = 12,
+                image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+                imagescale = \\"true\\",
+                imagepos = \\"tc\\",
+                penwidth = \\"0\\",
+                shape = \\"node\\",
+                fixedsize = \\"true\\",
+                labelloc = \\"b\\",
+                width = 1.2,
+                height = 1.466,
+              ];
+              \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource\\" [
+                label = \\" IAM Policy\\",
+                fontsize = 12,
+                image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+                imagescale = \\"true\\",
+                imagepos = \\"tc\\",
+                penwidth = \\"0\\",
+                shape = \\"node\\",
+                fixedsize = \\"true\\",
+                labelloc = \\"b\\",
+                width = 1.2,
+                height = 1.466,
+              ];
+            }
+          }
+        }
+        subgraph \\"cluster-SubGraph.CertificateRequestorFunction\\" {
+          graph [
+            label = \\"CertificateRequestorFunction\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#b9b9b9\\",
+          ];
+          \\"StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/Resource\\" [
+            label = \\" Lambda Function\\",
+            fontsize = 12,
+            image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.266,
+          ];
+          subgraph \\"cluster-SubGraph.ServiceRole\\" {
+            graph [
+              label = \\"ServiceRole\\",
+              labelloc = \\"b\\",
+              labeljust = \\"l\\",
+              margin = \\"10\\",
+              fontsize = \\"16\\",
+              penwidth = \\"2\\",
+              pencolor = \\"#888888\\",
+              style = \\"filled,rounded\\",
+              fillcolor = \\"#aaaaaa\\",
+            ];
+            \\"StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole/Resource\\" [
+              label = \\" IAM Role\\",
+              fontsize = 12,
+              image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 1.2,
+              height = 1.466,
+            ];
+            \\"StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource\\" [
+              label = \\" IAM Policy\\",
+              fontsize = 12,
+              image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 1.2,
+              height = 1.466,
+            ];
+          }
+        }
+      }
+      subgraph \\"cluster-SubGraph.AWS679f53fac002430cb0da5b7982bd2287\\" {
+        graph [
+          label = \\"AWS679f53fac002430cb0da5b7982bd2287\\",
+          labelloc = \\"b\\",
+          labeljust = \\"l\\",
+          margin = \\"10\\",
+          fontsize = \\"16\\",
+          penwidth = \\"2\\",
+          pencolor = \\"#888888\\",
+          style = \\"filled,rounded\\",
+          fillcolor = \\"#d6d6d6\\",
+        ];
+        \\"StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/Resource\\" [
+          label = \\" Lambda Function\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
+        ];
+        \\"StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource\\" [
+          label = \\" IAM Role\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 1.2,
+          height = 1.466,
+        ];
+      }
+      subgraph \\"cluster-SubGraph.Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C\\" {
+        graph [
+          label = \\"Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C\\",
+          labelloc = \\"b\\",
+          labeljust = \\"l\\",
+          margin = \\"10\\",
+          fontsize = \\"16\\",
+          penwidth = \\"2\\",
+          pencolor = \\"#888888\\",
+          style = \\"filled,rounded\\",
+          fillcolor = \\"#d6d6d6\\",
+        ];
+        \\"StaticWebSite/Custom__CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource\\" [
+          label = \\" Lambda Function\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
+        ];
+        \\"StaticWebSite/Custom__CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource\\" [
+          label = \\" IAM Role\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 1.2,
+          height = 1.466,
+        ];
+      }
+    }
+  }
+  \\"StaticWebSite/StaticWebsite/Bucket/Policy/Resource\\" -> \\"StaticWebSite/StaticWebsite/Bucket/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/Bucket/Policy/Resource\\" -> \\"StaticWebSite/StaticWebsite/Distribution/Origin1/S3Origin/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/Distribution/Resource\\" -> \\"StaticWebSite/StaticWebsite/Bucket/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/Distribution/Resource\\" -> \\"StaticWebSite/StaticWebsite/Distribution/Origin1/S3Origin/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource\\" -> \\"StaticWebSite/dns/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource\\" -> \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/Resource\\" -> \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution\\" -> \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectBucket/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecord2591f3/Resource\\" -> \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecord2591f3/Resource\\" -> \\"StaticWebSite/dns/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecordSix2591f3/Resource\\" -> \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecordSix2591f3/Resource\\" -> \\"StaticWebSite/dns/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource\\" -> \\"StaticWebSite/dns/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource\\" -> \\"StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/Resource\\" -> \\"StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/ARecord/Resource\\" -> \\"StaticWebSite/StaticWebsite/Distribution/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/ARecord/Resource\\" -> \\"StaticWebSite/dns/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/AaaaRecord/Resource\\" -> \\"StaticWebSite/StaticWebsite/Distribution/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/AaaaRecord/Resource\\" -> \\"StaticWebSite/dns/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/PutConfig/CustomResourcePolicy/Resource\\" -> \\"StaticWebSite/StaticWebsite/Bucket/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/StaticWebsite/PutConfig/CustomResourcePolicy/Resource\\" -> \\"StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/Resource\\" -> \\"StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource\\" [
+    dir = \\"both\\",
+  ];
+}"
+`;

@@ -1,0 +1,862 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagram converted to DOT file as expected src/test-fixtures/ - ec-loadbalancer-rds - non-collapsed 1`] = `
+"digraph \\"Diagram\\" {
+  splines = \\"ortho\\";
+  pad = \\"1.0\\";
+  nodesep = \\"0.60\\";
+  ranksep = \\"0.75\\";
+  fontname = \\"Sans-Serif\\";
+  fontsize = \\"15\\";
+  dpi = \\"200\\";
+  rankdir = \\"BT\\";
+  compound = \\"true\\";
+  fontcolor = \\"#222222\\";
+  edge [
+    color = \\"#D5871488\\",
+    penwidth = 2,
+    arrowhead = \\"dot\\",
+    arrowtail = \\"dot\\",
+  ];
+  node [
+    shape = \\"box\\",
+    style = \\"rounded\\",
+    fixedsize = true,
+    width = 1.7,
+    height = 1.7,
+    labelloc = \\"c\\",
+    imagescale = true,
+    fontname = \\"Sans-Serif\\",
+    fontsize = 8,
+    margin = 8,
+  ];
+  subgraph \\"QueueIsSubscribedToTopicStack\\" {
+    subgraph \\"cluster-SubGraph.QueueIsSubscribedToTopicStack\\" {
+      graph [
+        label = \\"QueueIsSubscribedToTopicStack\\",
+        labelloc = \\"b\\",
+        labeljust = \\"l\\",
+        margin = \\"10\\",
+        fontsize = \\"16\\",
+        penwidth = \\"2\\",
+        pencolor = \\"#888888\\",
+        style = \\"filled,rounded\\",
+        fillcolor = \\"#e4e4e4\\",
+      ];
+      subgraph \\"cluster-SubGraph.MyVpc\\" {
+        graph [
+          label = \\"MyVpc\\",
+          labelloc = \\"b\\",
+          labeljust = \\"l\\",
+          margin = \\"10\\",
+          fontsize = \\"16\\",
+          penwidth = \\"2\\",
+          pencolor = \\"#888888\\",
+          style = \\"filled,rounded\\",
+          fillcolor = \\"#d6d6d6\\",
+        ];
+        \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+          label = \\" EC2 VPC\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
+        ];
+        \\"QueueIsSubscribedToTopicStack/MyVpc/IGW\\" [
+          label = \\" EC2 InternetGateway\\\\nIGW\\",
+          fontsize = 12,
+        ];
+        \\"QueueIsSubscribedToTopicStack/MyVpc/VPCGW\\" [
+          label = \\" EC2\\\\nVPCGatewayAttachment\\\\nVPCGW\\",
+          fontsize = 12,
+          image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-VPC_Customer-Gateway_48_Dark_gen.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.6979999999999995,
+        ];
+        subgraph \\"cluster-SubGraph.PublicSubnet1\\" {
+          graph [
+            label = \\"PublicSubnet1\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#c7c7c7\\",
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/Subnet\\" [
+            label = \\" EC2 Subnet Subnet\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.266,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTable\\" [
+            label = \\" EC2 RouteTable\\\\nRouteTable\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTableAssociation\\" [
+            label = \\" EC2\\\\nRouteTableAssociation\\",
+            fontsize = 12,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/DefaultRoute\\" [
+            label = \\" EC2 Route\\\\nDefaultRoute\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/EIP\\" [
+            label = \\" EC2 EIP EIP\\",
+            fontsize = 12,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/NATGateway\\" [
+            label = \\" EC2 NatGateway\\\\nNATGateway\\",
+            fontsize = 12,
+          ];
+        }
+        subgraph \\"cluster-SubGraph.PublicSubnet2\\" {
+          graph [
+            label = \\"PublicSubnet2\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#c7c7c7\\",
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/Subnet\\" [
+            label = \\" EC2 Subnet Subnet\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.266,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTable\\" [
+            label = \\" EC2 RouteTable\\\\nRouteTable\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTableAssociation\\" [
+            label = \\" EC2\\\\nRouteTableAssociation\\",
+            fontsize = 12,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/DefaultRoute\\" [
+            label = \\" EC2 Route\\\\nDefaultRoute\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/EIP\\" [
+            label = \\" EC2 EIP EIP\\",
+            fontsize = 12,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/NATGateway\\" [
+            label = \\" EC2 NatGateway\\\\nNATGateway\\",
+            fontsize = 12,
+          ];
+        }
+        subgraph \\"cluster-SubGraph.PrivateSubnet1\\" {
+          graph [
+            label = \\"PrivateSubnet1\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#c7c7c7\\",
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/Subnet\\" [
+            label = \\" EC2 Subnet Subnet\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.266,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTable\\" [
+            label = \\" EC2 RouteTable\\\\nRouteTable\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTableAssociation\\" [
+            label = \\" EC2\\\\nRouteTableAssociation\\",
+            fontsize = 12,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/DefaultRoute\\" [
+            label = \\" EC2 Route\\\\nDefaultRoute\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+        }
+        subgraph \\"cluster-SubGraph.PrivateSubnet2\\" {
+          graph [
+            label = \\"PrivateSubnet2\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#c7c7c7\\",
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/Subnet\\" [
+            label = \\" EC2 Subnet Subnet\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.266,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTable\\" [
+            label = \\" EC2 RouteTable\\\\nRouteTable\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTableAssociation\\" [
+            label = \\" EC2\\\\nRouteTableAssociation\\",
+            fontsize = 12,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/DefaultRoute\\" [
+            label = \\" EC2 Route\\\\nDefaultRoute\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+        }
+      }
+      subgraph \\"cluster-SubGraph.MyLoadbalancer\\" {
+        graph [
+          label = \\"MyLoadbalancer\\",
+          labelloc = \\"b\\",
+          labeljust = \\"l\\",
+          margin = \\"10\\",
+          fontsize = \\"16\\",
+          penwidth = \\"2\\",
+          pencolor = \\"#888888\\",
+          style = \\"filled,rounded\\",
+          fillcolor = \\"#d6d6d6\\",
+        ];
+        \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/Resource\\" [
+          label = \\" LoadBalancer\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
+        ];
+        \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/SecurityGroup/Resource\\" [
+          label = \\" EC2 SecurityGroup\\",
+          fontsize = 12,
+        ];
+        subgraph \\"cluster-SubGraph.443\\" {
+          graph [
+            label = \\"443\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#c7c7c7\\",
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/443/Resource\\" [
+            label = \\" Listener\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Elastic-Load-Balancing_Application-Load-Balancer_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 1.2,
+            height = 1.466,
+          ];
+          \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/443/sdfaGroup/Resource\\" [
+            label = \\" TargetGroup\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Elastic-Load-Balancing_Application-Load-Balancer_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 1.2,
+            height = 1.466,
+          ];
+        }
+      }
+      subgraph \\"cluster-SubGraph.Web1\\" {
+        graph [
+          label = \\"Web1\\",
+          labelloc = \\"b\\",
+          labeljust = \\"l\\",
+          margin = \\"10\\",
+          fontsize = \\"16\\",
+          penwidth = \\"2\\",
+          pencolor = \\"#888888\\",
+          style = \\"filled,rounded\\",
+          fillcolor = \\"#d6d6d6\\",
+        ];
+        \\"QueueIsSubscribedToTopicStack/Web1/InstanceProfile\\" [
+          label = \\" IAM InstanceProfile\\\\nInstanceProfile\\",
+          fontsize = 12,
+          image = \\"icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+        \\"QueueIsSubscribedToTopicStack/Web1/Resource\\" [
+          label = \\" EC2 Instance\\",
+          fontsize = 12,
+          image = \\"icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C5-Instance_48_Dark.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
+        ];
+        \\"QueueIsSubscribedToTopicStack/Web1/InstanceSecurityGroup/Resource\\" [
+          label = \\" EC2 SecurityGroup\\",
+          fontsize = 12,
+        ];
+        subgraph \\"cluster-SubGraph.InstanceRole\\" {
+          graph [
+            label = \\"InstanceRole\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#c7c7c7\\",
+          ];
+          \\"QueueIsSubscribedToTopicStack/Web1/InstanceRole/Resource\\" [
+            label = \\" IAM Role\\",
+            fontsize = 12,
+            image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 1.2,
+            height = 1.466,
+          ];
+          \\"QueueIsSubscribedToTopicStack/Web1/InstanceRole/DefaultPolicy/Resource\\" [
+            label = \\" IAM Policy\\",
+            fontsize = 12,
+            image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 1.2,
+            height = 1.466,
+          ];
+        }
+      }
+      subgraph \\"cluster-SubGraph.Web2\\" {
+        graph [
+          label = \\"Web2\\",
+          labelloc = \\"b\\",
+          labeljust = \\"l\\",
+          margin = \\"10\\",
+          fontsize = \\"16\\",
+          penwidth = \\"2\\",
+          pencolor = \\"#888888\\",
+          style = \\"filled,rounded\\",
+          fillcolor = \\"#d6d6d6\\",
+        ];
+        \\"QueueIsSubscribedToTopicStack/Web2/InstanceProfile\\" [
+          label = \\" IAM InstanceProfile\\\\nInstanceProfile\\",
+          fontsize = 12,
+          image = \\"icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+        \\"QueueIsSubscribedToTopicStack/Web2/Resource\\" [
+          label = \\" EC2 Instance\\",
+          fontsize = 12,
+          image = \\"icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C5-Instance_48_Dark.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
+        ];
+        \\"QueueIsSubscribedToTopicStack/Web2/InstanceSecurityGroup/Resource\\" [
+          label = \\" EC2 SecurityGroup\\",
+          fontsize = 12,
+        ];
+        subgraph \\"cluster-SubGraph.InstanceRole\\" {
+          graph [
+            label = \\"InstanceRole\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#c7c7c7\\",
+          ];
+          \\"QueueIsSubscribedToTopicStack/Web2/InstanceRole/Resource\\" [
+            label = \\" IAM Role\\",
+            fontsize = 12,
+            image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 1.2,
+            height = 1.466,
+          ];
+          \\"QueueIsSubscribedToTopicStack/Web2/InstanceRole/DefaultPolicy/Resource\\" [
+            label = \\" IAM Policy\\",
+            fontsize = 12,
+            image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 1.2,
+            height = 1.466,
+          ];
+        }
+      }
+      subgraph \\"cluster-SubGraph.Database\\" {
+        graph [
+          label = \\"Database\\",
+          labelloc = \\"b\\",
+          labeljust = \\"l\\",
+          margin = \\"10\\",
+          fontsize = \\"16\\",
+          penwidth = \\"2\\",
+          pencolor = \\"#888888\\",
+          style = \\"filled,rounded\\",
+          fillcolor = \\"#d6d6d6\\",
+        ];
+        \\"QueueIsSubscribedToTopicStack/Database/Resource\\" [
+          label = \\" RDS DBCluster\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_Database/64/Arch_Amazon-RDS_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
+        ];
+        \\"QueueIsSubscribedToTopicStack/Database/Instance1\\" [
+          label = \\" RDS DBInstance\\\\nInstance1\\",
+          fontsize = 12,
+          image = \\"icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Instance_48_Dark_gen.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+        \\"QueueIsSubscribedToTopicStack/Database/Instance2\\" [
+          label = \\" RDS DBInstance\\\\nInstance2\\",
+          fontsize = 12,
+          image = \\"icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Instance_48_Dark_gen.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+        \\"QueueIsSubscribedToTopicStack/Database/Subnets/Default\\" [
+          label = \\" RDS DBSubnetGroup\\\\nDefault\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_Database/64/Arch_Amazon-RDS_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 1.2,
+          height = 1.682,
+        ];
+        \\"QueueIsSubscribedToTopicStack/Database/SecurityGroup/Resource\\" [
+          label = \\" EC2 SecurityGroup\\",
+          fontsize = 12,
+        ];
+        subgraph \\"cluster-SubGraph.Secret\\" {
+          graph [
+            label = \\"Secret\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#c7c7c7\\",
+          ];
+          \\"QueueIsSubscribedToTopicStack/Database/Secret/Resource\\" [
+            label = \\" SecretsManager\\\\nSecret\\",
+            fontsize = 12,
+            image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Secrets-Manager_64@5x.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 1.2,
+            height = 1.682,
+          ];
+          \\"QueueIsSubscribedToTopicStack/Database/Secret/Attachment/Resource\\" [
+            label = \\" SecretsManager\\",
+            fontsize = 12,
+            image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Secrets-Manager_64@5x.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 1.2,
+            height = 1.466,
+          ];
+        }
+      }
+    }
+  }
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/Subnet\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTable\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTableAssociation\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTableAssociation\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/DefaultRoute\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/DefaultRoute\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/IGW\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/NATGateway\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/EIP\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/NATGateway\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/Subnet\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTable\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTableAssociation\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTableAssociation\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/DefaultRoute\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/DefaultRoute\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/IGW\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/NATGateway\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/EIP\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/NATGateway\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/Subnet\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTable\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTableAssociation\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTableAssociation\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/DefaultRoute\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/DefaultRoute\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/NATGateway\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/Subnet\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTable\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTableAssociation\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTableAssociation\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/DefaultRoute\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/DefaultRoute\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/NATGateway\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/VPCGW\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyVpc/VPCGW\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/IGW\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/443/Resource\\" -> \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/443/sdfaGroup/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/443/Resource\\" -> \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/443/sdfaGroup/Resource\\" -> \\"QueueIsSubscribedToTopicStack/Web1/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/443/sdfaGroup/Resource\\" -> \\"QueueIsSubscribedToTopicStack/Web2/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/443/sdfaGroup/Resource\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/Resource\\" -> \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/SecurityGroup/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/Resource\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/Resource\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/SecurityGroup/Resource\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web1/InstanceRole/DefaultPolicy/Resource\\" -> \\"QueueIsSubscribedToTopicStack/Database/Secret/Attachment/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web1/InstanceRole/DefaultPolicy/Resource\\" -> \\"QueueIsSubscribedToTopicStack/Web1/InstanceRole/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web1/InstanceProfile\\" -> \\"QueueIsSubscribedToTopicStack/Web1/InstanceRole/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web1/Resource\\" -> \\"QueueIsSubscribedToTopicStack/Web1/InstanceProfile\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web1/Resource\\" -> \\"QueueIsSubscribedToTopicStack/Web1/InstanceSecurityGroup/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web1/Resource\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web1/InstanceSecurityGroup/Resource\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web2/InstanceRole/DefaultPolicy/Resource\\" -> \\"QueueIsSubscribedToTopicStack/Database/Secret/Attachment/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web2/InstanceRole/DefaultPolicy/Resource\\" -> \\"QueueIsSubscribedToTopicStack/Web2/InstanceRole/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web2/InstanceProfile\\" -> \\"QueueIsSubscribedToTopicStack/Web2/InstanceRole/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web2/Resource\\" -> \\"QueueIsSubscribedToTopicStack/Web2/InstanceProfile\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web2/Resource\\" -> \\"QueueIsSubscribedToTopicStack/Web2/InstanceSecurityGroup/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web2/Resource\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web2/InstanceSecurityGroup/Resource\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Database/Secret/Attachment/Resource\\" -> \\"QueueIsSubscribedToTopicStack/Database/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Database/Resource\\" -> \\"QueueIsSubscribedToTopicStack/Database/SecurityGroup/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Database/Resource\\" -> \\"QueueIsSubscribedToTopicStack/Database/Subnets/Default\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Database/Instance1\\" -> \\"QueueIsSubscribedToTopicStack/Database/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Database/Instance1\\" -> \\"QueueIsSubscribedToTopicStack/Database/Subnets/Default\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Database/Instance2\\" -> \\"QueueIsSubscribedToTopicStack/Database/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Database/Instance2\\" -> \\"QueueIsSubscribedToTopicStack/Database/Subnets/Default\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Database/Subnets/Default\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Database/Subnets/Default\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Database/SecurityGroup/Resource\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+}"
+`;

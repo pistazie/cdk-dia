@@ -1,0 +1,186 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "CdkAutoDiagramPocStack": {
+        "id": "CdkAutoDiagramPocStack",
+        "path": "CdkAutoDiagramPocStack",
+        "children": {
+          "a-piece-of-the-diagram": {
+            "id": "a-piece-of-the-diagram",
+            "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram",
+            "children": {
+              "my-function": {
+                "id": "my-function",
+                "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "sqs:ReceiveMessage",
+                                        "sqs:ChangeMessageVisibility",
+                                        "sqs:GetQueueUrl",
+                                        "sqs:DeleteMessage",
+                                        "sqs:GetQueueAttributes"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": {
+                                        "Fn::GetAtt": [
+                                          "apieceofthediagrammyqueueEFDA1578",
+                                          "Arn"
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "apieceofthediagrammyfunctionServiceRoleDefaultPolicy09E64E08",
+                                "roles": [
+                                  {
+                                    "Ref": "apieceofthediagrammyfunctionServiceRole337AA7F2"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "zipFile": "exports.handler = function(event, ctx, cb) { console.log(\"Consumed! \" + JSON.stringify(event)); return cb(null, \"done\"); }"
+                        },
+                        "handler": "index.handler",
+                        "role": {
+                          "Fn::GetAtt": [
+                            "apieceofthediagrammyfunctionServiceRole337AA7F2",
+                            "Arn"
+                          ]
+                        },
+                        "runtime": "nodejs12.x"
+                      }
+                    }
+                  },
+                  "SqsEventSource:CdkAutoDiagramPocStackapieceofthediagrammyqueue89326209": {
+                    "id": "SqsEventSource:CdkAutoDiagramPocStackapieceofthediagrammyqueue89326209",
+                    "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/SqsEventSource:CdkAutoDiagramPocStackapieceofthediagrammyqueue89326209",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/SqsEventSource:CdkAutoDiagramPocStackapieceofthediagrammyqueue89326209/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::EventSourceMapping",
+                          "aws:cdk:cloudformation:props": {
+                            "eventSourceArn": {
+                              "Fn::GetAtt": [
+                                "apieceofthediagrammyqueueEFDA1578",
+                                "Arn"
+                              ]
+                            },
+                            "functionName": {
+                              "Ref": "apieceofthediagrammyfunction3788534F"
+                            },
+                            "batchSize": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "my-queue": {
+                "id": "my-queue",
+                "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SQS::Queue",
+                      "aws:cdk:cloudformation:props": {}
+                    }
+                  }
+                }
+              }
+            },
+            "attributes": {
+              "hiii": "kjkshjfs"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "CdkAutoDiagramPocStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "CdkAutoDiagramPocStack/CDKMetadata/Default"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

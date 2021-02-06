@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagram JSON as expected src/test-fixtures/ - 2_queues-are-subscribed-to-a-topic - non-collapsed 1`] = `
+Object {
+  "_image": null,
+  "children": Array [
+    Object {
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [],
+          "id": "QueueIsSubscribedToTopicStack/queue1/Resource",
+          "isGroup": false,
+          "label": Array [
+            "SQS Queue",
+          ],
+        },
+        Object {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [
+            "QueueIsSubscribedToTopicStack/myTopic/Resource",
+            "QueueIsSubscribedToTopicStack/queue1/Resource",
+          ],
+          "id": "QueueIsSubscribedToTopicStack/queue1/Policy/Resource",
+          "isGroup": false,
+          "label": Array [
+            "SQS QueuePolicy",
+          ],
+        },
+        Object {
+          "_image": null,
+          "children": Array [],
+          "edges": Array [
+            "QueueIsSubscribedToTopicStack/myTopic/Resource",
+            "QueueIsSubscribedToTopicStack/queue1/Resource",
+          ],
+          "id": "QueueIsSubscribedToTopicStack/queue1/QueueIsSubscribedToTopicStackmyTopicD9B86344/Resource",
+          "isGroup": false,
+          "label": Array [
+            "SNS",
+            "SUBSCRIPTION",
+          ],
+        },
+      ],
+      "edges": Array [],
+      "id": "QueueIsSubscribedToTopicStack/queue1",
+      "isGroup": true,
+      "label": Array [
+        "queue1",
+      ],
+    },
+    Object {
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [],
+          "id": "QueueIsSubscribedToTopicStack/queue2/Resource",
+          "isGroup": false,
+          "label": Array [
+            "SQS Queue",
+          ],
+        },
+        Object {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [
+            "QueueIsSubscribedToTopicStack/myTopic/Resource",
+            "QueueIsSubscribedToTopicStack/queue2/Resource",
+          ],
+          "id": "QueueIsSubscribedToTopicStack/queue2/Policy/Resource",
+          "isGroup": false,
+          "label": Array [
+            "SQS QueuePolicy",
+          ],
+        },
+        Object {
+          "_image": null,
+          "children": Array [],
+          "edges": Array [
+            "QueueIsSubscribedToTopicStack/myTopic/Resource",
+            "QueueIsSubscribedToTopicStack/queue2/Resource",
+          ],
+          "id": "QueueIsSubscribedToTopicStack/queue2/QueueIsSubscribedToTopicStackmyTopicD9B86344/Resource",
+          "isGroup": false,
+          "label": Array [
+            "SNS",
+            "SUBSCRIPTION",
+          ],
+        },
+      ],
+      "edges": Array [],
+      "id": "QueueIsSubscribedToTopicStack/queue2",
+      "isGroup": true,
+      "label": Array [
+        "queue2",
+      ],
+    },
+    Object {
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Notification-Service_64@5x.png",
+      },
+      "children": Array [],
+      "edges": Array [],
+      "id": "QueueIsSubscribedToTopicStack/myTopic/Resource",
+      "isGroup": false,
+      "label": Array [
+        "SNS Topic",
+      ],
+    },
+  ],
+  "edges": Array [],
+  "id": "QueueIsSubscribedToTopicStack",
+  "isGroup": true,
+  "label": Array [
+    "QueueIsSubscribedToTopicStack",
+  ],
+}
+`;

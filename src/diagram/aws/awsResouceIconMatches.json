@@ -1,0 +1,3327 @@
+[
+  {
+    "resourcePrefix": "AWS::EC2",
+    "genericFilePath": null,
+    "specificResources": [
+      {
+        "resourceType": "AWS::EC2::RouteTable",
+        "filePath": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::EC2::VPCPeeringConnection",
+        "filePath": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-VPC_VPN-Connection_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::EC2::TransitGateway",
+        "filePath": "icons/aws/Service/Arch_Networking-Content/64/Arch_AWS-Transit-Gateway_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::EC2::CapacityReservation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::VPCEndpointServicePermissions",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::TransitGatewayRouteTableAssociation",
+        "filePath": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::EC2::Volume",
+        "filePath": "icons/aws/Resource/Res_Storage/Res_48_Dark/Res_Amazon-Elastic-Block-Store_Volume_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::EC2::LocalGatewayRoute",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::EIP",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::VPCEndpointConnectionNotification",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::FlowLog",
+        "filePath": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-VPC_Flow-Logs_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::EC2::SecurityGroupEgress",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::TransitGatewayAttachment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::Subnet",
+        "filePath": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::EC2::CarrierGateway",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::Instance",
+        "filePath": null,
+          "families": {
+            "A1": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_A1-Instance_48_Dark.png",
+            "C4": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C4-Instance_48_Dark.png",
+            "C5": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C5-Instance_48_Dark.png",
+            "C5N": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C5n-Instance_48_Dark.png",
+            "C6G": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C6g-Instance_48_Dark.png",
+            "D2": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_D2-Instance_48_Dark.png",
+            "DB": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_DB-Instance_48_Dark.png",
+            "F1": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_F1-Instance_48_Dark.png",
+            "G3": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_G3-Instance_48_Dark.png",
+            "H1": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_H1-Instance_48_Dark.png",
+            "I3": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_I3-Instance_48_Dark.png",
+            "M4": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M4-Instance_48_Dark.png",
+            "M5": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M5-Instance_48_Dark.png",
+            "M5A": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M5a-Instance_48_Dark.png",
+            "M5N": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M5n-Instance_48_Dark.png",
+            "M6G": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M6g-Instance_48_Dark.png",
+            "P2": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_P2-Instance_48_Dark.png",
+            "P3": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_P3-Instance_48_Dark.png",
+            "R4": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_R4-Instance_48_Dark.png",
+            "R5": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_R5-Instance_48_Dark.png",
+            "R5A": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_R5a-Instance_48_Dark.png",
+            "R5N": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_R5n-Instance_48_Dark.png",
+            "R6G": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_R6g-Instance_48_Dark.png",
+            "T2": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T2-Instance_48_Dark.png",
+            "T3": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T3-Instance_48_Dark.png",
+            "T3A": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T3a-Instance_48_Dark.png",
+            "X1": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_X1-Instance_48_Dark.png",
+            "X1E": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_X1e-Instance_48_Dark.png",
+            "Z1D": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Z1D-Instance_48_Dark.png"
+        }
+      },
+      {
+        "resourceType": "AWS::EC2::DHCPOptions",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::EgressOnlyInternetGateway",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::NetworkInterfaceAttachment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::CustomerGateway",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::NetworkInsightsPath",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::EIPAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::VPNGateway",
+        "filePath": "icons/aws/Service/Arch_Networking-Content/64/Arch_AWS-VPN_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::EC2::VPNConnection",
+        "filePath": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-VPC_VPN-Connection_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::EC2::TransitGatewayRouteTable",
+        "filePath": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::EC2::VPCEndpointService",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::ClientVpnRoute",
+        "filePath": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::EC2::PlacementGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::GatewayRouteTableAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::NetworkAclEntry",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::InternetGateway",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::LaunchTemplate",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::SpotFleet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::VPNConnectionRoute",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::NetworkInterfacePermission",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::TrafficMirrorFilter",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::SecurityGroupIngress",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::ClientVpnEndpoint",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::SubnetRouteTableAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::Route",
+        "filePath": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::EC2::LocalGatewayRouteTableVPCAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::TransitGatewayRouteTablePropagation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::NetworkInterface",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::ClientVpnAuthorizationRule",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::SubnetNetworkAclAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::TrafficMirrorSession",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::SubnetCidrBlock",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::NatGateway",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::SecurityGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::TrafficMirrorFilterRule",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::VPC",
+        "filePath": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::EC2::PrefixList",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::TransitGatewayRoute",
+        "filePath": "icons/aws/Service/Arch_Networking-Content/64/Arch_AWS-Transit-Gateway_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::EC2::NetworkAcl",
+        "filePath": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-VPC_Network-Access-Control-List_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::EC2::VPNGatewayRoutePropagation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::ClientVpnTargetNetworkAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::VolumeAttachment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::NetworkInsightsAnalysis",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::Host",
+        "filePath": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Instance_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::EC2::VPCEndpoint",
+        "filePath": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-VPC_Endpoints_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::EC2::VPCGatewayAttachment",
+        "filePath": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-VPC_Customer-Gateway_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::EC2::VPCCidrBlock",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::EC2Fleet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::VPCDHCPOptionsAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EC2::TrafficMirrorTarget",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ServiceCatalog",
+    "genericFilePath": "icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-Service-Catalog_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ServiceCatalog::PortfolioShare",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceCatalog::ResourceUpdateConstraint",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceCatalog::TagOption",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceCatalog::CloudFormationProduct",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceCatalog::PortfolioProductAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceCatalog::AcceptedPortfolioShare",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceCatalog::StackSetConstraint",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceCatalog::TagOptionAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceCatalog::LaunchTemplateConstraint",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceCatalog::PortfolioPrincipalAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceCatalog::LaunchRoleConstraint",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceCatalog::CloudFormationProvisionedProduct",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceCatalog::Portfolio",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceCatalog::LaunchNotificationConstraint",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ACMPCA",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ACMPCA::CertificateAuthority",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ACMPCA::CertificateAuthorityActivation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ACMPCA::Certificate",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::GlobalAccelerator",
+    "genericFilePath": "icons/aws/Service/Arch_Networking-Content/64/Arch_AWS-Global-Accelerator_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::GlobalAccelerator::Accelerator",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::GlobalAccelerator::Listener",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::GlobalAccelerator::EndpointGroup",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::AccessAnalyzer",
+    "specificResources": [
+      {
+        "resourceType": "AWS::AccessAnalyzer::Analyzer",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::WAF",
+    "genericFilePath": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-WAF_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::WAF::IPSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAF::SizeConstraintSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAF::ByteMatchSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAF::XssMatchSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAF::Rule",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAF::SqlInjectionMatchSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAF::WebACL",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::IAM",
+    "genericFilePath": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::IAM::Group",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IAM::Policy",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IAM::ServiceLinkedRole",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IAM::AccessKey",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IAM::User",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IAM::Role",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IAM::UserToGroupAddition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IAM::InstanceProfile",
+        "filePath": "icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::IAM::ManagedPolicy",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Backup",
+    "genericFilePath": "icons/aws/Service/Arch_Storage/64/Arch_AWS-Backup_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Backup::BackupPlan",
+        "filePath": "icons/aws/Service/Arch_Storage/64/Arch_AWS-Backup_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Backup::BackupVault",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Backup::BackupSelection",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::WAFRegional",
+    "specificResources": [
+      {
+        "resourceType": "AWS::WAFRegional::RateBasedRule",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAFRegional::SqlInjectionMatchSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAFRegional::GeoMatchSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAFRegional::RegexPatternSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAFRegional::WebACLAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAFRegional::WebACL",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAFRegional::IPSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAFRegional::SizeConstraintSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAFRegional::XssMatchSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAFRegional::ByteMatchSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAFRegional::Rule",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Pinpoint",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Pinpoint::SMSChannel",
+        "filePath": "icons/aws/Service/Arch_Mobile/64/Arch_Amazon-Pinpoint_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Pinpoint::VoiceChannel",
+        "filePath": "icons/aws/Service/Arch_Mobile/64/Arch_Amazon-Pinpoint_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Pinpoint::EventStream",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Pinpoint::EmailTemplate",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Pinpoint::BaiduChannel",
+        "filePath": "icons/aws/Service/Arch_Mobile/64/Arch_Amazon-Pinpoint_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Pinpoint::GCMChannel",
+        "filePath": "icons/aws/Service/Arch_Mobile/64/Arch_Amazon-Pinpoint_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Pinpoint::APNSChannel",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Pinpoint::SmsTemplate",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Pinpoint::Segment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Pinpoint::APNSSandboxChannel",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Pinpoint::ADMChannel",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Pinpoint::ApplicationSettings",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Pinpoint::Campaign",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Pinpoint::PushTemplate",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Pinpoint::APNSVoipSandboxChannel",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Pinpoint::APNSVoipChannel",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Pinpoint::EmailChannel",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Pinpoint::App",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Route53Resolver",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Route53Resolver::ResolverQueryLoggingConfig",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Route53Resolver::ResolverQueryLoggingConfigAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Route53Resolver::ResolverRule",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Route53Resolver::ResolverRuleAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Route53Resolver::ResolverEndpoint",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Elasticsearch",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Elasticsearch::Domain",
+        "filePath": "icons/aws/Service/Arch_Analytics/Arch_64/Arch_Amazon-Elasticsearch-Service_64@5x.png"
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::WorkSpaces",
+    "specificResources": [
+      {
+        "resourceType": "AWS::WorkSpaces::Workspace",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WorkSpaces::ConnectionAlias",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::IoTSiteWise",
+    "specificResources": [
+      {
+        "resourceType": "AWS::IoTSiteWise::AssetModel",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoTSiteWise::Asset",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoTSiteWise::Dashboard",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoTSiteWise::Portal",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoTSiteWise::AccessPolicy",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoTSiteWise::Gateway",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoTSiteWise::Project",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::EMR",
+    "specificResources": [
+      {
+        "resourceType": "AWS::EMR::InstanceFleetConfig",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EMR::InstanceGroupConfig",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EMR::Step",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EMR::SecurityConfiguration",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EMR::Cluster",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::MediaPackage",
+    "specificResources": [
+      {
+        "resourceType": "AWS::MediaPackage::Asset",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::MediaPackage::PackagingGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::MediaPackage::OriginEndpoint",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::MediaPackage::Channel",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::MediaPackage::PackagingConfiguration",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ApiGatewayV2",
+    "genericFilePath": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ApiGatewayV2::Route",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGatewayV2::ApiGatewayManagedOverrides",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGatewayV2::Stage",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGatewayV2::Api",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGatewayV2::RouteResponse",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGatewayV2::VpcLink",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGatewayV2::DomainName",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGatewayV2::Integration",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGatewayV2::Deployment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGatewayV2::Model",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGatewayV2::Authorizer",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGatewayV2::IntegrationResponse",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGatewayV2::ApiMapping",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::SageMaker",
+    "genericFilePath": "icons/aws/Resource/Res_Machine-Learning/Res_48_Dark/Res_Amazon-Sagemaker_Model_48_Dark_gen.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::SageMaker::Workteam",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::DataQualityJobDefinition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::NotebookInstanceLifecycleConfig",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::MonitoringSchedule",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::ModelExplainabilityJobDefinition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::ModelPackageGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::EndpointConfig",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::Endpoint",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::ModelBiasJobDefinition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::ModelQualityJobDefinition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::NotebookInstance",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::CodeRepository",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::Pipeline",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::Model",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::DeviceFleet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::Project",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SageMaker::Device",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::RAM",
+    "specificResources": [
+      {
+        "resourceType": "AWS::RAM::ResourceShare",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Kinesis",
+    "genericFilePath": "icons/aws/Service/Arch_Analytics/Arch_64/Arch_Amazon-Kinesis_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Kinesis::Stream",
+        "filePath": "icons/aws/Service/Arch_Analytics/Arch_64/Arch_Amazon-Kinesis_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Kinesis::StreamConsumer",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::AutoScaling",
+    "genericFilePath": "icons/aws/Service/Arch_Compute/64/Arch_Amazon-EC2-Auto-Scaling_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::AutoScaling::LaunchConfiguration",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AutoScaling::ScalingPolicy",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AutoScaling::LifecycleHook",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AutoScaling::AutoScalingGroup",
+        "filePath": "icons/aws/Service/Arch_Compute/64/Arch_Amazon-EC2-Auto-Scaling_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::AutoScaling::ScheduledAction",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::SQS",
+    "genericFilePath": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::SQS::Queue",
+        "filePath": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::SQS::QueuePolicy",
+        "filePath": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png"
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::AppSync",
+    "specificResources": [
+      {
+        "resourceType": "AWS::AppSync::Resolver",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppSync::GraphQLSchema",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppSync::GraphQLApi",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppSync::ApiKey",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppSync::DataSource",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppSync::FunctionConfiguration",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppSync::ApiCache",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Route53",
+    "genericFilePath": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Route53::RecordSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Route53::HostedZone",
+        "filePath":  "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png"
+         },
+      {
+        "resourceType": "AWS::Route53::HealthCheck",
+        "filePath":null
+      },
+      {
+        "resourceType": "AWS::Route53::RecordSetGroup",
+        "filePath":null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ManagedBlockchain",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ManagedBlockchain::Member",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ManagedBlockchain::Node",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CloudWatch",
+    "genericFilePath": "icons/aws/Service/Arch_Management-Governance/64/Arch_Amazon-CloudWatch_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CloudWatch::Dashboard",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudWatch::AnomalyDetector",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudWatch::CompositeAlarm",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudWatch::InsightRule",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudWatch::MetricStream",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudWatch::Alarm",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ECS",
+    "genericFilePath": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Container-1_48_Dark_gen.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ECS::Cluster",
+        "filePath": "icons/aws/Service/Arch_Compute/64/Arch_Amazon-Elastic-Container-Service_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::ECS::CapacityProvider",
+        "filePath": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Container-1_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::ECS::PrimaryTaskSet",
+        "filePath": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::ECS::Service",
+        "filePath": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Service_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::ECS::TaskSet",
+        "filePath": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::ECS::TaskDefinition",
+        "filePath": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png"
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::NetworkManager",
+    "specificResources": [
+      {
+        "resourceType": "AWS::NetworkManager::Link",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::NetworkManager::CustomerGatewayAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::NetworkManager::Device",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::NetworkManager::LinkAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::NetworkManager::GlobalNetwork",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::NetworkManager::TransitGatewayRegistration",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::NetworkManager::Site",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::StepFunctions",
+    "genericFilePath": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Step-Functions_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::StepFunctions::Activity",
+        "filePath": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Step-Functions_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::StepFunctions::StateMachine",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CodeStarConnections",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CodeStarConnections::Connection",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CloudFront",
+    "genericFilePath": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-CloudFront_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CloudFront::KeyGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudFront::StreamingDistribution",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudFront::CachePolicy",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudFront::Distribution",
+        "filePath": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-CloudFront_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
+        "filePath": "icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::CloudFront::RealtimeLogConfig",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudFront::OriginRequestPolicy",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudFront::PublicKey",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::KinesisAnalytics",
+    "specificResources": [
+      {
+        "resourceType": "AWS::KinesisAnalytics::ApplicationOutput",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::KinesisAnalytics::ApplicationReferenceDataSource",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::KinesisAnalytics::Application",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CloudFormation",
+    "genericFilePath": "icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-CloudFormation_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CloudFormation::StackSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudFormation::Stack",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudFormation::CustomResource",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudFormation::WaitCondition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudFormation::WaitConditionHandle",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudFormation::Macro",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudFormation::ModuleDefaultVersion",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CloudFormation::ModuleVersion",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Cognito",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Cognito::UserPoolRiskConfigurationAttachment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Cognito::UserPoolIdentityProvider",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Cognito::UserPoolGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Cognito::IdentityPool",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Cognito::UserPoolResourceServer",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Cognito::UserPool",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Cognito::UserPoolClient",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Cognito::UserPoolUserToGroupAttachment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Cognito::IdentityPoolRoleAttachment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Cognito::UserPoolUser",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Cognito::UserPoolUICustomizationAttachment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Cognito::UserPoolDomain",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::AppStream",
+    "specificResources": [
+      {
+        "resourceType": "AWS::AppStream::Stack",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppStream::User",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppStream::Fleet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppStream::ImageBuilder",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppStream::DirectoryConfig",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppStream::StackFleetAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppStream::StackUserAssociation",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Glue",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Glue::SchemaVersion",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Glue::DataCatalogEncryptionSettings",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Glue::Workflow",
+        "filePath": "icons/aws/Service/Arch_Analytics/Arch_64/Arch_AWS-Glue_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Glue::Job",
+        "filePath": "icons/aws/Service/Arch_Analytics/Arch_64/Arch_AWS-Glue_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Glue::Database",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Glue::DevEndpoint",
+        "filePath": "icons/aws/Service/Arch_Analytics/Arch_64/Arch_AWS-Glue_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Glue::SchemaVersionMetadata",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Glue::Crawler",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Glue::MLTransform",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Glue::Classifier",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Glue::Schema",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Glue::Table",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Glue::Connection",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Glue::Partition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Glue::Registry",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Glue::Trigger",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Glue::SecurityConfiguration",
+        "filePath": "icons/aws/Service/Arch_Analytics/Arch_64/Arch_AWS-Glue_64@5x.png"
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Greengrass",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Greengrass::ConnectorDefinitionVersion",
+        "filePath": "icons/aws/Service/Arch_Internet-of-Things/64/Arch_AWS-IoT-Greengrass-Core_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Greengrass::ResourceDefinition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Greengrass::DeviceDefinition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Greengrass::LoggerDefinitionVersion",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Greengrass::FunctionDefinitionVersion",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Greengrass::Group",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Greengrass::ConnectorDefinition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Greengrass::FunctionDefinition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Greengrass::SubscriptionDefinitionVersion",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Greengrass::CoreDefinitionVersion",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Greengrass::LoggerDefinition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Greengrass::CoreDefinition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Greengrass::DeviceDefinitionVersion",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Greengrass::SubscriptionDefinition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Greengrass::ResourceDefinitionVersion",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Greengrass::GroupVersion",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::GuardDuty",
+    "specificResources": [
+      {
+        "resourceType": "AWS::GuardDuty::Filter",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::GuardDuty::ThreatIntelSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::GuardDuty::Member",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::GuardDuty::Detector",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::GuardDuty::Master",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::GuardDuty::IPSet",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::LakeFormation",
+    "specificResources": [
+      {
+        "resourceType": "AWS::LakeFormation::Resource",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::LakeFormation::Permissions",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::LakeFormation::DataLakeSettings",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::S3",
+    "genericFilePath": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::S3::AccessPoint",
+        "filePath": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::S3::StorageLens",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::S3::Bucket",
+        "filePath": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::S3::BucketPolicy",
+        "filePath": "icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png"
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::SNS",
+    "specificResources": [
+      {
+        "resourceType": "AWS::SNS::Subscription",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SNS::Topic",
+        "filePath": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Notification-Service_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::SNS::TopicPolicy",
+        "filePath": "icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png"
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::EFS",
+    "genericFilePath": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-Elastic-File-System_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::EFS::MountTarget",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EFS::FileSystem",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EFS::AccessPoint",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ApiGateway",
+    "genericFilePath": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ApiGateway::Deployment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::Authorizer",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::DomainName",
+        "filePath": "icons/aws/Service/Arch_Storage/64/Arch_AWS-Storage-Gateway_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::ApiGateway::DocumentationPart",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::Model",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::UsagePlan",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::BasePathMapping",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::Stage",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::GatewayResponse",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::ClientCertificate",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::DocumentationVersion",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::UsagePlanKey",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::RequestValidator",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::ApiKey",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::Resource",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::Account",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::RestApi",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::VpcLink",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApiGateway::Method",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::KMS",
+    "specificResources": [
+      {
+        "resourceType": "AWS::KMS::Key",
+        "filePath": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Key-Management-Services_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::KMS::Alias",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Redshift",
+    "genericFilePath": "icons/aws/Service/Arch_Database/64/Arch_Amazon-Redshift_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Redshift::Cluster",
+        "filePath": "icons/aws/Service/Arch_Database/64/Arch_Amazon-Redshift_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Redshift::ClusterParameterGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Redshift::ClusterSubnetGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Redshift::ClusterSecurityGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Redshift::ClusterSecurityGroupIngress",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ApplicationInsights",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ApplicationInsights::Application",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::OpsWorks",
+    "genericFilePath": "icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-OpsWorks_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::OpsWorks::App",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::OpsWorks::ElasticLoadBalancerAttachment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::OpsWorks::Instance",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::OpsWorks::UserProfile",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::OpsWorks::Volume",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::OpsWorks::Layer",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::OpsWorks::Stack",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::AppMesh",
+    "specificResources": [
+      {
+        "resourceType": "AWS::AppMesh::Route",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppMesh::GatewayRoute",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppMesh::VirtualGateway",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppMesh::VirtualNode",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppMesh::VirtualRouter",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppMesh::VirtualService",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppMesh::Mesh",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::EKS",
+    "genericFilePath": "icons/aws/Service/Arch_Compute/64/Arch_Amazon-Elastic-Container-Kubernetes_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::EKS::Nodegroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EKS::Cluster",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EKS::FargateProfile",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Lambda",
+    "genericFilePath": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Lambda::EventSourceMapping",
+        "filePath": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Lambda::LayerVersion",
+        "filePath": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Lambda::Alias",
+        "filePath": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Lambda::LayerVersionPermission",
+        "filePath": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Lambda::Version",
+        "filePath": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Lambda::CodeSigningConfig",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Lambda::EventInvokeConfig",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Lambda::Function",
+        "filePath": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Lambda::Permission",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::AppConfig",
+    "specificResources": [
+      {
+        "resourceType": "AWS::AppConfig::Deployment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppConfig::HostedConfigurationVersion",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppConfig::ConfigurationProfile",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppConfig::Environment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppConfig::DeploymentStrategy",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppConfig::Application",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CE",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CE::CostCategory",
+        "filePath": "icons/aws/Service/Arch_Cost-Management/64/Arch_AWS-Budgets_64@5x.png"
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::IoT1Click",
+    "specificResources": [
+      {
+        "resourceType": "AWS::IoT1Click::Project",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoT1Click::Placement",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoT1Click::Device",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::MediaConvert",
+    "specificResources": [
+      {
+        "resourceType": "AWS::MediaConvert::Queue",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::MediaConvert::JobTemplate",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::MediaConvert::Preset",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::QLDB",
+    "specificResources": [
+      {
+        "resourceType": "AWS::QLDB::Stream",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::QLDB::Ledger",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::WAFv2",
+    "specificResources": [
+      {
+        "resourceType": "AWS::WAFv2::RegexPatternSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAFv2::IPSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAFv2::WebACLAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAFv2::RuleGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::WAFv2::WebACL",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Batch",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Batch::JobDefinition",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Batch::JobQueue",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Batch::ComputeEnvironment",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::DataBrew",
+    "specificResources": [
+      {
+        "resourceType": "AWS::DataBrew::Dataset",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DataBrew::Recipe",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DataBrew::Project",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DataBrew::Job",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DataBrew::Schedule",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::GameLift",
+    "specificResources": [
+      {
+        "resourceType": "AWS::GameLift::Fleet",
+        "filePath": "icons/aws/Service/Arch_Game-Tech/64/Arch_Amazon-GameLift_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::GameLift::MatchmakingConfiguration",
+        "filePath": "icons/aws/Service/Arch_Game-Tech/64/Arch_Amazon-GameLift_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::GameLift::Alias",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::GameLift::Build",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::GameLift::MatchmakingRuleSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::GameLift::GameSessionQueue",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::GameLift::Script",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::GameLift::GameServerGroup",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ElastiCache",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ElastiCache::User",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ElastiCache::UserGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ElastiCache::SecurityGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ElastiCache::SubnetGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ElastiCache::SecurityGroupIngress",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ElastiCache::ReplicationGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ElastiCache::ParameterGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ElastiCache::CacheCluster",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::RDS",
+    "genericFilePath": "icons/aws/Service/Arch_Database/64/Arch_Amazon-RDS_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::RDS::DBSubnetGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::RDS::GlobalCluster",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::RDS::DBInstance",
+        "filePath": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Instance_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::RDS::DBSecurityGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::RDS::DBClusterParameterGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::RDS::DBSecurityGroupIngress",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::RDS::DBCluster",
+        "filePath": "icons/aws/Service/Arch_Database/64/Arch_Amazon-RDS_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::RDS::OptionGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::RDS::DBParameterGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::RDS::EventSubscription",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::RDS::DBProxy",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::RDS::DBProxyTargetGroup",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ElasticLoadBalancing",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ElasticLoadBalancing::LoadBalancer",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CodeArtifact",
+    "genericFilePath": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Artifact_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CodeArtifact::Repository",
+        "filePath": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Artifact_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::CodeArtifact::Domain",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::MWAA",
+    "specificResources": [
+      {
+        "resourceType": "AWS::MWAA::Environment",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::PinpointEmail",
+    "specificResources": [
+      {
+        "resourceType": "AWS::PinpointEmail::ConfigurationSetEventDestination",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::PinpointEmail::DedicatedIpPool",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::PinpointEmail::Identity",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::PinpointEmail::ConfigurationSet",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Logs",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Logs::MetricFilter",
+        "filePath": "icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::Logs::SubscriptionFilter",
+        "filePath": "icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::Logs::Destination",
+        "filePath": "icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::Logs::LogGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Logs::LogStream",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Macie",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Macie::Session",
+        "filePath": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_Amazon-Macie_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Macie::FindingsFilter",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Macie::CustomDataIdentifier",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::SES",
+    "genericFilePath": "icons/aws/Service/Arch_Customer-Enagagement/64/Arch_AWS-Simple-Email-Service_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::SES::ReceiptFilter",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SES::ConfigurationSetEventDestination",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SES::Template",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SES::ConfigurationSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SES::ReceiptRule",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SES::ReceiptRuleSet",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Config",
+    "genericFilePath": "icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-Config_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Config::RemediationConfiguration",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Config::ConfigurationAggregator",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Config::AggregationAuthorization",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Config::ConfigurationRecorder",
+        "filePath": "icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-Config_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Config::DeliveryChannel",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Config::OrganizationConfigRule",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Config::OrganizationConformancePack",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Config::ConfigRule",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Config::ConformancePack",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::SecretsManager",
+    "genericFilePath": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Secrets-Manager_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::SecretsManager::RotationSchedule",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SecretsManager::ResourcePolicy",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SecretsManager::Secret",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SecretsManager::SecretTargetAttachment",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ElasticLoadBalancingV2",
+    "genericFilePath":  "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Elastic-Load-Balancing_Application-Load-Balancer_48_Dark_gen.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+        "filePath": "icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::ElasticLoadBalancingV2::Listener",
+        "filePath": ""
+      },
+      {
+        "resourceType": "AWS::ElasticLoadBalancingV2::ListenerRule",
+        "filePath": ""
+      },
+      {
+        "resourceType": "AWS::ElasticLoadBalancingV2::ListenerCertificate",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ElasticLoadBalancingV2::TargetGroup",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CodeBuild",
+    "genericFilePath": "icons/aws/Service/Arch_Developer- Tools/64/Arch_Amazon-CodeBuild_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CodeBuild::SourceCredential",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CodeBuild::Project",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CodeBuild::ReportGroup",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::AmazonMQ",
+    "specificResources": [
+      {
+        "resourceType": "AWS::AmazonMQ::ConfigurationAssociation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AmazonMQ::Configuration",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AmazonMQ::Broker",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::DMS",
+    "specificResources": [
+      {
+        "resourceType": "AWS::DMS::ReplicationSubnetGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DMS::EventSubscription",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DMS::Certificate",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DMS::Endpoint",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DMS::ReplicationTask",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DMS::ReplicationInstance",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Budgets",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Budgets::Budget",
+        "filePath": "icons/aws/Service/Arch_Cost-Management/64/Arch_AWS-Budgets_64@5x.png"
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::NetworkFirewall",
+    "specificResources": [
+      {
+        "resourceType": "AWS::NetworkFirewall::RuleGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::NetworkFirewall::FirewallPolicy",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::NetworkFirewall::Firewall",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::NetworkFirewall::LoggingConfiguration",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CodeDeploy",
+    "genericFilePath": "icons/aws/Service/Arch_Developer- Tools/64/Arch_AWS-CodeDeploy_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CodeDeploy::DeploymentConfig",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CodeDeploy::Application",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CodeDeploy::DeploymentGroup",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::DAX",
+    "specificResources": [
+      {
+        "resourceType": "AWS::DAX::ParameterGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DAX::Cluster",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DAX::SubnetGroup",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CloudTrail",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CloudTrail::Trail",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Neptune",
+    "genericFilePath": "icons/aws/Service/Arch_Database/64/Arch_Amazon-Neptune_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Neptune::DBClusterParameterGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Neptune::DBSubnetGroup",
+        "filePath": "icons/aws/Service/Arch_Database/64/Arch_Amazon-Neptune_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Neptune::DBInstance",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Neptune::DBParameterGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Neptune::DBCluster",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CodePipeline",
+    "genericFilePath": "icons/aws/Service/Arch_Developer- Tools/64/Arch_AWS-CodePipeline_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CodePipeline::Pipeline",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CodePipeline::CustomActionType",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::CodePipeline::Webhook",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::IoT",
+    "specificResources": [
+      {
+        "resourceType": "AWS::IoT::TopicRule",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoT::DomainConfiguration",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoT::Authorizer",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoT::ProvisioningTemplate",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoT::Thing",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoT::Policy",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoT::PolicyPrincipalAttachment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoT::ThingPrincipalAttachment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoT::TopicRuleDestination",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoT::Certificate",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::DocDB",
+    "specificResources": [
+      {
+        "resourceType": "AWS::DocDB::DBInstance",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DocDB::DBCluster",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DocDB::DBSubnetGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DocDB::DBClusterParameterGroup",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::GreengrassV2",
+    "specificResources": [
+      {
+        "resourceType": "AWS::GreengrassV2::ComponentVersion",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::RoboMaker",
+    "specificResources": [
+      {
+        "resourceType": "AWS::RoboMaker::SimulationApplication",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::RoboMaker::SimulationApplicationVersion",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::RoboMaker::RobotApplication",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::RoboMaker::Fleet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::RoboMaker::RobotApplicationVersion",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::RoboMaker::Robot",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::IoTAnalytics",
+    "specificResources": [
+      {
+        "resourceType": "AWS::IoTAnalytics::Channel",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoTAnalytics::Datastore",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoTAnalytics::Dataset",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoTAnalytics::Pipeline",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Amplify",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Amplify::App",
+        "filePath": "icons/aws/Service/Arch_Mobile/64/Arch_AWS-Amplify-Console_64@5x.png"
+      },
+      {
+        "resourceType": "AWS::Amplify::Branch",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Amplify::Domain",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::EventSchemas",
+    "specificResources": [
+      {
+        "resourceType": "AWS::EventSchemas::Discoverer",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EventSchemas::RegistryPolicy",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EventSchemas::Schema",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::EventSchemas::Registry",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Cloud9",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Cloud9::EnvironmentEC2",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::IoTWireless",
+    "specificResources": [
+      {
+        "resourceType": "AWS::IoTWireless::ServiceProfile",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoTWireless::WirelessDevice",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoTWireless::WirelessGateway",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoTWireless::Destination",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoTWireless::DeviceProfile",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ServiceDiscovery",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ServiceDiscovery::Instance",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceDiscovery::Service",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceDiscovery::HttpNamespace",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceDiscovery::PrivateDnsNamespace",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ServiceDiscovery::PublicDnsNamespace",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Events",
+    "genericFilePath": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_Amazon-EventBridge_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Events::EventBusPolicy",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Events::Rule",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Events::Archive",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Events::EventBus",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::SSM",
+    "specificResources": [
+      {
+        "resourceType": "AWS::SSM::PatchBaseline",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SSM::MaintenanceWindowTarget",
+        "filePath": "icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_AWS-System-Manager_Maintenance-Windows_48_Dark_gen.png"
+      },
+      {
+        "resourceType": "AWS::SSM::MaintenanceWindowTask",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SSM::Document",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SSM::MaintenanceWindow",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SSM::Parameter",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SSM::ResourceDataSync",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SSM::Association",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::KinesisAnalyticsV2",
+    "specificResources": [
+      {
+        "resourceType": "AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::KinesisAnalyticsV2::Application",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::KinesisAnalyticsV2::ApplicationOutput",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::DevOpsGuru",
+    "specificResources": [
+      {
+        "resourceType": "AWS::DevOpsGuru::NotificationChannel",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DevOpsGuru::ResourceCollection",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::AuditManager",
+    "specificResources": [
+      {
+        "resourceType": "AWS::AuditManager::Assessment",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Detective",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Detective::MemberInvitation",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Detective::Graph",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Synthetics",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Synthetics::Canary",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::IVS",
+    "specificResources": [
+      {
+        "resourceType": "AWS::IVS::StreamKey",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IVS::Channel",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IVS::PlaybackKeyPair",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::DLM",
+    "specificResources": [
+      {
+        "resourceType": "AWS::DLM::LifecyclePolicy",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::SDB",
+    "specificResources": [
+      {
+        "resourceType": "AWS::SDB::Domain",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::IoTEvents",
+    "specificResources": [
+      {
+        "resourceType": "AWS::IoTEvents::Input",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::IoTEvents::DetectorModel",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ECR",
+    "genericFilePath": "icons/aws/Service/Arch_Compute/64/Arch_Amazon-Elastic-Container-Registry_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ECR::Repository",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ECR::PublicRepository",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::FMS",
+    "specificResources": [
+      {
+        "resourceType": "AWS::FMS::NotificationChannel",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::FMS::Policy",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::MediaLive",
+    "specificResources": [
+      {
+        "resourceType": "AWS::MediaLive::Channel",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::MediaLive::Input",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::MediaLive::InputSecurityGroup",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Kendra",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Kendra::DataSource",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Kendra::Faq",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Kendra::Index",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Transfer",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Transfer::Server",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Transfer::User",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CodeGuruReviewer",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CodeGuruReviewer::RepositoryAssociation",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ElasticBeanstalk",
+    "genericFilePath": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Elastic-Beanstalk_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ElasticBeanstalk::ConfigurationTemplate",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ElasticBeanstalk::Application",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ElasticBeanstalk::Environment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ElasticBeanstalk::ApplicationVersion",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ImageBuilder",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ImageBuilder::Component",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ImageBuilder::InfrastructureConfiguration",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ImageBuilder::ImagePipeline",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ImageBuilder::DistributionConfiguration",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ImageBuilder::ImageRecipe",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ImageBuilder::Image",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Timestream",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Timestream::Database",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Timestream::Table",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::IoTThingsGraph",
+    "specificResources": [
+      {
+        "resourceType": "AWS::IoTThingsGraph::FlowTemplate",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::AutoScalingPlans",
+    "specificResources": [
+      {
+        "resourceType": "AWS::AutoScalingPlans::ScalingPlan",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::SSO",
+    "specificResources": [
+      {
+        "resourceType": "AWS::SSO::Assignment",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SSO::PermissionSet",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::SSO::InstanceAccessControlAttributeConfiguration",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::DirectoryService",
+    "specificResources": [
+      {
+        "resourceType": "AWS::DirectoryService::MicrosoftAD",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::DirectoryService::SimpleAD",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::LicenseManager",
+    "specificResources": [
+      {
+        "resourceType": "AWS::LicenseManager::License",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::LicenseManager::Grant",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CertificateManager",
+    "genericFilePath": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Certificate-Manager_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CertificateManager::Certificate",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CodeStarNotifications",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CodeStarNotifications::NotificationRule",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Inspector",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Inspector::ResourceGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Inspector::AssessmentTemplate",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Inspector::AssessmentTarget",
+        "filePath": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_Amazon-Inspector_64@5x.png"
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "Alexa::ASK",
+    "specificResources": [
+      {
+        "resourceType": "Alexa::ASK::Skill",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::OpsWorksCM",
+    "specificResources": [
+      {
+        "resourceType": "AWS::OpsWorksCM::Server",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::AppFlow",
+    "specificResources": [
+      {
+        "resourceType": "AWS::AppFlow::Flow",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::AppFlow::ConnectorProfile",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::SecurityHub",
+    "specificResources": [
+      {
+        "resourceType": "AWS::SecurityHub::Hub",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::FSx",
+    "specificResources": [
+      {
+        "resourceType": "AWS::FSx::FileSystem",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::DataPipeline",
+    "specificResources": [
+      {
+        "resourceType": "AWS::DataPipeline::Pipeline",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Signer",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Signer::SigningProfile",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Signer::ProfilePermission",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CodeGuruProfiler",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CodeGuruProfiler::ProfilingGroup",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Athena",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Athena::DataCatalog",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Athena::WorkGroup",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Athena::NamedQuery",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ApplicationAutoScaling",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ApplicationAutoScaling::ScalingPolicy",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::ApplicationAutoScaling::ScalableTarget",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CodeCommit",
+    "genericFilePath": "icons/aws/Service/Arch_Developer- Tools/64/Arch_AWS-CodeCommit_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CodeCommit::Repository",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::MediaStore",
+    "specificResources": [
+      {
+        "resourceType": "AWS::MediaStore::Container",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::ResourceGroups",
+    "specificResources": [
+      {
+        "resourceType": "AWS::ResourceGroups::Group",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::KinesisFirehose",
+    "specificResources": [
+      {
+        "resourceType": "AWS::KinesisFirehose::DeliveryStream",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::MSK",
+    "specificResources": [
+      {
+        "resourceType": "AWS::MSK::Cluster",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::DynamoDB",
+    "genericFilePath": "icons/aws/Service/Arch_Database/64/Arch_Amazon-DynamoDB_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::DynamoDB::Table",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Cassandra",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Cassandra::Table",
+        "filePath": null
+      },
+      {
+        "resourceType": "AWS::Cassandra::Keyspace",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::CodeStar",
+    "specificResources": [
+      {
+        "resourceType": "AWS::CodeStar::GitHubRepository",
+        "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Chatbot",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Chatbot::SlackChannelConfiguration",
+        "filePath": null
+      }
+    ]
+  }
+]

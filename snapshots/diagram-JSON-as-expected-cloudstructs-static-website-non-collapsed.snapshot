@@ -1,0 +1,447 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagram JSON as expected src/test-fixtures/ - cloudstructs-static-website - non-collapsed 1`] = `
+Object {
+  "_image": null,
+  "children": Array [
+    Object {
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [],
+              "id": "StaticWebSite/StaticWebsite/Bucket/Resource",
+              "isGroup": false,
+              "label": Array [
+                "S3 Bucket",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "StaticWebSite/StaticWebsite/Bucket/Resource",
+                "StaticWebSite/StaticWebsite/Distribution/Origin1/S3Origin/Resource",
+              ],
+              "id": "StaticWebSite/StaticWebsite/Bucket/Policy/Resource",
+              "isGroup": false,
+              "label": Array [
+                "S3 BucketPolicy",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "StaticWebSite/StaticWebsite/Bucket",
+          "isGroup": true,
+          "label": Array [
+            "Bucket",
+          ],
+        },
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-CloudFront_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "StaticWebSite/StaticWebsite/Bucket/Resource",
+                "StaticWebSite/StaticWebsite/Distribution/Origin1/S3Origin/Resource",
+              ],
+              "id": "StaticWebSite/StaticWebsite/Distribution/Resource",
+              "isGroup": false,
+              "label": Array [
+                "CloudFront Distribution",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [],
+              "id": "StaticWebSite/StaticWebsite/Distribution/Origin1/S3Origin/Resource",
+              "isGroup": false,
+              "label": Array [
+                "CloudFront CloudFrontOriginAccessIdentity",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "StaticWebSite/StaticWebsite/Distribution",
+          "isGroup": true,
+          "label": Array [
+            "Distribution",
+          ],
+        },
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": null,
+                  "children": Array [
+                    Object {
+                      "_image": ComponentIcon {
+                        "format": "SMALLER",
+                        "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                      },
+                      "children": Array [],
+                      "edges": Array [],
+                      "id": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/Resource",
+                      "isGroup": false,
+                      "label": Array [
+                        "IAM Role",
+                      ],
+                    },
+                    Object {
+                      "_image": ComponentIcon {
+                        "format": "SMALLER",
+                        "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                      },
+                      "children": Array [],
+                      "edges": Array [
+                        "StaticWebSite/dns/Resource",
+                        "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/Resource",
+                      ],
+                      "id": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource",
+                      "isGroup": false,
+                      "label": Array [
+                        "IAM Policy",
+                      ],
+                    },
+                  ],
+                  "edges": Array [],
+                  "id": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole",
+                  "isGroup": true,
+                  "label": Array [
+                    "ServiceRole",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "NORMAL",
+                    "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/Resource",
+                  ],
+                  "id": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "Lambda Function",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction",
+              "isGroup": true,
+              "label": Array [
+                "CertificateRequestorFunction",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [],
+              "id": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectBucket/Resource",
+              "isGroup": false,
+              "label": Array [
+                "S3 Bucket",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-CloudFront_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectBucket/Resource",
+              ],
+              "id": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution",
+              "isGroup": false,
+              "label": Array [
+                "CloudFront Distribution",
+                "CFDistribution",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution",
+                "StaticWebSite/dns/Resource",
+              ],
+              "id": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecord2591f3/Resource",
+              "isGroup": false,
+              "label": Array [
+                "Route53 RecordSet",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution",
+                "StaticWebSite/dns/Resource",
+              ],
+              "id": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecordSix2591f3/Resource",
+              "isGroup": false,
+              "label": Array [
+                "Route53 RecordSet",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "StaticWebSite/StaticWebsite/HttpsRedirect",
+          "isGroup": true,
+          "label": Array [
+            "HttpsRedirect",
+          ],
+        },
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [],
+                  "id": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Role",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "StaticWebSite/dns/Resource",
+                    "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole/Resource",
+                  ],
+                  "id": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Policy",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole",
+              "isGroup": true,
+              "label": Array [
+                "ServiceRole",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole/Resource",
+              ],
+              "id": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/Resource",
+              "isGroup": false,
+              "label": Array [
+                "Lambda Function",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction",
+          "isGroup": true,
+          "label": Array [
+            "CertificateRequestorFunction",
+          ],
+        },
+        Object {
+          "_image": ComponentIcon {
+            "format": "SMALLER",
+            "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png",
+          },
+          "children": Array [],
+          "edges": Array [
+            "StaticWebSite/StaticWebsite/Distribution/Resource",
+            "StaticWebSite/dns/Resource",
+          ],
+          "id": "StaticWebSite/StaticWebsite/ARecord/Resource",
+          "isGroup": false,
+          "label": Array [
+            "Route53 RecordSet",
+          ],
+        },
+        Object {
+          "_image": ComponentIcon {
+            "format": "SMALLER",
+            "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png",
+          },
+          "children": Array [],
+          "edges": Array [
+            "StaticWebSite/StaticWebsite/Distribution/Resource",
+            "StaticWebSite/dns/Resource",
+          ],
+          "id": "StaticWebSite/StaticWebsite/AaaaRecord/Resource",
+          "isGroup": false,
+          "label": Array [
+            "Route53 RecordSet",
+          ],
+        },
+        Object {
+          "_image": ComponentIcon {
+            "format": "SMALLER",
+            "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [
+            "StaticWebSite/StaticWebsite/Bucket/Resource",
+            "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource",
+          ],
+          "id": "StaticWebSite/StaticWebsite/PutConfig/CustomResourcePolicy/Resource",
+          "isGroup": false,
+          "label": Array [
+            "IAM Policy",
+          ],
+        },
+      ],
+      "edges": Array [],
+      "id": "StaticWebSite/StaticWebsite",
+      "isGroup": true,
+      "label": Array [
+        "StaticWebsite",
+      ],
+    },
+    Object {
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [
+            "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource",
+          ],
+          "id": "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/Resource",
+          "isGroup": false,
+          "label": Array [
+            "Lambda Function",
+          ],
+        },
+        Object {
+          "_image": ComponentIcon {
+            "format": "SMALLER",
+            "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [],
+          "id": "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource",
+          "isGroup": false,
+          "label": Array [
+            "IAM Role",
+          ],
+        },
+      ],
+      "edges": Array [],
+      "id": "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287",
+      "isGroup": true,
+      "label": Array [
+        "AWS679f53fac002430cb0da5b7982bd2287",
+      ],
+    },
+    Object {
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [],
+          "id": "StaticWebSite/Custom__CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource",
+          "isGroup": false,
+          "label": Array [
+            "Lambda Function",
+          ],
+        },
+        Object {
+          "_image": ComponentIcon {
+            "format": "SMALLER",
+            "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [],
+          "id": "StaticWebSite/Custom__CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource",
+          "isGroup": false,
+          "label": Array [
+            "IAM Role",
+          ],
+        },
+      ],
+      "edges": Array [],
+      "id": "StaticWebSite/Custom__CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C",
+      "isGroup": true,
+      "label": Array [
+        "Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C",
+      ],
+    },
+    Object {
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png",
+      },
+      "children": Array [],
+      "edges": Array [],
+      "id": "StaticWebSite/dns/Resource",
+      "isGroup": false,
+      "label": Array [
+        "Route53 HostedZone",
+      ],
+    },
+  ],
+  "edges": Array [],
+  "id": "StaticWebSite",
+  "isGroup": true,
+  "label": Array [
+    "StaticWebSite",
+  ],
+}
+`;

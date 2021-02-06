@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagram converted to DOT file as expected src/test-fixtures/ - ec-loadbalancer-rds - collapsed 1`] = `
+"digraph \\"Diagram\\" {
+  splines = \\"ortho\\";
+  pad = \\"1.0\\";
+  nodesep = \\"0.60\\";
+  ranksep = \\"0.75\\";
+  fontname = \\"Sans-Serif\\";
+  fontsize = \\"15\\";
+  dpi = \\"200\\";
+  rankdir = \\"BT\\";
+  compound = \\"true\\";
+  fontcolor = \\"#222222\\";
+  edge [
+    color = \\"#D5871488\\",
+    penwidth = 2,
+    arrowhead = \\"dot\\",
+    arrowtail = \\"dot\\",
+  ];
+  node [
+    shape = \\"box\\",
+    style = \\"rounded\\",
+    fixedsize = true,
+    width = 1.7,
+    height = 1.7,
+    labelloc = \\"c\\",
+    imagescale = true,
+    fontname = \\"Sans-Serif\\",
+    fontsize = 8,
+    margin = 8,
+  ];
+  subgraph \\"QueueIsSubscribedToTopicStack\\" {
+    subgraph \\"cluster-SubGraph.QueueIsSubscribedToTopicStack\\" {
+      graph [
+        label = \\"QueueIsSubscribedToTopicStack\\",
+        labelloc = \\"b\\",
+        labeljust = \\"l\\",
+        margin = \\"10\\",
+        fontsize = \\"16\\",
+        penwidth = \\"2\\",
+        pencolor = \\"#888888\\",
+        style = \\"filled,rounded\\",
+        fillcolor = \\"#e4e4e4\\",
+      ];
+      \\"QueueIsSubscribedToTopicStack/MyVpc\\" [
+        label = \\" MyVpc\\",
+        fontsize = 12,
+        image = \\"icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png\\",
+        imagescale = \\"true\\",
+        imagepos = \\"tc\\",
+        penwidth = \\"0\\",
+        shape = \\"node\\",
+        fixedsize = \\"true\\",
+        labelloc = \\"b\\",
+        width = 2,
+        height = 2.266,
+      ];
+      \\"QueueIsSubscribedToTopicStack/MyLoadbalancer\\" [
+        label = \\" MyLoadbalancer\\",
+        fontsize = 12,
+        image = \\"icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png\\",
+        imagescale = \\"true\\",
+        imagepos = \\"tc\\",
+        penwidth = \\"0\\",
+        shape = \\"node\\",
+        fixedsize = \\"true\\",
+        labelloc = \\"b\\",
+        width = 2,
+        height = 2.266,
+      ];
+      \\"QueueIsSubscribedToTopicStack/Web1\\" [
+        label = \\" Web1\\",
+        fontsize = 12,
+        image = \\"icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C5-Instance_48_Dark.png\\",
+        imagescale = \\"true\\",
+        imagepos = \\"tc\\",
+        penwidth = \\"0\\",
+        shape = \\"node\\",
+        fixedsize = \\"true\\",
+        labelloc = \\"b\\",
+        width = 2,
+        height = 2.266,
+      ];
+      \\"QueueIsSubscribedToTopicStack/Web2\\" [
+        label = \\" Web2\\",
+        fontsize = 12,
+        image = \\"icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C5-Instance_48_Dark.png\\",
+        imagescale = \\"true\\",
+        imagepos = \\"tc\\",
+        penwidth = \\"0\\",
+        shape = \\"node\\",
+        fixedsize = \\"true\\",
+        labelloc = \\"b\\",
+        width = 2,
+        height = 2.266,
+      ];
+      \\"QueueIsSubscribedToTopicStack/Database\\" [
+        label = \\" Database\\",
+        fontsize = 12,
+        image = \\"icons/aws/Service/Arch_Database/64/Arch_Amazon-RDS_64@5x.png\\",
+        imagescale = \\"true\\",
+        imagepos = \\"tc\\",
+        penwidth = \\"0\\",
+        shape = \\"node\\",
+        fixedsize = \\"true\\",
+        labelloc = \\"b\\",
+        width = 2,
+        height = 2.266,
+      ];
+    }
+  }
+  \\"QueueIsSubscribedToTopicStack/MyLoadbalancer\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyLoadbalancer\\" -> \\"QueueIsSubscribedToTopicStack/Web1\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/MyLoadbalancer\\" -> \\"QueueIsSubscribedToTopicStack/Web2\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web1\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web1\\" -> \\"QueueIsSubscribedToTopicStack/Database\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web2\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Web2\\" -> \\"QueueIsSubscribedToTopicStack/Database\\" [
+    dir = \\"both\\",
+  ];
+  \\"QueueIsSubscribedToTopicStack/Database\\" -> \\"QueueIsSubscribedToTopicStack/MyVpc\\" [
+    dir = \\"both\\",
+  ];
+}"
+`;
