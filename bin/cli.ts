@@ -12,7 +12,7 @@ async function initCli(): Promise<cdkDiaCliArgs> {
         'cdk-tree-path': {type: 'string', alias: 'tree', default: 'cdk.out/tree.json', describe: 'Path of synthesized cdk cloud assembly'},
         'target-path': {type: 'string', alias: 'target', default: 'diagram.png', describe: 'Target path for rendered PNG'},
         'collapse': {type: 'boolean', default: true, describe: 'Collapse CDK Constructs'},
-    }).argv
+    }).version(false).argv
 }
 
 async function generateDiagram(args: cdkDiaCliArgs) {
