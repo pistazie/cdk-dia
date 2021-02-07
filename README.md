@@ -8,9 +8,8 @@ _Cdk-dia diagrams your CDK provisioned infrastructure using the Grpahviz dot lan
 ## Example
 
 This Diagram was automatically generated from an AWS CDK stack
-
 <p align="center">
-    <img width="500" height="auto" src="docs/diagram.png" />
+    <img src="docs/diagram.png" />
 </p>
 
 ## Getting started
