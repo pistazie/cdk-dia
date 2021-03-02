@@ -31,6 +31,7 @@ jobs:
             npm run build
             npm prune --production
             verdaccio --config smoke-test-npm-local-repo-config.yml &
+            cd dist
             npm version 9.9.${GITHUB_RUN_NUMBER} --commit-hooks false --git-tag-version false
             npm publish --registry http://localhost:4873
 

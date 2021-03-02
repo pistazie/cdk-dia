@@ -6,3 +6,4 @@ bin/**/*.js.map
 scripts/**/*.js
 scripts/**/*.js.map
 test-generated/**
+dist

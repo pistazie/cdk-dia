@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "🎡 Automated diagrams of CDK provisioned infrastructure",
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf dist && tsc && cp package.json dist && cp src/diagram/aws/awsResouceIconMatches.json dist/src/diagram/aws/awsResouceIconMatches.json",
     "test": "tsc && jest"
   },
   "bin": {
@@ -12,11 +12,9 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "files": [
-    "src/**/*",
-    "icons/**/*",
-    "bin/**/*"
-  ],
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": ["**/*"],
   "author": "Tom Roshko @pistazie",
   "license": "MIT",
   "dependencies": {

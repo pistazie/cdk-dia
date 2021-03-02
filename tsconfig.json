@@ -6,10 +6,14 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationDir": "./dist",
+    "outDir": "./dist"
   },
   "include": [
-    "./**/*.ts"
+    "src/**/*.ts",
+    "bin/**/*.ts",
   ],
   "exclude": [
     "node_modules/**/*"
