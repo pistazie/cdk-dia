@@ -36,5 +36,28 @@ $ npx cdk-dia
 ```
 <br/>
 
+## Customize diagrams
+
+In some cases it is useful to be able to tweak a diagram. For this purpose CDK-DIA includes customizers/decorators
+you can use with your CDK constructs in order to tweak the diagram.
+
+### Example:
+Consider the following diagram of a 3-Tier CDK Stack:
+<img src="docs/decorator_example_collapsed.png" />
+
+In this diagram CDK-DIA collapsed the DBTier (done automatically to any CDK Level 2 (L2) construct) in order to
+create a diagram which contains the most important details.
+
+One can use a decorator in order to customize the diagram and prevent CDK-DIA from collapsing the Construct.
+
+This is done by implementing CDK's IInpectable's interface and using CDK-DIA's decorator. example:
+
+<img src="docs/decoration_example_diff.png" />
+
+This results in a Diagram where the DB-Tier was not collapsed providing more details:
+<img src="docs/decorator_example_non-collapsed.png" />
+
+* a full example or the above can be found at [examples/decoration-example](examples/decoration-example)
+
 ## CLI arguments
 ```npx cdk-dia --help``` - Get possible arguments
