@@ -7,13 +7,11 @@
     "noUnusedParameters": true,
     "sourceMap": true,
     "esModuleInterop": true,
-    "declaration": true,
-    "declarationDir": "./dist",
-    "outDir": "./dist"
+    "declaration": true
   },
   "include": [
     "src/**/*.ts",
-    "bin/**/*.ts",
+    "bin/**/*.ts"
   ],
   "exclude": [
     "node_modules/**/*"

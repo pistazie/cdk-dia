@@ -1,9 +1,9 @@
 {
   "name": "cdk-dia",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "🎡 Automated diagrams of CDK provisioned infrastructure",
   "scripts": {
-    "build": "rimraf dist && tsc && cp package.json dist && cp -r icons dist && cp src/diagram/aws/awsResouceIconMatches.json dist/src/diagram/aws/awsResouceIconMatches.json",
+    "prepare-dist": "./prepare-dist.sh",
     "test": "tsc && jest"
   },
   "bin": {

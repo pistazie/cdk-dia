@@ -5,5 +5,7 @@ bin/**/*.js
 bin/**/*.js.map
 scripts/**/*.js
 scripts/**/*.js.map
+index.*
+**/*.d.ts
 test-generated/**
 dist
