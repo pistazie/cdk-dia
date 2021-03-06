@@ -3,6 +3,8 @@ import * as cdk from "../../cdk"
 import {AwsEdgeResolver} from "./aws-edge-resolver"
 import {AwsIconSupplier, Component, ComponentTags, Diagram, DiagramComponent, DiagramGenerator, RootComponent} from ".."
 import {ComponentIcon} from "../component/icon"
+import {CdkDia} from "../../cdk"
+import {CollapseTypes, CollapssingCustomizer} from "../component/customizable-attribute"
 
 /**
  * Generates a Diagram from a CdkTree
@@ -100,7 +102,22 @@ export class AwsDiagramGenerator extends DiagramGenerator{
             component = new DiagramComponent(AwsDiagramGenerator.sanitizeComponentId(cdkNode.path), [cdkNode.id], parentComponent)
         }
 
+        this.applyAttributeSetCustomizers(cdkNode, component)
+
         return component
+    }
+
+    private applyAttributeSetCustomizers(tree: cdk.Node,component: Component) {
+        tree.attributes.forEach( (value: string, key: string) => {
+
+            if (key.startsWith(CdkDia.attrPrefix)){
+                switch (key.substr(CdkDia.attrPrefix.length)){
+                    case CollapssingCustomizer.name:
+                        CollapssingCustomizer.fromAttributeValue(value).customize(component)
+                        break;
+                }
+            }
+        })
     }
 
     private generateCfnComponent(node: cdk.Node, cfnType: string, cleanedResource: string, parent: Component): DiagramComponent {
@@ -160,18 +177,30 @@ export class AwsDiagramGenerator extends DiagramGenerator{
 
     private collapseCdkConstructs(node: Component) {
 
+        const collapsingCustomization = node.tags.get(ComponentTags.collapssingOverride)
+
+        const forceCollapsed = collapsingCustomization === CollapseTypes.FORCE_COLLAPSE
+        const forceNonCollapsedRecursive = collapsingCustomization === CollapseTypes.FORCE_NON_COLLAPSE_RECURSIVE
+        const forceNonCollapsed = forceNonCollapsedRecursive || collapsingCustomization === CollapseTypes.FORCE_NON_COLLAPSE
+
+        if (forceCollapsed){
+            return this.collapseSubtreeToNode(node, node.subComponents()[0])
+        }
+
         // find whether this looks like a CDK construct - has a subComponent named "Resource"
         const resourceComponent = Array.from(node.subComponents()).find(it => {
             const parts = it.idPathParts()
             return parts[parts.length - 1] == "Resource"
         })
 
-        if (resourceComponent !== undefined) {
+        if (resourceComponent !== undefined && !forceNonCollapsed) {
             return this.collapseSubtreeToNode(node, resourceComponent)
         } else {
-            node.subComponents().forEach(sub => {
-                this.collapseCdkConstructs(sub)
-            })
+            if (!forceNonCollapsedRecursive) {
+                node.subComponents().forEach(sub => {
+                    this.collapseCdkConstructs(sub)
+                })
+            }
         }
     }
 

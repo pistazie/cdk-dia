@@ -13,6 +13,18 @@ export const testCases: TestConf[] = [
         collapsed: false
     },
     {
+        id:`collapsed`,
+        jsonTreeFile: "multiple-similar-stacks-with-usage-of-collapsing-customizer",
+        cdkTreePath: "src/test-fixtures/",
+        collapsed: true
+    },
+    {
+        id:`non-collapsed`,
+        jsonTreeFile: "multiple-similar-stacks-with-usage-of-collapsing-customizer",
+        cdkTreePath: "src/test-fixtures/",
+        collapsed: false
+    },
+    {
         id:`non-collapsed`,
         jsonTreeFile: "function-and-queue",
         cdkTreePath: "src/test-fixtures/",

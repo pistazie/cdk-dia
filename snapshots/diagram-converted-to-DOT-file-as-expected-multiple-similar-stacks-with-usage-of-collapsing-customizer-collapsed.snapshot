@@ -1,0 +1,602 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagram converted to DOT file as expected src/test-fixtures/ - multiple-similar-stacks-with-usage-of-collapsing-customizer - collapsed 1`] = `
+"digraph \\"Diagram\\" {
+  splines = \\"ortho\\";
+  pad = \\"1.0\\";
+  nodesep = \\"0.60\\";
+  ranksep = \\"0.75\\";
+  fontname = \\"Sans-Serif\\";
+  fontsize = \\"15\\";
+  dpi = \\"200\\";
+  rankdir = \\"BT\\";
+  compound = \\"true\\";
+  fontcolor = \\"#222222\\";
+  edge [
+    color = \\"#D5871488\\",
+    penwidth = 2,
+    arrowhead = \\"dot\\",
+    arrowtail = \\"dot\\",
+  ];
+  node [
+    shape = \\"box\\",
+    style = \\"rounded\\",
+    fixedsize = true,
+    width = 1.7,
+    height = 1.7,
+    labelloc = \\"c\\",
+    imagescale = true,
+    fontname = \\"Sans-Serif\\",
+    fontsize = 8,
+    margin = 8,
+  ];
+  subgraph \\"App\\" {
+    subgraph \\"cluster-SubGraph.App\\" {
+      graph [
+        label = \\"App\\",
+        labelloc = \\"b\\",
+        labeljust = \\"l\\",
+        margin = \\"10\\",
+        fontsize = \\"16\\",
+        penwidth = \\"2\\",
+        pencolor = \\"#888888\\",
+        style = \\"filled,rounded\\",
+        fillcolor = \\"#f3f3f3\\",
+      ];
+      subgraph \\"cluster-SubGraph.Microservice1\\" {
+        graph [
+          label = \\"Microservice1\\",
+          labelloc = \\"b\\",
+          labeljust = \\"l\\",
+          margin = \\"10\\",
+          fontsize = \\"16\\",
+          penwidth = \\"2\\",
+          pencolor = \\"#888888\\",
+          style = \\"filled,rounded\\",
+          fillcolor = \\"#e4e4e4\\",
+        ];
+        \\"Microservice1/Vpc\\" [
+          label = \\" Vpc\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
+        ];
+        \\"Microservice1/Cluster\\" [
+          label = \\" Cluster\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_Compute/64/Arch_Amazon-Elastic-Container-Service_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
+        ];
+        \\"Microservice1/FargateService\\" [
+          label = \\" FargateService\\",
+          fontsize = 12,
+        ];
+      }
+      subgraph \\"cluster-SubGraph.Microservice2\\" {
+        graph [
+          label = \\"Microservice2\\",
+          labelloc = \\"b\\",
+          labeljust = \\"l\\",
+          margin = \\"10\\",
+          fontsize = \\"16\\",
+          penwidth = \\"2\\",
+          pencolor = \\"#888888\\",
+          style = \\"filled,rounded\\",
+          fillcolor = \\"#e4e4e4\\",
+        ];
+        \\"Microservice2/Cluster\\" [
+          label = \\" Cluster\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_Compute/64/Arch_Amazon-Elastic-Container-Service_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
+        ];
+        subgraph \\"cluster-SubGraph.Vpc\\" {
+          graph [
+            label = \\"Vpc\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#d6d6d6\\",
+          ];
+          \\"Microservice2/Vpc/Resource\\" [
+            label = \\" EC2 VPC\\",
+            fontsize = 12,
+            image = \\"icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.266,
+          ];
+          \\"Microservice2/Vpc/IGW\\" [
+            label = \\" EC2 InternetGateway\\\\nIGW\\",
+            fontsize = 12,
+          ];
+          \\"Microservice2/Vpc/VPCGW\\" [
+            label = \\" EC2\\\\nVPCGatewayAttachment\\\\nVPCGW\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-VPC_Customer-Gateway_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.6979999999999995,
+          ];
+          subgraph \\"cluster-SubGraph.PublicSubnet1\\" {
+            graph [
+              label = \\"PublicSubnet1\\",
+              labelloc = \\"b\\",
+              labeljust = \\"l\\",
+              margin = \\"10\\",
+              fontsize = \\"16\\",
+              penwidth = \\"2\\",
+              pencolor = \\"#888888\\",
+              style = \\"filled,rounded\\",
+              fillcolor = \\"#c7c7c7\\",
+            ];
+            \\"Microservice2/Vpc/PublicSubnet1/Subnet\\" [
+              label = \\" EC2 Subnet Subnet\\",
+              fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.266,
+            ];
+            \\"Microservice2/Vpc/PublicSubnet1/RouteTable\\" [
+              label = \\" EC2 RouteTable\\\\nRouteTable\\",
+              fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.4819999999999998,
+            ];
+            \\"Microservice2/Vpc/PublicSubnet1/RouteTableAssociation\\" [
+              label = \\" EC2\\\\nRouteTableAssociation\\",
+              fontsize = 12,
+            ];
+            \\"Microservice2/Vpc/PublicSubnet1/DefaultRoute\\" [
+              label = \\" EC2 Route\\\\nDefaultRoute\\",
+              fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.4819999999999998,
+            ];
+            \\"Microservice2/Vpc/PublicSubnet1/EIP\\" [
+              label = \\" EC2 EIP EIP\\",
+              fontsize = 12,
+            ];
+            \\"Microservice2/Vpc/PublicSubnet1/NATGateway\\" [
+              label = \\" EC2 NatGateway\\\\nNATGateway\\",
+              fontsize = 12,
+            ];
+          }
+          subgraph \\"cluster-SubGraph.PublicSubnet2\\" {
+            graph [
+              label = \\"PublicSubnet2\\",
+              labelloc = \\"b\\",
+              labeljust = \\"l\\",
+              margin = \\"10\\",
+              fontsize = \\"16\\",
+              penwidth = \\"2\\",
+              pencolor = \\"#888888\\",
+              style = \\"filled,rounded\\",
+              fillcolor = \\"#c7c7c7\\",
+            ];
+            \\"Microservice2/Vpc/PublicSubnet2/Subnet\\" [
+              label = \\" EC2 Subnet Subnet\\",
+              fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.266,
+            ];
+            \\"Microservice2/Vpc/PublicSubnet2/RouteTable\\" [
+              label = \\" EC2 RouteTable\\\\nRouteTable\\",
+              fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.4819999999999998,
+            ];
+            \\"Microservice2/Vpc/PublicSubnet2/RouteTableAssociation\\" [
+              label = \\" EC2\\\\nRouteTableAssociation\\",
+              fontsize = 12,
+            ];
+            \\"Microservice2/Vpc/PublicSubnet2/DefaultRoute\\" [
+              label = \\" EC2 Route\\\\nDefaultRoute\\",
+              fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.4819999999999998,
+            ];
+            \\"Microservice2/Vpc/PublicSubnet2/EIP\\" [
+              label = \\" EC2 EIP EIP\\",
+              fontsize = 12,
+            ];
+            \\"Microservice2/Vpc/PublicSubnet2/NATGateway\\" [
+              label = \\" EC2 NatGateway\\\\nNATGateway\\",
+              fontsize = 12,
+            ];
+          }
+          subgraph \\"cluster-SubGraph.PrivateSubnet1\\" {
+            graph [
+              label = \\"PrivateSubnet1\\",
+              labelloc = \\"b\\",
+              labeljust = \\"l\\",
+              margin = \\"10\\",
+              fontsize = \\"16\\",
+              penwidth = \\"2\\",
+              pencolor = \\"#888888\\",
+              style = \\"filled,rounded\\",
+              fillcolor = \\"#c7c7c7\\",
+            ];
+            \\"Microservice2/Vpc/PrivateSubnet1/Subnet\\" [
+              label = \\" EC2 Subnet Subnet\\",
+              fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.266,
+            ];
+            \\"Microservice2/Vpc/PrivateSubnet1/RouteTable\\" [
+              label = \\" EC2 RouteTable\\\\nRouteTable\\",
+              fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.4819999999999998,
+            ];
+            \\"Microservice2/Vpc/PrivateSubnet1/RouteTableAssociation\\" [
+              label = \\" EC2\\\\nRouteTableAssociation\\",
+              fontsize = 12,
+            ];
+            \\"Microservice2/Vpc/PrivateSubnet1/DefaultRoute\\" [
+              label = \\" EC2 Route\\\\nDefaultRoute\\",
+              fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.4819999999999998,
+            ];
+          }
+          subgraph \\"cluster-SubGraph.PrivateSubnet2\\" {
+            graph [
+              label = \\"PrivateSubnet2\\",
+              labelloc = \\"b\\",
+              labeljust = \\"l\\",
+              margin = \\"10\\",
+              fontsize = \\"16\\",
+              penwidth = \\"2\\",
+              pencolor = \\"#888888\\",
+              style = \\"filled,rounded\\",
+              fillcolor = \\"#c7c7c7\\",
+            ];
+            \\"Microservice2/Vpc/PrivateSubnet2/Subnet\\" [
+              label = \\" EC2 Subnet Subnet\\",
+              fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.266,
+            ];
+            \\"Microservice2/Vpc/PrivateSubnet2/RouteTable\\" [
+              label = \\" EC2 RouteTable\\\\nRouteTable\\",
+              fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.4819999999999998,
+            ];
+            \\"Microservice2/Vpc/PrivateSubnet2/RouteTableAssociation\\" [
+              label = \\" EC2\\\\nRouteTableAssociation\\",
+              fontsize = 12,
+            ];
+            \\"Microservice2/Vpc/PrivateSubnet2/DefaultRoute\\" [
+              label = \\" EC2 Route\\\\nDefaultRoute\\",
+              fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.4819999999999998,
+            ];
+          }
+        }
+        subgraph \\"cluster-SubGraph.FargateService\\" {
+          graph [
+            label = \\"FargateService\\",
+            labelloc = \\"b\\",
+            labeljust = \\"l\\",
+            margin = \\"10\\",
+            fontsize = \\"16\\",
+            penwidth = \\"2\\",
+            pencolor = \\"#888888\\",
+            style = \\"filled,rounded\\",
+            fillcolor = \\"#d6d6d6\\",
+          ];
+          \\"Microservice2/FargateService/LB\\" [
+            label = \\" LB\\",
+            fontsize = 12,
+            image = \\"icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.266,
+          ];
+          \\"Microservice2/FargateService/TaskDef\\" [
+            label = \\" TaskDef\\",
+            fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.266,
+          ];
+          subgraph \\"cluster-SubGraph.Service\\" {
+            graph [
+              label = \\"Service\\",
+              labelloc = \\"b\\",
+              labeljust = \\"l\\",
+              margin = \\"10\\",
+              fontsize = \\"16\\",
+              penwidth = \\"2\\",
+              pencolor = \\"#888888\\",
+              style = \\"filled,rounded\\",
+              fillcolor = \\"#c7c7c7\\",
+            ];
+            \\"Microservice2/FargateService/Service/Service\\" [
+              label = \\" ECS Service Service\\",
+              fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Service_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.266,
+            ];
+            \\"Microservice2/FargateService/Service/SecurityGroup\\" [
+              label = \\" SecurityGroup\\",
+              fontsize = 12,
+            ];
+          }
+        }
+      }
+    }
+  }
+  \\"Microservice1/FargateService\\" -> \\"Microservice1/Vpc\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice1/FargateService\\" -> \\"Microservice1/Cluster\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet1/Subnet\\" -> \\"Microservice2/Vpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet1/RouteTable\\" -> \\"Microservice2/Vpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet1/RouteTableAssociation\\" -> \\"Microservice2/Vpc/PublicSubnet1/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet1/RouteTableAssociation\\" -> \\"Microservice2/Vpc/PublicSubnet1/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet1/DefaultRoute\\" -> \\"Microservice2/Vpc/PublicSubnet1/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet1/DefaultRoute\\" -> \\"Microservice2/Vpc/IGW\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet1/NATGateway\\" -> \\"Microservice2/Vpc/PublicSubnet1/EIP\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet1/NATGateway\\" -> \\"Microservice2/Vpc/PublicSubnet1/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet2/Subnet\\" -> \\"Microservice2/Vpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet2/RouteTable\\" -> \\"Microservice2/Vpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet2/RouteTableAssociation\\" -> \\"Microservice2/Vpc/PublicSubnet2/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet2/RouteTableAssociation\\" -> \\"Microservice2/Vpc/PublicSubnet2/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet2/DefaultRoute\\" -> \\"Microservice2/Vpc/PublicSubnet2/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet2/DefaultRoute\\" -> \\"Microservice2/Vpc/IGW\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet2/NATGateway\\" -> \\"Microservice2/Vpc/PublicSubnet2/EIP\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PublicSubnet2/NATGateway\\" -> \\"Microservice2/Vpc/PublicSubnet2/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PrivateSubnet1/Subnet\\" -> \\"Microservice2/Vpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PrivateSubnet1/RouteTable\\" -> \\"Microservice2/Vpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PrivateSubnet1/RouteTableAssociation\\" -> \\"Microservice2/Vpc/PrivateSubnet1/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PrivateSubnet1/RouteTableAssociation\\" -> \\"Microservice2/Vpc/PrivateSubnet1/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PrivateSubnet1/DefaultRoute\\" -> \\"Microservice2/Vpc/PrivateSubnet1/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PrivateSubnet1/DefaultRoute\\" -> \\"Microservice2/Vpc/PublicSubnet1/NATGateway\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PrivateSubnet2/Subnet\\" -> \\"Microservice2/Vpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PrivateSubnet2/RouteTable\\" -> \\"Microservice2/Vpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PrivateSubnet2/RouteTableAssociation\\" -> \\"Microservice2/Vpc/PrivateSubnet2/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PrivateSubnet2/RouteTableAssociation\\" -> \\"Microservice2/Vpc/PrivateSubnet2/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PrivateSubnet2/DefaultRoute\\" -> \\"Microservice2/Vpc/PrivateSubnet2/RouteTable\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/PrivateSubnet2/DefaultRoute\\" -> \\"Microservice2/Vpc/PublicSubnet2/NATGateway\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/VPCGW\\" -> \\"Microservice2/Vpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/Vpc/VPCGW\\" -> \\"Microservice2/Vpc/IGW\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/FargateService/LB\\" -> \\"Microservice2/Vpc/PublicSubnet1/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/FargateService/LB\\" -> \\"Microservice2/Vpc/PublicSubnet2/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/FargateService/LB\\" -> \\"Microservice2/Vpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/FargateService/LB\\" -> \\"Microservice2/FargateService/Service/SecurityGroup\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/FargateService/Service/Service\\" -> \\"Microservice2/Vpc/PrivateSubnet1/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/FargateService/Service/Service\\" -> \\"Microservice2/Vpc/PrivateSubnet2/Subnet\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/FargateService/Service/Service\\" -> \\"Microservice2/Cluster\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/FargateService/Service/Service\\" -> \\"Microservice2/FargateService/LB\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/FargateService/Service/Service\\" -> \\"Microservice2/FargateService/TaskDef\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/FargateService/Service/Service\\" -> \\"Microservice2/FargateService/Service/SecurityGroup\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/FargateService/Service/SecurityGroup\\" -> \\"Microservice2/Vpc/Resource\\" [
+    dir = \\"both\\",
+  ];
+  \\"Microservice2/FargateService/Service/SecurityGroup\\" -> \\"Microservice2/FargateService/LB\\" [
+    dir = \\"both\\",
+  ];
+}"
+`;

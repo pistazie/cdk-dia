@@ -7,7 +7,8 @@ import {RootComponent} from "./root-component"
 export type ComponentId = string
 
 export enum ComponentTags{
-    isCdkStack = "isCdkStack"
+    isCdkStack = "isCdkStack",
+    collapssingOverride = "collapssingOverride"
 }
 
 /**
