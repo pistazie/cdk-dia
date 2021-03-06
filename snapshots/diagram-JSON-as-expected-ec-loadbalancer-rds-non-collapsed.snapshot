@@ -775,7 +775,7 @@ Object {
         Object {
           "_image": ComponentIcon {
             "format": "NORMAL",
-            "path": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Instance_48_Dark_gen.png",
+            "path": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T2-Instance_48_Dark.png",
           },
           "children": Array [],
           "edges": Array [
@@ -792,7 +792,7 @@ Object {
         Object {
           "_image": ComponentIcon {
             "format": "NORMAL",
-            "path": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Instance_48_Dark_gen.png",
+            "path": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T2-Instance_48_Dark.png",
           },
           "children": Array [],
           "edges": Array [

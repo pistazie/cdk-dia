@@ -587,7 +587,7 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - ec-loadb
         \\"QueueIsSubscribedToTopicStack/Database/Instance1\\" [
           label = \\" RDS DBInstance\\\\nInstance1\\",
           fontsize = 12,
-          image = \\"icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Instance_48_Dark_gen.png\\",
+          image = \\"icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T2-Instance_48_Dark.png\\",
           imagescale = \\"true\\",
           imagepos = \\"tc\\",
           penwidth = \\"0\\",
@@ -600,7 +600,7 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - ec-loadb
         \\"QueueIsSubscribedToTopicStack/Database/Instance2\\" [
           label = \\" RDS DBInstance\\\\nInstance2\\",
           fontsize = 12,
-          image = \\"icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Instance_48_Dark_gen.png\\",
+          image = \\"icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T2-Instance_48_Dark.png\\",
           imagescale = \\"true\\",
           imagepos = \\"tc\\",
           penwidth = \\"0\\",

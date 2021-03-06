@@ -17,7 +17,9 @@ export class AwsIconSupplier {
 
         switch (resourceType){
             case "AWS::EC2::Instance":
-                  return this.matchEC2InstanceImage(resourceProps)
+                  return this.matchEC2InstanceIcon(resourceProps)
+            case "AWS::RDS::DBInstance":
+                return this.matchRDSInstanceIcon(resourceProps)
             default: {
                 const prefix = resourceType.split("::").slice(0, 2).join("::")
                 const mappingGroup = this.resourceToImageMapping.find(mapping => {
@@ -43,17 +45,39 @@ export class AwsIconSupplier {
         return null
     }
 
-    private matchEC2InstanceImage(awsresourceProps: Record<string, string>): ComponentIcon {
-        const ec2ImagesNode = this.resourceToImageMapping.find(mapping => { return mapping.resourcePrefix == "AWS::EC2"})
-        const ec2Images = ec2ImagesNode.specificResources.find(mapping => { return mapping.resourceType == "AWS::EC2::Instance"})
+    private matchEC2InstanceIcon(awsresourceProps: Record<string, string>): ComponentIcon {
+        return this.instanceIconByFamily("AWS::EC2::Instance", "instanceType", 2, 0, awsresourceProps)
+    }
 
-            if (awsresourceProps["instanceType"] !== undefined && awsresourceProps["instanceType"].split(".").length == 2){
-                const instanceFamily = (awsresourceProps["instanceType"].split("."))[0]
-                if (ec2Images["families"][instanceFamily.toUpperCase()] !== undefined){
-                    return new ComponentIcon(path.join(this.iconsBasePath, ec2Images["families"][instanceFamily.toUpperCase()]))
-                }
+    private matchRDSInstanceIcon(awsresourceProps: Record<string, string>): ComponentIcon {
+        return this.instanceIconByFamily("AWS::RDS::DBInstance", "dbInstanceClass", 3, 1, awsresourceProps)
+    }
+
+    private instanceIconByFamily(
+        cfnResource: string,
+        instanceTypeAttribute: string,
+        instanceTypeParts: number,
+        instanceTypeFamilyPartInd: number,
+        props: Record<string, string>) {
+
+        const parentInstanceIconsNode = this.resourceToImageMapping.find(mapping => {
+            return mapping.resourcePrefix == cfnResource.split("::").slice(0, 2).join("::")
+        })
+
+        const instanceIconsNode = parentInstanceIconsNode.specificResources.find(mapping => {
+            return mapping.resourceType == cfnResource
+        })
+
+        if (props[instanceTypeAttribute] !== undefined && props[instanceTypeAttribute].split(".").length == instanceTypeParts) {
+
+            const instanceFamily = (props[instanceTypeAttribute].split("."))[instanceTypeFamilyPartInd]
+
+            if (instanceIconsNode["families"][instanceFamily.toUpperCase()] !== undefined) {
+                return new ComponentIcon(path.join(this.iconsBasePath, instanceIconsNode["families"][instanceFamily.toUpperCase()]))
             }
-        return new ComponentIcon(path.join(this.iconsBasePath, ec2Images["filePath"]))
+        }
+
+        return new ComponentIcon(path.join(this.iconsBasePath, instanceIconsNode["filePath"]))
     }
 }
 

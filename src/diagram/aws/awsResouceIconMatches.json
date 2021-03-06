@@ -2052,7 +2052,23 @@
       },
       {
         "resourceType": "AWS::RDS::DBInstance",
-        "filePath": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Instance_48_Dark_gen.png"
+        "filePath": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Instance_48_Dark_gen.png",
+        "families": {
+          "M4": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M4-Instance_48_Dark.png",
+          "M5": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M5-Instance_48_Dark.png",
+          "M5D": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M5-Instance_48_Dark.png",
+          "M6G": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M6g-Instance_48_Dark.png",
+          "R4": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_R4-Instance_48_Dark.png",
+          "R5": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_R5-Instance_48_Dark.png",
+          "R5B": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_R5-Instance_48_Dark.png",
+          "R5D": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_R5-Instance_48_Dark.png",
+          "R6G": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_R6g-Instance_48_Dark.png",
+          "T2": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T2-Instance_48_Dark.png",
+          "T3": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T3-Instance_48_Dark.png",
+          "X1": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_X1-Instance_48_Dark.png",
+          "X1E": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_X1e-Instance_48_Dark.png",
+          "Z1D": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Z1D-Instance_48_Dark.png"
+        }
       },
       {
         "resourceType": "AWS::RDS::DBSecurityGroup",
