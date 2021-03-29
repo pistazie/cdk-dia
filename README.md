@@ -1,3 +1,4 @@
+[![Mentioned in Awesome CDK](https://awesome.re/mentioned-badge.svg)](https://github.com/kolomied/awesome-cdk)
 ![Test](https://github.com/pistazie/cdk-dia/workflows/Test/badge.svg)
 [![npm version](https://badge.fury.io/js/cdk-dia.svg)](https://badge.fury.io/js/cdk-dia)
 
