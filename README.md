@@ -42,6 +42,8 @@ $ npx cdk-dia
 In some cases it is useful to be able to tweak a diagram. For this purpose CDK-DIA includes customizers/decorators
 you can use with your CDK constructs in order to tweak the diagram.
 
+* In order to customize you have to add cdk-dia as a npm project dependency (globally installing it using `npm -g` won't allow you to use the `CdkDiaDecorator` class)
+
 ### Example:
 Consider the following diagram of a 3-Tier CDK Stack:
 <img src="docs/decorator_example_collapsed.png" />
