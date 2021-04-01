@@ -1,6 +1,6 @@
 {
   "name": "cdk-dia",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "🎡 Automated diagrams of CDK provisioned infrastructure",
   "scripts": {
     "prepare-dist": "./prepare-dist.sh",
@@ -26,9 +26,7 @@
     "ts-graphviz": "^0.13.2",
     "values.js": "^2.0.0",
     "word-wrap": "^1.2.3",
-    "yargs": "^16.2.0"
-  },
-  "peerDependencies": {
+    "yargs": "^16.2.0",
     "@aws-cdk/core": "^1.40.0"
   },
   "devDependencies": {
