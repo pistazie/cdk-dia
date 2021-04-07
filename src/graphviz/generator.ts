@@ -1,16 +1,13 @@
-import * as diagram from "../diagram"
-
 import * as fs from 'fs'
 import * as util from 'util'
 import * as _ from 'lodash'
 import * as hasbin from 'hasbin'
 import wrap from "word-wrap"
 import childProcess from "child_process"
-
 import {digraph, Graph, ISubgraph, toDot} from "ts-graphviz"
 
-import {ColorPalette, setBaseGraphAttributes} from "./styling"
-import {ComponentIconFormat} from "../diagram/component/icon"
+import * as diagram from "../diagram"
+import * as styling from "./styling"
 import {RenderingError} from "./rendering-error"
 
 const exec = util.promisify(childProcess.exec)
@@ -23,7 +20,7 @@ export class Generator {
 
         this.rootGraph = digraph('Diagram')
 
-        setBaseGraphAttributes(this.rootGraph)
+        styling.applyBaseGraphStyling(this.rootGraph)
         this.diagramGraph(dia)
     }
     async generatePng(path: string) : Promise<string>{
@@ -127,7 +124,6 @@ export class Generator {
 
     private addToGraph(g: ISubgraph, node: diagram.Component) {
 
-        const baseImgSize = 2
         const labelFontSize = 12
         const charsPerLine = labelFontSize * 1.8
 
@@ -137,15 +133,8 @@ export class Generator {
 
             subGraph.attributes.graph.set("label", node.label.join(" "))
 
-            subGraph.attributes.graph.set("labelloc", "b")
-            subGraph.attributes.graph.set("labeljust", "l")
-            subGraph.attributes.graph.set("margin", "10")
-            subGraph.attributes.graph.set("fontsize", "16")
-            //subGraph.attributes.edge.set("constraint", "false")
-            subGraph.attributes.graph.set("penwidth", "2")
-            subGraph.attributes.graph.set("pencolor", "#888888")
-            subGraph.attributes.graph.set("style", "filled,rounded")
-            subGraph.attributes.graph.set("fillcolor", ColorPalette.byInd(node.depth()))
+            styling.applyClusterStyling(subGraph, node.depth())
+
 
             node.subComponents().forEach(sub => this.addToGraph(subGraph, sub))
 
@@ -154,25 +143,11 @@ export class Generator {
 
             const labelLines = this.breakLineEveryMaxChars(node.label, charsPerLine)
             gnode.attributes.set("label", labelLines.join("\n"))
-            gnode.attributes.set("fontsize", labelFontSize)
+
+            styling.applyBasicNodeStyling(gnode, labelFontSize)
 
             if (node.icon != null && node.icon.path != null) {
-                gnode.attributes.set("image", node.icon.path)
-                gnode.attributes.set("imagescale", "true")
-                gnode.attributes.set("imagepos", "tc")
-                gnode.attributes.set("penwidth", "0")
-                gnode.attributes.set("shape", "node")
-                gnode.attributes.set("fixedsize", "true")
-                gnode.attributes.set("labelloc", "b")
-
-                if (node.icon.format == ComponentIconFormat.NORMAL) {
-                    gnode.attributes.set("width", baseImgSize)
-                    gnode.attributes.set("height", baseImgSize + 0.05 + (labelLines.length * 0.018 * labelFontSize))
-                } else {
-                    const ratio = 0.60
-                    gnode.attributes.set("width", baseImgSize * ratio)
-                    gnode.attributes.set("height", (baseImgSize * ratio) + 0.05 + (labelLines.length * 0.018 * labelFontSize))
-                }
+                styling.applyNodeWithIconStyling(gnode, node.icon, labelFontSize, labelLines.length)
             }
         }
     }
