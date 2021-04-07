@@ -63,4 +63,5 @@ This results in a Diagram where the DB-Tier was not collapsed providing more det
 * a full example or the above can be found at [examples/decoration-example](examples/decoration-example)
 
 ## CLI arguments
-```npx cdk-dia --help``` - Get possible arguments
+* ```npx cdk-dia --help``` - Get possible arguments
+* ```npx cdk-dia --stacks stackOne stackFour``` - only diagram chosen aws-cdk stacks
