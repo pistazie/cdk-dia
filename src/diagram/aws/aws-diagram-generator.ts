@@ -12,7 +12,6 @@ import {CollapseTypes, CollapssingCustomizer} from "../component/customizable-at
 export class AwsDiagramGenerator extends DiagramGenerator{
 
     static CDK_STACK_DEPTH = 2
-    static NON_DIAGRAMED_ID_PREFIXES = ["SsmParameterValue"]
 
     private readonly edgeResolver : AwsEdgeResolver
     private readonly iconSupplier: AwsIconSupplier
@@ -33,9 +32,6 @@ export class AwsDiagramGenerator extends DiagramGenerator{
 
         // add edges between Components
         this.edgeResolver.resolveEdges(cdkRoot, diagram)
-
-        // Optimize by removing leaf components which shouldn't be diagramed
-        this.removeNonDiagramedComponents(diagram)
 
         // collapse CDK constructs to single Components (useful as many times the internal details of a component are not diagram relevant)
         if (collapse) this.collapseCdkConstructs(diagram.root)
@@ -160,19 +156,6 @@ export class AwsDiagramGenerator extends DiagramGenerator{
     private hasCfnProps(tree: cdk.Node): boolean {
         const {cfnType} = this.cfnProps(tree)
         return cfnType != null
-    }
-
-    private removeNonDiagramedComponents(diagram: Diagram) {
-        diagram.root.subTreeApplyAllComponents(component => {
-            if (component.subComponents().length == 0) {
-                const idParts = component.id.split("/")
-                if (idParts.length > 0 && _.find(AwsDiagramGenerator.NON_DIAGRAMED_ID_PREFIXES, prefix => {
-                    return idParts[idParts.length - 1].startsWith(prefix)
-                }) != undefined) {
-                    component.destroySelfWithFromParent()
-                }
-            }
-        })
     }
 
     private collapseCdkConstructs(node: Component) {
