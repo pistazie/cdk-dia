@@ -129,7 +129,7 @@ export class AwsEdgeResolver {
         }
 
         if (Array.isArray(object)) {
-            const array = (object as Array<any>).map(it => {
+            const array = object.map(it => {
                 return Array.from(this.scrapeAllStrings(it))
             })
             const strings = _.flatten(array)

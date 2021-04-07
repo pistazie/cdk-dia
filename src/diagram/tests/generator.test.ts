@@ -63,11 +63,11 @@ describe("All Components linked from the Tree are also part of the tree", () => 
 
              const diagram = givenDiagram(test)
 
-            expect(testAllLinksInDiagram(diagram.root, diagram.root)).toBeUndefined()
+            expect(testAllLinksInDiagram(diagram.root, diagram.root)).toBeTruthy()
         })
     })
 
-    function testAllLinksInDiagram(root, node) {
+    function testAllLinksInDiagram(root, node): boolean {
 
         node.links.getLinkedComponents().forEach(target => {
             if (! root.componentIsInSubTree(target)) {
@@ -83,6 +83,8 @@ describe("All Components linked from the Tree are also part of the tree", () => 
         node.subComponents().forEach(it => {
             testAllLinksInDiagram(root, it)
         })
+
+        return true
     }
 
 })
@@ -96,11 +98,11 @@ describe("All Sub-Components are also part of the tree", () => {
 
              const diagram = givenDiagram(test)
 
-            expect(testAllSubComponentsInDiagram(diagram.root, diagram.root)).toBeUndefined()
+            expect(testAllSubComponentsInDiagram(diagram.root, diagram.root)).toBeTruthy()
         })
     })
 
-    function testAllSubComponentsInDiagram(node, root) {
+    function testAllSubComponentsInDiagram(node, root): boolean {
 
         if (! root.componentIsInSubTree(node)) throw Error(`not looking good node not in ${node.id}`)
 
@@ -112,6 +114,8 @@ describe("All Sub-Components are also part of the tree", () => {
         node.subComponents().forEach(it => {
             testAllSubComponentsInDiagram(it, root)
         })
+
+        return true
     }
 })
 
@@ -123,11 +127,11 @@ describe("All Links are bi-directional", () => {
 
             const diagram = givenDiagram(test)
 
-            expect(testLinks(diagram.root)).toBeUndefined()
+            expect(testLinks(diagram.root)).toBeTruthy()
         })
     })
 
-    function testLinks(node) {
+    function testLinks(node): boolean {
 
         // check each link to me has a rev-link to me
         node.links.getLinkedComponents().forEach( target =>{
@@ -141,6 +145,8 @@ describe("All Links are bi-directional", () => {
         node.subComponents().forEach( it => {
             testLinks(it)
         })
+
+        return true
     }
 })
 

@@ -256,7 +256,7 @@ export class AwsDiagramGenerator extends DiagramGenerator{
         if ((current instanceof DiagramComponent) && current.depth() > AwsDiagramGenerator.CDK_STACK_DEPTH -1) {
 
             try {
-                const stackRootComponent = (current as DiagramComponent).treeAncestorInDepth(AwsDiagramGenerator.CDK_STACK_DEPTH - 1)
+                const stackRootComponent = current.treeAncestorInDepth(AwsDiagramGenerator.CDK_STACK_DEPTH - 1)
 
                 current.links.getLinkedComponents().forEach(linkedComponent => {
                     // check if linked component is in the same stack as current
