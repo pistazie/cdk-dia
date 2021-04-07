@@ -12,16 +12,22 @@ async function initCli(): Promise<cdkDiaCliArgs> {
         'cdk-tree-path': {type: 'string', alias: 'tree', default: 'cdk.out/tree.json', describe: 'Path of synthesized cdk cloud assembly'},
         'target-path': {type: 'string', alias: 'target', default: 'diagram.png', describe: 'Target path for rendered PNG'},
         'collapse': {type: 'boolean', default: true, describe: 'Collapse CDK Constructs'},
+        'stacks': {type: 'array', describe: 'Stacks to include (if not specified all stacks are diagramed)'}
     }).version(false).argv
 }
 
 async function generateDiagram(args: cdkDiaCliArgs) {
 
-    const packageBasePath = path.dirname(require.resolve('cdk-dia/package.json'))
-
     const cdkDia = new CdkDia()
 
-    cdkDia.generateDiagram(args["cdk-tree-path"],args["target-path"],packageBasePath,args.collapse).then((pngFilename) => {
+    let includedStacks: string[] | false = false
+    if (args.stacks !== undefined) {
+        includedStacks = args.stacks.map( it => it.toString())
+    }
+
+    const packageBasePath = path.dirname(require.resolve('cdk-dia/package.json'))
+
+    cdkDia.generateDiagram(args["cdk-tree-path"], args["target-path"], args.collapse, packageBasePath, includedStacks).then((pngFilename) => {
         if (terminalLink.isSupported)
             console.log(chalk.green(`CDK code diagram generated to PNG at ${chalk.bold(terminalLink(pngFilename, pngFilename))}`))
         else
@@ -59,5 +65,6 @@ initCli().then(args => {
 interface cdkDiaCliArgs {
     'cdk-tree-path': string,
     'target-path': string,
-    collapse: boolean
+    collapse: boolean,
+    stacks: (string | number)[] | undefined
 }

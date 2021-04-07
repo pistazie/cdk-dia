@@ -22,13 +22,16 @@ export class AwsDiagramGenerator extends DiagramGenerator{
         this.iconSupplier = iconSupplier
     }
 
-    generate(cdkTree: cdk.Tree, collapse: boolean): Diagram {
+    generate(cdkTree: cdk.Tree, collapse: boolean, includedStacks: string[] | false = false): Diagram {
 
         const diagram = new Diagram()
         const cdkRoot = cdkTree.tree
 
         // build diagram Components tree
         diagram.root = this.generateComponentsTree(cdkRoot)
+
+        // remove non requested includedStacks from the diagram
+        if (includedStacks !== false) this.removeNonIncludedDiagrams(diagram, includedStacks)
 
         // add edges between Components
         this.edgeResolver.resolveEdges(cdkRoot, diagram)
@@ -103,6 +106,19 @@ export class AwsDiagramGenerator extends DiagramGenerator{
         return component
     }
 
+    private removeNonIncludedDiagrams(diagram: Diagram, includedStacks: string[]) {
+
+        diagram.root.subTreeApplyAllComponents( (component: Component) => {
+
+            const isStack = component.tags.get(ComponentTags.isCdkStack) == "true"
+            const stackNotIncluded = !includedStacks.map(it => it.toLowerCase()).includes(component.id.toLowerCase())
+
+            if (isStack && stackNotIncluded){
+                component.destroyAndDetach()
+            }
+        })
+    }
+
     private applyAttributeSetCustomizers(tree: cdk.Node,component: Component) {
         tree.attributes.forEach( (value: string, key: string) => {
 
@@ -111,6 +127,8 @@ export class AwsDiagramGenerator extends DiagramGenerator{
                     case CollapssingCustomizer.name:
                         CollapssingCustomizer.fromAttributeValue(value).customize(component)
                         break;
+                    default:
+                        throw new Error(`Unknown customizer ${key}`)
                 }
             }
         })

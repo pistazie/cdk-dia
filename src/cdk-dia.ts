@@ -5,14 +5,18 @@ import * as graphviz from "../src/graphviz"
 
 export class CdkDia {
 
-    async generateDiagram(treeJsonPath: string, targetPath: string, cdkBasePath: string = require.resolve('cdk-dia/package.json'), collapse: boolean) {
+    async generateDiagram(treeJsonPath: string,
+                          targetPath: string,
+                          collapse: boolean,
+                          cdkBasePath: string = require.resolve('cdk-dia/package.json'),
+                          includedStacks: string[] | false = false) {
 
         // Parse tree.json
         const cdkTree = cdk.TreeJsonLoader.load(path.isAbsolute(treeJsonPath) ? treeJsonPath : path.join(process.cwd(), treeJsonPath))
 
         // Generate Diagram
         const generator = new diagrams.AwsDiagramGenerator(new diagrams.AwsEdgeResolver(), new diagrams.AwsIconSupplier(`${cdkBasePath}`))
-        const diagram = generator.generate(cdkTree, collapse)
+        const diagram = generator.generate(cdkTree, collapse, includedStacks)
 
         // Render diagram using Graphviz
         const renderer = new graphviz.Generator(diagram)
