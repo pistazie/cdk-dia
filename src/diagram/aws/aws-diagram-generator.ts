@@ -1,17 +1,15 @@
 import * as _ from "lodash"
 import * as cdk from "../../cdk"
+import {CdkDia, ConstructInfoFqn} from "../../cdk"
 import {AwsEdgeResolver} from "./aws-edge-resolver"
 import {AwsIconSupplier, Component, ComponentTags, Diagram, DiagramComponent, DiagramGenerator, RootComponent} from ".."
 import {ComponentIcon} from "../component/icon"
-import {CdkDia} from "../../cdk"
 import {CollapseTypes, CollapssingCustomizer} from "../component/customizable-attribute"
 
 /**
  * Generates a Diagram from a CdkTree
  */
 export class AwsDiagramGenerator extends DiagramGenerator{
-
-    static CDK_STACK_DEPTH = 2
 
     private readonly edgeResolver : AwsEdgeResolver
     private readonly iconSupplier: AwsIconSupplier
@@ -59,8 +57,14 @@ export class AwsDiagramGenerator extends DiagramGenerator{
 
         cdkRoot.children.forEach((value) => {
             const component = this.generateSubTree(value, root)
-            if (component != null) component.tags.set(ComponentTags.isCdkStack, "true")
-            if (component != null) root.addSubComponent(component)
+
+            if (component != null && value.constructInfoFqn === undefined) { // no fqn data - we assume all depth 1 nodes are stacks
+                component.tags.set(ComponentTags.isCdkStack, "true")
+            }
+
+            if (component != null) {
+                root.addSubComponent(component)
+            }
         })
 
         return root
@@ -88,7 +92,6 @@ export class AwsDiagramGenerator extends DiagramGenerator{
         let component: Component
 
         if (cfnType != null) {
-
             component = this.generateCfnComponent(cdkNode, cfnType, label, parentComponent)
         } else {
 
@@ -101,22 +104,62 @@ export class AwsDiagramGenerator extends DiagramGenerator{
             component = new DiagramComponent(AwsDiagramGenerator.sanitizeComponentId(cdkNode.path), [cdkNode.id], parentComponent)
         }
 
+        if (cdkNode.constructInfoFqn === ConstructInfoFqn.STACK) {
+            component.tags.set(ComponentTags.isCdkStack, "true")
+        }
+
+        if (cdkNode.constructInfoFqn === ConstructInfoFqn.STAGE) {
+            component.tags.set(ComponentTags.isCdkStage, "true")
+        }
+
         this.applyAttributeSetCustomizers(cdkNode, component)
 
         return component
     }
 
-    private removeNonIncludedDiagrams(diagram: Diagram, includedStacks: string[]) {
+    private removeNonIncludedDiagrams(diagram: Diagram, includedStackIds: string[]) {
+
+        const excludedStacks: Component[] = []
+        const includedStacks: Component[] = []
+
+        diagram.root.subTreeApplyAllComponents( (component: Component) => {
+            const isStack = this.isStack(component)
+            const idIncluded = this.idIncluded(includedStackIds, component)
+            if (isStack){
+                if (!idIncluded) {
+                    excludedStacks.push(component)
+                } else {
+                    includedStacks.push(component)
+                }
+            }
+        })
 
         diagram.root.subTreeApplyAllComponents( (component: Component) => {
 
-            const isStack = component.tags.get(ComponentTags.isCdkStack) == "true"
-            const stackNotIncluded = !includedStacks.map(it => it.toLowerCase()).includes(component.id.toLowerCase())
+            const inExcludedStack = excludedStacks.find( excludedStack => component.isAncestor(excludedStack)) != null
+            const inIncludedStack = includedStacks.find( includedStack => component.isAncestor(includedStack)) != null
+            const isStack = this.isStack(component)
+            const isIncludedStack = excludedStacks.includes(component)
 
-            if (isStack && stackNotIncluded){
+            const containsIncludedStack = component.subTreeFindComponent( subComponent => {
+                return this.isStack(subComponent) && this.idIncluded(includedStackIds, subComponent)
+            })
+
+
+            if ((inExcludedStack && !inIncludedStack && !containsIncludedStack) ||
+                (isStack && !containsIncludedStack && isIncludedStack)
+            ){
                 component.destroyAndDetach()
             }
         })
+    }
+
+    private isStack(component: Component) {
+        return component.tags.get(ComponentTags.isCdkStack) == "true"
+    }
+
+    private idIncluded(includedStacks: string[], component: Component) {
+        return includedStacks.map(it => it.toLowerCase()).includes(component.id.toLowerCase())
     }
 
     private applyAttributeSetCustomizers(tree: cdk.Node,component: Component) {
@@ -171,9 +214,9 @@ export class AwsDiagramGenerator extends DiagramGenerator{
         return {cfnType: null, label: null}
     }
 
-    private hasCfnProps(tree: cdk.Node): boolean {
-        const {cfnType} = this.cfnProps(tree)
-        return cfnType != null
+    private hasCfnProps(node: cdk.Node): boolean {
+        const {cfnType} = this.cfnProps(node)
+        return cfnType != null || node.constructInfoFqn !== undefined
     }
 
     private collapseCdkConstructs(node: Component) {
@@ -238,8 +281,14 @@ export class AwsDiagramGenerator extends DiagramGenerator{
 
         root.subComponents().forEach( component => {
             const newComponent = this.collapseDoubleClusters(component)
-            if (component !== newComponent){
-                root.replaceSubComponent(component,newComponent)
+            if (component !== newComponent){ // collapse
+                if (
+                    component.tags.get(ComponentTags.isCdkStack) !== "true" &&
+                    component.tags.get(ComponentTags.isCdkStage) !== "true"
+
+                ) {
+                    root.replaceSubComponent(component,newComponent)
+                }
             }
         })
 
@@ -253,10 +302,10 @@ export class AwsDiagramGenerator extends DiagramGenerator{
 
     private removeCrossStackEdges(current: Component) {
 
-        if ((current instanceof DiagramComponent) && current.depth() > AwsDiagramGenerator.CDK_STACK_DEPTH -1) {
+        if ((current instanceof DiagramComponent) && current.tags.get(ComponentTags.isCdkStack) == "true") {
 
             try {
-                const stackRootComponent = current.treeAncestorInDepth(AwsDiagramGenerator.CDK_STACK_DEPTH - 1)
+                const stackRootComponent = current.treeAncestorWithTag(ComponentTags.isCdkStack, "true")
 
                 current.links.getLinkedComponents().forEach(linkedComponent => {
                     // check if linked component is in the same stack as current
@@ -265,7 +314,7 @@ export class AwsDiagramGenerator extends DiagramGenerator{
 
                         // add a link between the stacks as a replacement to the many cross stack resource links
                         if (linkedComponent instanceof DiagramComponent) {
-                            stackRootComponent.links.addLink(linkedComponent.treeAncestorInDepth(AwsDiagramGenerator.CDK_STACK_DEPTH - 1))
+                            stackRootComponent.links.addLink(linkedComponent.treeAncestorWithTag(ComponentTags.isCdkStack, "true"))
                         }
                     }
                 })

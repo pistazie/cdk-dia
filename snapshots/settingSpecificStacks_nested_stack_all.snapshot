@@ -1,0 +1,954 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`setting specific Stacks works as expected use can use a path of a stack which is nested 1`] = `
+Object {
+  "_image": null,
+  "children": Array [
+    Object {
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "NORMAL",
+                    "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+                  ],
+                  "id": "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "S3 Bucket",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "NORMAL",
+                    "path": "icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource",
+                  ],
+                  "id": "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Policy/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "S3 BucketPolicy",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "PipelineStack/Pipeline/Pipeline/ArtifactsBucket",
+              "isGroup": true,
+              "label": Array [
+                "ArtifactsBucket",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [],
+                  "id": "PipelineStack/Pipeline/Pipeline/Role/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Role",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource",
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+                    "PipelineStack/Pipeline/Pipeline/Source/sdds/CodePipelineActionRole/Resource",
+                    "PipelineStack/Pipeline/Pipeline/Build/Synth/CodePipelineActionRole/Resource",
+                    "PipelineStack/Pipeline/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole/Resource",
+                    "PipelineStack/Pipeline/Pipeline/Role/Resource",
+                  ],
+                  "id": "PipelineStack/Pipeline/Pipeline/Role/DefaultPolicy/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Policy",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "PipelineStack/Pipeline/Pipeline/Role",
+              "isGroup": true,
+              "label": Array [
+                "Role",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": "icons/aws/Service/Arch_Developer- Tools/64/Arch_AWS-CodePipeline_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "PipelineStack/Pipeline/Pipeline/Role/Resource",
+                "PipelineStack/bucket/Resource",
+                "PipelineStack/Pipeline/Pipeline/Source/sdds/CodePipelineActionRole/Resource",
+                "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Resource",
+                "PipelineStack/Pipeline/Pipeline/Build/Synth/CodePipelineActionRole/Resource",
+                "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Resource",
+                "PipelineStack/Pipeline/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole/Resource",
+                "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource",
+                "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+              ],
+              "id": "PipelineStack/Pipeline/Pipeline/Resource",
+              "isGroup": false,
+              "label": Array [
+                "CodePipeline Pipeline",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Key-Management-Services_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [],
+              "id": "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+              "isGroup": false,
+              "label": Array [
+                "KMS Key",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [],
+              "edges": Array [
+                "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+              ],
+              "id": "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKeyAlias/Resource",
+              "isGroup": false,
+              "label": Array [
+                "KMS",
+                "ALIAS",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [],
+                  "id": "PipelineStack/Pipeline/Pipeline/Source/sdds/CodePipelineActionRole/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Role",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "PipelineStack/bucket/Resource",
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource",
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+                    "PipelineStack/Pipeline/Pipeline/Source/sdds/CodePipelineActionRole/Resource",
+                  ],
+                  "id": "PipelineStack/Pipeline/Pipeline/Source/sdds/CodePipelineActionRole/DefaultPolicy/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Policy",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "PipelineStack/Pipeline/Pipeline/Source/sdds/CodePipelineActionRole",
+              "isGroup": true,
+              "label": Array [
+                "CodePipelineActionRole",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": null,
+                  "children": Array [
+                    Object {
+                      "_image": ComponentIcon {
+                        "format": "SMALLER",
+                        "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                      },
+                      "children": Array [],
+                      "edges": Array [],
+                      "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CodePipelineActionRole/Resource",
+                      "isGroup": false,
+                      "label": Array [
+                        "IAM Role",
+                      ],
+                    },
+                    Object {
+                      "_image": ComponentIcon {
+                        "format": "SMALLER",
+                        "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                      },
+                      "children": Array [],
+                      "edges": Array [
+                        "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Resource",
+                        "PipelineStack/Pipeline/Pipeline/Build/Synth/CodePipelineActionRole/Resource",
+                      ],
+                      "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CodePipelineActionRole/DefaultPolicy/Resource",
+                      "isGroup": false,
+                      "label": Array [
+                        "IAM Policy",
+                      ],
+                    },
+                  ],
+                  "edges": Array [],
+                  "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CodePipelineActionRole",
+                  "isGroup": true,
+                  "label": Array [
+                    "CodePipelineActionRole",
+                  ],
+                },
+                Object {
+                  "_image": null,
+                  "children": Array [
+                    Object {
+                      "_image": null,
+                      "children": Array [
+                        Object {
+                          "_image": ComponentIcon {
+                            "format": "SMALLER",
+                            "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                          },
+                          "children": Array [],
+                          "edges": Array [],
+                          "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/Resource",
+                          "isGroup": false,
+                          "label": Array [
+                            "IAM Role",
+                          ],
+                        },
+                        Object {
+                          "_image": ComponentIcon {
+                            "format": "SMALLER",
+                            "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                          },
+                          "children": Array [],
+                          "edges": Array [
+                            "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Resource",
+                            "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource",
+                            "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+                            "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/Resource",
+                          ],
+                          "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy/Resource",
+                          "isGroup": false,
+                          "label": Array [
+                            "IAM Policy",
+                          ],
+                        },
+                      ],
+                      "edges": Array [],
+                      "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role",
+                      "isGroup": true,
+                      "label": Array [
+                        "Role",
+                      ],
+                    },
+                    Object {
+                      "_image": ComponentIcon {
+                        "format": "SMALLER",
+                        "path": "icons/aws/Service/Arch_Developer- Tools/64/Arch_Amazon-CodeBuild_64@5x.png",
+                      },
+                      "children": Array [],
+                      "edges": Array [
+                        "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/Resource",
+                        "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+                      ],
+                      "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Resource",
+                      "isGroup": false,
+                      "label": Array [
+                        "CodeBuild Project",
+                      ],
+                    },
+                  ],
+                  "edges": Array [],
+                  "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject",
+                  "isGroup": true,
+                  "label": Array [
+                    "CdkBuildProject",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "PipelineStack/Pipeline/Pipeline/Build/Synth",
+              "isGroup": true,
+              "label": Array [
+                "Synth",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [],
+                  "id": "PipelineStack/Pipeline/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Role",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Resource",
+                    "PipelineStack/Pipeline/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole/Resource",
+                  ],
+                  "id": "PipelineStack/Pipeline/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole/DefaultPolicy/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Policy",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "PipelineStack/Pipeline/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole",
+              "isGroup": true,
+              "label": Array [
+                "CodePipelineActionRole",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "PipelineStack/Pipeline/Pipeline",
+          "isGroup": true,
+          "label": Array [
+            "Pipeline",
+          ],
+        },
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [],
+                  "id": "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Role/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Role",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Resource",
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource",
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+                    "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Role/Resource",
+                  ],
+                  "id": "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Policy",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Role",
+              "isGroup": true,
+              "label": Array [
+                "Role",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": "icons/aws/Service/Arch_Developer- Tools/64/Arch_Amazon-CodeBuild_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Role/Resource",
+                "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+              ],
+              "id": "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Resource",
+              "isGroup": false,
+              "label": Array [
+                "CodeBuild Project",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "PipelineStack/Pipeline/UpdatePipeline/SelfMutation",
+          "isGroup": true,
+          "label": Array [
+            "SelfMutation",
+          ],
+        },
+      ],
+      "edges": Array [],
+      "id": "PipelineStack/Pipeline",
+      "isGroup": true,
+      "label": Array [
+        "Pipeline",
+      ],
+    },
+    Object {
+      "_image": null,
+      "children": Array [],
+      "edges": Array [],
+      "id": "PipelineStack/Prod",
+      "isGroup": false,
+      "label": Array [
+        "Prod",
+      ],
+    },
+    Object {
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+      },
+      "children": Array [],
+      "edges": Array [],
+      "id": "PipelineStack/bucket/Resource",
+      "isGroup": false,
+      "label": Array [
+        "S3 Bucket",
+      ],
+    },
+  ],
+  "edges": Array [],
+  "id": "PipelineStack",
+  "isGroup": true,
+  "label": Array [
+    "PipelineStack",
+  ],
+}
+`;
+
+exports[`setting specific Stacks works as expected use can use a path of a stack which is nested 2`] = `
+Object {
+  "_image": null,
+  "children": Array [
+    Object {
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "NORMAL",
+                    "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+                  ],
+                  "id": "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "S3 Bucket",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "NORMAL",
+                    "path": "icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource",
+                  ],
+                  "id": "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Policy/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "S3 BucketPolicy",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "PipelineStack/Pipeline/Pipeline/ArtifactsBucket",
+              "isGroup": true,
+              "label": Array [
+                "ArtifactsBucket",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [],
+                  "id": "PipelineStack/Pipeline/Pipeline/Role/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Role",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource",
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+                    "PipelineStack/Pipeline/Pipeline/Source/sdds/CodePipelineActionRole/Resource",
+                    "PipelineStack/Pipeline/Pipeline/Build/Synth/CodePipelineActionRole/Resource",
+                    "PipelineStack/Pipeline/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole/Resource",
+                    "PipelineStack/Pipeline/Pipeline/Role/Resource",
+                  ],
+                  "id": "PipelineStack/Pipeline/Pipeline/Role/DefaultPolicy/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Policy",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "PipelineStack/Pipeline/Pipeline/Role",
+              "isGroup": true,
+              "label": Array [
+                "Role",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": "icons/aws/Service/Arch_Developer- Tools/64/Arch_AWS-CodePipeline_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "PipelineStack/Pipeline/Pipeline/Role/Resource",
+                "PipelineStack/bucket/Resource",
+                "PipelineStack/Pipeline/Pipeline/Source/sdds/CodePipelineActionRole/Resource",
+                "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Resource",
+                "PipelineStack/Pipeline/Pipeline/Build/Synth/CodePipelineActionRole/Resource",
+                "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Resource",
+                "PipelineStack/Pipeline/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole/Resource",
+                "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource",
+                "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+              ],
+              "id": "PipelineStack/Pipeline/Pipeline/Resource",
+              "isGroup": false,
+              "label": Array [
+                "CodePipeline Pipeline",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Key-Management-Services_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [],
+              "id": "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+              "isGroup": false,
+              "label": Array [
+                "KMS Key",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [],
+              "edges": Array [
+                "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+              ],
+              "id": "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKeyAlias/Resource",
+              "isGroup": false,
+              "label": Array [
+                "KMS",
+                "ALIAS",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [],
+                  "id": "PipelineStack/Pipeline/Pipeline/Source/sdds/CodePipelineActionRole/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Role",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "PipelineStack/bucket/Resource",
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource",
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+                    "PipelineStack/Pipeline/Pipeline/Source/sdds/CodePipelineActionRole/Resource",
+                  ],
+                  "id": "PipelineStack/Pipeline/Pipeline/Source/sdds/CodePipelineActionRole/DefaultPolicy/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Policy",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "PipelineStack/Pipeline/Pipeline/Source/sdds/CodePipelineActionRole",
+              "isGroup": true,
+              "label": Array [
+                "CodePipelineActionRole",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": null,
+                  "children": Array [
+                    Object {
+                      "_image": ComponentIcon {
+                        "format": "SMALLER",
+                        "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                      },
+                      "children": Array [],
+                      "edges": Array [],
+                      "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CodePipelineActionRole/Resource",
+                      "isGroup": false,
+                      "label": Array [
+                        "IAM Role",
+                      ],
+                    },
+                    Object {
+                      "_image": ComponentIcon {
+                        "format": "SMALLER",
+                        "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                      },
+                      "children": Array [],
+                      "edges": Array [
+                        "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Resource",
+                        "PipelineStack/Pipeline/Pipeline/Build/Synth/CodePipelineActionRole/Resource",
+                      ],
+                      "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CodePipelineActionRole/DefaultPolicy/Resource",
+                      "isGroup": false,
+                      "label": Array [
+                        "IAM Policy",
+                      ],
+                    },
+                  ],
+                  "edges": Array [],
+                  "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CodePipelineActionRole",
+                  "isGroup": true,
+                  "label": Array [
+                    "CodePipelineActionRole",
+                  ],
+                },
+                Object {
+                  "_image": null,
+                  "children": Array [
+                    Object {
+                      "_image": null,
+                      "children": Array [
+                        Object {
+                          "_image": ComponentIcon {
+                            "format": "SMALLER",
+                            "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                          },
+                          "children": Array [],
+                          "edges": Array [],
+                          "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/Resource",
+                          "isGroup": false,
+                          "label": Array [
+                            "IAM Role",
+                          ],
+                        },
+                        Object {
+                          "_image": ComponentIcon {
+                            "format": "SMALLER",
+                            "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                          },
+                          "children": Array [],
+                          "edges": Array [
+                            "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Resource",
+                            "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource",
+                            "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+                            "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/Resource",
+                          ],
+                          "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy/Resource",
+                          "isGroup": false,
+                          "label": Array [
+                            "IAM Policy",
+                          ],
+                        },
+                      ],
+                      "edges": Array [],
+                      "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role",
+                      "isGroup": true,
+                      "label": Array [
+                        "Role",
+                      ],
+                    },
+                    Object {
+                      "_image": ComponentIcon {
+                        "format": "SMALLER",
+                        "path": "icons/aws/Service/Arch_Developer- Tools/64/Arch_Amazon-CodeBuild_64@5x.png",
+                      },
+                      "children": Array [],
+                      "edges": Array [
+                        "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/Resource",
+                        "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+                      ],
+                      "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Resource",
+                      "isGroup": false,
+                      "label": Array [
+                        "CodeBuild Project",
+                      ],
+                    },
+                  ],
+                  "edges": Array [],
+                  "id": "PipelineStack/Pipeline/Pipeline/Build/Synth/CdkBuildProject",
+                  "isGroup": true,
+                  "label": Array [
+                    "CdkBuildProject",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "PipelineStack/Pipeline/Pipeline/Build/Synth",
+              "isGroup": true,
+              "label": Array [
+                "Synth",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [],
+                  "id": "PipelineStack/Pipeline/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Role",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Resource",
+                    "PipelineStack/Pipeline/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole/Resource",
+                  ],
+                  "id": "PipelineStack/Pipeline/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole/DefaultPolicy/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Policy",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "PipelineStack/Pipeline/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole",
+              "isGroup": true,
+              "label": Array [
+                "CodePipelineActionRole",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "PipelineStack/Pipeline/Pipeline",
+          "isGroup": true,
+          "label": Array [
+            "Pipeline",
+          ],
+        },
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [],
+                  "id": "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Role/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Role",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Resource",
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource",
+                    "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+                    "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Role/Resource",
+                  ],
+                  "id": "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Policy",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Role",
+              "isGroup": true,
+              "label": Array [
+                "Role",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": "icons/aws/Service/Arch_Developer- Tools/64/Arch_Amazon-CodeBuild_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Role/Resource",
+                "PipelineStack/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource",
+              ],
+              "id": "PipelineStack/Pipeline/UpdatePipeline/SelfMutation/Resource",
+              "isGroup": false,
+              "label": Array [
+                "CodeBuild Project",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "PipelineStack/Pipeline/UpdatePipeline/SelfMutation",
+          "isGroup": true,
+          "label": Array [
+            "SelfMutation",
+          ],
+        },
+      ],
+      "edges": Array [],
+      "id": "PipelineStack/Pipeline",
+      "isGroup": true,
+      "label": Array [
+        "Pipeline",
+      ],
+    },
+    Object {
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [],
+              "id": "PipelineStack/Prod/Database/my-s3-db/Resource",
+              "isGroup": false,
+              "label": Array [
+                "S3 Bucket",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "PipelineStack/Prod/Database",
+          "isGroup": true,
+          "label": Array [
+            "Database",
+          ],
+        },
+      ],
+      "edges": Array [],
+      "id": "PipelineStack/Prod",
+      "isGroup": true,
+      "label": Array [
+        "Prod",
+      ],
+    },
+    Object {
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+      },
+      "children": Array [],
+      "edges": Array [],
+      "id": "PipelineStack/bucket/Resource",
+      "isGroup": false,
+      "label": Array [
+        "S3 Bucket",
+      ],
+    },
+  ],
+  "edges": Array [],
+  "id": "PipelineStack",
+  "isGroup": true,
+  "label": Array [
+    "PipelineStack",
+  ],
+}
+`;

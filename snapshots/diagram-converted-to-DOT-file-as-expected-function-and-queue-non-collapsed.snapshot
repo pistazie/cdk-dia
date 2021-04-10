@@ -30,10 +30,10 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - function
     fontsize = 8,
     margin = 8,
   ];
-  subgraph \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram\\" {
-    subgraph \\"cluster-SubGraph.a-piece-of-the-diagram\\" {
+  subgraph \\"CdkAutoDiagramPocStack\\" {
+    subgraph \\"cluster-SubGraph.CdkAutoDiagramPocStack\\" {
       graph [
-        label = \\"a-piece-of-the-diagram\\",
+        label = \\"CdkAutoDiagramPocStack\\",
         labelloc = \\"b\\",
         labeljust = \\"l\\",
         margin = \\"10\\",
@@ -41,24 +41,11 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - function
         penwidth = \\"2\\",
         pencolor = \\"#888888\\",
         style = \\"filled,rounded\\",
-        fillcolor = \\"#d6d6d6\\",
+        fillcolor = \\"#e4e4e4\\",
       ];
-      \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue/Resource\\" [
-        label = \\" SQS Queue\\",
-        fontsize = 12,
-        image = \\"icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png\\",
-        imagescale = \\"true\\",
-        imagepos = \\"tc\\",
-        penwidth = \\"0\\",
-        shape = \\"node\\",
-        fixedsize = \\"true\\",
-        labelloc = \\"b\\",
-        width = 2,
-        height = 2.266,
-      ];
-      subgraph \\"cluster-SubGraph.my-function\\" {
+      subgraph \\"cluster-SubGraph.a-piece-of-the-diagram\\" {
         graph [
-          label = \\"my-function\\",
+          label = \\"a-piece-of-the-diagram\\",
           labelloc = \\"b\\",
           labeljust = \\"l\\",
           margin = \\"10\\",
@@ -66,12 +53,12 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - function
           penwidth = \\"2\\",
           pencolor = \\"#888888\\",
           style = \\"filled,rounded\\",
-          fillcolor = \\"#c7c7c7\\",
+          fillcolor = \\"#d6d6d6\\",
         ];
-        \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/Resource\\" [
-          label = \\" Lambda Function\\",
+        \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue/Resource\\" [
+          label = \\" SQS Queue\\",
           fontsize = 12,
-          image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
+          image = \\"icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png\\",
           imagescale = \\"true\\",
           imagepos = \\"tc\\",
           penwidth = \\"0\\",
@@ -81,22 +68,9 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - function
           width = 2,
           height = 2.266,
         ];
-        \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/SqsEventSource_CdkAutoDiagramPocStackapieceofthediagrammyqueue89326209/Resource\\" [
-          label = \\" Lambda\\\\nEventSourceMapping\\",
-          fontsize = 12,
-          image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
-          width = 2,
-          height = 2.4819999999999998,
-        ];
-        subgraph \\"cluster-SubGraph.ServiceRole\\" {
+        subgraph \\"cluster-SubGraph.my-function\\" {
           graph [
-            label = \\"ServiceRole\\",
+            label = \\"my-function\\",
             labelloc = \\"b\\",
             labeljust = \\"l\\",
             margin = \\"10\\",
@@ -104,34 +78,73 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - function
             penwidth = \\"2\\",
             pencolor = \\"#888888\\",
             style = \\"filled,rounded\\",
-            fillcolor = \\"#b9b9b9\\",
+            fillcolor = \\"#c7c7c7\\",
           ];
-          \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole/Resource\\" [
-            label = \\" IAM Role\\",
+          \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/Resource\\" [
+            label = \\" Lambda Function\\",
             fontsize = 12,
-            image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+            image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
             imagescale = \\"true\\",
             imagepos = \\"tc\\",
             penwidth = \\"0\\",
             shape = \\"node\\",
             fixedsize = \\"true\\",
             labelloc = \\"b\\",
-            width = 1.2,
-            height = 1.466,
+            width = 2,
+            height = 2.266,
           ];
-          \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole/DefaultPolicy/Resource\\" [
-            label = \\" IAM Policy\\",
+          \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/SqsEventSource_CdkAutoDiagramPocStackapieceofthediagrammyqueue89326209/Resource\\" [
+            label = \\" Lambda\\\\nEventSourceMapping\\",
             fontsize = 12,
-            image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+            image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
             imagescale = \\"true\\",
             imagepos = \\"tc\\",
             penwidth = \\"0\\",
             shape = \\"node\\",
             fixedsize = \\"true\\",
             labelloc = \\"b\\",
-            width = 1.2,
-            height = 1.466,
+            width = 2,
+            height = 2.4819999999999998,
           ];
+          subgraph \\"cluster-SubGraph.ServiceRole\\" {
+            graph [
+              label = \\"ServiceRole\\",
+              labelloc = \\"b\\",
+              labeljust = \\"l\\",
+              margin = \\"10\\",
+              fontsize = \\"16\\",
+              penwidth = \\"2\\",
+              pencolor = \\"#888888\\",
+              style = \\"filled,rounded\\",
+              fillcolor = \\"#b9b9b9\\",
+            ];
+            \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole/Resource\\" [
+              label = \\" IAM Role\\",
+              fontsize = 12,
+              image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 1.2,
+              height = 1.466,
+            ];
+            \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole/DefaultPolicy/Resource\\" [
+              label = \\" IAM Policy\\",
+              fontsize = 12,
+              image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 1.2,
+              height = 1.466,
+            ];
+          }
         }
       }
     }

@@ -5,39 +5,50 @@ Object {
   "_image": null,
   "children": Array [
     Object {
-      "_image": ComponentIcon {
-        "format": "NORMAL",
-        "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
-      },
-      "children": Array [],
-      "edges": Array [
-        "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue",
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [
+            "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue",
+          ],
+          "id": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function",
+          "isGroup": false,
+          "label": Array [
+            "my-function",
+          ],
+        },
+        Object {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [],
+          "id": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue",
+          "isGroup": false,
+          "label": Array [
+            "my-queue",
+          ],
+        },
       ],
-      "id": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function",
-      "isGroup": false,
-      "label": Array [
-        "my-function",
-      ],
-    },
-    Object {
-      "_image": ComponentIcon {
-        "format": "NORMAL",
-        "path": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
-      },
-      "children": Array [],
       "edges": Array [],
-      "id": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue",
-      "isGroup": false,
+      "id": "CdkAutoDiagramPocStack/a-piece-of-the-diagram",
+      "isGroup": true,
       "label": Array [
-        "my-queue",
+        "a-piece-of-the-diagram",
       ],
     },
   ],
   "edges": Array [],
-  "id": "CdkAutoDiagramPocStack/a-piece-of-the-diagram",
+  "id": "CdkAutoDiagramPocStack",
   "isGroup": true,
   "label": Array [
-    "a-piece-of-the-diagram",
+    "CdkAutoDiagramPocStack",
   ],
 }
 `;

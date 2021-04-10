@@ -27,7 +27,7 @@ describe("diagram JSON as expected", () => {
 
 describe("setting specific Stacks works as expected", () => {
 
-    const testCase = {
+    const twoSimpleStacksTestCase = {
         id: `collapsed`,
         jsonTreeFile: "multiple-similar-stacks",
         cdkTreePath: "src/test-fixtures/",
@@ -35,20 +35,45 @@ describe("setting specific Stacks works as expected", () => {
     }
 
     it(`it only diagrams the "microservice1" stack`, () => {
-        const diagram = givenDiagram(testCase, ["microservice1"])
+        const diagram = givenDiagram(twoSimpleStacksTestCase, ["microservice1"])
         const pathToSnap = path.resolve(process.cwd(), `./snapshots/settingSpecificStacks_only_microservice1.snapshot`);
         expect(diagram.toSimpleObject()).toMatchSpecificSnapshot(pathToSnap)
     })
 
     it(`it only diagrams both "microservice1" and "microservice2" stacks`, () => {
-        const diagram = givenDiagram(testCase, ["microservice1", "microservice2"])
+        const diagram = givenDiagram(twoSimpleStacksTestCase, ["microservice1", "microservice2"])
         const pathToSnap = path.resolve(process.cwd(), `./snapshots/settingSpecificStacks_both_microservices.snapshot`);
         expect(diagram.toSimpleObject()).toMatchSpecificSnapshot(pathToSnap)
     })
 
     it(`when false set as includedStacks both "microservice1" and "microservice2" stacks are diagramed`, () => {
-        const diagram = givenDiagram(testCase, false)
+        const diagram = givenDiagram(twoSimpleStacksTestCase, false)
         const pathToSnap = path.resolve(process.cwd(), `./snapshots/settingSpecificStacks_both_microservices.snapshot`);
+        expect(diagram.toSimpleObject()).toMatchSpecificSnapshot(pathToSnap)
+    })
+
+    const pipelineNestedStacksTestCase = {
+        id:`non-collapsed`,
+            jsonTreeFile: "cdk_pipeline_with_stages_stacks_and_construct_infos",
+        cdkTreePath: "src/test-fixtures/",
+        collapsed: false
+    }
+
+    it(`use can use a path of a stack which is nested`, () => {
+        const diagram = givenDiagram(pipelineNestedStacksTestCase, ["pipelinestack/prod/database"])
+        const pathToSnap = path.resolve(process.cwd(), `./snapshots/settingSpecificStacks_nested_stack_path.snapshot`);
+        expect(diagram.toSimpleObject()).toMatchSpecificSnapshot(pathToSnap)
+    })
+
+    it(`use can use a path of a stack which is nested`, () => {
+        const diagram = givenDiagram(pipelineNestedStacksTestCase, ["pipelinestack"])
+        const pathToSnap = path.resolve(process.cwd(), `./snapshots/settingSpecificStacks_nested_stack_all.snapshot`);
+        expect(diagram.toSimpleObject()).toMatchSpecificSnapshot(pathToSnap)
+    })
+
+    it(`use can use a path of a stack which is nested`, () => {
+        const diagram = givenDiagram(pipelineNestedStacksTestCase, false)
+        const pathToSnap = path.resolve(process.cwd(), `./snapshots/settingSpecificStacks_nested_stack_all.snapshot`);
         expect(diagram.toSimpleObject()).toMatchSpecificSnapshot(pathToSnap)
     })
 })

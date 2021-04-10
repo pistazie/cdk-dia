@@ -95,6 +95,12 @@ export const testCases: TestConf[] = [
         jsonTreeFile: "ec-loadbalancer-rds",
         cdkTreePath: "src/test-fixtures/",
         collapsed: true
+    },
+    {
+        id:`collapsed`,
+        jsonTreeFile: "cdk_pipeline_with_stages_stacks_and_construct_infos",
+        cdkTreePath: "src/test-fixtures/",
+        collapsed: true
     }
 ]
 

@@ -8,6 +8,7 @@ export type ComponentId = string
 
 export enum ComponentTags{
     isCdkStack = "isCdkStack",
+    isCdkStage = "isCdkStage",
     collapssingOverride = "collapssingOverride"
 }
 
@@ -246,9 +247,17 @@ export abstract class Component {
         return targets
     }
 
-    treeAncestorWithTag(tagKey: ComponentTags, tagVal: string) {
+    treeAncestorWithTag(tagKey: ComponentTags, tagVal: string): Component {
          if (this.tags.get(tagKey) === tagVal) return this
 
         return this.parent().treeAncestorWithTag(tagKey,tagVal)
+    }
+
+    isAncestor(possibleAncestor: Component): boolean {
+        try {
+            return this.parent() == possibleAncestor || this.parent().isAncestor(possibleAncestor)
+        } catch (e) {
+            return false
+        }
     }
 }

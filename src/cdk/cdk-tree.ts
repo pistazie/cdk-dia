@@ -12,11 +12,32 @@ export class Tree {
     }
 }
 
+export class ConstructInfoFqn {
+
+    public static STACK = new ConstructInfoFqn("@aws-cdk/core.Stack")
+    public static STAGE = new ConstructInfoFqn("@aws-cdk/core.Stage")
+    public static APP = new ConstructInfoFqn("@aws-cdk/core.App")
+
+    static of = (val: string): ConstructInfoFqn | undefined =>
+        [
+            ConstructInfoFqn.STACK,
+            ConstructInfoFqn.STAGE,
+            ConstructInfoFqn.APP
+        ].find(fqn => fqn.cdkVal === val);
+
+    constructor(cdkVal: string) {
+        this.cdkVal = cdkVal
+    }
+
+    readonly cdkVal: string
+}
+
 export class Node {
     id: string
     path: string
     children: Map<string,Node>
     attributes: Map<string,string | Node | Record<string, string>>
+    constructInfoFqn: ConstructInfoFqn | undefined = undefined
 
     pathParts = (): Array<string> => this.path.split("/")
 
@@ -49,6 +70,10 @@ export class Node {
             for (const attrKey in object['attributes'] as Record<string, string>) {
                 node.attributes.set(attrKey,object['attributes'][attrKey])
             }
+        }
+
+        if (object['constructInfo'] != undefined && object['constructInfo']['fqn'] != undefined) {
+            node.constructInfoFqn = ConstructInfoFqn.of(object['constructInfo']['fqn'])
         }
 
         return node

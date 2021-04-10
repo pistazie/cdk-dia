@@ -64,7 +64,9 @@ export class AwsEdgeResolver {
     }
 
     private findUniqueResourceId(component: Component): string | boolean {
-        const pathParts: string[] = component.idPathParts().slice(AwsDiagramGenerator.CDK_STACK_DEPTH - 1)
+
+        const stackDepth = component.treeAncestorWithTag(ComponentTags.isCdkStack, "true")
+        const pathParts: string[] = component.idPathParts().slice(stackDepth.depth())
 
         if (pathParts.length === 0) return false
 

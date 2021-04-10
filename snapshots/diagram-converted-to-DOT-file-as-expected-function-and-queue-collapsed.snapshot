@@ -30,10 +30,10 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - function
     fontsize = 8,
     margin = 8,
   ];
-  subgraph \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram\\" {
-    subgraph \\"cluster-SubGraph.a-piece-of-the-diagram\\" {
+  subgraph \\"CdkAutoDiagramPocStack\\" {
+    subgraph \\"cluster-SubGraph.CdkAutoDiagramPocStack\\" {
       graph [
-        label = \\"a-piece-of-the-diagram\\",
+        label = \\"CdkAutoDiagramPocStack\\",
         labelloc = \\"b\\",
         labeljust = \\"l\\",
         margin = \\"10\\",
@@ -41,34 +41,47 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - function
         penwidth = \\"2\\",
         pencolor = \\"#888888\\",
         style = \\"filled,rounded\\",
-        fillcolor = \\"#d6d6d6\\",
+        fillcolor = \\"#e4e4e4\\",
       ];
-      \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function\\" [
-        label = \\" my-function\\",
-        fontsize = 12,
-        image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
-        imagescale = \\"true\\",
-        imagepos = \\"tc\\",
-        penwidth = \\"0\\",
-        shape = \\"node\\",
-        fixedsize = \\"true\\",
-        labelloc = \\"b\\",
-        width = 2,
-        height = 2.266,
-      ];
-      \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue\\" [
-        label = \\" my-queue\\",
-        fontsize = 12,
-        image = \\"icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png\\",
-        imagescale = \\"true\\",
-        imagepos = \\"tc\\",
-        penwidth = \\"0\\",
-        shape = \\"node\\",
-        fixedsize = \\"true\\",
-        labelloc = \\"b\\",
-        width = 2,
-        height = 2.266,
-      ];
+      subgraph \\"cluster-SubGraph.a-piece-of-the-diagram\\" {
+        graph [
+          label = \\"a-piece-of-the-diagram\\",
+          labelloc = \\"b\\",
+          labeljust = \\"l\\",
+          margin = \\"10\\",
+          fontsize = \\"16\\",
+          penwidth = \\"2\\",
+          pencolor = \\"#888888\\",
+          style = \\"filled,rounded\\",
+          fillcolor = \\"#d6d6d6\\",
+        ];
+        \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function\\" [
+          label = \\" my-function\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
+        ];
+        \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue\\" [
+          label = \\" my-queue\\",
+          fontsize = 12,
+          image = \\"icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
+        ];
+      }
     }
   }
   \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function\\" -> \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue\\" [
