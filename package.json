@@ -14,7 +14,9 @@
   },
   "main": "index.js",
   "types": "index.d.ts",
-  "files": ["**/*"],
+  "files": [
+    "**/*"
+  ],
   "author": "Tom Roshko @pistazie",
   "license": "MIT",
   "dependencies": {
@@ -22,6 +24,7 @@
     "chalk": "^4.1.0",
     "colors": "^1.4.0",
     "hasbin": "^1.2.3",
+    "sanitize-filename": "^1.6.3",
     "terminal-link": "^2.1.1",
     "ts-graphviz": "^0.13.2",
     "values.js": "^2.0.0",

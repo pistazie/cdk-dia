@@ -5,6 +5,7 @@ import * as hasbin from 'hasbin'
 import wrap from "word-wrap"
 import childProcess from "child_process"
 import {digraph, Graph, ISubgraph, toDot} from "ts-graphviz"
+const sanitizeFilename = require('sanitize-filename')
 
 import * as diagram from "../diagram"
 import * as styling from "./styling"
@@ -191,12 +192,12 @@ export class Generator {
         return  node.subComponents().find( sub => { return sub.subComponents().length == 0 })
     }
 
-    private async dotToPng(sourceDotFile: string, targetPngFile: string,) {
+    private async dotToPng(sourceDotFile: string, targetPngFile: string) {
 
-        const cmd = `${Generator.graphvizBinary} ${sourceDotFile} -T png > ${targetPngFile}`
+        const cmd = `${Generator.graphvizBinary} ${sanitizeFilename(sourceDotFile)} -T png > ${sanitizeFilename(targetPngFile)}`
 
         try {
-            const {stdout, stderr} = await exec(cmd);
+            const {stdout, stderr} = await exec(cmd)
 
             const fileExists = fs.existsSync(targetPngFile)
             if (!fileExists){
