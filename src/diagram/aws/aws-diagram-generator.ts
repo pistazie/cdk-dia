@@ -87,7 +87,7 @@ export class AwsDiagramGenerator extends DiagramGenerator{
 
     private generateComponent(cdkNode: cdk.Node, parentComponent: Component): Component | null {
 
-        const {cfnType, label} = this.cfnProps(cdkNode)
+        const {cfnType, label} = AwsDiagramGenerator.cfnProps(cdkNode)
 
         let component: Component
 
@@ -96,7 +96,7 @@ export class AwsDiagramGenerator extends DiagramGenerator{
         } else {
 
             const relevantNode = cdkNode.findInSubTree(node => {
-                return this.hasCfnProps(node)
+                return AwsDiagramGenerator.hasCfnProps(node)
             })
 
             if (relevantNode == null) return null // nothing relevant to diagram in this subtree
@@ -201,21 +201,29 @@ export class AwsDiagramGenerator extends DiagramGenerator{
         return component
     }
 
-    private cfnProps(tree: cdk.Node): { cfnType: string | null; label: string | null } {
+    private static cfnProps(tree: cdk.Node): { cfnType: string | null; label: string | null } {
 
         const cfnTypeAttr = tree.attributes.get("aws:cdk:cloudformation:type")
 
         if (cfnTypeAttr !== undefined) {
-            const cfnType = cfnTypeAttr as string
-            const label = cfnType.split("::").slice(1).join(" ")
-            return {cfnType: cfnType, label: label}
+            return AwsDiagramGenerator.generateCfnProps(cfnTypeAttr as string)
+        }
+
+
+        if (tree.constructInfoFqn === ConstructInfoFqn.CUSTOM_RESOURCE) {
+            return AwsDiagramGenerator.generateCfnProps("AWS::CloudFormation::CustomResource")
         }
 
         return {cfnType: null, label: null}
     }
 
-    private hasCfnProps(node: cdk.Node): boolean {
-        const {cfnType} = this.cfnProps(node)
+    private static generateCfnProps(cfnType: string) {
+        const label = cfnType.split("::").slice(1).join(" ")
+        return {cfnType: cfnType, label: label}
+    }
+
+    private static hasCfnProps(node: cdk.Node): boolean {
+        const {cfnType} = AwsDiagramGenerator.cfnProps(node)
         return cfnType != null || node.constructInfoFqn !== undefined
     }
 

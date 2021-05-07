@@ -101,6 +101,18 @@ export const testCases: TestConf[] = [
         jsonTreeFile: "cdk_pipeline_with_stages_stacks_and_construct_infos",
         cdkTreePath: "src/test-fixtures/",
         collapsed: true
+    },
+    {
+        id:`non-collapsed`,
+        jsonTreeFile: "custom-resource",
+        cdkTreePath: "src/test-fixtures/",
+        collapsed: false
+    },
+    {
+        id:`collapsed`,
+        jsonTreeFile: "custom-resource",
+        cdkTreePath: "src/test-fixtures/",
+        collapsed: true
     }
 ]
 

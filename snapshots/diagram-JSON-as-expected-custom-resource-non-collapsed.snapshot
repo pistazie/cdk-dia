@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagram JSON as expected src/test-fixtures/ - custom-resource - non-collapsed 1`] = `
+Object {
+  "_image": null,
+  "children": Array [
+    Object {
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [
+            "SoTsStack/on-event-handler/ServiceRole/Resource",
+          ],
+          "id": "SoTsStack/on-event-handler/Resource",
+          "isGroup": false,
+          "label": Array [
+            "Lambda Function",
+          ],
+        },
+        Object {
+          "_image": ComponentIcon {
+            "format": "SMALLER",
+            "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [],
+          "id": "SoTsStack/on-event-handler/ServiceRole/Resource",
+          "isGroup": false,
+          "label": Array [
+            "IAM Role",
+          ],
+        },
+      ],
+      "edges": Array [],
+      "id": "SoTsStack/on-event-handler",
+      "isGroup": true,
+      "label": Array [
+        "on-event-handler",
+      ],
+    },
+    Object {
+      "_image": ComponentIcon {
+        "format": "SMALLER",
+        "path": "icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-CloudFormation_64@5x.png",
+      },
+      "children": Array [],
+      "edges": Array [],
+      "id": "SoTsStack/custom-resource",
+      "isGroup": false,
+      "label": Array [
+        "CloudFormation CustomResource",
+        "custom-resource",
+      ],
+    },
+    Object {
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [],
+              "id": "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/Resource",
+              "isGroup": false,
+              "label": Array [
+                "IAM Role",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "SoTsStack/on-event-handler/Resource",
+                "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/Resource",
+              ],
+              "id": "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/DefaultPolicy/Resource",
+              "isGroup": false,
+              "label": Array [
+                "IAM Policy",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole",
+          "isGroup": true,
+          "label": Array [
+            "ServiceRole",
+          ],
+        },
+        Object {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [
+            "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/Resource",
+            "SoTsStack/on-event-handler/Resource",
+          ],
+          "id": "SoTsStack/custom-resource-provider/framework-onEvent/Resource",
+          "isGroup": false,
+          "label": Array [
+            "Lambda Function",
+          ],
+        },
+      ],
+      "edges": Array [],
+      "id": "SoTsStack/custom-resource-provider/framework-onEvent",
+      "isGroup": true,
+      "label": Array [
+        "framework-onEvent",
+      ],
+    },
+  ],
+  "edges": Array [],
+  "id": "SoTsStack",
+  "isGroup": true,
+  "label": Array [
+    "SoTsStack",
+  ],
+}
+`;

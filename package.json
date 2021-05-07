@@ -1,6 +1,6 @@
 {
   "name": "cdk-dia",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "🎡 Automated diagrams of CDK provisioned infrastructure",
   "scripts": {
     "prepare-dist": "./prepare-dist.sh",

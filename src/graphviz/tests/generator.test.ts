@@ -49,7 +49,7 @@ describe("diagram converted to DOT file as expected", () => {
 //
 //                const generator = new Generator(diagram)
 //
-//                let filePath = `${basePath}/${test.jsonTreeFile}-${test.id}`
+//                const filePath = `${basePath}/${test.jsonTreeFile}-${test.id}`
 //
 //                await generator.generatePng(`${filePath}.png`).then((pngFilename) => {
 //                     console.log(`done! find your file as ${pngFilename}`)

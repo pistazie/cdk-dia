@@ -17,12 +17,14 @@ export class ConstructInfoFqn {
     public static STACK = new ConstructInfoFqn("@aws-cdk/core.Stack")
     public static STAGE = new ConstructInfoFqn("@aws-cdk/core.Stage")
     public static APP = new ConstructInfoFqn("@aws-cdk/core.App")
+    public static CUSTOM_RESOURCE = new ConstructInfoFqn("@aws-cdk/core.CustomResource")
 
     static of = (val: string): ConstructInfoFqn | undefined =>
         [
             ConstructInfoFqn.STACK,
             ConstructInfoFqn.STAGE,
-            ConstructInfoFqn.APP
+            ConstructInfoFqn.APP,
+            ConstructInfoFqn.CUSTOM_RESOURCE
         ].find(fqn => fqn.cdkVal === val);
 
     constructor(cdkVal: string) {
