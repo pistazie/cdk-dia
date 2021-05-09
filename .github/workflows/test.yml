@@ -62,4 +62,5 @@ jobs:
             cdk synth
             cdk-dia
             test -s diagram.png && echo "diagram.png exists and has size > 0"
+            echo "Exited with '$?'"
             ls -la
