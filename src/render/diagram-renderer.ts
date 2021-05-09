@@ -26,3 +26,8 @@ export class RenderingError extends Error {
         this.fixTips = fixTips
     }
 }
+
+export enum RenderingEngines {
+    GRAPHVIZ = "graphviz",
+    EXAMPLE= "example"
+}

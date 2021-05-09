@@ -11,7 +11,8 @@ async function initCli(): Promise<cdkDiaCliArgs> {
         'cdk-tree-path': {type: 'string', alias: 'tree', default: 'cdk.out/tree.json', describe: 'Path of synthesized cdk cloud assembly'},
         'target-path': {type: 'string', alias: 'target', default: 'diagram.png', describe: 'Target path for rendered PNG'},
         'collapse': {type: 'boolean', default: true, describe: 'Collapse CDK Constructs'},
-        'stacks': {type: 'array', describe: 'Stacks to include (if not specified all stacks are diagramed)'}
+        'stacks': {type: 'array', describe: 'Stacks to include (if nare diagramed)'},
+        'render': { choices: ['graphviz','example'], default:'graphviz', describe: 'Rendering engine to use'}
     }).version(false).argv
 }
 
@@ -24,14 +25,15 @@ async function generateDiagram(args: cdkDiaCliArgs) {
         includedStacks = args.stacks.map(it => it.toString())
     }
 
-    const packageBasePath = path.dirname(require.resolve('cdk-dia/package.json'))
+    const packageBasePath = resolvePackageBasePath()
 
-    cdkDia.generateDiagram(
+    await cdkDia.generateDiagram(
         args["cdk-tree-path"],
         args["target-path"],
         args.collapse,
         packageBasePath,
-        includedStacks)
+        includedStacks,
+        args.render)
         .then((output) => output.userOutput())
         .catch(e => {
             throw e
@@ -68,5 +70,14 @@ interface cdkDiaCliArgs {
     'cdk-tree-path': string,
     'target-path': string,
     collapse: boolean,
-    stacks: (string | number)[] | undefined
+    stacks: (string | number)[] | undefined,
+    render: string
+}
+
+function resolvePackageBasePath() {
+    try {
+        return path.dirname(require.resolve('cdk-dia/package.json'))
+    } catch (e) {
+        return process.cwd()
+    }
 }
