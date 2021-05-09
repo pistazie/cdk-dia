@@ -1,8 +1,8 @@
 import * as fs from "fs"
 import * as rimraf from "rimraf"
-import {Generator} from "../generator"
-import {testCases} from "../../test-fixtures/testCases"
-import {givenDiagram} from "../../diagram/tests/generator.test"
+import {Graphviz} from "../graphviz"
+import {testCases} from "../../../test-fixtures/testCases"
+import {givenDiagram} from "../../../diagram/tests/generator.test"
 import * as path from "path"
 
 if (global['jest-specific-init'] == undefined) {
@@ -27,13 +27,13 @@ describe("diagram converted to DOT file as expected", () => {
 
                const diagram = givenDiagram(test)
 
-               const generator = new Generator(diagram)
+               const generator = new Graphviz()
 
-               const filePath = `${basePath}/${test.jsonTreeFile}-${test.id}`
-               const dotPath = generator.generateDot(filePath)
+               const dotFilePath = `${basePath}/${test.jsonTreeFile}-${test.id}.dot`
+               generator.renderToDot(diagram, dotFilePath)
 
                const pathToSnap = path.resolve(process.cwd(), `./snapshots/diagram-converted-to-DOT-file-as-expected-${test.jsonTreeFile}-${test.id}.snapshot`);
-               expect(fs.readFileSync(dotPath).toString()).toMatchSpecificSnapshot(pathToSnap);
+               expect(fs.readFileSync(dotFilePath).toString()).toMatchSpecificSnapshot(pathToSnap);
           })
      })
 })
@@ -47,11 +47,12 @@ describe("diagram converted to DOT file as expected", () => {
 //
 //                const diagram = givenDiagram(test)
 //
-//                const generator = new Generator(diagram)
-//
 //                const filePath = `${basePath}/${test.jsonTreeFile}-${test.id}`
 //
-//                await generator.generatePng(`${filePath}.png`).then((pngFilename) => {
+//                await new Graphviz().render({
+//                     diagram: diagram,
+//                     path: filePath
+//                }).then((pngFilename) => {
 //                     console.log(`done! find your file as ${pngFilename}`)
 //                })
 //           })

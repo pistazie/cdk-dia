@@ -1,7 +1,7 @@
 import * as cdk from "../src/cdk"
 import * as path from "path"
 import * as diagrams from "../src/diagram"
-import * as graphviz from "../src/graphviz"
+import * as graphviz from "../src/render/graphviz"
 
 export class CdkDia {
 
@@ -19,9 +19,10 @@ export class CdkDia {
         const diagram = generator.generate(cdkTree, collapse, includedStacks)
 
         // Render diagram using Graphviz
-        const renderer = new graphviz.Generator(diagram)
-
-        return renderer.generatePng(`${targetPath}`)
+        return new graphviz.Graphviz().render({
+            diagram: diagram,
+            path: `${targetPath}`
+        })
     }
 }
 

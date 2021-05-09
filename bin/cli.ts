@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 import chalk from "chalk"
-import terminalLink from "terminal-link"
 import yargs from "yargs/yargs"
 import * as path from "path"
-import {RenderingError} from "../src/graphviz"
 import {CdkDia} from "../src/cdk-dia"
+import * as rendering from "../src/render/index"
 
 async function initCli(): Promise<cdkDiaCliArgs> {
 
@@ -22,32 +21,32 @@ async function generateDiagram(args: cdkDiaCliArgs) {
 
     let includedStacks: string[] | false = false
     if (args.stacks !== undefined) {
-        includedStacks = args.stacks.map( it => it.toString())
+        includedStacks = args.stacks.map(it => it.toString())
     }
 
     const packageBasePath = path.dirname(require.resolve('cdk-dia/package.json'))
 
-    cdkDia.generateDiagram(args["cdk-tree-path"], args["target-path"], args.collapse, packageBasePath, includedStacks).then((pngFilename) => {
-        if (terminalLink.isSupported)
-            console.log(chalk.green(`CDK code diagram generated to PNG at ${chalk.bold(terminalLink(pngFilename, pngFilename))}`))
-        else
-            console.log(chalk.green(`CDK code diagram generated to PNG at ${chalk.bold(pngFilename)}`))
-    }).catch(e => {
-        throw e
-    })
+    cdkDia.generateDiagram(
+        args["cdk-tree-path"],
+        args["target-path"],
+        args.collapse,
+        packageBasePath,
+        includedStacks)
+        .then((output) => output.userOutput())
+        .catch(e => {
+            throw e
+        })
 }
 
 function printError(e) {
-    if (e instanceof RenderingError) {
+    if (e instanceof rendering.RenderingError) {
         notifyRenderingError(e)
     } else {
-        console.log(e)
-        notifyRenderingError(new RenderingError(`Unexpected error occurred: ${e.message}`))
+        notifyRenderingError(new rendering.RenderingError(`Unexpected error occurred: ${e.message}`))
     }
 }
 
-function notifyRenderingError(e: RenderingError) {
-    console.log(e)
+function notifyRenderingError(e: rendering.RenderingError) {
     console.log(`${chalk.red.bold(`Failed to render diagram: ${e.message}`)}`)
 
     if (e.fixTips.length > 0)
@@ -58,9 +57,12 @@ function notifyRenderingError(e: RenderingError) {
     })
 }
 
-initCli().then(args => {
-    generateDiagram(args).catch(printError)
-}).catch(printError)
+initCli()
+    .then(args => {
+        generateDiagram(args)
+            .catch(printError)
+    })
+    .catch(printError)
 
 interface cdkDiaCliArgs {
     'cdk-tree-path': string,

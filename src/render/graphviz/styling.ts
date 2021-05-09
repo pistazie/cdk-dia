@@ -1,6 +1,6 @@
 import {Graph, INode, ISubgraph} from "ts-graphviz"
 import Values from "values.js"
-import {ComponentIcon, ComponentIconFormat} from "../diagram/component/icon"
+import {ComponentIcon, ComponentIconFormat} from "../../diagram/component/icon"
 
 export function applyBaseGraphStyling(graph: Graph): void {
 

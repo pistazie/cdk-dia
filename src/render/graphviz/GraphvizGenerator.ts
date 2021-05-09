@@ -1,60 +1,21 @@
-import * as fs from 'fs'
-import * as util from 'util'
-import * as _ from 'lodash'
-import * as hasbin from 'hasbin'
-import wrap from "word-wrap"
-import childProcess from "child_process"
-import {digraph, Graph, ISubgraph, toDot} from "ts-graphviz"
-const sanitizeFilename = require('sanitize-filename')
-
-import * as diagram from "../diagram"
+import {Digraph, digraph, Graph, ISubgraph} from "ts-graphviz"
+import * as diagram from "../../diagram"
 import * as styling from "./styling"
-import {RenderingError} from "./rendering-error"
+import * as _ from "lodash"
+import wrap from "word-wrap"
 
-const exec = util.promisify(childProcess.exec)
+export class GraphvizGenerator {
 
-export class Generator {
+    /**
+     * Generates a ts-graphviz repersentation of a Diagram
+     */
+    generate(dia: diagram.Diagram): Digraph{
 
-    private readonly rootGraph: Graph
+        const rootGraph = digraph('Diagram')
+        styling.applyBaseGraphStyling(rootGraph)
 
-    constructor(dia: diagram.Diagram) {
-
-        this.rootGraph = digraph('Diagram')
-
-        styling.applyBaseGraphStyling(this.rootGraph)
-        this.diagramGraph(dia)
-    }
-    async generatePng(path: string) : Promise<string>{
-
-        const dotFileName = this.generateDot(path)
-
-        try {
-            await this.dotToPng(dotFileName, path)
-        } catch (e) {
-
-            if (!hasbin.sync(Generator.graphvizBinary)){
-                throw new RenderingError("Graphvig '"+Generator.graphvizBinary+"' binary does not exist locally or in PATH",[],[
-                    "Install Graphviz and make sure it is available in PATH",
-                    "Using brew: 'brew install graphviz'"
-                ])
-            }
-            else {
-                if (e instanceof RenderingError) {
-                    throw e
-                } else {
-                    throw new RenderingError(e.message)
-                }
-            }
-        }
-
-        return path
-    }
-
-    generateDot(path: string) : string {
-        const data = toDot(this.rootGraph)
-        const fullPath = `${path}.dot`
-        fs.writeFileSync(fullPath, data)
-        return fullPath
+        this.diagramGraph(rootGraph, dia)
+        return rootGraph
     }
 
     private breakLineEveryMaxChars(label: string[], charsPerLine: number): string[] {
@@ -114,13 +75,13 @@ export class Generator {
         return words
     }
 
-    private diagramGraph(d: diagram.Diagram) {
+    private diagramGraph(rootGraph: Digraph, diagram1: diagram.Diagram) {
 
-        const root = this.rootGraph.createSubgraph(d.root.id)
+        const root = rootGraph.createSubgraph(diagram1.root.id)
 
-        this.addToGraph(root, d.root)
+        this.addToGraph(root, diagram1.root)
 
-        this.addEdges(this.rootGraph, d.root)
+        this.addEdges(rootGraph, diagram1.root)
     }
 
     private addToGraph(g: ISubgraph, node: diagram.Component) {
@@ -192,31 +153,4 @@ export class Generator {
         return  node.subComponents().find( sub => { return sub.subComponents().length == 0 })
     }
 
-    private async dotToPng(sourceDotFile: string, targetPngFile: string) {
-
-        const cmd = `${Generator.graphvizBinary} ${sanitizeFilename(sourceDotFile)} -T png > ${sanitizeFilename(targetPngFile)}`
-
-        try {
-            const {stdout, stderr} = await exec(cmd)
-
-            const fileExists = fs.existsSync(targetPngFile)
-            if (!fileExists){
-                throw new RenderingError("Failed to generate PNG: file does not exist.")
-            }
-
-            const stats = fs.lstatSync(targetPngFile)
-            if (stats.size < 2){
-                throw new RenderingError("Generated PNG doesn't seem valid: file size is too small.",
-                    [stdout,stderr],
-                    [". make sure Graphviz is installed and available in the PATH"])
-            }
-        } catch (e){
-            throw new RenderingError(e.message)
-        }
-
-        return true
-    }
-
-    private static graphvizBinary = "dot"
 }
-
