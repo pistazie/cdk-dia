@@ -39,8 +39,9 @@ export class Graphviz implements DiagramRenderer {
      */
     async render(props: GraphvizRenderingProps): Promise<GraphvizRenderingOutput> {
 
-        const targetDotPath = `${props.path}.dot`
-        const targetPngPath = `${props.path}.png`
+        const basePath = props.path.replace(/\.[^/.]+$/, "")
+        const targetDotPath = `${basePath}.dot`
+        const targetPngPath = `${basePath}.png`
 
         this.renderToDot(props.diagram, targetDotPath)
         await Graphviz.generatePng(targetDotPath, targetPngPath)
