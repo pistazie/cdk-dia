@@ -13,7 +13,7 @@ This Diagram was automatically generated from an AWS CDK stack
     <img src="docs/diagram.png" />
 </p>
 
-## Getting started
+## Getting started - Typescript / Javascript
 Add cdk-dia to your CDK project
 ```sh
 $ npm install cdk-dia
@@ -37,12 +37,39 @@ $ npx cdk-dia
 ```
 <br/>
 
+## Getting started - any other CDK language
+Globally install cdk-dia
+```sh
+$ npm install cdk-dia -g
+```
+
+Install Graphviz
+```sh
+$ brew install graphviz
+```
+* If you don't use brew: Graphviz installation in many environments is [well documented](https://graphviz.org/download/).
+* make sure Graphviz's dot binary is available in your PATH.
+
+Synthesize your CDK application
+```sh
+$ cdk synth
+```
+
+Generate a CDK-DIA diagram
+```sh
+$ cdk-dia
+```
+<br/>
+
 ## Customize diagrams
 
 In some cases it is useful to be able to tweak a diagram. For this purpose CDK-DIA includes customizers/decorators
 you can use with your CDK constructs in order to tweak the diagram.
 
-* In order to customize you have to add cdk-dia as a npm project dependency (globally installing it using `npm -g` won't allow you to use the `CdkDiaDecorator` class)
+### Limitations:
+
+* Customization and decorators are currently only support for Typescript/Javascript CDK projects.
+* In order to customize you have to add cdk-dia as a npm project dependency (globally installing it using `npm i -g` won't allow you to use the `CdkDiaDecorator` class)
 
 ### Example:
 Consider the following diagram of a 3-Tier CDK Stack:
