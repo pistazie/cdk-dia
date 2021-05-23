@@ -5,5 +5,5 @@ import {ThreeTierExample} from '../lib/three-tier-example';
 
 const app = new cdk.App();
 
-new ThreeTierExample(app, 'Tier3-DB',false);
-new ThreeTierExample(app, 'Tier3-DB-detailed',true);
+new ThreeTierExample(app, 'Tier3-DB-detailed',false);
+new ThreeTierExample(app, 'Tier3-DB',true);
