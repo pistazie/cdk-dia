@@ -1,0 +1,31 @@
+{
+  "name": "three-tier-example",
+  "version": "0.1.0",
+  "bin": {
+    "queue-is-subscribed-to-topic": "bin/three-tier-example.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "synth": "cdk synth",
+    "postsynth": "cdk-dia",
+    "link": "(cd ../..; npm link) && npm link cdk-dia",
+    "unlink": "npm unlink --no-save cdk-dia"
+  },
+  "devDependencies": {
+    "@types/node": "10.17.27",
+    "@aws-cdk/aws-ec2": "1.92.0",
+    "@aws-cdk/aws-elasticloadbalancingv2": "1.92.0",
+    "@aws-cdk/aws-elasticloadbalancingv2-targets": "1.92.0",
+    "@aws-cdk/aws-rds": "1.92.0",
+    "@aws-cdk/core": "1.92.0",
+    "aws-cdk": "1.92.0",
+    "ts-node": "^9.0.0",
+    "typescript": "4.2.3",
+    "source-map-support": "^0.5.16",
+    "cdk-dia": "0.0.2"
+  },
+  "dependencies": {}
+}
