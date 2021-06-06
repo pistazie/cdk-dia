@@ -5,11 +5,10 @@ import * as lb from "@aws-cdk/aws-elasticloadbalancingv2";
 import * as lb_targets from "@aws-cdk/aws-elasticloadbalancingv2-targets";
 
 import {WebTier} from "./web-tier"
-import {Db, DbWithDiagramDecorator} from "./db-tier"
 
 export class ThreeTierExample extends cdk.Stack {
 
-    constructor(scope: cdk.Construct, id: string, dbDiagramCollapsed: boolean = false) {
+    constructor(scope: cdk.Construct, id: string, dbConstructor: new (context: cdk.Stack, name: string, arg2: ec2.Vpc) => rds.DatabaseCluster) {
         super(scope, id);
 
         const vpc = new ec2.Vpc(this, "Vpc");
@@ -17,12 +16,7 @@ export class ThreeTierExample extends cdk.Stack {
 
         const webTier = new WebTier(this, 'WebTier', vpc)
 
-        let cluster: rds.DatabaseCluster
-        if (dbDiagramCollapsed) {
-            cluster = new Db(this, 'DbTier', vpc)
-        } else {
-            cluster = new DbWithDiagramDecorator(this, 'DbTier', vpc)
-        }
+        const cluster = new dbConstructor(this, 'DbTier', vpc)
 
         webTier.instances.forEach(instance => {
             cluster.secret?.grantWrite(instance)
