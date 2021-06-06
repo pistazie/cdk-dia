@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "description": "🎡 Automated diagrams of CDK provisioned infrastructure",
   "scripts": {
-    "prepare-dist": "./prepare-dist.sh",
+    "prepare": "./prepare-dist.sh",
     "test": "tsc && jest"
   },
   "bin": {
