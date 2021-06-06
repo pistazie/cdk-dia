@@ -24,7 +24,7 @@ async function generateDiagram(args: cdkDiaCliArgs) {
         includedStacks = args.stacks.map(it => it.toString())
     }
 
-    const packageBasePath = path.dirname(require.resolve('cdk-dia/package.json'))
+    const packageBasePath = path.dirname(require.resolve('../../package.json'))
 
     cdkDia.generateDiagram(
         args["cdk-tree-path"],

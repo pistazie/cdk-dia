@@ -7,7 +7,7 @@
     "test": "tsc && jest"
   },
   "bin": {
-    "cdk-dia": "bin/cli.js"
+    "cdk-dia": "dist/bin/cli.js"
   },
   "jest": {
     "testEnvironment": "node"
