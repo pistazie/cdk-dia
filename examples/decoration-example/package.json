@@ -9,6 +9,8 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",
+    "synth": "cdk synth",
+    "postsynth": "cdk-dia",
     "link": "(cd ../..; npm link) && npm link cdk-dia",
     "unlink": "npm unlink --no-save cdk-dia"
   },
