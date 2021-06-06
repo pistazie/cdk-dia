@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "description": "🎡 Automated diagrams of CDK provisioned infrastructure",
   "scripts": {
-    "prepare": "./prepare-dist.sh",
+    "prepare": "tsc && cp -r icons dist && cp src/diagram/aws/awsResouceIconMatches.json dist/src/diagram/aws/awsResouceIconMatches.json",
     "test": "tsc && jest"
   },
   "bin": {

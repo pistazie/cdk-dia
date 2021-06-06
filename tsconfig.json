@@ -7,7 +7,8 @@
     "noUnusedParameters": true,
     "sourceMap": true,
     "esModuleInterop": true,
-    "declaration": true
+    "declaration": true,
+    "outDir": "./dist"
   },
   "include": [
     "src/**/*.ts",
