@@ -5,10 +5,10 @@ export class CdkDia{
 
     static readonly attrPrefix = "CDK-DIA_"
 
-    static decorate(inspector: TreeInspector, decorator: CdkDiaDecorator) {
+    static decorate(inspector: TreeInspector, decorator: CdkDiaDecorator): void {
         const attributes = decorator.build()
         for (const key in attributes) {
-           inspector.addAttribute(CdkDia.attrPrefix + key, attributes[key])
+            inspector.addAttribute(CdkDia.attrPrefix + key, attributes[key])
         }
     }
 }
