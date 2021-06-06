@@ -12,7 +12,8 @@
   },
   "include": [
     "src/**/*.ts",
-    "bin/**/*.ts"
+    "bin/**/*.ts",
+    "index.ts" 
   ],
   "exclude": [
     "node_modules/**/*"
