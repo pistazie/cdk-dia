@@ -8,7 +8,9 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "link": "(cd ../..; npm link) && npm link cdk-dia",
+    "unlink": "npm unlink --no-save cdk-dia"
   },
   "devDependencies": {
     "@types/node": "10.17.27",
