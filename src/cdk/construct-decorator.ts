@@ -27,13 +27,6 @@ export class CdkDiaDecorator {
     }
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
-export function DiagramForceNonCollapsed(target: any): void {
-    target.prototype.inspect = function(inspector: TreeInspector): void {
-        CdkDia.decorate(inspector, new CdkDiaDecorator().collapse(CollapseTypes.FORCE_NON_COLLAPSE));
-    };
-}
-
 export function DiagramOptions(options: DiagramOptionValues): ClassDecorator {
     // eslint-disable-next-line @typescript-eslint/ban-types
     return function <TFunction extends Function>(target: TFunction) {
