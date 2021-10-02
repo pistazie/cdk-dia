@@ -1,6 +1,8 @@
 # Publish to local npm registry
+nope
 npm install -g verdaccio
 verdaccio --config smoke-test-npm-local-repo-config.yml &
+nope
 npm run prepare-dist
 npm version 9.9.${GITHUB_RUN_NUMBER} --commit-hooks false --git-tag-version false
 npm publish --registry http://localhost:4873
@@ -19,7 +21,7 @@ cdk synth
 ./node_modules/.bin/cdk-dia
 ls -la
 SMOKE_TEST_BASE_PATH=$(pwd)
-cd ./.github/smoke-test
+cd ../.github/smoke-test
 npm i
 npm run test
 
@@ -37,6 +39,6 @@ cdk synth
 cdk-dia
 ls -la
 SMOKE_TEST_BASE_PATH=$(pwd)
-cd ./.github/smoke-test
+cd ../.github/smoke-test
 npm i
 npm run test
