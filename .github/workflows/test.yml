@@ -26,13 +26,3 @@ jobs:
 
       - name: Package and CLI usage in a CDK Project - Smoke Test
         run:  ./.github/smoke-test/smoke-test.sh
-  test2:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - name: Package and CLI usage in a CDK Project - Smoke Test
-        run: ./.github/smoke-test/smoke-test.sh

@@ -1,8 +1,7 @@
-nope
-echo "Exit code '$?'"
+#!/bin/bash
+set -e
 npm install -g verdaccio
 verdaccio --config smoke-test-npm-local-repo-config.yml &
-nope
 npm run prepare-dist
 npm version 9.9.${GITHUB_RUN_NUMBER} --commit-hooks false --git-tag-version false
 npm publish --registry http://localhost:4873
@@ -20,8 +19,8 @@ npm install cdk-dia@9.9.${GITHUB_RUN_NUMBER} --registry http://localhost:4873
 cdk synth
 ./node_modules/.bin/cdk-dia
 ls -la
-SMOKE_TEST_BASE_PATH=$(pwd)
-cd ../.github/smoke-test
+export SMOKE_TEST_BASE_PATH=$(pwd)
+cd $GITHUB_WORKSPACE/.github/smoke-test
 npm i
 npm run test
 
@@ -38,7 +37,7 @@ cdk init sample-app --language typescript
 cdk synth
 cdk-dia
 ls -la
-SMOKE_TEST_BASE_PATH=$(pwd)
-cd ../.github/smoke-test
+export SMOKE_TEST_BASE_PATH=$(pwd)
+cd $GITHUB_WORKSPACE/.github/smoke-test
 npm i
 npm run test
