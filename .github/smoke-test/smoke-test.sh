@@ -1,5 +1,5 @@
-# Publish to local npm registry
 nope
+echo "Exit code '$?'"
 npm install -g verdaccio
 verdaccio --config smoke-test-npm-local-repo-config.yml &
 nope
