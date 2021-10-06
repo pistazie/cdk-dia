@@ -25,4 +25,4 @@ jobs:
             npx eslint . --ext .ts || true
 
       - name: Package and CLI usage in a CDK Project - Smoke Test
-        run:  ./.github/smoke-test/smoke-test.sh
+        run: ./smoke-test/smoke-test.sh

@@ -11,7 +11,7 @@ storage: ./storage
 # path to a directory with plugins to include
 plugins: ./plugins
 
-max_body_size: 100mb
+max_body_size: 200mb
 
 web:
   title: Verdaccio
