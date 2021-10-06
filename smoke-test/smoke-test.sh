@@ -43,8 +43,8 @@ smokeTest() {
 }
 
 # install smoke test dependencies
+sudo apt install graphviz -y
 npm install -g typescript aws-cdk verdaccio
-apt update -y && apt install graphviz -y
 verdaccio --config ./smoke-test/smoke-test-npm-local-repo-config.yml &
 
 # publish CDK-Dia to a locally running NPM registry for testing
