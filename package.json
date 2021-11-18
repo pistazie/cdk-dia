@@ -4,7 +4,7 @@
   "description": "🎡 Automated diagrams of CDK provisioned infrastructure",
   "scripts": {
     "build-watch": "tsc --watch",
-    "prepare": "tsc && cp -r icons dist && cp src/diagram/aws/awsResouceIconMatches.json dist/src/diagram/aws/awsResouceIconMatches.json",
+    "prepare": "tsc && cp src/diagram/aws/awsResouceIconMatches.json dist/src/diagram/aws/awsResouceIconMatches.json",
     "test": "tsc && jest"
   },
   "bin": {
@@ -16,7 +16,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "icons"
   ],
   "author": "Tom Roshko @pistazie",
   "license": "MIT",
