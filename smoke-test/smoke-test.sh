@@ -48,7 +48,6 @@ npm install -g typescript aws-cdk verdaccio
 verdaccio --config ./smoke-test/smoke-test-npm-local-repo-config.yml &
 
 # publish CDK-Dia to a locally running NPM registry for testing
-npm run prepare-dist
 cd dist
 npm version 9.9.${GITHUB_RUN_NUMBER} --commit-hooks false --git-tag-version false
 npm publish --registry http://localhost:4873
