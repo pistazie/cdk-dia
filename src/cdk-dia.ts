@@ -15,7 +15,7 @@ export class CdkDia {
         const cdkTree = cdk.TreeJsonLoader.load(path.isAbsolute(treeJsonPath) ? treeJsonPath : path.join(process.cwd(), treeJsonPath))
 
         // Generate Diagram
-        const generator = new diagrams.AwsDiagramGenerator(new diagrams.AwsEdgeResolver(), new diagrams.AwsIconSupplier(`${cdkBasePath}`))
+        const generator = new diagrams.AwsDiagramGenerator(new diagrams.AwsEdgeResolver(), new diagrams.AwsIconSupplier(`${cdkBasePath}/dist`))
         const diagram = generator.generate(cdkTree, collapse, includedStacks)
 
         // Render diagram using Graphviz
