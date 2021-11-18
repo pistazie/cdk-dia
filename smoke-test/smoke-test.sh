@@ -6,7 +6,7 @@ prepareCdkProject(){
   TEST_CDK_PROJ_PATH=$1
   INSTALL_CDK_DIA_GLOBALLY=$2
 
-  echo "bootsrtapping a new AWS-CDK project at ${TEST_CDK_PROJ_PATH}"
+  echo "bootstrapping a new AWS-CDK project at ${TEST_CDK_PROJ_PATH}"
   mkdir -p $TEST_CDK_PROJ_PATH
   cd $TEST_CDK_PROJ_PATH
   cdk init sample-app --language typescript
@@ -52,5 +52,8 @@ npm version 9.9.${GITHUB_RUN_NUMBER} --commit-hooks false --git-tag-version fals
 npm publish --registry http://localhost:4873
 
 # Perform Tests Cases
-smokeTest false ./node_modules/.bin/cdk-dia # install in a project
-smokeTest true cdk-dia # install globally
+echo "smoketest with cdk-dia installed in a project's node_modules"
+smokeTest false ./node_modules/.bin/cdk-dia
+
+echo "smoketest with cdk-dia installed globally"
+smokeTest true cdk-dia
