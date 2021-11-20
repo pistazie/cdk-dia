@@ -2,8 +2,7 @@ import * as rds from "@aws-cdk/aws-rds"
 import * as cdk from "@aws-cdk/core"
 import * as ec2 from "@aws-cdk/aws-ec2"
 
-import {CdkDia, CdkDiaDecorator} from "cdk-dia/src/cdk"
-import {CollapseTypes} from "cdk-dia/src/diagram/component/customizable-attribute"
+import {CdkDia, CdkDiaDecorator, CollapseTypes} from "cdk-dia"
 
 export class Db extends rds.DatabaseCluster {
     constructor(scope: cdk.Construct, id: string, vpc: ec2.Vpc) {

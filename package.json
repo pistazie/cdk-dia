@@ -3,19 +3,21 @@
   "version": "0.3.0",
   "description": "🎡 Automated diagrams of CDK provisioned infrastructure",
   "scripts": {
-    "prepare-dist": "./prepare-dist.sh",
+    "build-watch": "tsc --watch",
+    "prepare": "tsc && cp src/diagram/aws/awsResouceIconMatches.json dist/src/diagram/aws/awsResouceIconMatches.json",
     "test": "tsc && jest"
   },
   "bin": {
-    "cdk-dia": "bin/cli.js"
+    "cdk-dia": "dist/bin/cli.js"
   },
   "jest": {
     "testEnvironment": "node"
   },
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "**/*"
+    "dist",
+    "icons"
   ],
   "author": "Tom Roshko @pistazie",
   "license": "MIT",

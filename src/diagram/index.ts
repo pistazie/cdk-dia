@@ -1,5 +1,6 @@
 export * from "./diagram"
 export * from "./component/component"
+export * from "./component/customizable-attribute"
 export * from "./component/diagram-component"
 export * from "./component/root-component"
 export * from "./component/link"
