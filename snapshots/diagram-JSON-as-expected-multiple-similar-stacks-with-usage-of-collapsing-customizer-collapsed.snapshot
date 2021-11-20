@@ -555,8 +555,8 @@ Object {
                 },
                 Object {
                   "_image": ComponentIcon {
-                    "format": "SMALLER",
-                    "path": null,
+                    "format": "NORMAL",
+                    "path": "icons/aws/security_group.png",
                   },
                   "children": Array [],
                   "edges": Array [

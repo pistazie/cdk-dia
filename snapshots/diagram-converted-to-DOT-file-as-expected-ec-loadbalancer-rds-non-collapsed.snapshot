@@ -354,6 +354,15 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - ec-loadb
         \\"QueueIsSubscribedToTopicStack/MyLoadbalancer/SecurityGroup/Resource\\" [
           label = \\" EC2 SecurityGroup\\",
           fontsize = 12,
+          image = \\"icons/aws/security_group.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
         ];
         subgraph \\"cluster-SubGraph.443\\" {
           graph [
@@ -436,6 +445,15 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - ec-loadb
         \\"QueueIsSubscribedToTopicStack/Web1/InstanceSecurityGroup/Resource\\" [
           label = \\" EC2 SecurityGroup\\",
           fontsize = 12,
+          image = \\"icons/aws/security_group.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
         ];
         subgraph \\"cluster-SubGraph.InstanceRole\\" {
           graph [
@@ -518,6 +536,15 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - ec-loadb
         \\"QueueIsSubscribedToTopicStack/Web2/InstanceSecurityGroup/Resource\\" [
           label = \\" EC2 SecurityGroup\\",
           fontsize = 12,
+          image = \\"icons/aws/security_group.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
         ];
         subgraph \\"cluster-SubGraph.InstanceRole\\" {
           graph [
@@ -626,6 +653,15 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - ec-loadb
         \\"QueueIsSubscribedToTopicStack/Database/SecurityGroup/Resource\\" [
           label = \\" EC2 SecurityGroup\\",
           fontsize = 12,
+          image = \\"icons/aws/security_group.png\\",
+          imagescale = \\"true\\",
+          imagepos = \\"tc\\",
+          penwidth = \\"0\\",
+          shape = \\"node\\",
+          fixedsize = \\"true\\",
+          labelloc = \\"b\\",
+          width = 2,
+          height = 2.266,
         ];
         subgraph \\"cluster-SubGraph.Secret\\" {
           graph [

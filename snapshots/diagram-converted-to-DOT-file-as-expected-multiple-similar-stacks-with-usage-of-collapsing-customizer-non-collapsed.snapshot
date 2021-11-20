@@ -403,6 +403,15 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - multiple
               \\"Microservice1/FargateService/LB/SecurityGroup/Resource\\" [
                 label = \\" EC2 SecurityGroup\\",
                 fontsize = 12,
+                image = \\"icons/aws/security_group.png\\",
+                imagescale = \\"true\\",
+                imagepos = \\"tc\\",
+                penwidth = \\"0\\",
+                shape = \\"node\\",
+                fixedsize = \\"true\\",
+                labelloc = \\"b\\",
+                width = 2,
+                height = 2.266,
               ];
               \\"Microservice1/FargateService/LB/SecurityGroup/to Microservice1FargateServiceSecurityGroup668E2AD9_80\\" [
                 label = \\" EC2\\\\nSecurityGroupEgress\\\\nto\\",
@@ -488,8 +497,17 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - multiple
               height = 1.466,
             ];
             \\"Microservice1/FargateService/TaskDef/web/LogGroup/Resource\\" [
-              label = \\" LOGS LOGGROUP\\",
+              label = \\" Logs LogGroup\\",
               fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.266,
             ];
             subgraph \\"cluster-SubGraph.ExecutionRole\\" {
               graph [
@@ -571,6 +589,15 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - multiple
               \\"Microservice1/FargateService/Service/SecurityGroup/Resource\\" [
                 label = \\" EC2 SecurityGroup\\",
                 fontsize = 12,
+                image = \\"icons/aws/security_group.png\\",
+                imagescale = \\"true\\",
+                imagepos = \\"tc\\",
+                penwidth = \\"0\\",
+                shape = \\"node\\",
+                fixedsize = \\"true\\",
+                labelloc = \\"b\\",
+                width = 2,
+                height = 2.266,
               ];
               \\"Microservice1/FargateService/Service/SecurityGroup/from Microservice1FargateServiceLBSecurityGroup2D549ECE_80\\" [
                 label = \\" EC2\\\\nSecurityGroupIngress\\\\nfrom\\",
@@ -940,6 +967,15 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - multiple
               \\"Microservice2/FargateService/LB/SecurityGroup/Resource\\" [
                 label = \\" EC2 SecurityGroup\\",
                 fontsize = 12,
+                image = \\"icons/aws/security_group.png\\",
+                imagescale = \\"true\\",
+                imagepos = \\"tc\\",
+                penwidth = \\"0\\",
+                shape = \\"node\\",
+                fixedsize = \\"true\\",
+                labelloc = \\"b\\",
+                width = 2,
+                height = 2.266,
               ];
               \\"Microservice2/FargateService/LB/SecurityGroup/to Microservice2FargateServiceSecurityGroup9AA3C63C_80\\" [
                 label = \\" EC2\\\\nSecurityGroupEgress\\\\nto\\",
@@ -1025,8 +1061,17 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - multiple
               height = 1.466,
             ];
             \\"Microservice2/FargateService/TaskDef/web/LogGroup/Resource\\" [
-              label = \\" LOGS LOGGROUP\\",
+              label = \\" Logs LogGroup\\",
               fontsize = 12,
+              image = \\"icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.266,
             ];
             subgraph \\"cluster-SubGraph.ExecutionRole\\" {
               graph [
@@ -1108,6 +1153,15 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - multiple
               \\"Microservice2/FargateService/Service/SecurityGroup/Resource\\" [
                 label = \\" EC2 SecurityGroup\\",
                 fontsize = 12,
+                image = \\"icons/aws/security_group.png\\",
+                imagescale = \\"true\\",
+                imagepos = \\"tc\\",
+                penwidth = \\"0\\",
+                shape = \\"node\\",
+                fixedsize = \\"true\\",
+                labelloc = \\"b\\",
+                width = 2,
+                height = 2.266,
               ];
               \\"Microservice2/FargateService/Service/SecurityGroup/from Microservice2FargateServiceLBSecurityGroupF11BF879_80\\" [
                 label = \\" EC2\\\\nSecurityGroupIngress\\\\nfrom\\",

@@ -391,6 +391,15 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - fargate-
             \\"QueueIsSubscribedToTopicStack/MyFargateService/LB/SecurityGroup/Resource\\" [
               label = \\" EC2 SecurityGroup\\",
               fontsize = 12,
+              image = \\"icons/aws/security_group.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.266,
             ];
             \\"QueueIsSubscribedToTopicStack/MyFargateService/LB/SecurityGroup/to QueueIsSubscribedToTopicStackMyFargateServiceSecurityGroupB3618F23_80\\" [
               label = \\" EC2\\\\nSecurityGroupEgress\\\\nto\\",
@@ -476,8 +485,17 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - fargate-
             height = 1.466,
           ];
           \\"QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/web/LogGroup/Resource\\" [
-            label = \\" LOGS LOGGROUP\\",
+            label = \\" Logs LogGroup\\",
             fontsize = 12,
+            image = \\"icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png\\",
+            imagescale = \\"true\\",
+            imagepos = \\"tc\\",
+            penwidth = \\"0\\",
+            shape = \\"node\\",
+            fixedsize = \\"true\\",
+            labelloc = \\"b\\",
+            width = 2,
+            height = 2.266,
           ];
           subgraph \\"cluster-SubGraph.ExecutionRole\\" {
             graph [
@@ -559,6 +577,15 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - fargate-
             \\"QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup/Resource\\" [
               label = \\" EC2 SecurityGroup\\",
               fontsize = 12,
+              image = \\"icons/aws/security_group.png\\",
+              imagescale = \\"true\\",
+              imagepos = \\"tc\\",
+              penwidth = \\"0\\",
+              shape = \\"node\\",
+              fixedsize = \\"true\\",
+              labelloc = \\"b\\",
+              width = 2,
+              height = 2.266,
             ];
             \\"QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup/from QueueIsSubscribedToTopicStackMyFargateServiceLBSecurityGroupE6D6C06E_80\\" [
               label = \\" EC2\\\\nSecurityGroupIngress\\\\nfrom\\",

@@ -460,8 +460,8 @@ Object {
                   "children": Array [
                     Object {
                       "_image": ComponentIcon {
-                        "format": "SMALLER",
-                        "path": null,
+                        "format": "NORMAL",
+                        "path": "icons/aws/security_group.png",
                       },
                       "children": Array [],
                       "edges": Array [
@@ -622,14 +622,16 @@ Object {
                   ],
                 },
                 Object {
-                  "_image": null,
+                  "_image": ComponentIcon {
+                    "format": "NORMAL",
+                    "path": "icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png",
+                  },
                   "children": Array [],
                   "edges": Array [],
                   "id": "Microservice1/FargateService/TaskDef/web/LogGroup/Resource",
                   "isGroup": false,
                   "label": Array [
-                    "LOGS",
-                    "LOGGROUP",
+                    "Logs LogGroup",
                   ],
                 },
               ],
@@ -669,8 +671,8 @@ Object {
                   "children": Array [
                     Object {
                       "_image": ComponentIcon {
-                        "format": "SMALLER",
-                        "path": null,
+                        "format": "NORMAL",
+                        "path": "icons/aws/security_group.png",
                       },
                       "children": Array [],
                       "edges": Array [
@@ -1200,8 +1202,8 @@ Object {
                   "children": Array [
                     Object {
                       "_image": ComponentIcon {
-                        "format": "SMALLER",
-                        "path": null,
+                        "format": "NORMAL",
+                        "path": "icons/aws/security_group.png",
                       },
                       "children": Array [],
                       "edges": Array [
@@ -1362,14 +1364,16 @@ Object {
                   ],
                 },
                 Object {
-                  "_image": null,
+                  "_image": ComponentIcon {
+                    "format": "NORMAL",
+                    "path": "icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png",
+                  },
                   "children": Array [],
                   "edges": Array [],
                   "id": "Microservice2/FargateService/TaskDef/web/LogGroup/Resource",
                   "isGroup": false,
                   "label": Array [
-                    "LOGS",
-                    "LOGGROUP",
+                    "Logs LogGroup",
                   ],
                 },
               ],
@@ -1409,8 +1413,8 @@ Object {
                   "children": Array [
                     Object {
                       "_image": ComponentIcon {
-                        "format": "SMALLER",
-                        "path": null,
+                        "format": "NORMAL",
+                        "path": "icons/aws/security_group.png",
                       },
                       "children": Array [],
                       "edges": Array [
