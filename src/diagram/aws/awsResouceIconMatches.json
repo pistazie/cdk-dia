@@ -71,20 +71,34 @@
             "C4": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C4-Instance_48_Dark.png",
             "C5": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C5-Instance_48_Dark.png",
             "C5N": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C5n-Instance_48_Dark.png",
+            "C5A": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C5a-Instance_48_Dark.png",
+            "C5D": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C5d-Instance_48_Dark.png",
+            "C5AD": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C5ad-Instance_48_Dark.png",
             "C6G": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C6g-Instance_48_Dark.png",
             "D2": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_D2-Instance_48_Dark.png",
+            "D3": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_D3-Instance_48_Dark.png",
+            "D3EN": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_D3en-Instance_48_Dark.png",
             "DB": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_DB-Instance_48_Dark.png",
             "F1": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_F1-Instance_48_Dark.png",
             "G3": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_G3-Instance_48_Dark.png",
+            "G4AD": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_G4ad-Instance_48_Dark.png",
+            "G4DN": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_G4dn-Instance_48_Dark.png",
             "H1": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_H1-Instance_48_Dark.png",
+            "I2": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_I2-Instance_48_Dark.png",
             "I3": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_I3-Instance_48_Dark.png",
+            "I3EN": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_I3en-Instance_48_Dark.png",
+            "INF1": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Inf1-Instance_48_Dark.png",
             "M4": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M4-Instance_48_Dark.png",
             "M5": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M5-Instance_48_Dark.png",
             "M5A": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M5a-Instance_48_Dark.png",
             "M5N": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M5n-Instance_48_Dark.png",
             "M6G": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M6g-Instance_48_Dark.png",
+            "MAC": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Mac-Instance_48_Dark.png",
             "P2": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_P2-Instance_48_Dark.png",
             "P3": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_P3-Instance_48_Dark.png",
+            "P3DN": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_P3dn-Instance_48_Dark.png",
+            "P4": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_P4-Instance_48_Dark.png",
+            "P4D": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_P4d-Instance_48_Dark.png",
             "R4": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_R4-Instance_48_Dark.png",
             "R5": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_R5-Instance_48_Dark.png",
             "R5A": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_R5a-Instance_48_Dark.png",
@@ -93,6 +107,8 @@
             "T2": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T2-Instance_48_Dark.png",
             "T3": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T3-Instance_48_Dark.png",
             "T3A": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T3a-Instance_48_Dark.png",
+            "T4G": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T4g-Instance_48_Dark.png",
+            "TRAINIUM": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Trainium-Instance_48_Dark.png",
             "X1": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_X1-Instance_48_Dark.png",
             "X1E": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_X1e-Instance_48_Dark.png",
             "Z1D": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Z1D-Instance_48_Dark.png"
@@ -228,7 +244,7 @@
       },
       {
         "resourceType": "AWS::EC2::SecurityGroup",
-        "filePath": null
+        "filePath": "icons/aws/security_group.png"
       },
       {
         "resourceType": "AWS::EC2::TrafficMirrorFilterRule",
@@ -1226,6 +1242,7 @@
   },
   {
     "resourcePrefix": "AWS::Cognito",
+    "genericFilePath": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_Amazon-Cognito_64.png",
     "specificResources": [
       {
         "resourceType": "AWS::Cognito::UserPoolRiskConfigurationAttachment",
@@ -2166,7 +2183,7 @@
     "specificResources": [
       {
         "resourceType": "AWS::Logs::MetricFilter",
-        "filePath": "icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png"
+        "filePath": "icons/aws/cloudwatch_metric_filter.png"
       },
       {
         "resourceType": "AWS::Logs::SubscriptionFilter",
@@ -2178,11 +2195,11 @@
       },
       {
         "resourceType": "AWS::Logs::LogGroup",
-        "filePath": null
+        "filePath": "icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png"
       },
       {
         "resourceType": "AWS::Logs::LogStream",
-        "filePath": null
+        "filePath": "icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png"
       }
     ]
   },
