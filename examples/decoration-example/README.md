@@ -7,7 +7,3 @@ Run `npm install` to install dependencies, then run the following to synthesize 
 ```bash
 npm run synth
 ```
-
-## Local development
-
-To work on `cdk-dia` and this project locally, use `npm run link` script.
