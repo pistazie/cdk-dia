@@ -1,6 +1,7 @@
 [![Mentioned in Awesome CDK](https://awesome.re/mentioned-badge.svg)](https://github.com/kolomied/awesome-cdk)
 ![Test](https://github.com/pistazie/cdk-dia/workflows/Test/badge.svg)
 [![npm version](https://badge.fury.io/js/cdk-dia.svg)](https://badge.fury.io/js/cdk-dia)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
 # 🎡 CDK-Dia - Automated diagrams for CDK infrastructure
 
@@ -93,3 +94,6 @@ This results in a Diagram where the DB-Tier was not collapsed providing more det
 * ```npx cdk-dia --help``` - Get possible arguments
 * ```npx cdk-dia --stacks stackOne stackFour``` - only diagram chosen aws-cdk stacks
     * ```npx cdk-dia --stacks pipelinestack/prod/database``` - choose stacks by path (nested stacks, pipeline stacks)
+
+## 🙏🏽 Contributing
+Contribution is covered in the [CONTRIBUTING.md](./CONTRIBUTING.md) markdown.
