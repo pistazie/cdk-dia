@@ -8,6 +8,7 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "declaration": true,
+    "experimentalDecorators": true,
     "outDir": "./dist"
   },
   "include": [
