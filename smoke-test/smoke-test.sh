@@ -21,29 +21,27 @@ prepareCdkProject(){
 # Assert diagram generated as expected
 executeSmokeTestAssertions() {
   DIAGRAMS_PATH=$1
+  ASSERTIONS=$2
 
   TEST_SUITE_PATH=$GITHUB_WORKSPACE/smoke-test
   export SMOKE_TEST_BASE_PATH=$DIAGRAMS_PATH # used by the following Jest test suite
   cd $TEST_SUITE_PATH
   npm i
-  npm run test
+   jest --testPathPattern $ASSERTIONS
 }
 
 # Execute smoke test-case
 smokeTest() {
   CDK_DIA_INSTALL_GLOBALLY=$1
   CDK_DIA_COMMAND=$2
-  EXECUTE_ASSERTIONS=$3
+  ASSERTIONS=$3
 
   TEST_CASE_CDK_PROJ_PATH="${GITHUB_WORKSPACE}/smoke-test-cases/cdk_${RANDOM}"
   prepareCdkProject $TEST_CASE_CDK_PROJ_PATH $CDK_DIA_INSTALL_GLOBALLY
   cd $TEST_CASE_CDK_PROJ_PATH
   cdk synth # synthesize
   $CDK_DIA_COMMAND # generate PNG using Cdk-Dia
-
-  if [[ "$EXECUTE_ASSERTIONS" == "true" ]]
-      then executeSmokeTestAssertions $(pwd) # assert PNG as expected
-  fi
+  executeSmokeTestAssertions $(pwd) $ASSERTIONS
 }
 
 # install smoke test dependencies
@@ -57,13 +55,13 @@ npm publish --registry http://localhost:4873
 
 # Perform Tests Cases
 echo "smoketest with cdk-dia installed in a project's node_modules"
-smokeTest false ./node_modules/.bin/cdk-dia true
+smokeTest false ./node_modules/.bin/cdk-dia diagram-assertions-graphviz
 
 echo "smoketest with cdk-dia installed globally"
-smokeTest true cdk-dia true
+smokeTest true cdk-dia diagram-assertions-graphviz
 
 echo "smoketest with cdk-dia installed in a project's node_modules - cytoscape rendering"
-smokeTest false "./node_modules/.bin/cdk-dia  --rendering cytoscape-html" false
+smokeTest false "./node_modules/.bin/cdk-dia  --rendering cytoscape-html" diagram-assertions-cytoscape
 
 echo "smoketest with cdk-dia installed globally - cytoscape rendering"
-smokeTest true "cdk-dia --rendering cytoscape-html" false
+smokeTest true "cdk-dia --rendering cytoscape-html" diagram-assertions-cytoscape
