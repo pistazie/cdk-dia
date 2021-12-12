@@ -33,13 +33,17 @@ executeSmokeTestAssertions() {
 smokeTest() {
   CDK_DIA_INSTALL_GLOBALLY=$1
   CDK_DIA_COMMAND=$2
+  EXECUTE_ASSERTIONS=$3
 
   TEST_CASE_CDK_PROJ_PATH="${GITHUB_WORKSPACE}/smoke-test-cases/cdk_${RANDOM}"
   prepareCdkProject $TEST_CASE_CDK_PROJ_PATH $CDK_DIA_INSTALL_GLOBALLY
   cd $TEST_CASE_CDK_PROJ_PATH
   cdk synth # synthesize
   $CDK_DIA_COMMAND # generate PNG using Cdk-Dia
-  executeSmokeTestAssertions $(pwd) # assert PNG as expected
+
+  if [[ "$EXECUTE_ASSERTIONS" == "true" ]]
+      then executeSmokeTestAssertions $(pwd) # assert PNG as expected
+  fi
 }
 
 # install smoke test dependencies
@@ -53,13 +57,13 @@ npm publish --registry http://localhost:4873
 
 # Perform Tests Cases
 echo "smoketest with cdk-dia installed in a project's node_modules"
-smokeTest false ./node_modules/.bin/cdk-dia
+smokeTest false ./node_modules/.bin/cdk-dia true
 
 echo "smoketest with cdk-dia installed globally"
-smokeTest true cdk-dia
+smokeTest true cdk-dia true
 
 echo "smoketest with cdk-dia installed in a project's node_modules - cytoscape rendering"
-smokeTest false "./node_modules/.bin/cdk-dia  --rendering cytoscape-html"
+smokeTest false "./node_modules/.bin/cdk-dia  --rendering cytoscape-html" false
 
 echo "smoketest with cdk-dia installed globally - cytoscape rendering"
-smokeTest true "cdk-dia --rendering cytoscape-html"
+smokeTest true "cdk-dia --rendering cytoscape-html" false
