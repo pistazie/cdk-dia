@@ -110,13 +110,7 @@ export class CytoscapeGenerator {
         }
     }
 
-    private static
-
-    addEdges(node
-                 :
-                 diagram.Component
-    ):
-        CytoscapeElementEdge[] {
+    private static addEdges(node: diagram.Component): CytoscapeElementEdge[] {
 
         const linkedComponentEdges: CytoscapeElementEdge[] = node.links.getLinkedComponents().map(edgeNode => {
             return {
