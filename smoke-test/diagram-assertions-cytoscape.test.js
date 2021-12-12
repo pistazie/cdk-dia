@@ -6,9 +6,9 @@ const diagramFolderName = 'diagram';
 
 console.info("Asserting expected static website with Cytoscape at: " + path.join(basePath, diagramFolderName))
 
-describe('Created static website', ()=>{
+describe('Genretated static website', ()=>{
 
-    it ('should exist', ()=>{
+    it ('should exist as expected', ()=>{
         const index = new File(`${basePath}/${diagramFolderName}/index.html`)
         expect(index.stats.size).toBeGreaterThanOrEqual(300)
         expect(index.body).toContain("CDK-Dia")
