@@ -1,6 +1,6 @@
 import {Graph, INode, ISubgraph} from "ts-graphviz"
-import Values from "values.js"
 import {ComponentIcon, ComponentIconFormat} from "../../diagram/component/icon"
+import {ColorPalette} from "../styling"
 
 export function applyBaseGraphStyling(graph: Graph): void {
 
@@ -71,15 +71,5 @@ export function applyNodeWithIconStyling(node: INode, icon: ComponentIcon, label
         const ratio = 0.60
         node.attributes.set("width", baseImgSize * ratio)
         node.attributes.set("height", (baseImgSize * ratio) + 0.05 + (labelLinesCount * 0.018 * labelFontSize))
-    }
-}
-
-export class ColorPalette {
-
-    static byInd(num: number): string {
-
-        const color = new Values('#F3F3F3') // base / lightest shade
-        const shade = color.shade(6 * num)
-        return shade.hexString()
     }
 }

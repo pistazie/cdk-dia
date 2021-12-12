@@ -1,5 +1,4 @@
 import * as fs from "fs"
-import * as rimraf from "rimraf"
 import {Graphviz} from "../graphviz"
 import {testCases} from "../../../test-fixtures/testCases"
 import {givenDiagram} from "../../../diagram/tests/generator.test"
@@ -13,11 +12,6 @@ if (global['jest-specific-init'] == undefined) {
 jest.setTimeout(3000000)
 
 const basePath = `${process.cwd()}/test-generated`
-
-beforeAll(() => {
-     rimraf.sync(basePath)
-     fs.mkdirSync(basePath)
-});
 
 describe("diagram converted to DOT file as expected", () => {
      //const oneCase = [testCases[2]]

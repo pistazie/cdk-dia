@@ -57,3 +57,9 @@ smokeTest false ./node_modules/.bin/cdk-dia
 
 echo "smoketest with cdk-dia installed globally"
 smokeTest true cdk-dia
+
+echo "smoketest with cdk-dia installed in a project's node_modules - cytoscape rendering"
+smokeTest false "./node_modules/.bin/cdk-dia  --rendering cytoscape-html"
+
+echo "smoketest with cdk-dia installed globally - cytoscape rendering"
+smokeTest true "cdk-dia --rendering cytoscape-html"

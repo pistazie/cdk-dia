@@ -1,0 +1,1 @@
+This folder includes the all resources required to develop and bundle the Cytoscape base resources.

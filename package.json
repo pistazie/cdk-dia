@@ -4,7 +4,8 @@
   "description": "🎡 Automated diagrams of CDK provisioned infrastructure",
   "scripts": {
     "build-watch": "tsc --watch",
-    "prepare": "tsc && cp src/diagram/aws/awsResouceIconMatches.json dist/src/diagram/aws/awsResouceIconMatches.json",
+    "build": "tsc",
+    "prepublishOnly": "./scripts/npm-prepare.sh",
     "test": "tsc && jest"
   },
   "bin": {
@@ -26,6 +27,7 @@
     "chalk": "^4.1.0",
     "colors": "^1.4.0",
     "hasbin": "^1.2.3",
+    "ncp": "^2.0.0",
     "sanitize-filename": "^1.6.3",
     "terminal-link": "^2.1.1",
     "ts-graphviz": "^0.13.2",
