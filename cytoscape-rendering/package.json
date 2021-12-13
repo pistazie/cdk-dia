@@ -1,0 +1,43 @@
+{
+  "name": "",
+  "version": "9.9.395",
+  "description": "",
+  "scripts": {
+    "build": "webpack --config webpack/webpack.config.prod.js",
+    "start": "webpack serve --config webpack/webpack.config.dev.js --open"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.15.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.2.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.2.0",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.2",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@types/cytoscape": "^3.19.2",
+    "core-js": "^3.16.1",
+    "cytoscape": "^3.20.0",
+    "cytoscape-dom-node": "^1.1.0",
+    "cytoscape-elk": "^2.0.2",
+    "web-worker": "^1.2.0"
+  }
+}

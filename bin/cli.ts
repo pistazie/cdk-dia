@@ -2,7 +2,7 @@
 import chalk from "chalk"
 import yargs from "yargs/yargs"
 import * as path from "path"
-import {CdkDia} from "../src/cdk-dia"
+import {CdkDia, Renderers} from "../src/cdk-dia"
 import * as rendering from "../src/render/index"
 
 async function initCli(): Promise<cdkDiaCliArgs> {
@@ -11,7 +11,8 @@ async function initCli(): Promise<cdkDiaCliArgs> {
         'cdk-tree-path': {type: 'string', alias: 'tree', default: 'cdk.out/tree.json', describe: 'Path of synthesized cdk cloud assembly'},
         'target-path': {type: 'string', alias: 'target', default: 'diagram.png', describe: 'Target path for rendered PNG'},
         'collapse': {type: 'boolean', default: true, describe: 'Collapse CDK Constructs'},
-        'stacks': {type: 'array', describe: 'Stacks to include (if not specified all stacks are diagramed)'}
+        'stacks': {type: 'array', describe: 'Stacks to include (if not specified all stacks are diagramed)'},
+        'rendering': {type: 'string', choices:[ Renderers.GRAPHVIZ, Renderers.CYTOSCAPE],default: Renderers.GRAPHVIZ, describe: 'The rendering engine to use'}
     }).version(false).argv
 }
 
@@ -31,9 +32,11 @@ async function generateDiagram(args: cdkDiaCliArgs) {
         args["target-path"],
         args.collapse,
         packageBasePath,
-        includedStacks)
+        includedStacks,
+        args["rendering"])
         .then((output) => output.userOutput())
         .catch(e => {
+            console.error(`Failed to generate diagram - ${e}`)
             throw e
         })
 }
@@ -68,5 +71,6 @@ interface cdkDiaCliArgs {
     'cdk-tree-path': string,
     'target-path': string,
     collapse: boolean,
-    stacks: (string | number)[] | undefined
+    stacks: (string | number)[] | undefined,
+    rendering: Renderers
 }

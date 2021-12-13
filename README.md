@@ -32,9 +32,14 @@ Synthesize your CDK application
 $ cdk synth
 ```
 
-Generate a CDK-DIA diagram
+Generate a CDK-DIA diagram PNG
 ```sh
 $ npx cdk-dia
+```
+
+Generate a CDK-DIA diagram as an interactive HTML (experimental)
+```sh
+$ npx cdk-dia --rendering cytoscape-html
 ```
 <br/>
 
