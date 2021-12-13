@@ -4,8 +4,6 @@ import {givenDiagram} from "../../../diagram/tests/generator.test"
 import {Cytoscape} from "../cytoscape"
 import {Stats} from "fs"
 
-jest.setTimeout(75000)
-
 const basePath = `${process.cwd()}/test-generated`
 
 describe('Cytoscape static website generated as expected', () => {
@@ -36,7 +34,7 @@ describe('Cytoscape static website generated as expected', () => {
 
         const stylesJson = new File(`${filePath}/cy-styles.json`)
         expect(JSON.parse(stylesJson.body).length).toBeGreaterThanOrEqual(15)
-    })
+    }, 100000)
 })
 
 class File {
