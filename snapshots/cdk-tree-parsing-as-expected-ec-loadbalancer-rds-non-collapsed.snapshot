@@ -1,0 +1,1402 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cdk-tree parsing src/test-fixtures/ - ec-loadbalancer-rds - non-collapsed 1`] = `
+Node {
+  "attributes": Map {},
+  "children": Map {
+    "Tree" => Node {
+      "attributes": Map {},
+      "children": Map {},
+      "constructInfoFqn": undefined,
+      "id": "Tree",
+      "path": "Tree",
+    },
+    "QueueIsSubscribedToTopicStack" => Node {
+      "attributes": Map {},
+      "children": Map {
+        "MyVpc" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::EC2::VPC",
+                "aws:cdk:cloudformation:props" => Object {
+                  "cidrBlock": "10.0.0.0/16",
+                  "enableDnsHostnames": true,
+                  "enableDnsSupport": true,
+                  "instanceTenancy": "default",
+                  "tags": Array [
+                    Object {
+                      "key": "Name",
+                      "value": "QueueIsSubscribedToTopicStack/MyVpc",
+                    },
+                  ],
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+            },
+            "PublicSubnet1" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Subnet" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Subnet",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "availabilityZone": Object {
+                        "Fn::Select": Array [
+                          0,
+                          Object {
+                            "Fn::GetAZs": "",
+                          },
+                        ],
+                      },
+                      "cidrBlock": "10.0.0.0/18",
+                      "mapPublicIpOnLaunch": true,
+                      "tags": Array [
+                        Object {
+                          "key": "aws-cdk:subnet-name",
+                          "value": "Public",
+                        },
+                        Object {
+                          "key": "aws-cdk:subnet-type",
+                          "value": "Public",
+                        },
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Subnet",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/Subnet",
+                },
+                "Acl" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Acl",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/Acl",
+                },
+                "RouteTable" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::RouteTable",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTable",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTable",
+                },
+                "RouteTableAssociation" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::SubnetRouteTableAssociation",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPublicSubnet1RouteTableC46AB2F4",
+                      },
+                      "subnetId": Object {
+                        "Ref": "MyVpcPublicSubnet1SubnetF6608456",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTableAssociation",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTableAssociation",
+                },
+                "DefaultRoute" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Route",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "destinationCidrBlock": "0.0.0.0/0",
+                      "gatewayId": Object {
+                        "Ref": "MyVpcIGW5C4A4F63",
+                      },
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPublicSubnet1RouteTableC46AB2F4",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "DefaultRoute",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/DefaultRoute",
+                },
+                "EIP" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::EIP",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "domain": "vpc",
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "EIP",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/EIP",
+                },
+                "NATGateway" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::NatGateway",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "allocationId": Object {
+                        "Fn::GetAtt": Array [
+                          "MyVpcPublicSubnet1EIP096967CB",
+                          "AllocationId",
+                        ],
+                      },
+                      "subnetId": Object {
+                        "Ref": "MyVpcPublicSubnet1SubnetF6608456",
+                      },
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "NATGateway",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/NATGateway",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "PublicSubnet1",
+              "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
+            },
+            "PublicSubnet2" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Subnet" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Subnet",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "availabilityZone": Object {
+                        "Fn::Select": Array [
+                          1,
+                          Object {
+                            "Fn::GetAZs": "",
+                          },
+                        ],
+                      },
+                      "cidrBlock": "10.0.64.0/18",
+                      "mapPublicIpOnLaunch": true,
+                      "tags": Array [
+                        Object {
+                          "key": "aws-cdk:subnet-name",
+                          "value": "Public",
+                        },
+                        Object {
+                          "key": "aws-cdk:subnet-type",
+                          "value": "Public",
+                        },
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Subnet",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/Subnet",
+                },
+                "Acl" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Acl",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/Acl",
+                },
+                "RouteTable" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::RouteTable",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTable",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTable",
+                },
+                "RouteTableAssociation" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::SubnetRouteTableAssociation",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPublicSubnet2RouteTable1DF17386",
+                      },
+                      "subnetId": Object {
+                        "Ref": "MyVpcPublicSubnet2Subnet492B6BFB",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTableAssociation",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTableAssociation",
+                },
+                "DefaultRoute" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Route",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "destinationCidrBlock": "0.0.0.0/0",
+                      "gatewayId": Object {
+                        "Ref": "MyVpcIGW5C4A4F63",
+                      },
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPublicSubnet2RouteTable1DF17386",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "DefaultRoute",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/DefaultRoute",
+                },
+                "EIP" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::EIP",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "domain": "vpc",
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "EIP",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/EIP",
+                },
+                "NATGateway" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::NatGateway",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "allocationId": Object {
+                        "Fn::GetAtt": Array [
+                          "MyVpcPublicSubnet2EIP8CCBA239",
+                          "AllocationId",
+                        ],
+                      },
+                      "subnetId": Object {
+                        "Ref": "MyVpcPublicSubnet2Subnet492B6BFB",
+                      },
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "NATGateway",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/NATGateway",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "PublicSubnet2",
+              "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
+            },
+            "PrivateSubnet1" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Subnet" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Subnet",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "availabilityZone": Object {
+                        "Fn::Select": Array [
+                          0,
+                          Object {
+                            "Fn::GetAZs": "",
+                          },
+                        ],
+                      },
+                      "cidrBlock": "10.0.128.0/18",
+                      "mapPublicIpOnLaunch": false,
+                      "tags": Array [
+                        Object {
+                          "key": "aws-cdk:subnet-name",
+                          "value": "Private",
+                        },
+                        Object {
+                          "key": "aws-cdk:subnet-type",
+                          "value": "Private",
+                        },
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Subnet",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/Subnet",
+                },
+                "Acl" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Acl",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/Acl",
+                },
+                "RouteTable" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::RouteTable",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTable",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTable",
+                },
+                "RouteTableAssociation" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::SubnetRouteTableAssociation",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPrivateSubnet1RouteTable8819E6E2",
+                      },
+                      "subnetId": Object {
+                        "Ref": "MyVpcPrivateSubnet1Subnet5057CF7E",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTableAssociation",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTableAssociation",
+                },
+                "DefaultRoute" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Route",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "destinationCidrBlock": "0.0.0.0/0",
+                      "natGatewayId": Object {
+                        "Ref": "MyVpcPublicSubnet1NATGatewayAD3400C1",
+                      },
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPrivateSubnet1RouteTable8819E6E2",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "DefaultRoute",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/DefaultRoute",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "PrivateSubnet1",
+              "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1",
+            },
+            "PrivateSubnet2" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Subnet" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Subnet",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "availabilityZone": Object {
+                        "Fn::Select": Array [
+                          1,
+                          Object {
+                            "Fn::GetAZs": "",
+                          },
+                        ],
+                      },
+                      "cidrBlock": "10.0.192.0/18",
+                      "mapPublicIpOnLaunch": false,
+                      "tags": Array [
+                        Object {
+                          "key": "aws-cdk:subnet-name",
+                          "value": "Private",
+                        },
+                        Object {
+                          "key": "aws-cdk:subnet-type",
+                          "value": "Private",
+                        },
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Subnet",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/Subnet",
+                },
+                "Acl" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Acl",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/Acl",
+                },
+                "RouteTable" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::RouteTable",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTable",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTable",
+                },
+                "RouteTableAssociation" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::SubnetRouteTableAssociation",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPrivateSubnet2RouteTableCEDCEECE",
+                      },
+                      "subnetId": Object {
+                        "Ref": "MyVpcPrivateSubnet2Subnet0040C983",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTableAssociation",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTableAssociation",
+                },
+                "DefaultRoute" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Route",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "destinationCidrBlock": "0.0.0.0/0",
+                      "natGatewayId": Object {
+                        "Ref": "MyVpcPublicSubnet2NATGateway91BFBEC9",
+                      },
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPrivateSubnet2RouteTableCEDCEECE",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "DefaultRoute",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/DefaultRoute",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "PrivateSubnet2",
+              "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2",
+            },
+            "IGW" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::EC2::InternetGateway",
+                "aws:cdk:cloudformation:props" => Object {
+                  "tags": Array [
+                    Object {
+                      "key": "Name",
+                      "value": "QueueIsSubscribedToTopicStack/MyVpc",
+                    },
+                  ],
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "IGW",
+              "path": "QueueIsSubscribedToTopicStack/MyVpc/IGW",
+            },
+            "VPCGW" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::EC2::VPCGatewayAttachment",
+                "aws:cdk:cloudformation:props" => Object {
+                  "internetGatewayId": Object {
+                    "Ref": "MyVpcIGW5C4A4F63",
+                  },
+                  "vpcId": Object {
+                    "Ref": "MyVpcF9F0CA6F",
+                  },
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "VPCGW",
+              "path": "QueueIsSubscribedToTopicStack/MyVpc/VPCGW",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "MyVpc",
+          "path": "QueueIsSubscribedToTopicStack/MyVpc",
+        },
+        "MyLoadbalancer" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "443" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::ElasticLoadBalancingV2::Listener",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "defaultActions": Array [
+                        Object {
+                          "targetGroupArn": Object {
+                            "Ref": "MyLoadbalancer443sdfaGroup6DCEDB21",
+                          },
+                          "type": "forward",
+                        },
+                      ],
+                      "loadBalancerArn": Object {
+                        "Ref": "MyLoadbalancerC5FA523B",
+                      },
+                      "port": 80,
+                      "protocol": "HTTP",
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "QueueIsSubscribedToTopicStack/MyLoadbalancer/443/Resource",
+                },
+                "sdfaGroup" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::ElasticLoadBalancingV2::TargetGroup",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "port": 80,
+                          "protocol": "HTTP",
+                          "targetType": "instance",
+                          "targets": Array [
+                            Object {
+                              "id": Object {
+                                "Ref": "Web1EEBE43FB",
+                              },
+                              "port": 80,
+                            },
+                            Object {
+                              "id": Object {
+                                "Ref": "Web23FFBCA20",
+                              },
+                              "port": 80,
+                            },
+                          ],
+                          "vpcId": Object {
+                            "Ref": "MyVpcF9F0CA6F",
+                          },
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "QueueIsSubscribedToTopicStack/MyLoadbalancer/443/sdfaGroup/Resource",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "sdfaGroup",
+                  "path": "QueueIsSubscribedToTopicStack/MyLoadbalancer/443/sdfaGroup",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "443",
+              "path": "QueueIsSubscribedToTopicStack/MyLoadbalancer/443",
+            },
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                "aws:cdk:cloudformation:props" => Object {
+                  "loadBalancerAttributes": Array [
+                    Object {
+                      "key": "deletion_protection.enabled",
+                      "value": "false",
+                    },
+                  ],
+                  "scheme": "internal",
+                  "securityGroups": Array [
+                    Object {
+                      "Fn::GetAtt": Array [
+                        "MyLoadbalancerSecurityGroup5A2F3DCD",
+                        "GroupId",
+                      ],
+                    },
+                  ],
+                  "subnets": Array [
+                    Object {
+                      "Ref": "MyVpcPrivateSubnet1Subnet5057CF7E",
+                    },
+                    Object {
+                      "Ref": "MyVpcPrivateSubnet2Subnet0040C983",
+                    },
+                  ],
+                  "type": "application",
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "QueueIsSubscribedToTopicStack/MyLoadbalancer/Resource",
+            },
+            "SecurityGroup" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::SecurityGroup",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "groupDescription": "Automatically created Security Group for ELB QueueIsSubscribedToTopicStackMyLoadbalancer58BBF115",
+                      "securityGroupEgress": Array [
+                        Object {
+                          "cidrIp": "255.255.255.255/32",
+                          "description": "Disallow all traffic",
+                          "fromPort": 252,
+                          "ipProtocol": "icmp",
+                          "toPort": 86,
+                        },
+                      ],
+                      "securityGroupIngress": Array [
+                        Object {
+                          "cidrIp": "0.0.0.0/0",
+                          "description": "Allow from anyone on port 80",
+                          "fromPort": 80,
+                          "ipProtocol": "tcp",
+                          "toPort": 80,
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "QueueIsSubscribedToTopicStack/MyLoadbalancer/SecurityGroup/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "SecurityGroup",
+              "path": "QueueIsSubscribedToTopicStack/MyLoadbalancer/SecurityGroup",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "MyLoadbalancer",
+          "path": "QueueIsSubscribedToTopicStack/MyLoadbalancer",
+        },
+        "Web1" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "InstanceSecurityGroup" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::SecurityGroup",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "groupDescription": "QueueIsSubscribedToTopicStack/Web1/InstanceSecurityGroup",
+                      "securityGroupEgress": Array [
+                        Object {
+                          "cidrIp": "0.0.0.0/0",
+                          "description": "Allow all outbound traffic by default",
+                          "ipProtocol": "-1",
+                        },
+                      ],
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/Web1",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "QueueIsSubscribedToTopicStack/Web1/InstanceSecurityGroup/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "InstanceSecurityGroup",
+              "path": "QueueIsSubscribedToTopicStack/Web1/InstanceSecurityGroup",
+            },
+            "InstanceRole" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "assumeRolePolicyDocument": Object {
+                        "Statement": Array [
+                          Object {
+                            "Action": "sts:AssumeRole",
+                            "Effect": "Allow",
+                            "Principal": Object {
+                              "Service": Object {
+                                "Fn::Join": Array [
+                                  "",
+                                  Array [
+                                    "ec2.",
+                                    Object {
+                                      "Ref": "AWS::URLSuffix",
+                                    },
+                                  ],
+                                ],
+                              },
+                            },
+                          },
+                        ],
+                        "Version": "2012-10-17",
+                      },
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/Web1",
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "QueueIsSubscribedToTopicStack/Web1/InstanceRole/Resource",
+                },
+                "DefaultPolicy" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "policyDocument": Object {
+                            "Statement": Array [
+                              Object {
+                                "Action": Array [
+                                  "secretsmanager:PutSecretValue",
+                                  "secretsmanager:UpdateSecret",
+                                ],
+                                "Effect": "Allow",
+                                "Resource": Object {
+                                  "Ref": "DatabaseSecretAttachmentE5D1B020",
+                                },
+                              },
+                            ],
+                            "Version": "2012-10-17",
+                          },
+                          "policyName": "Web1InstanceRoleDefaultPolicy4C16A778",
+                          "roles": Array [
+                            Object {
+                              "Ref": "Web1InstanceRoleCE131C6A",
+                            },
+                          ],
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "QueueIsSubscribedToTopicStack/Web1/InstanceRole/DefaultPolicy/Resource",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "DefaultPolicy",
+                  "path": "QueueIsSubscribedToTopicStack/Web1/InstanceRole/DefaultPolicy",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "InstanceRole",
+              "path": "QueueIsSubscribedToTopicStack/Web1/InstanceRole",
+            },
+            "InstanceProfile" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::IAM::InstanceProfile",
+                "aws:cdk:cloudformation:props" => Object {
+                  "roles": Array [
+                    Object {
+                      "Ref": "Web1InstanceRoleCE131C6A",
+                    },
+                  ],
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "InstanceProfile",
+              "path": "QueueIsSubscribedToTopicStack/Web1/InstanceProfile",
+            },
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::EC2::Instance",
+                "aws:cdk:cloudformation:props" => Object {
+                  "availabilityZone": Object {
+                    "Fn::Select": Array [
+                      0,
+                      Object {
+                        "Fn::GetAZs": "",
+                      },
+                    ],
+                  },
+                  "iamInstanceProfile": Object {
+                    "Ref": "Web1InstanceProfile4AD7432E",
+                  },
+                  "imageId": Object {
+                    "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter",
+                  },
+                  "instanceType": "c5.large",
+                  "securityGroupIds": Array [
+                    Object {
+                      "Fn::GetAtt": Array [
+                        "Web1InstanceSecurityGroup1BA842CD",
+                        "GroupId",
+                      ],
+                    },
+                  ],
+                  "subnetId": Object {
+                    "Ref": "MyVpcPrivateSubnet1Subnet5057CF7E",
+                  },
+                  "tags": Array [
+                    Object {
+                      "key": "Name",
+                      "value": "QueueIsSubscribedToTopicStack/Web1",
+                    },
+                  ],
+                  "userData": Object {
+                    "Fn::Base64": "#!/bin/bash",
+                  },
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "QueueIsSubscribedToTopicStack/Web1/Resource",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "Web1",
+          "path": "QueueIsSubscribedToTopicStack/Web1",
+        },
+        "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter" => Node {
+          "attributes": Map {},
+          "children": Map {},
+          "constructInfoFqn": undefined,
+          "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+          "path": "QueueIsSubscribedToTopicStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+        },
+        "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118" => Node {
+          "attributes": Map {},
+          "children": Map {},
+          "constructInfoFqn": undefined,
+          "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+          "path": "QueueIsSubscribedToTopicStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+        },
+        "Web2" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "InstanceSecurityGroup" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::SecurityGroup",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "groupDescription": "QueueIsSubscribedToTopicStack/Web2/InstanceSecurityGroup",
+                      "securityGroupEgress": Array [
+                        Object {
+                          "cidrIp": "0.0.0.0/0",
+                          "description": "Allow all outbound traffic by default",
+                          "ipProtocol": "-1",
+                        },
+                      ],
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/Web2",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "QueueIsSubscribedToTopicStack/Web2/InstanceSecurityGroup/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "InstanceSecurityGroup",
+              "path": "QueueIsSubscribedToTopicStack/Web2/InstanceSecurityGroup",
+            },
+            "InstanceRole" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "assumeRolePolicyDocument": Object {
+                        "Statement": Array [
+                          Object {
+                            "Action": "sts:AssumeRole",
+                            "Effect": "Allow",
+                            "Principal": Object {
+                              "Service": Object {
+                                "Fn::Join": Array [
+                                  "",
+                                  Array [
+                                    "ec2.",
+                                    Object {
+                                      "Ref": "AWS::URLSuffix",
+                                    },
+                                  ],
+                                ],
+                              },
+                            },
+                          },
+                        ],
+                        "Version": "2012-10-17",
+                      },
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/Web2",
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "QueueIsSubscribedToTopicStack/Web2/InstanceRole/Resource",
+                },
+                "DefaultPolicy" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "policyDocument": Object {
+                            "Statement": Array [
+                              Object {
+                                "Action": Array [
+                                  "secretsmanager:PutSecretValue",
+                                  "secretsmanager:UpdateSecret",
+                                ],
+                                "Effect": "Allow",
+                                "Resource": Object {
+                                  "Ref": "DatabaseSecretAttachmentE5D1B020",
+                                },
+                              },
+                            ],
+                            "Version": "2012-10-17",
+                          },
+                          "policyName": "Web2InstanceRoleDefaultPolicy988B1F61",
+                          "roles": Array [
+                            Object {
+                              "Ref": "Web2InstanceRoleA6295717",
+                            },
+                          ],
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "QueueIsSubscribedToTopicStack/Web2/InstanceRole/DefaultPolicy/Resource",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "DefaultPolicy",
+                  "path": "QueueIsSubscribedToTopicStack/Web2/InstanceRole/DefaultPolicy",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "InstanceRole",
+              "path": "QueueIsSubscribedToTopicStack/Web2/InstanceRole",
+            },
+            "InstanceProfile" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::IAM::InstanceProfile",
+                "aws:cdk:cloudformation:props" => Object {
+                  "roles": Array [
+                    Object {
+                      "Ref": "Web2InstanceRoleA6295717",
+                    },
+                  ],
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "InstanceProfile",
+              "path": "QueueIsSubscribedToTopicStack/Web2/InstanceProfile",
+            },
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::EC2::Instance",
+                "aws:cdk:cloudformation:props" => Object {
+                  "availabilityZone": Object {
+                    "Fn::Select": Array [
+                      0,
+                      Object {
+                        "Fn::GetAZs": "",
+                      },
+                    ],
+                  },
+                  "iamInstanceProfile": Object {
+                    "Ref": "Web2InstanceProfileC4D67EEC",
+                  },
+                  "imageId": Object {
+                    "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter",
+                  },
+                  "instanceType": "c5.large",
+                  "securityGroupIds": Array [
+                    Object {
+                      "Fn::GetAtt": Array [
+                        "Web2InstanceSecurityGroupF76410E8",
+                        "GroupId",
+                      ],
+                    },
+                  ],
+                  "subnetId": Object {
+                    "Ref": "MyVpcPrivateSubnet1Subnet5057CF7E",
+                  },
+                  "tags": Array [
+                    Object {
+                      "key": "Name",
+                      "value": "QueueIsSubscribedToTopicStack/Web2",
+                    },
+                  ],
+                  "userData": Object {
+                    "Fn::Base64": "#!/bin/bash",
+                  },
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "QueueIsSubscribedToTopicStack/Web2/Resource",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "Web2",
+          "path": "QueueIsSubscribedToTopicStack/Web2",
+        },
+        "Database" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Subnets" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Default" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::RDS::DBSubnetGroup",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "dbSubnetGroupDescription": "Subnets for Database database",
+                      "subnetIds": Array [
+                        Object {
+                          "Ref": "MyVpcPrivateSubnet1Subnet5057CF7E",
+                        },
+                        Object {
+                          "Ref": "MyVpcPrivateSubnet2Subnet0040C983",
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Default",
+                  "path": "QueueIsSubscribedToTopicStack/Database/Subnets/Default",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "Subnets",
+              "path": "QueueIsSubscribedToTopicStack/Database/Subnets",
+            },
+            "SecurityGroup" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::SecurityGroup",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "groupDescription": "RDS security group",
+                      "securityGroupEgress": Array [
+                        Object {
+                          "cidrIp": "0.0.0.0/0",
+                          "description": "Allow all outbound traffic by default",
+                          "ipProtocol": "-1",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "QueueIsSubscribedToTopicStack/Database/SecurityGroup/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "SecurityGroup",
+              "path": "QueueIsSubscribedToTopicStack/Database/SecurityGroup",
+            },
+            "AuroraMySqlDatabaseClusterEngineDefaultParameterGroup" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "AuroraMySqlDatabaseClusterEngineDefaultParameterGroup",
+              "path": "QueueIsSubscribedToTopicStack/Database/AuroraMySqlDatabaseClusterEngineDefaultParameterGroup",
+            },
+            "Secret" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::SecretsManager::Secret",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "description": Object {
+                        "Fn::Join": Array [
+                          "",
+                          Array [
+                            "Generated by the CDK for stack: ",
+                            Object {
+                              "Ref": "AWS::StackName",
+                            },
+                          ],
+                        ],
+                      },
+                      "generateSecretString": Object {
+                        "excludeCharacters": " %+~\`#$&*()|[]{}:;<>?!'/@\\"\\\\",
+                        "generateStringKey": "password",
+                        "passwordLength": 30,
+                        "secretStringTemplate": "{\\"username\\":\\"clusteradmin\\"}",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "QueueIsSubscribedToTopicStack/Database/Secret/Resource",
+                },
+                "Attachment" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::SecretsManager::SecretTargetAttachment",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "secretId": Object {
+                            "Ref": "QueueIsSubscribedToTopicStackDatabaseSecret360E6F443fdaad7efa858a3daf9490cf0a702aeb",
+                          },
+                          "targetId": Object {
+                            "Ref": "DatabaseB269D8BB",
+                          },
+                          "targetType": "AWS::RDS::DBCluster",
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "QueueIsSubscribedToTopicStack/Database/Secret/Attachment/Resource",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "Attachment",
+                  "path": "QueueIsSubscribedToTopicStack/Database/Secret/Attachment",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "Secret",
+              "path": "QueueIsSubscribedToTopicStack/Database/Secret",
+            },
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::RDS::DBCluster",
+                "aws:cdk:cloudformation:props" => Object {
+                  "dbClusterParameterGroupName": "default.aurora-mysql5.7",
+                  "dbSubnetGroupName": Object {
+                    "Ref": "DatabaseSubnets56F17B9A",
+                  },
+                  "engine": "aurora-mysql",
+                  "engineVersion": "5.7.mysql_aurora.2.08.1",
+                  "masterUserPassword": Object {
+                    "Fn::Join": Array [
+                      "",
+                      Array [
+                        "{{resolve:secretsmanager:",
+                        Object {
+                          "Ref": "QueueIsSubscribedToTopicStackDatabaseSecret360E6F443fdaad7efa858a3daf9490cf0a702aeb",
+                        },
+                        ":SecretString:password::}}",
+                      ],
+                    ],
+                  },
+                  "masterUsername": "clusteradmin",
+                  "vpcSecurityGroupIds": Array [
+                    Object {
+                      "Fn::GetAtt": Array [
+                        "DatabaseSecurityGroup5C91FDCB",
+                        "GroupId",
+                      ],
+                    },
+                  ],
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "QueueIsSubscribedToTopicStack/Database/Resource",
+            },
+            "Instance1" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::RDS::DBInstance",
+                "aws:cdk:cloudformation:props" => Object {
+                  "dbClusterIdentifier": Object {
+                    "Ref": "DatabaseB269D8BB",
+                  },
+                  "dbInstanceClass": "db.t2.small",
+                  "dbSubnetGroupName": Object {
+                    "Ref": "DatabaseSubnets56F17B9A",
+                  },
+                  "engine": "aurora-mysql",
+                  "engineVersion": "5.7.mysql_aurora.2.08.1",
+                  "publiclyAccessible": false,
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Instance1",
+              "path": "QueueIsSubscribedToTopicStack/Database/Instance1",
+            },
+            "Instance2" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::RDS::DBInstance",
+                "aws:cdk:cloudformation:props" => Object {
+                  "dbClusterIdentifier": Object {
+                    "Ref": "DatabaseB269D8BB",
+                  },
+                  "dbInstanceClass": "db.t2.small",
+                  "dbSubnetGroupName": Object {
+                    "Ref": "DatabaseSubnets56F17B9A",
+                  },
+                  "engine": "aurora-mysql",
+                  "engineVersion": "5.7.mysql_aurora.2.08.1",
+                  "publiclyAccessible": false,
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Instance2",
+              "path": "QueueIsSubscribedToTopicStack/Database/Instance2",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "Database",
+          "path": "QueueIsSubscribedToTopicStack/Database",
+        },
+        "CDKMetadata" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Default" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Default",
+              "path": "QueueIsSubscribedToTopicStack/CDKMetadata/Default",
+            },
+            "Condition" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Condition",
+              "path": "QueueIsSubscribedToTopicStack/CDKMetadata/Condition",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "CDKMetadata",
+          "path": "QueueIsSubscribedToTopicStack/CDKMetadata",
+        },
+      },
+      "constructInfoFqn": undefined,
+      "id": "QueueIsSubscribedToTopicStack",
+      "path": "QueueIsSubscribedToTopicStack",
+    },
+  },
+  "constructInfoFqn": undefined,
+  "id": "App",
+  "path": "",
+}
+`;

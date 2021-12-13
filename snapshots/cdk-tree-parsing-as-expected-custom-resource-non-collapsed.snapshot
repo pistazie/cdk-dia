@@ -1,0 +1,367 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cdk-tree parsing src/test-fixtures/ - custom-resource - non-collapsed 1`] = `
+Node {
+  "attributes": Map {},
+  "children": Map {
+    "Tree" => Node {
+      "attributes": Map {},
+      "children": Map {},
+      "constructInfoFqn": undefined,
+      "id": "Tree",
+      "path": "Tree",
+    },
+    "SoTsStack" => Node {
+      "attributes": Map {},
+      "children": Map {
+        "on-event-handler" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "ServiceRole" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "assumeRolePolicyDocument": Object {
+                        "Statement": Array [
+                          Object {
+                            "Action": "sts:AssumeRole",
+                            "Effect": "Allow",
+                            "Principal": Object {
+                              "Service": "lambda.amazonaws.com",
+                            },
+                          },
+                        ],
+                        "Version": "2012-10-17",
+                      },
+                      "managedPolicyArns": Array [
+                        Object {
+                          "Fn::Join": Array [
+                            "",
+                            Array [
+                              "arn:",
+                              Object {
+                                "Ref": "AWS::Partition",
+                              },
+                              ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                            ],
+                          ],
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "SoTsStack/on-event-handler/ServiceRole/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "ServiceRole",
+              "path": "SoTsStack/on-event-handler/ServiceRole",
+            },
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
+                "aws:cdk:cloudformation:props" => Object {
+                  "code": Object {
+                    "zipFile": "exports.handler = function(event, ctx, cb) { console.log(event);  return cb(null, \\"hi\\"); }",
+                  },
+                  "handler": "index.handler",
+                  "role": Object {
+                    "Fn::GetAtt": Array [
+                      "oneventhandlerServiceRole13113A93",
+                      "Arn",
+                    ],
+                  },
+                  "runtime": "nodejs12.x",
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "SoTsStack/on-event-handler/Resource",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "on-event-handler",
+          "path": "SoTsStack/on-event-handler",
+        },
+        "custom-resource-provider" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "framework-onEvent" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "ServiceRole" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "assumeRolePolicyDocument": Object {
+                            "Statement": Array [
+                              Object {
+                                "Action": "sts:AssumeRole",
+                                "Effect": "Allow",
+                                "Principal": Object {
+                                  "Service": "lambda.amazonaws.com",
+                                },
+                              },
+                            ],
+                            "Version": "2012-10-17",
+                          },
+                          "managedPolicyArns": Array [
+                            Object {
+                              "Fn::Join": Array [
+                                "",
+                                Array [
+                                  "arn:",
+                                  Object {
+                                    "Ref": "AWS::Partition",
+                                  },
+                                  ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                                ],
+                              ],
+                            },
+                          ],
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/Resource",
+                    },
+                    "DefaultPolicy" => Node {
+                      "attributes": Map {},
+                      "children": Map {
+                        "Resource" => Node {
+                          "attributes": Map {
+                            "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
+                            "aws:cdk:cloudformation:props" => Object {
+                              "policyDocument": Object {
+                                "Statement": Array [
+                                  Object {
+                                    "Action": "lambda:InvokeFunction",
+                                    "Effect": "Allow",
+                                    "Resource": Object {
+                                      "Fn::GetAtt": Array [
+                                        "oneventhandler6B374C77",
+                                        "Arn",
+                                      ],
+                                    },
+                                  },
+                                ],
+                                "Version": "2012-10-17",
+                              },
+                              "policyName": "customresourceproviderframeworkonEventServiceRoleDefaultPolicyDFA4A2F0",
+                              "roles": Array [
+                                Object {
+                                  "Ref": "customresourceproviderframeworkonEventServiceRole070B62AA",
+                                },
+                              ],
+                            },
+                          },
+                          "children": Map {},
+                          "constructInfoFqn": undefined,
+                          "id": "Resource",
+                          "path": "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/DefaultPolicy/Resource",
+                        },
+                      },
+                      "constructInfoFqn": undefined,
+                      "id": "DefaultPolicy",
+                      "path": "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/DefaultPolicy",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "ServiceRole",
+                  "path": "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole",
+                },
+                "Code" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Stage" => Node {
+                      "attributes": Map {},
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Stage",
+                      "path": "SoTsStack/custom-resource-provider/framework-onEvent/Code/Stage",
+                    },
+                    "AssetBucket" => Node {
+                      "attributes": Map {},
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "AssetBucket",
+                      "path": "SoTsStack/custom-resource-provider/framework-onEvent/Code/AssetBucket",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "Code",
+                  "path": "SoTsStack/custom-resource-provider/framework-onEvent/Code",
+                },
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "code": Object {
+                        "s3Bucket": Object {
+                          "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3BucketEAC9DD43",
+                        },
+                        "s3Key": Object {
+                          "Fn::Join": Array [
+                            "",
+                            Array [
+                              Object {
+                                "Fn::Select": Array [
+                                  0,
+                                  Object {
+                                    "Fn::Split": Array [
+                                      "||",
+                                      Object {
+                                        "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7",
+                                      },
+                                    ],
+                                  },
+                                ],
+                              },
+                              Object {
+                                "Fn::Select": Array [
+                                  1,
+                                  Object {
+                                    "Fn::Split": Array [
+                                      "||",
+                                      Object {
+                                        "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7",
+                                      },
+                                    ],
+                                  },
+                                ],
+                              },
+                            ],
+                          ],
+                        },
+                      },
+                      "description": "AWS CDK resource provider framework - onEvent (SoTsStack/custom-resource-provider)",
+                      "environment": Object {
+                        "variables": Object {
+                          "USER_ON_EVENT_FUNCTION_ARN": Object {
+                            "Fn::GetAtt": Array [
+                              "oneventhandler6B374C77",
+                              "Arn",
+                            ],
+                          },
+                        },
+                      },
+                      "handler": "framework.onEvent",
+                      "role": Object {
+                        "Fn::GetAtt": Array [
+                          "customresourceproviderframeworkonEventServiceRole070B62AA",
+                          "Arn",
+                        ],
+                      },
+                      "runtime": "nodejs14.x",
+                      "timeout": 900,
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "SoTsStack/custom-resource-provider/framework-onEvent/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "framework-onEvent",
+              "path": "SoTsStack/custom-resource-provider/framework-onEvent",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "custom-resource-provider",
+          "path": "SoTsStack/custom-resource-provider",
+        },
+        "AssetParameters" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "S3Bucket" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "S3Bucket",
+                  "path": "SoTsStack/AssetParameters/c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c/S3Bucket",
+                },
+                "S3VersionKey" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "S3VersionKey",
+                  "path": "SoTsStack/AssetParameters/c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c/S3VersionKey",
+                },
+                "ArtifactHash" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "ArtifactHash",
+                  "path": "SoTsStack/AssetParameters/c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c/ArtifactHash",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c",
+              "path": "SoTsStack/AssetParameters/c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "AssetParameters",
+          "path": "SoTsStack/AssetParameters",
+        },
+        "custom-resource" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Default" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Default",
+              "path": "SoTsStack/custom-resource/Default",
+            },
+          },
+          "constructInfoFqn": ConstructInfoFqn {
+            "typ": 3,
+          },
+          "id": "custom-resource",
+          "path": "SoTsStack/custom-resource",
+        },
+        "CDKMetadata" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Default" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Default",
+              "path": "SoTsStack/CDKMetadata/Default",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "CDKMetadata",
+          "path": "SoTsStack/CDKMetadata",
+        },
+      },
+      "constructInfoFqn": ConstructInfoFqn {
+        "typ": 0,
+      },
+      "id": "SoTsStack",
+      "path": "SoTsStack",
+    },
+  },
+  "constructInfoFqn": ConstructInfoFqn {
+    "typ": 2,
+  },
+  "id": "App",
+  "path": "",
+}
+`;

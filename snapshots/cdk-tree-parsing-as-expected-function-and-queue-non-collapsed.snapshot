@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cdk-tree parsing src/test-fixtures/ - function-and-queue - non-collapsed 1`] = `
+Node {
+  "attributes": Map {},
+  "children": Map {
+    "Tree" => Node {
+      "attributes": Map {},
+      "children": Map {},
+      "constructInfoFqn": undefined,
+      "id": "Tree",
+      "path": "Tree",
+    },
+    "CdkAutoDiagramPocStack" => Node {
+      "attributes": Map {},
+      "children": Map {
+        "a-piece-of-the-diagram" => Node {
+          "attributes": Map {
+            "hiii" => "kjkshjfs",
+          },
+          "children": Map {
+            "my-function" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "ServiceRole" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "assumeRolePolicyDocument": Object {
+                            "Statement": Array [
+                              Object {
+                                "Action": "sts:AssumeRole",
+                                "Effect": "Allow",
+                                "Principal": Object {
+                                  "Service": "lambda.amazonaws.com",
+                                },
+                              },
+                            ],
+                            "Version": "2012-10-17",
+                          },
+                          "managedPolicyArns": Array [
+                            Object {
+                              "Fn::Join": Array [
+                                "",
+                                Array [
+                                  "arn:",
+                                  Object {
+                                    "Ref": "AWS::Partition",
+                                  },
+                                  ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                                ],
+                              ],
+                            },
+                          ],
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole/Resource",
+                    },
+                    "DefaultPolicy" => Node {
+                      "attributes": Map {},
+                      "children": Map {
+                        "Resource" => Node {
+                          "attributes": Map {
+                            "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
+                            "aws:cdk:cloudformation:props" => Object {
+                              "policyDocument": Object {
+                                "Statement": Array [
+                                  Object {
+                                    "Action": Array [
+                                      "sqs:ReceiveMessage",
+                                      "sqs:ChangeMessageVisibility",
+                                      "sqs:GetQueueUrl",
+                                      "sqs:DeleteMessage",
+                                      "sqs:GetQueueAttributes",
+                                    ],
+                                    "Effect": "Allow",
+                                    "Resource": Object {
+                                      "Fn::GetAtt": Array [
+                                        "apieceofthediagrammyqueueEFDA1578",
+                                        "Arn",
+                                      ],
+                                    },
+                                  },
+                                ],
+                                "Version": "2012-10-17",
+                              },
+                              "policyName": "apieceofthediagrammyfunctionServiceRoleDefaultPolicy09E64E08",
+                              "roles": Array [
+                                Object {
+                                  "Ref": "apieceofthediagrammyfunctionServiceRole337AA7F2",
+                                },
+                              ],
+                            },
+                          },
+                          "children": Map {},
+                          "constructInfoFqn": undefined,
+                          "id": "Resource",
+                          "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole/DefaultPolicy/Resource",
+                        },
+                      },
+                      "constructInfoFqn": undefined,
+                      "id": "DefaultPolicy",
+                      "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole/DefaultPolicy",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "ServiceRole",
+                  "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole",
+                },
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "code": Object {
+                        "zipFile": "exports.handler = function(event, ctx, cb) { console.log(\\"Consumed! \\" + JSON.stringify(event)); return cb(null, \\"done\\"); }",
+                      },
+                      "handler": "index.handler",
+                      "role": Object {
+                        "Fn::GetAtt": Array [
+                          "apieceofthediagrammyfunctionServiceRole337AA7F2",
+                          "Arn",
+                        ],
+                      },
+                      "runtime": "nodejs12.x",
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/Resource",
+                },
+                "SqsEventSource:CdkAutoDiagramPocStackapieceofthediagrammyqueue89326209" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::Lambda::EventSourceMapping",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "batchSize": 1,
+                          "eventSourceArn": Object {
+                            "Fn::GetAtt": Array [
+                              "apieceofthediagrammyqueueEFDA1578",
+                              "Arn",
+                            ],
+                          },
+                          "functionName": Object {
+                            "Ref": "apieceofthediagrammyfunction3788534F",
+                          },
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/SqsEventSource:CdkAutoDiagramPocStackapieceofthediagrammyqueue89326209/Resource",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "SqsEventSource:CdkAutoDiagramPocStackapieceofthediagrammyqueue89326209",
+                  "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/SqsEventSource:CdkAutoDiagramPocStackapieceofthediagrammyqueue89326209",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "my-function",
+              "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function",
+            },
+            "my-queue" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::SQS::Queue",
+                    "aws:cdk:cloudformation:props" => Object {},
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "my-queue",
+              "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "a-piece-of-the-diagram",
+          "path": "CdkAutoDiagramPocStack/a-piece-of-the-diagram",
+        },
+        "CDKMetadata" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Default" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Default",
+              "path": "CdkAutoDiagramPocStack/CDKMetadata/Default",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "CDKMetadata",
+          "path": "CdkAutoDiagramPocStack/CDKMetadata",
+        },
+      },
+      "constructInfoFqn": undefined,
+      "id": "CdkAutoDiagramPocStack",
+      "path": "CdkAutoDiagramPocStack",
+    },
+  },
+  "constructInfoFqn": undefined,
+  "id": "App",
+  "path": "",
+}
+`;

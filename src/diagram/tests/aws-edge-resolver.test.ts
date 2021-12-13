@@ -1,4 +1,5 @@
 import {AwsEdgeResolver} from "../aws/aws-edge-resolver"
+import {EdgeTarget, EdgeTargetSimpleString, EdgeTargetStackExport} from "../aws/edge-target"
 
 describe("candidate target edges are well scraped from any thing", () => {
 
@@ -20,9 +21,13 @@ describe("candidate target edges are well scraped from any thing", () => {
 
         const targets = new AwsEdgeResolver().scrapePossibleEdgeTargets(haystack)
 
-        expect(targets.has("mayQueue111")).toBeTruthy()
-        expect(targets.has("QueueName")).toBeTruthy()
-        expect(targets.size).toEqual(2)
+        const expectedTargetValues = [
+            new EdgeTargetSimpleString("mayQueue111"),
+            new EdgeTargetSimpleString("QueueName")]
+
+        expectTargetValuesToBeInSet(targets, expectedTargetValues)
+
+        expect(targets.length).toEqual(2)
     })
 
     it(`sample no.2`, () => {
@@ -183,14 +188,26 @@ describe("candidate target edges are well scraped from any thing", () => {
 
         const targets = new AwsEdgeResolver().scrapePossibleEdgeTargets(haystack)
 
-        expect(targets.has("queue333")).toBeTruthy()
-        expect(targets.has("queue123")).toBeTruthy()
-        expect(targets.has("topic123")).toBeTruthy()
-        expect(targets.has("bkt1")).toBeTruthy()
-        expect(targets.has("table123")).toBeTruthy()
-        expect(targets.has("queue222")).toBeTruthy()
-        expect(targets.size).toEqual(7)
+        const expectedTargetValues = [
+            new EdgeTargetSimpleString("queue333"),
+            new EdgeTargetSimpleString("queue123"),
+            new EdgeTargetSimpleString("topic123"),
+            new EdgeTargetSimpleString("bkt1"),
+            new EdgeTargetSimpleString("table123"),
+            new EdgeTargetSimpleString("queue222")]
+
+        expectTargetValuesToBeInSet(targets, expectedTargetValues)
+
+        expect(targets.length).toEqual(7)
     })
+
+    function expectTargetValuesToBeInSet(targets: Array<EdgeTarget>, expectedTargetInArray: EdgeTarget[]) {
+
+        expectedTargetInArray.forEach(targetValue => {
+            // @ts-ignore
+            expect(targets).arrayToContainEdgeTarget(targetValue)
+        })
+    }
 
     it(`sample no.3`, () => {
 
@@ -224,9 +241,68 @@ describe("candidate target edges are well scraped from any thing", () => {
 
         const targets = new AwsEdgeResolver().scrapePossibleEdgeTargets(haystack)
 
-        expect(targets.has("TopicX")).toBeTruthy()
-        expect(targets.has("queueX2")).toBeTruthy()
-        expect(targets.has("Arn")).toBeTruthy()
-        expect(targets.size).toEqual(3)
+        const expectedTargetValues = [
+            new EdgeTargetSimpleString("TopicX"),
+            new EdgeTargetSimpleString("queueX2"),
+            new EdgeTargetSimpleString("Arn")]
+
+        expectTargetValuesToBeInSet(targets, expectedTargetValues)
+
+        expect(targets.length).toEqual(3)
+    })
+
+    it(`sample no.4 `, () => {
+
+        const haystack = {
+            "dimensions": [
+                {
+                    "name": "QueueName",
+                    "value": {
+                        "Fn::GetAtt": [
+                            "mayQueue111",
+                            "QueueName"
+                        ]
+                    }
+                },
+                {
+                    "name": "QueueName2",
+                    "value": {
+                        "Fn::ImportValue": "stack-name-here:export-name-here"
+                    }
+                }
+            ]
+        }
+
+        const targets: Array<EdgeTarget> = new AwsEdgeResolver().scrapePossibleEdgeTargets(haystack)
+
+        const expectedTargetValues = [
+            new EdgeTargetSimpleString("mayQueue111"),
+            new EdgeTargetSimpleString("QueueName"),
+            new EdgeTargetStackExport('stack-name-here', 'export-name-here')
+
+        ]
+
+        expectTargetValuesToBeInSet(targets, expectedTargetValues)
+
+        expect(targets.length).toEqual(3)
     })
 })
+
+expect.extend({
+    arrayToContainEdgeTarget(array: EdgeTarget[], expected: EdgeTarget) {
+
+        const foundTarget = array.find((target) => target.isEqual(expected) )
+
+        if (foundTarget) {
+            return {
+                message: () => `Found ${expected} in array`,
+                pass: true
+            };
+        } else {
+            return {
+                message: () => `array does not contain expected EdgeTarget:${expected}`,
+                pass: false
+            };
+        }
+    }
+});

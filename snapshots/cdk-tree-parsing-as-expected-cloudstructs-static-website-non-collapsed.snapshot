@@ -1,0 +1,1502 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cdk-tree parsing src/test-fixtures/ - cloudstructs-static-website - non-collapsed 1`] = `
+Node {
+  "attributes": Map {},
+  "children": Map {
+    "Tree" => Node {
+      "attributes": Map {},
+      "children": Map {},
+      "constructInfoFqn": undefined,
+      "id": "Tree",
+      "path": "Tree",
+    },
+    "StaticWebSite" => Node {
+      "attributes": Map {},
+      "children": Map {
+        "dns" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::Route53::HostedZone",
+                "aws:cdk:cloudformation:props" => Object {
+                  "name": "my-site.com.",
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "StaticWebSite/dns/Resource",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "dns",
+          "path": "StaticWebSite/dns",
+        },
+        "StaticWebsite" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Bucket" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::S3::Bucket",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "publicAccessBlockConfiguration": Object {
+                        "blockPublicAcls": true,
+                        "blockPublicPolicy": true,
+                        "ignorePublicAcls": true,
+                        "restrictPublicBuckets": true,
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "StaticWebSite/StaticWebsite/Bucket/Resource",
+                },
+                "Notifications" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Notifications",
+                  "path": "StaticWebSite/StaticWebsite/Bucket/Notifications",
+                },
+                "Policy" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::S3::BucketPolicy",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "bucket": Object {
+                            "Ref": "StaticWebsiteBucket0E92E0FC",
+                          },
+                          "policyDocument": Object {
+                            "Statement": Array [
+                              Object {
+                                "Action": Array [
+                                  "s3:GetObject*",
+                                  "s3:GetBucket*",
+                                  "s3:List*",
+                                ],
+                                "Effect": "Allow",
+                                "Principal": Object {
+                                  "CanonicalUser": Object {
+                                    "Fn::GetAtt": Array [
+                                      "StaticWebsiteDistributionOrigin1S3Origin3045572F",
+                                      "S3CanonicalUserId",
+                                    ],
+                                  },
+                                },
+                                "Resource": Array [
+                                  Object {
+                                    "Fn::GetAtt": Array [
+                                      "StaticWebsiteBucket0E92E0FC",
+                                      "Arn",
+                                    ],
+                                  },
+                                  Object {
+                                    "Fn::Join": Array [
+                                      "",
+                                      Array [
+                                        Object {
+                                          "Fn::GetAtt": Array [
+                                            "StaticWebsiteBucket0E92E0FC",
+                                            "Arn",
+                                          ],
+                                        },
+                                        "/*",
+                                      ],
+                                    ],
+                                  },
+                                ],
+                              },
+                            ],
+                            "Version": "2012-10-17",
+                          },
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "StaticWebSite/StaticWebsite/Bucket/Policy/Resource",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "Policy",
+                  "path": "StaticWebSite/StaticWebsite/Bucket/Policy",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "Bucket",
+              "path": "StaticWebSite/StaticWebsite/Bucket",
+            },
+            "Certificate" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "CertificateRequestorFunction" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "ServiceRole" => Node {
+                      "attributes": Map {},
+                      "children": Map {
+                        "Resource" => Node {
+                          "attributes": Map {
+                            "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
+                            "aws:cdk:cloudformation:props" => Object {
+                              "assumeRolePolicyDocument": Object {
+                                "Statement": Array [
+                                  Object {
+                                    "Action": "sts:AssumeRole",
+                                    "Effect": "Allow",
+                                    "Principal": Object {
+                                      "Service": "lambda.amazonaws.com",
+                                    },
+                                  },
+                                ],
+                                "Version": "2012-10-17",
+                              },
+                              "managedPolicyArns": Array [
+                                Object {
+                                  "Fn::Join": Array [
+                                    "",
+                                    Array [
+                                      "arn:",
+                                      Object {
+                                        "Ref": "AWS::Partition",
+                                      },
+                                      ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                                    ],
+                                  ],
+                                },
+                              ],
+                            },
+                          },
+                          "children": Map {},
+                          "constructInfoFqn": undefined,
+                          "id": "Resource",
+                          "path": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole/Resource",
+                        },
+                        "DefaultPolicy" => Node {
+                          "attributes": Map {},
+                          "children": Map {
+                            "Resource" => Node {
+                              "attributes": Map {
+                                "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
+                                "aws:cdk:cloudformation:props" => Object {
+                                  "policyDocument": Object {
+                                    "Statement": Array [
+                                      Object {
+                                        "Action": Array [
+                                          "acm:RequestCertificate",
+                                          "acm:DescribeCertificate",
+                                          "acm:DeleteCertificate",
+                                        ],
+                                        "Effect": "Allow",
+                                        "Resource": "*",
+                                      },
+                                      Object {
+                                        "Action": "route53:GetChange",
+                                        "Effect": "Allow",
+                                        "Resource": "*",
+                                      },
+                                      Object {
+                                        "Action": "route53:changeResourceRecordSets",
+                                        "Effect": "Allow",
+                                        "Resource": Object {
+                                          "Fn::Join": Array [
+                                            "",
+                                            Array [
+                                              "arn:",
+                                              Object {
+                                                "Ref": "AWS::Partition",
+                                              },
+                                              ":route53:::hostedzone/",
+                                              Object {
+                                                "Ref": "dnsB8C63060",
+                                              },
+                                            ],
+                                          ],
+                                        },
+                                      },
+                                    ],
+                                    "Version": "2012-10-17",
+                                  },
+                                  "policyName": "StaticWebsiteCertificateCertificateRequestorFunctionServiceRoleDefaultPolicyBBEC5BA3",
+                                  "roles": Array [
+                                    Object {
+                                      "Ref": "StaticWebsiteCertificateCertificateRequestorFunctionServiceRoleC558C69B",
+                                    },
+                                  ],
+                                },
+                              },
+                              "children": Map {},
+                              "constructInfoFqn": undefined,
+                              "id": "Resource",
+                              "path": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource",
+                            },
+                          },
+                          "constructInfoFqn": undefined,
+                          "id": "DefaultPolicy",
+                          "path": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy",
+                        },
+                      },
+                      "constructInfoFqn": undefined,
+                      "id": "ServiceRole",
+                      "path": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/ServiceRole",
+                    },
+                    "Code" => Node {
+                      "attributes": Map {},
+                      "children": Map {
+                        "Stage" => Node {
+                          "attributes": Map {},
+                          "children": Map {},
+                          "constructInfoFqn": undefined,
+                          "id": "Stage",
+                          "path": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/Code/Stage",
+                        },
+                        "AssetBucket" => Node {
+                          "attributes": Map {},
+                          "children": Map {},
+                          "constructInfoFqn": undefined,
+                          "id": "AssetBucket",
+                          "path": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/Code/AssetBucket",
+                        },
+                      },
+                      "constructInfoFqn": undefined,
+                      "id": "Code",
+                      "path": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/Code",
+                    },
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "code": Object {
+                            "s3Bucket": Object {
+                              "Ref": "AssetParameters19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2S3BucketFCCD3A76",
+                            },
+                            "s3Key": Object {
+                              "Fn::Join": Array [
+                                "",
+                                Array [
+                                  Object {
+                                    "Fn::Select": Array [
+                                      0,
+                                      Object {
+                                        "Fn::Split": Array [
+                                          "||",
+                                          Object {
+                                            "Ref": "AssetParameters19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2S3VersionKey07AF06B6",
+                                          },
+                                        ],
+                                      },
+                                    ],
+                                  },
+                                  Object {
+                                    "Fn::Select": Array [
+                                      1,
+                                      Object {
+                                        "Fn::Split": Array [
+                                          "||",
+                                          Object {
+                                            "Ref": "AssetParameters19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2S3VersionKey07AF06B6",
+                                          },
+                                        ],
+                                      },
+                                    ],
+                                  },
+                                ],
+                              ],
+                            },
+                          },
+                          "handler": "index.certificateRequestHandler",
+                          "role": Object {
+                            "Fn::GetAtt": Array [
+                              "StaticWebsiteCertificateCertificateRequestorFunctionServiceRoleC558C69B",
+                              "Arn",
+                            ],
+                          },
+                          "runtime": "nodejs10.x",
+                          "timeout": 900,
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction/Resource",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "CertificateRequestorFunction",
+                  "path": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction",
+                },
+                "CertificateRequestorResource" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Default" => Node {
+                      "attributes": Map {},
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Default",
+                      "path": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorResource/Default",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "CertificateRequestorResource",
+                  "path": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorResource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "Certificate",
+              "path": "StaticWebSite/StaticWebsite/Certificate",
+            },
+            "Distribution" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Origin1" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "S3Origin" => Node {
+                      "attributes": Map {},
+                      "children": Map {
+                        "Resource" => Node {
+                          "attributes": Map {
+                            "aws:cdk:cloudformation:type" => "AWS::CloudFront::CloudFrontOriginAccessIdentity",
+                            "aws:cdk:cloudformation:props" => Object {
+                              "cloudFrontOriginAccessIdentityConfig": Object {
+                                "comment": "Identity for StaticWebSiteStaticWebsiteDistributionOrigin1F10ED96A",
+                              },
+                            },
+                          },
+                          "children": Map {},
+                          "constructInfoFqn": undefined,
+                          "id": "Resource",
+                          "path": "StaticWebSite/StaticWebsite/Distribution/Origin1/S3Origin/Resource",
+                        },
+                      },
+                      "constructInfoFqn": undefined,
+                      "id": "S3Origin",
+                      "path": "StaticWebSite/StaticWebsite/Distribution/Origin1/S3Origin",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "Origin1",
+                  "path": "StaticWebSite/StaticWebsite/Distribution/Origin1",
+                },
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::CloudFront::Distribution",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "distributionConfig": Object {
+                        "aliases": Array [
+                          "www.my-site.com",
+                        ],
+                        "customErrorResponses": Array [
+                          Object {
+                            "errorCode": 404,
+                            "responseCode": 200,
+                            "responsePagePath": "/index.html",
+                          },
+                        ],
+                        "defaultCacheBehavior": Object {
+                          "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+                          "compress": true,
+                          "pathPattern": "*",
+                          "targetOriginId": "StaticWebSiteStaticWebsiteDistributionOrigin1F10ED96A",
+                          "viewerProtocolPolicy": "redirect-to-https",
+                        },
+                        "defaultRootObject": "index.html",
+                        "enabled": true,
+                        "httpVersion": "http2",
+                        "ipv6Enabled": true,
+                        "origins": Array [
+                          Object {
+                            "domainName": Object {
+                              "Fn::GetAtt": Array [
+                                "StaticWebsiteBucket0E92E0FC",
+                                "RegionalDomainName",
+                              ],
+                            },
+                            "id": "StaticWebSiteStaticWebsiteDistributionOrigin1F10ED96A",
+                            "s3OriginConfig": Object {
+                              "originAccessIdentity": Object {
+                                "Fn::Join": Array [
+                                  "",
+                                  Array [
+                                    "origin-access-identity/cloudfront/",
+                                    Object {
+                                      "Ref": "StaticWebsiteDistributionOrigin1S3Origin3045572F",
+                                    },
+                                  ],
+                                ],
+                              },
+                            },
+                          },
+                        ],
+                        "viewerCertificate": Object {
+                          "acmCertificateArn": Object {
+                            "Fn::GetAtt": Array [
+                              "StaticWebsiteCertificateCertificateRequestorResource7C29CEF3",
+                              "Arn",
+                            ],
+                          },
+                          "minimumProtocolVersion": "TLSv1.2_2019",
+                          "sslSupportMethod": "sni-only",
+                        },
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "StaticWebSite/StaticWebsite/Distribution/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "Distribution",
+              "path": "StaticWebSite/StaticWebsite/Distribution",
+            },
+            "ARecord" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::Route53::RecordSet",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "aliasTarget": Object {
+                        "dnsName": Object {
+                          "Fn::GetAtt": Array [
+                            "StaticWebsiteDistributionBAD21F75",
+                            "DomainName",
+                          ],
+                        },
+                        "hostedZoneId": Object {
+                          "Fn::FindInMap": Array [
+                            "AWSCloudFrontPartitionHostedZoneIdMap",
+                            Object {
+                              "Ref": "AWS::Partition",
+                            },
+                            "zoneId",
+                          ],
+                        },
+                      },
+                      "hostedZoneId": Object {
+                        "Ref": "dnsB8C63060",
+                      },
+                      "name": "www.my-site.com.",
+                      "type": "A",
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "StaticWebSite/StaticWebsite/ARecord/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "ARecord",
+              "path": "StaticWebSite/StaticWebsite/ARecord",
+            },
+            "AaaaRecord" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::Route53::RecordSet",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "aliasTarget": Object {
+                        "dnsName": Object {
+                          "Fn::GetAtt": Array [
+                            "StaticWebsiteDistributionBAD21F75",
+                            "DomainName",
+                          ],
+                        },
+                        "hostedZoneId": Object {
+                          "Fn::FindInMap": Array [
+                            "AWSCloudFrontPartitionHostedZoneIdMap",
+                            Object {
+                              "Ref": "AWS::Partition",
+                            },
+                            "zoneId",
+                          ],
+                        },
+                      },
+                      "hostedZoneId": Object {
+                        "Ref": "dnsB8C63060",
+                      },
+                      "name": "www.my-site.com.",
+                      "type": "AAAA",
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "StaticWebSite/StaticWebsite/AaaaRecord/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "AaaaRecord",
+              "path": "StaticWebSite/StaticWebsite/AaaaRecord",
+            },
+            "PutConfig" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Provider" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Provider",
+                  "path": "StaticWebSite/StaticWebsite/PutConfig/Provider",
+                },
+                "CustomResourcePolicy" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "policyDocument": Object {
+                            "Statement": Array [
+                              Object {
+                                "Action": "s3:PutObject",
+                                "Effect": "Allow",
+                                "Resource": Object {
+                                  "Fn::Join": Array [
+                                    "",
+                                    Array [
+                                      Object {
+                                        "Fn::GetAtt": Array [
+                                          "StaticWebsiteBucket0E92E0FC",
+                                          "Arn",
+                                        ],
+                                      },
+                                      "/config.json",
+                                    ],
+                                  ],
+                                },
+                              },
+                            ],
+                            "Version": "2012-10-17",
+                          },
+                          "policyName": "StaticWebsitePutConfigCustomResourcePolicy54D08151",
+                          "roles": Array [
+                            Object {
+                              "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
+                            },
+                          ],
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "StaticWebSite/StaticWebsite/PutConfig/CustomResourcePolicy/Resource",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "CustomResourcePolicy",
+                  "path": "StaticWebSite/StaticWebsite/PutConfig/CustomResourcePolicy",
+                },
+                "Resource" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Default" => Node {
+                      "attributes": Map {},
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Default",
+                      "path": "StaticWebSite/StaticWebsite/PutConfig/Resource/Default",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "StaticWebSite/StaticWebsite/PutConfig/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "PutConfig",
+              "path": "StaticWebSite/StaticWebsite/PutConfig",
+            },
+            "HttpsRedirect" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "RedirectCertificate" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "CertificateRequestorFunction" => Node {
+                      "attributes": Map {},
+                      "children": Map {
+                        "ServiceRole" => Node {
+                          "attributes": Map {},
+                          "children": Map {
+                            "Resource" => Node {
+                              "attributes": Map {
+                                "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
+                                "aws:cdk:cloudformation:props" => Object {
+                                  "assumeRolePolicyDocument": Object {
+                                    "Statement": Array [
+                                      Object {
+                                        "Action": "sts:AssumeRole",
+                                        "Effect": "Allow",
+                                        "Principal": Object {
+                                          "Service": "lambda.amazonaws.com",
+                                        },
+                                      },
+                                    ],
+                                    "Version": "2012-10-17",
+                                  },
+                                  "managedPolicyArns": Array [
+                                    Object {
+                                      "Fn::Join": Array [
+                                        "",
+                                        Array [
+                                          "arn:",
+                                          Object {
+                                            "Ref": "AWS::Partition",
+                                          },
+                                          ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                                        ],
+                                      ],
+                                    },
+                                  ],
+                                },
+                              },
+                              "children": Map {},
+                              "constructInfoFqn": undefined,
+                              "id": "Resource",
+                              "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/Resource",
+                            },
+                            "DefaultPolicy" => Node {
+                              "attributes": Map {},
+                              "children": Map {
+                                "Resource" => Node {
+                                  "attributes": Map {
+                                    "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
+                                    "aws:cdk:cloudformation:props" => Object {
+                                      "policyDocument": Object {
+                                        "Statement": Array [
+                                          Object {
+                                            "Action": Array [
+                                              "acm:RequestCertificate",
+                                              "acm:DescribeCertificate",
+                                              "acm:DeleteCertificate",
+                                            ],
+                                            "Effect": "Allow",
+                                            "Resource": "*",
+                                          },
+                                          Object {
+                                            "Action": "route53:GetChange",
+                                            "Effect": "Allow",
+                                            "Resource": "*",
+                                          },
+                                          Object {
+                                            "Action": "route53:changeResourceRecordSets",
+                                            "Effect": "Allow",
+                                            "Resource": Object {
+                                              "Fn::Join": Array [
+                                                "",
+                                                Array [
+                                                  "arn:",
+                                                  Object {
+                                                    "Ref": "AWS::Partition",
+                                                  },
+                                                  ":route53:::hostedzone/",
+                                                  Object {
+                                                    "Ref": "dnsB8C63060",
+                                                  },
+                                                ],
+                                              ],
+                                            },
+                                          },
+                                        ],
+                                        "Version": "2012-10-17",
+                                      },
+                                      "policyName": "StaticWebsiteHttpsRedirectRedirectCertificateCertificateRequestorFunctionServiceRoleDefaultPolicy81FC4515",
+                                      "roles": Array [
+                                        Object {
+                                          "Ref": "StaticWebsiteHttpsRedirectRedirectCertificateCertificateRequestorFunctionServiceRole08DAF404",
+                                        },
+                                      ],
+                                    },
+                                  },
+                                  "children": Map {},
+                                  "constructInfoFqn": undefined,
+                                  "id": "Resource",
+                                  "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource",
+                                },
+                              },
+                              "constructInfoFqn": undefined,
+                              "id": "DefaultPolicy",
+                              "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy",
+                            },
+                          },
+                          "constructInfoFqn": undefined,
+                          "id": "ServiceRole",
+                          "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole",
+                        },
+                        "Code" => Node {
+                          "attributes": Map {},
+                          "children": Map {
+                            "Stage" => Node {
+                              "attributes": Map {},
+                              "children": Map {},
+                              "constructInfoFqn": undefined,
+                              "id": "Stage",
+                              "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/Code/Stage",
+                            },
+                            "AssetBucket" => Node {
+                              "attributes": Map {},
+                              "children": Map {},
+                              "constructInfoFqn": undefined,
+                              "id": "AssetBucket",
+                              "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/Code/AssetBucket",
+                            },
+                          },
+                          "constructInfoFqn": undefined,
+                          "id": "Code",
+                          "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/Code",
+                        },
+                        "Resource" => Node {
+                          "attributes": Map {
+                            "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
+                            "aws:cdk:cloudformation:props" => Object {
+                              "code": Object {
+                                "s3Bucket": Object {
+                                  "Ref": "AssetParameters19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2S3BucketFCCD3A76",
+                                },
+                                "s3Key": Object {
+                                  "Fn::Join": Array [
+                                    "",
+                                    Array [
+                                      Object {
+                                        "Fn::Select": Array [
+                                          0,
+                                          Object {
+                                            "Fn::Split": Array [
+                                              "||",
+                                              Object {
+                                                "Ref": "AssetParameters19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2S3VersionKey07AF06B6",
+                                              },
+                                            ],
+                                          },
+                                        ],
+                                      },
+                                      Object {
+                                        "Fn::Select": Array [
+                                          1,
+                                          Object {
+                                            "Fn::Split": Array [
+                                              "||",
+                                              Object {
+                                                "Ref": "AssetParameters19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2S3VersionKey07AF06B6",
+                                              },
+                                            ],
+                                          },
+                                        ],
+                                      },
+                                    ],
+                                  ],
+                                },
+                              },
+                              "handler": "index.certificateRequestHandler",
+                              "role": Object {
+                                "Fn::GetAtt": Array [
+                                  "StaticWebsiteHttpsRedirectRedirectCertificateCertificateRequestorFunctionServiceRole08DAF404",
+                                  "Arn",
+                                ],
+                              },
+                              "runtime": "nodejs10.x",
+                              "timeout": 900,
+                            },
+                          },
+                          "children": Map {},
+                          "constructInfoFqn": undefined,
+                          "id": "Resource",
+                          "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction/Resource",
+                        },
+                      },
+                      "constructInfoFqn": undefined,
+                      "id": "CertificateRequestorFunction",
+                      "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction",
+                    },
+                    "CertificateRequestorResource" => Node {
+                      "attributes": Map {},
+                      "children": Map {
+                        "Default" => Node {
+                          "attributes": Map {},
+                          "children": Map {},
+                          "constructInfoFqn": undefined,
+                          "id": "Default",
+                          "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorResource/Default",
+                        },
+                      },
+                      "constructInfoFqn": undefined,
+                      "id": "CertificateRequestorResource",
+                      "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorResource",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "RedirectCertificate",
+                  "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate",
+                },
+                "RedirectBucket" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::S3::Bucket",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "publicAccessBlockConfiguration": Object {
+                            "blockPublicAcls": true,
+                            "blockPublicPolicy": true,
+                            "ignorePublicAcls": true,
+                            "restrictPublicBuckets": true,
+                          },
+                          "websiteConfiguration": Object {
+                            "redirectAllRequestsTo": Object {
+                              "hostName": "www.my-site.com",
+                              "protocol": "https",
+                            },
+                          },
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectBucket/Resource",
+                    },
+                    "Notifications" => Node {
+                      "attributes": Map {},
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Notifications",
+                      "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectBucket/Notifications",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "RedirectBucket",
+                  "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectBucket",
+                },
+                "RedirectDistribution" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "AliasConfigurationCert" => Node {
+                      "attributes": Map {},
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "AliasConfigurationCert",
+                      "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/AliasConfigurationCert",
+                    },
+                    "CFDistribution" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::CloudFront::Distribution",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "distributionConfig": Object {
+                            "aliases": Array [
+                              "my-site.com",
+                            ],
+                            "comment": "Redirect to www.my-site.com from my-site.com",
+                            "defaultCacheBehavior": Object {
+                              "allowedMethods": Array [
+                                "GET",
+                                "HEAD",
+                              ],
+                              "cachedMethods": Array [
+                                "GET",
+                                "HEAD",
+                              ],
+                              "compress": true,
+                              "forwardedValues": Object {
+                                "cookies": Object {
+                                  "forward": "none",
+                                },
+                                "queryString": false,
+                              },
+                              "targetOriginId": "origin1",
+                              "viewerProtocolPolicy": "redirect-to-https",
+                            },
+                            "defaultRootObject": "",
+                            "enabled": true,
+                            "httpVersion": "http2",
+                            "ipv6Enabled": true,
+                            "origins": Array [
+                              Object {
+                                "connectionAttempts": 3,
+                                "connectionTimeout": 10,
+                                "customOriginConfig": Object {
+                                  "httpPort": 80,
+                                  "httpsPort": 443,
+                                  "originKeepaliveTimeout": 5,
+                                  "originProtocolPolicy": "http-only",
+                                  "originReadTimeout": 30,
+                                  "originSslProtocols": Array [
+                                    "TLSv1.2",
+                                  ],
+                                },
+                                "domainName": Object {
+                                  "Fn::Select": Array [
+                                    2,
+                                    Object {
+                                      "Fn::Split": Array [
+                                        "/",
+                                        Object {
+                                          "Fn::GetAtt": Array [
+                                            "StaticWebsiteHttpsRedirectRedirectBucket45BA11C9",
+                                            "WebsiteURL",
+                                          ],
+                                        },
+                                      ],
+                                    },
+                                  ],
+                                },
+                                "id": "origin1",
+                              },
+                            ],
+                            "priceClass": "PriceClass_All",
+                            "viewerCertificate": Object {
+                              "acmCertificateArn": Object {
+                                "Fn::GetAtt": Array [
+                                  "StaticWebsiteHttpsRedirectRedirectCertificateCertificateRequestorResource692E38D9",
+                                  "Arn",
+                                ],
+                              },
+                              "sslSupportMethod": "sni-only",
+                            },
+                          },
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "CFDistribution",
+                      "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "RedirectDistribution",
+                  "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution",
+                },
+                "RedirectAliasRecord2591f3" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::Route53::RecordSet",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "aliasTarget": Object {
+                            "dnsName": Object {
+                              "Fn::GetAtt": Array [
+                                "StaticWebsiteHttpsRedirectRedirectDistributionCFDistributionF7ADE06F",
+                                "DomainName",
+                              ],
+                            },
+                            "hostedZoneId": Object {
+                              "Fn::FindInMap": Array [
+                                "AWSCloudFrontPartitionHostedZoneIdMap",
+                                Object {
+                                  "Ref": "AWS::Partition",
+                                },
+                                "zoneId",
+                              ],
+                            },
+                          },
+                          "hostedZoneId": Object {
+                            "Ref": "dnsB8C63060",
+                          },
+                          "name": "my-site.com.",
+                          "type": "A",
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecord2591f3/Resource",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "RedirectAliasRecord2591f3",
+                  "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecord2591f3",
+                },
+                "RedirectAliasRecordSix2591f3" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::Route53::RecordSet",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "aliasTarget": Object {
+                            "dnsName": Object {
+                              "Fn::GetAtt": Array [
+                                "StaticWebsiteHttpsRedirectRedirectDistributionCFDistributionF7ADE06F",
+                                "DomainName",
+                              ],
+                            },
+                            "hostedZoneId": Object {
+                              "Fn::FindInMap": Array [
+                                "AWSCloudFrontPartitionHostedZoneIdMap",
+                                Object {
+                                  "Ref": "AWS::Partition",
+                                },
+                                "zoneId",
+                              ],
+                            },
+                          },
+                          "hostedZoneId": Object {
+                            "Ref": "dnsB8C63060",
+                          },
+                          "name": "my-site.com.",
+                          "type": "AAAA",
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecordSix2591f3/Resource",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "RedirectAliasRecordSix2591f3",
+                  "path": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecordSix2591f3",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "HttpsRedirect",
+              "path": "StaticWebSite/StaticWebsite/HttpsRedirect",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "StaticWebsite",
+          "path": "StaticWebSite/StaticWebsite",
+        },
+        "AssetParameters" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "S3Bucket" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "S3Bucket",
+                  "path": "StaticWebSite/AssetParameters/19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2/S3Bucket",
+                },
+                "S3VersionKey" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "S3VersionKey",
+                  "path": "StaticWebSite/AssetParameters/19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2/S3VersionKey",
+                },
+                "ArtifactHash" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "ArtifactHash",
+                  "path": "StaticWebSite/AssetParameters/19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2/ArtifactHash",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2",
+              "path": "StaticWebSite/AssetParameters/19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2",
+            },
+            "4a3609ad912843e581892f37ae9d6fb0fa1648b547693aaa562b0119452b8956" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "S3Bucket" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "S3Bucket",
+                  "path": "StaticWebSite/AssetParameters/4a3609ad912843e581892f37ae9d6fb0fa1648b547693aaa562b0119452b8956/S3Bucket",
+                },
+                "S3VersionKey" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "S3VersionKey",
+                  "path": "StaticWebSite/AssetParameters/4a3609ad912843e581892f37ae9d6fb0fa1648b547693aaa562b0119452b8956/S3VersionKey",
+                },
+                "ArtifactHash" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "ArtifactHash",
+                  "path": "StaticWebSite/AssetParameters/4a3609ad912843e581892f37ae9d6fb0fa1648b547693aaa562b0119452b8956/ArtifactHash",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "4a3609ad912843e581892f37ae9d6fb0fa1648b547693aaa562b0119452b8956",
+              "path": "StaticWebSite/AssetParameters/4a3609ad912843e581892f37ae9d6fb0fa1648b547693aaa562b0119452b8956",
+            },
+            "c9ac4b3b65f3510a2088b7fd003de23d2aefac424025eb168725ce6769e3c176" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "S3Bucket" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "S3Bucket",
+                  "path": "StaticWebSite/AssetParameters/c9ac4b3b65f3510a2088b7fd003de23d2aefac424025eb168725ce6769e3c176/S3Bucket",
+                },
+                "S3VersionKey" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "S3VersionKey",
+                  "path": "StaticWebSite/AssetParameters/c9ac4b3b65f3510a2088b7fd003de23d2aefac424025eb168725ce6769e3c176/S3VersionKey",
+                },
+                "ArtifactHash" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "ArtifactHash",
+                  "path": "StaticWebSite/AssetParameters/c9ac4b3b65f3510a2088b7fd003de23d2aefac424025eb168725ce6769e3c176/ArtifactHash",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "c9ac4b3b65f3510a2088b7fd003de23d2aefac424025eb168725ce6769e3c176",
+              "path": "StaticWebSite/AssetParameters/c9ac4b3b65f3510a2088b7fd003de23d2aefac424025eb168725ce6769e3c176",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "AssetParameters",
+          "path": "StaticWebSite/AssetParameters",
+        },
+        "AWSCloudFrontPartitionHostedZoneIdMap" => Node {
+          "attributes": Map {},
+          "children": Map {},
+          "constructInfoFqn": undefined,
+          "id": "AWSCloudFrontPartitionHostedZoneIdMap",
+          "path": "StaticWebSite/AWSCloudFrontPartitionHostedZoneIdMap",
+        },
+        "AWS679f53fac002430cb0da5b7982bd2287" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "ServiceRole" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "assumeRolePolicyDocument": Object {
+                        "Statement": Array [
+                          Object {
+                            "Action": "sts:AssumeRole",
+                            "Effect": "Allow",
+                            "Principal": Object {
+                              "Service": "lambda.amazonaws.com",
+                            },
+                          },
+                        ],
+                        "Version": "2012-10-17",
+                      },
+                      "managedPolicyArns": Array [
+                        Object {
+                          "Fn::Join": Array [
+                            "",
+                            Array [
+                              "arn:",
+                              Object {
+                                "Ref": "AWS::Partition",
+                              },
+                              ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                            ],
+                          ],
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "ServiceRole",
+              "path": "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole",
+            },
+            "Code" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Stage" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Stage",
+                  "path": "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/Code/Stage",
+                },
+                "AssetBucket" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "AssetBucket",
+                  "path": "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/Code/AssetBucket",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "Code",
+              "path": "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/Code",
+            },
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
+                "aws:cdk:cloudformation:props" => Object {
+                  "code": Object {
+                    "s3Bucket": Object {
+                      "Ref": "AssetParameters4a3609ad912843e581892f37ae9d6fb0fa1648b547693aaa562b0119452b8956S3Bucket72B03BC9",
+                    },
+                    "s3Key": Object {
+                      "Fn::Join": Array [
+                        "",
+                        Array [
+                          Object {
+                            "Fn::Select": Array [
+                              0,
+                              Object {
+                                "Fn::Split": Array [
+                                  "||",
+                                  Object {
+                                    "Ref": "AssetParameters4a3609ad912843e581892f37ae9d6fb0fa1648b547693aaa562b0119452b8956S3VersionKey520B7554",
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          Object {
+                            "Fn::Select": Array [
+                              1,
+                              Object {
+                                "Fn::Split": Array [
+                                  "||",
+                                  Object {
+                                    "Ref": "AssetParameters4a3609ad912843e581892f37ae9d6fb0fa1648b547693aaa562b0119452b8956S3VersionKey520B7554",
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                        ],
+                      ],
+                    },
+                  },
+                  "handler": "index.handler",
+                  "role": Object {
+                    "Fn::GetAtt": Array [
+                      "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
+                      "Arn",
+                    ],
+                  },
+                  "runtime": "nodejs12.x",
+                  "timeout": 120,
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287/Resource",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "AWS679f53fac002430cb0da5b7982bd2287",
+          "path": "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287",
+        },
+        "Deployment" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "CustomResourceHandler" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "CustomResourceHandler",
+              "path": "StaticWebSite/Deployment/CustomResourceHandler",
+            },
+            "Asset1" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Stage" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Stage",
+                  "path": "StaticWebSite/Deployment/Asset1/Stage",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "Asset1",
+              "path": "StaticWebSite/Deployment/Asset1",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "Deployment",
+          "path": "StaticWebSite/Deployment",
+        },
+        "Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "ServiceRole" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "assumeRolePolicyDocument": Object {
+                        "Statement": Array [
+                          Object {
+                            "Action": "sts:AssumeRole",
+                            "Effect": "Allow",
+                            "Principal": Object {
+                              "Service": "lambda.amazonaws.com",
+                            },
+                          },
+                        ],
+                        "Version": "2012-10-17",
+                      },
+                      "managedPolicyArns": Array [
+                        Object {
+                          "Fn::Join": Array [
+                            "",
+                            Array [
+                              "arn:",
+                              Object {
+                                "Ref": "AWS::Partition",
+                              },
+                              ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                            ],
+                          ],
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "StaticWebSite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "ServiceRole",
+              "path": "StaticWebSite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole",
+            },
+            "Code" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Stage" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Stage",
+                  "path": "StaticWebSite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code/Stage",
+                },
+                "AssetBucket" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "AssetBucket",
+                  "path": "StaticWebSite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code/AssetBucket",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "Code",
+              "path": "StaticWebSite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code",
+            },
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
+                "aws:cdk:cloudformation:props" => Object {
+                  "code": Object {
+                    "s3Bucket": Object {
+                      "Ref": "AssetParametersc9ac4b3b65f3510a2088b7fd003de23d2aefac424025eb168725ce6769e3c176S3Bucket77147E20",
+                    },
+                    "s3Key": Object {
+                      "Fn::Join": Array [
+                        "",
+                        Array [
+                          Object {
+                            "Fn::Select": Array [
+                              0,
+                              Object {
+                                "Fn::Split": Array [
+                                  "||",
+                                  Object {
+                                    "Ref": "AssetParametersc9ac4b3b65f3510a2088b7fd003de23d2aefac424025eb168725ce6769e3c176S3VersionKey4253216F",
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          Object {
+                            "Fn::Select": Array [
+                              1,
+                              Object {
+                                "Fn::Split": Array [
+                                  "||",
+                                  Object {
+                                    "Ref": "AssetParametersc9ac4b3b65f3510a2088b7fd003de23d2aefac424025eb168725ce6769e3c176S3VersionKey4253216F",
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                        ],
+                      ],
+                    },
+                  },
+                  "handler": "index.handler",
+                  "role": Object {
+                    "Fn::GetAtt": Array [
+                      "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+                      "Arn",
+                    ],
+                  },
+                  "runtime": "python3.6",
+                  "timeout": 900,
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "StaticWebSite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C",
+          "path": "StaticWebSite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C",
+        },
+        "CDKMetadata" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Default" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Default",
+              "path": "StaticWebSite/CDKMetadata/Default",
+            },
+            "Condition" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Condition",
+              "path": "StaticWebSite/CDKMetadata/Condition",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "CDKMetadata",
+          "path": "StaticWebSite/CDKMetadata",
+        },
+      },
+      "constructInfoFqn": undefined,
+      "id": "StaticWebSite",
+      "path": "StaticWebSite",
+    },
+  },
+  "constructInfoFqn": undefined,
+  "id": "App",
+  "path": "",
+}
+`;

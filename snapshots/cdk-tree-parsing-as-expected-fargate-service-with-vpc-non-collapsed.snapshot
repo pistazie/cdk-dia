@@ -1,0 +1,1145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cdk-tree parsing src/test-fixtures/ - fargate-service-with-vpc - non-collapsed 1`] = `
+Node {
+  "attributes": Map {},
+  "children": Map {
+    "Tree" => Node {
+      "attributes": Map {},
+      "children": Map {},
+      "constructInfoFqn": undefined,
+      "id": "Tree",
+      "path": "Tree",
+    },
+    "QueueIsSubscribedToTopicStack" => Node {
+      "attributes": Map {},
+      "children": Map {
+        "MyVpc" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::EC2::VPC",
+                "aws:cdk:cloudformation:props" => Object {
+                  "cidrBlock": "10.0.0.0/16",
+                  "enableDnsHostnames": true,
+                  "enableDnsSupport": true,
+                  "instanceTenancy": "default",
+                  "tags": Array [
+                    Object {
+                      "key": "Name",
+                      "value": "QueueIsSubscribedToTopicStack/MyVpc",
+                    },
+                  ],
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "QueueIsSubscribedToTopicStack/MyVpc/Resource",
+            },
+            "PublicSubnet1" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Subnet" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Subnet",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "availabilityZone": Object {
+                        "Fn::Select": Array [
+                          0,
+                          Object {
+                            "Fn::GetAZs": "",
+                          },
+                        ],
+                      },
+                      "cidrBlock": "10.0.0.0/18",
+                      "mapPublicIpOnLaunch": true,
+                      "tags": Array [
+                        Object {
+                          "key": "aws-cdk:subnet-name",
+                          "value": "Public",
+                        },
+                        Object {
+                          "key": "aws-cdk:subnet-type",
+                          "value": "Public",
+                        },
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Subnet",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/Subnet",
+                },
+                "Acl" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Acl",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/Acl",
+                },
+                "RouteTable" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::RouteTable",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTable",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTable",
+                },
+                "RouteTableAssociation" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::SubnetRouteTableAssociation",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPublicSubnet1RouteTableC46AB2F4",
+                      },
+                      "subnetId": Object {
+                        "Ref": "MyVpcPublicSubnet1SubnetF6608456",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTableAssociation",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/RouteTableAssociation",
+                },
+                "DefaultRoute" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Route",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "destinationCidrBlock": "0.0.0.0/0",
+                      "gatewayId": Object {
+                        "Ref": "MyVpcIGW5C4A4F63",
+                      },
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPublicSubnet1RouteTableC46AB2F4",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "DefaultRoute",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/DefaultRoute",
+                },
+                "EIP" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::EIP",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "domain": "vpc",
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "EIP",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/EIP",
+                },
+                "NATGateway" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::NatGateway",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "allocationId": Object {
+                        "Fn::GetAtt": Array [
+                          "MyVpcPublicSubnet1EIP096967CB",
+                          "AllocationId",
+                        ],
+                      },
+                      "subnetId": Object {
+                        "Ref": "MyVpcPublicSubnet1SubnetF6608456",
+                      },
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "NATGateway",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1/NATGateway",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "PublicSubnet1",
+              "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
+            },
+            "PublicSubnet2" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Subnet" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Subnet",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "availabilityZone": Object {
+                        "Fn::Select": Array [
+                          1,
+                          Object {
+                            "Fn::GetAZs": "",
+                          },
+                        ],
+                      },
+                      "cidrBlock": "10.0.64.0/18",
+                      "mapPublicIpOnLaunch": true,
+                      "tags": Array [
+                        Object {
+                          "key": "aws-cdk:subnet-name",
+                          "value": "Public",
+                        },
+                        Object {
+                          "key": "aws-cdk:subnet-type",
+                          "value": "Public",
+                        },
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Subnet",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/Subnet",
+                },
+                "Acl" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Acl",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/Acl",
+                },
+                "RouteTable" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::RouteTable",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTable",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTable",
+                },
+                "RouteTableAssociation" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::SubnetRouteTableAssociation",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPublicSubnet2RouteTable1DF17386",
+                      },
+                      "subnetId": Object {
+                        "Ref": "MyVpcPublicSubnet2Subnet492B6BFB",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTableAssociation",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/RouteTableAssociation",
+                },
+                "DefaultRoute" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Route",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "destinationCidrBlock": "0.0.0.0/0",
+                      "gatewayId": Object {
+                        "Ref": "MyVpcIGW5C4A4F63",
+                      },
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPublicSubnet2RouteTable1DF17386",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "DefaultRoute",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/DefaultRoute",
+                },
+                "EIP" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::EIP",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "domain": "vpc",
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "EIP",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/EIP",
+                },
+                "NATGateway" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::NatGateway",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "allocationId": Object {
+                        "Fn::GetAtt": Array [
+                          "MyVpcPublicSubnet2EIP8CCBA239",
+                          "AllocationId",
+                        ],
+                      },
+                      "subnetId": Object {
+                        "Ref": "MyVpcPublicSubnet2Subnet492B6BFB",
+                      },
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "NATGateway",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2/NATGateway",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "PublicSubnet2",
+              "path": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
+            },
+            "PrivateSubnet1" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Subnet" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Subnet",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "availabilityZone": Object {
+                        "Fn::Select": Array [
+                          0,
+                          Object {
+                            "Fn::GetAZs": "",
+                          },
+                        ],
+                      },
+                      "cidrBlock": "10.0.128.0/18",
+                      "mapPublicIpOnLaunch": false,
+                      "tags": Array [
+                        Object {
+                          "key": "aws-cdk:subnet-name",
+                          "value": "Private",
+                        },
+                        Object {
+                          "key": "aws-cdk:subnet-type",
+                          "value": "Private",
+                        },
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Subnet",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/Subnet",
+                },
+                "Acl" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Acl",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/Acl",
+                },
+                "RouteTable" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::RouteTable",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTable",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTable",
+                },
+                "RouteTableAssociation" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::SubnetRouteTableAssociation",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPrivateSubnet1RouteTable8819E6E2",
+                      },
+                      "subnetId": Object {
+                        "Ref": "MyVpcPrivateSubnet1Subnet5057CF7E",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTableAssociation",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/RouteTableAssociation",
+                },
+                "DefaultRoute" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Route",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "destinationCidrBlock": "0.0.0.0/0",
+                      "natGatewayId": Object {
+                        "Ref": "MyVpcPublicSubnet1NATGatewayAD3400C1",
+                      },
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPrivateSubnet1RouteTable8819E6E2",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "DefaultRoute",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1/DefaultRoute",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "PrivateSubnet1",
+              "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1",
+            },
+            "PrivateSubnet2" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Subnet" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Subnet",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "availabilityZone": Object {
+                        "Fn::Select": Array [
+                          1,
+                          Object {
+                            "Fn::GetAZs": "",
+                          },
+                        ],
+                      },
+                      "cidrBlock": "10.0.192.0/18",
+                      "mapPublicIpOnLaunch": false,
+                      "tags": Array [
+                        Object {
+                          "key": "aws-cdk:subnet-name",
+                          "value": "Private",
+                        },
+                        Object {
+                          "key": "aws-cdk:subnet-type",
+                          "value": "Private",
+                        },
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Subnet",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/Subnet",
+                },
+                "Acl" => Node {
+                  "attributes": Map {},
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Acl",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/Acl",
+                },
+                "RouteTable" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::RouteTable",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "tags": Array [
+                        Object {
+                          "key": "Name",
+                          "value": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2",
+                        },
+                      ],
+                      "vpcId": Object {
+                        "Ref": "MyVpcF9F0CA6F",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTable",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTable",
+                },
+                "RouteTableAssociation" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::SubnetRouteTableAssociation",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPrivateSubnet2RouteTableCEDCEECE",
+                      },
+                      "subnetId": Object {
+                        "Ref": "MyVpcPrivateSubnet2Subnet0040C983",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "RouteTableAssociation",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/RouteTableAssociation",
+                },
+                "DefaultRoute" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::EC2::Route",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "destinationCidrBlock": "0.0.0.0/0",
+                      "natGatewayId": Object {
+                        "Ref": "MyVpcPublicSubnet2NATGateway91BFBEC9",
+                      },
+                      "routeTableId": Object {
+                        "Ref": "MyVpcPrivateSubnet2RouteTableCEDCEECE",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "DefaultRoute",
+                  "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2/DefaultRoute",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "PrivateSubnet2",
+              "path": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2",
+            },
+            "IGW" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::EC2::InternetGateway",
+                "aws:cdk:cloudformation:props" => Object {
+                  "tags": Array [
+                    Object {
+                      "key": "Name",
+                      "value": "QueueIsSubscribedToTopicStack/MyVpc",
+                    },
+                  ],
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "IGW",
+              "path": "QueueIsSubscribedToTopicStack/MyVpc/IGW",
+            },
+            "VPCGW" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::EC2::VPCGatewayAttachment",
+                "aws:cdk:cloudformation:props" => Object {
+                  "internetGatewayId": Object {
+                    "Ref": "MyVpcIGW5C4A4F63",
+                  },
+                  "vpcId": Object {
+                    "Ref": "MyVpcF9F0CA6F",
+                  },
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "VPCGW",
+              "path": "QueueIsSubscribedToTopicStack/MyVpc/VPCGW",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "MyVpc",
+          "path": "QueueIsSubscribedToTopicStack/MyVpc",
+        },
+        "MyCluster" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::ECS::Cluster",
+                "aws:cdk:cloudformation:props" => Object {},
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "QueueIsSubscribedToTopicStack/MyCluster/Resource",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "MyCluster",
+          "path": "QueueIsSubscribedToTopicStack/MyCluster",
+        },
+        "MyFargateService" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "LB" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "loadBalancerAttributes": Array [
+                        Object {
+                          "key": "deletion_protection.enabled",
+                          "value": "false",
+                        },
+                      ],
+                      "scheme": "internet-facing",
+                      "securityGroups": Array [
+                        Object {
+                          "Fn::GetAtt": Array [
+                            "MyFargateServiceLBSecurityGroup6FBF16F1",
+                            "GroupId",
+                          ],
+                        },
+                      ],
+                      "subnets": Array [
+                        Object {
+                          "Ref": "MyVpcPublicSubnet1SubnetF6608456",
+                        },
+                        Object {
+                          "Ref": "MyVpcPublicSubnet2Subnet492B6BFB",
+                        },
+                      ],
+                      "type": "application",
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "QueueIsSubscribedToTopicStack/MyFargateService/LB/Resource",
+                },
+                "SecurityGroup" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::EC2::SecurityGroup",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "groupDescription": "Automatically created Security Group for ELB QueueIsSubscribedToTopicStackMyFargateServiceLB409C97A6",
+                          "securityGroupIngress": Array [
+                            Object {
+                              "cidrIp": "0.0.0.0/0",
+                              "description": "Allow from anyone on port 80",
+                              "fromPort": 80,
+                              "ipProtocol": "tcp",
+                              "toPort": 80,
+                            },
+                          ],
+                          "vpcId": Object {
+                            "Ref": "MyVpcF9F0CA6F",
+                          },
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "QueueIsSubscribedToTopicStack/MyFargateService/LB/SecurityGroup/Resource",
+                    },
+                    "to QueueIsSubscribedToTopicStackMyFargateServiceSecurityGroupB3618F23:80" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::EC2::SecurityGroupEgress",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "description": "Load balancer to target",
+                          "destinationSecurityGroupId": Object {
+                            "Fn::GetAtt": Array [
+                              "MyFargateServiceSecurityGroup7016792A",
+                              "GroupId",
+                            ],
+                          },
+                          "fromPort": 80,
+                          "groupId": Object {
+                            "Fn::GetAtt": Array [
+                              "MyFargateServiceLBSecurityGroup6FBF16F1",
+                              "GroupId",
+                            ],
+                          },
+                          "ipProtocol": "tcp",
+                          "toPort": 80,
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "to QueueIsSubscribedToTopicStackMyFargateServiceSecurityGroupB3618F23:80",
+                      "path": "QueueIsSubscribedToTopicStack/MyFargateService/LB/SecurityGroup/to QueueIsSubscribedToTopicStackMyFargateServiceSecurityGroupB3618F23:80",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "SecurityGroup",
+                  "path": "QueueIsSubscribedToTopicStack/MyFargateService/LB/SecurityGroup",
+                },
+                "PublicListener" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::ElasticLoadBalancingV2::Listener",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "defaultActions": Array [
+                            Object {
+                              "targetGroupArn": Object {
+                                "Ref": "MyFargateServiceLBPublicListenerECSGroup4A3EDF05",
+                              },
+                              "type": "forward",
+                            },
+                          ],
+                          "loadBalancerArn": Object {
+                            "Ref": "MyFargateServiceLBDE830E97",
+                          },
+                          "port": 80,
+                          "protocol": "HTTP",
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "QueueIsSubscribedToTopicStack/MyFargateService/LB/PublicListener/Resource",
+                    },
+                    "ECSGroup" => Node {
+                      "attributes": Map {},
+                      "children": Map {
+                        "Resource" => Node {
+                          "attributes": Map {
+                            "aws:cdk:cloudformation:type" => "AWS::ElasticLoadBalancingV2::TargetGroup",
+                            "aws:cdk:cloudformation:props" => Object {
+                              "port": 80,
+                              "protocol": "HTTP",
+                              "targetType": "ip",
+                              "vpcId": Object {
+                                "Ref": "MyVpcF9F0CA6F",
+                              },
+                            },
+                          },
+                          "children": Map {},
+                          "constructInfoFqn": undefined,
+                          "id": "Resource",
+                          "path": "QueueIsSubscribedToTopicStack/MyFargateService/LB/PublicListener/ECSGroup/Resource",
+                        },
+                      },
+                      "constructInfoFqn": undefined,
+                      "id": "ECSGroup",
+                      "path": "QueueIsSubscribedToTopicStack/MyFargateService/LB/PublicListener/ECSGroup",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "PublicListener",
+                  "path": "QueueIsSubscribedToTopicStack/MyFargateService/LB/PublicListener",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "LB",
+              "path": "QueueIsSubscribedToTopicStack/MyFargateService/LB",
+            },
+            "LoadBalancerDNS" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "LoadBalancerDNS",
+              "path": "QueueIsSubscribedToTopicStack/MyFargateService/LoadBalancerDNS",
+            },
+            "ServiceURL" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "ServiceURL",
+              "path": "QueueIsSubscribedToTopicStack/MyFargateService/ServiceURL",
+            },
+            "TaskDef" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "TaskRole" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "assumeRolePolicyDocument": Object {
+                            "Statement": Array [
+                              Object {
+                                "Action": "sts:AssumeRole",
+                                "Effect": "Allow",
+                                "Principal": Object {
+                                  "Service": "ecs-tasks.amazonaws.com",
+                                },
+                              },
+                            ],
+                            "Version": "2012-10-17",
+                          },
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/TaskRole/Resource",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "TaskRole",
+                  "path": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/TaskRole",
+                },
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::ECS::TaskDefinition",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "containerDefinitions": Array [
+                        Object {
+                          "essential": true,
+                          "image": "amazon/amazon-ecs-sample",
+                          "logConfiguration": Object {
+                            "logDriver": "awslogs",
+                            "options": Object {
+                              "awslogs-group": Object {
+                                "Ref": "MyFargateServiceTaskDefwebLogGroup4A6C44E8",
+                              },
+                              "awslogs-region": Object {
+                                "Ref": "AWS::Region",
+                              },
+                              "awslogs-stream-prefix": "MyFargateService",
+                            },
+                          },
+                          "name": "web",
+                          "portMappings": Array [
+                            Object {
+                              "containerPort": 80,
+                              "protocol": "tcp",
+                            },
+                          ],
+                        },
+                      ],
+                      "cpu": "512",
+                      "executionRoleArn": Object {
+                        "Fn::GetAtt": Array [
+                          "MyFargateServiceTaskDefExecutionRoleD6305504",
+                          "Arn",
+                        ],
+                      },
+                      "family": "QueueIsSubscribedToTopicStackMyFargateServiceTaskDefFC34EE8E",
+                      "memory": "2048",
+                      "networkMode": "awsvpc",
+                      "requiresCompatibilities": Array [
+                        "FARGATE",
+                      ],
+                      "taskRoleArn": Object {
+                        "Fn::GetAtt": Array [
+                          "MyFargateServiceTaskDefTaskRole62C7D397",
+                          "Arn",
+                        ],
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/Resource",
+                },
+                "web" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "LogGroup" => Node {
+                      "attributes": Map {},
+                      "children": Map {
+                        "Resource" => Node {
+                          "attributes": Map {
+                            "aws:cdk:cloudformation:type" => "AWS::Logs::LogGroup",
+                            "aws:cdk:cloudformation:props" => Object {},
+                          },
+                          "children": Map {},
+                          "constructInfoFqn": undefined,
+                          "id": "Resource",
+                          "path": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/web/LogGroup/Resource",
+                        },
+                      },
+                      "constructInfoFqn": undefined,
+                      "id": "LogGroup",
+                      "path": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/web/LogGroup",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "web",
+                  "path": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/web",
+                },
+                "ExecutionRole" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "assumeRolePolicyDocument": Object {
+                            "Statement": Array [
+                              Object {
+                                "Action": "sts:AssumeRole",
+                                "Effect": "Allow",
+                                "Principal": Object {
+                                  "Service": "ecs-tasks.amazonaws.com",
+                                },
+                              },
+                            ],
+                            "Version": "2012-10-17",
+                          },
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/ExecutionRole/Resource",
+                    },
+                    "DefaultPolicy" => Node {
+                      "attributes": Map {},
+                      "children": Map {
+                        "Resource" => Node {
+                          "attributes": Map {
+                            "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
+                            "aws:cdk:cloudformation:props" => Object {
+                              "policyDocument": Object {
+                                "Statement": Array [
+                                  Object {
+                                    "Action": Array [
+                                      "logs:CreateLogStream",
+                                      "logs:PutLogEvents",
+                                    ],
+                                    "Effect": "Allow",
+                                    "Resource": Object {
+                                      "Fn::GetAtt": Array [
+                                        "MyFargateServiceTaskDefwebLogGroup4A6C44E8",
+                                        "Arn",
+                                      ],
+                                    },
+                                  },
+                                ],
+                                "Version": "2012-10-17",
+                              },
+                              "policyName": "MyFargateServiceTaskDefExecutionRoleDefaultPolicyEC22B20F",
+                              "roles": Array [
+                                Object {
+                                  "Ref": "MyFargateServiceTaskDefExecutionRoleD6305504",
+                                },
+                              ],
+                            },
+                          },
+                          "children": Map {},
+                          "constructInfoFqn": undefined,
+                          "id": "Resource",
+                          "path": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/ExecutionRole/DefaultPolicy/Resource",
+                        },
+                      },
+                      "constructInfoFqn": undefined,
+                      "id": "DefaultPolicy",
+                      "path": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/ExecutionRole/DefaultPolicy",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "ExecutionRole",
+                  "path": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef/ExecutionRole",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "TaskDef",
+              "path": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef",
+            },
+            "Service" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Service" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::ECS::Service",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "cluster": Object {
+                        "Ref": "MyCluster4C1BA579",
+                      },
+                      "deploymentConfiguration": Object {
+                        "maximumPercent": 200,
+                        "minimumHealthyPercent": 50,
+                      },
+                      "desiredCount": 6,
+                      "enableEcsManagedTags": false,
+                      "healthCheckGracePeriodSeconds": 60,
+                      "launchType": "FARGATE",
+                      "loadBalancers": Array [
+                        Object {
+                          "containerName": "web",
+                          "containerPort": 80,
+                          "targetGroupArn": Object {
+                            "Ref": "MyFargateServiceLBPublicListenerECSGroup4A3EDF05",
+                          },
+                        },
+                      ],
+                      "networkConfiguration": Object {
+                        "awsvpcConfiguration": Object {
+                          "assignPublicIp": "DISABLED",
+                          "securityGroups": Array [
+                            Object {
+                              "Fn::GetAtt": Array [
+                                "MyFargateServiceSecurityGroup7016792A",
+                                "GroupId",
+                              ],
+                            },
+                          ],
+                          "subnets": Array [
+                            Object {
+                              "Ref": "MyVpcPrivateSubnet1Subnet5057CF7E",
+                            },
+                            Object {
+                              "Ref": "MyVpcPrivateSubnet2Subnet0040C983",
+                            },
+                          ],
+                        },
+                      },
+                      "taskDefinition": Object {
+                        "Ref": "MyFargateServiceTaskDef5DA17B39",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Service",
+                  "path": "QueueIsSubscribedToTopicStack/MyFargateService/Service/Service",
+                },
+                "SecurityGroup" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::EC2::SecurityGroup",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "groupDescription": "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup",
+                          "securityGroupEgress": Array [
+                            Object {
+                              "cidrIp": "0.0.0.0/0",
+                              "description": "Allow all outbound traffic by default",
+                              "ipProtocol": "-1",
+                            },
+                          ],
+                          "vpcId": Object {
+                            "Ref": "MyVpcF9F0CA6F",
+                          },
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup/Resource",
+                    },
+                    "from QueueIsSubscribedToTopicStackMyFargateServiceLBSecurityGroupE6D6C06E:80" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::EC2::SecurityGroupIngress",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "description": "Load balancer to target",
+                          "fromPort": 80,
+                          "groupId": Object {
+                            "Fn::GetAtt": Array [
+                              "MyFargateServiceSecurityGroup7016792A",
+                              "GroupId",
+                            ],
+                          },
+                          "ipProtocol": "tcp",
+                          "sourceSecurityGroupId": Object {
+                            "Fn::GetAtt": Array [
+                              "MyFargateServiceLBSecurityGroup6FBF16F1",
+                              "GroupId",
+                            ],
+                          },
+                          "toPort": 80,
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "from QueueIsSubscribedToTopicStackMyFargateServiceLBSecurityGroupE6D6C06E:80",
+                      "path": "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup/from QueueIsSubscribedToTopicStackMyFargateServiceLBSecurityGroupE6D6C06E:80",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "SecurityGroup",
+                  "path": "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "Service",
+              "path": "QueueIsSubscribedToTopicStack/MyFargateService/Service",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "MyFargateService",
+          "path": "QueueIsSubscribedToTopicStack/MyFargateService",
+        },
+        "CDKMetadata" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Default" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Default",
+              "path": "QueueIsSubscribedToTopicStack/CDKMetadata/Default",
+            },
+            "Condition" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Condition",
+              "path": "QueueIsSubscribedToTopicStack/CDKMetadata/Condition",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "CDKMetadata",
+          "path": "QueueIsSubscribedToTopicStack/CDKMetadata",
+        },
+      },
+      "constructInfoFqn": undefined,
+      "id": "QueueIsSubscribedToTopicStack",
+      "path": "QueueIsSubscribedToTopicStack",
+    },
+  },
+  "constructInfoFqn": undefined,
+  "id": "App",
+  "path": "",
+}
+`;

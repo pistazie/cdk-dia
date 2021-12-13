@@ -1,0 +1,296 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cdk-tree parsing src/test-fixtures/ - two-stack-with-a-relationship - collapsed-dontRemoveCrossStackEdges 1`] = `
+Node {
+  "attributes": Map {},
+  "children": Map {
+    "Tree" => Node {
+      "attributes": Map {},
+      "children": Map {},
+      "constructInfoFqn": undefined,
+      "id": "Tree",
+      "path": "Tree",
+    },
+    "stack-with-topic" => Node {
+      "attributes": Map {},
+      "children": Map {
+        "the-topic" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::SNS::Topic",
+                "aws:cdk:cloudformation:props" => Object {},
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "stack-with-topic/the-topic/Resource",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "the-topic",
+          "path": "stack-with-topic/the-topic",
+        },
+        "CDKMetadata" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Default" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Default",
+              "path": "stack-with-topic/CDKMetadata/Default",
+            },
+            "Condition" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Condition",
+              "path": "stack-with-topic/CDKMetadata/Condition",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "CDKMetadata",
+          "path": "stack-with-topic/CDKMetadata",
+        },
+        "Exports" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Output{\\"Ref\\":\\"thetopic9E1A294D\\"}" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Output{\\"Ref\\":\\"thetopic9E1A294D\\"}",
+              "path": "stack-with-topic/Exports/Output{\\"Ref\\":\\"thetopic9E1A294D\\"}",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "Exports",
+          "path": "stack-with-topic/Exports",
+        },
+      },
+      "constructInfoFqn": ConstructInfoFqn {
+        "typ": 0,
+      },
+      "id": "stack-with-topic",
+      "path": "stack-with-topic",
+    },
+    "stack-with-function" => Node {
+      "attributes": Map {},
+      "children": Map {
+        "the-queue" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::SQS::Queue",
+                "aws:cdk:cloudformation:props" => Object {},
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "stack-with-function/the-queue/Resource",
+            },
+            "Policy" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::SQS::QueuePolicy",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "policyDocument": Object {
+                        "Statement": Array [
+                          Object {
+                            "Action": "sqs:SendMessage",
+                            "Condition": Object {
+                              "ArnEquals": Object {
+                                "aws:SourceArn": Object {
+                                  "Fn::ImportValue": "stack-with-topic:ExportsOutputRefthetopic9E1A294DCC1C73D6",
+                                },
+                              },
+                            },
+                            "Effect": "Allow",
+                            "Principal": Object {
+                              "Service": "sns.amazonaws.com",
+                            },
+                            "Resource": Object {
+                              "Fn::GetAtt": Array [
+                                "thequeue250FA05D",
+                                "Arn",
+                              ],
+                            },
+                          },
+                        ],
+                        "Version": "2012-10-17",
+                      },
+                      "queues": Array [
+                        Object {
+                          "Ref": "thequeue250FA05D",
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "stack-with-function/the-queue/Policy/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "Policy",
+              "path": "stack-with-function/the-queue/Policy",
+            },
+            "stackwithtopicthetopic5764FDE0" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::SNS::Subscription",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "endpoint": Object {
+                        "Fn::GetAtt": Array [
+                          "thequeue250FA05D",
+                          "Arn",
+                        ],
+                      },
+                      "protocol": "sqs",
+                      "topicArn": Object {
+                        "Fn::ImportValue": "stack-with-topic:ExportsOutputRefthetopic9E1A294DCC1C73D6",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "stack-with-function/the-queue/stackwithtopicthetopic5764FDE0/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "stackwithtopicthetopic5764FDE0",
+              "path": "stack-with-function/the-queue/stackwithtopicthetopic5764FDE0",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "the-queue",
+          "path": "stack-with-function/the-queue",
+        },
+        "the-function" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "ServiceRole" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "assumeRolePolicyDocument": Object {
+                        "Statement": Array [
+                          Object {
+                            "Action": "sts:AssumeRole",
+                            "Effect": "Allow",
+                            "Principal": Object {
+                              "Service": "lambda.amazonaws.com",
+                            },
+                          },
+                        ],
+                        "Version": "2012-10-17",
+                      },
+                      "managedPolicyArns": Array [
+                        Object {
+                          "Fn::Join": Array [
+                            "",
+                            Array [
+                              "arn:",
+                              Object {
+                                "Ref": "AWS::Partition",
+                              },
+                              ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                            ],
+                          ],
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "stack-with-function/the-function/ServiceRole/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "ServiceRole",
+              "path": "stack-with-function/the-function/ServiceRole",
+            },
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
+                "aws:cdk:cloudformation:props" => Object {
+                  "code": Object {
+                    "zipFile": "console.log('hi')",
+                  },
+                  "environment": Object {
+                    "variables": Object {
+                      "TOPIC_ARN": Object {
+                        "Fn::ImportValue": "stack-with-topic:ExportsOutputRefthetopic9E1A294DCC1C73D6",
+                      },
+                    },
+                  },
+                  "handler": "index",
+                  "role": Object {
+                    "Fn::GetAtt": Array [
+                      "thefunctionServiceRoleE4CD77A9",
+                      "Arn",
+                    ],
+                  },
+                  "runtime": "nodejs12.x",
+                },
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "stack-with-function/the-function/Resource",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "the-function",
+          "path": "stack-with-function/the-function",
+        },
+        "CDKMetadata" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Default" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Default",
+              "path": "stack-with-function/CDKMetadata/Default",
+            },
+            "Condition" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Condition",
+              "path": "stack-with-function/CDKMetadata/Condition",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "CDKMetadata",
+          "path": "stack-with-function/CDKMetadata",
+        },
+      },
+      "constructInfoFqn": ConstructInfoFqn {
+        "typ": 0,
+      },
+      "id": "stack-with-function",
+      "path": "stack-with-function",
+    },
+  },
+  "constructInfoFqn": ConstructInfoFqn {
+    "typ": 2,
+  },
+  "id": "App",
+  "path": "",
+}
+`;

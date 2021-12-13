@@ -113,7 +113,13 @@ export const testCases: TestConf[] = [
         jsonTreeFile: "custom-resource",
         cdkTreePath: "src/test-fixtures/",
         collapsed: true
-    }
+    },
+    {
+        id:`collapsed-dontRemoveCrossStackEdges`,
+        jsonTreeFile: "two-stack-with-a-relationship",
+        cdkTreePath: "src/test-fixtures/",
+        collapsed: false
+    },
 ]
 
 export interface TestConf {

@@ -5,6 +5,8 @@ import {makeUniqueId} from "@aws-cdk/core/lib/private/uniqueid"
 import {Component, ComponentTags} from "../component/component"
 import {AwsDiagramGenerator} from "./aws-diagram-generator"
 import {DiagramComponent} from "../component/diagram-component"
+import {RootComponent} from "../component/root-component"
+import {EdgeTarget, EdgeTargetSimpleString, EdgeTargetStackExport} from "./edge-target"
 
 /**
  * Finds references between nodes in AWS-CDK trees and converts them to Diagrams subComponent links
@@ -33,34 +35,51 @@ export class AwsEdgeResolver {
         edgeTargetStrings.forEach(targetString => this.addEdge(targetString, originComponent as DiagramComponent))
     }
 
-    private addEdge(targetString: string, originComponent: DiagramComponent) {
+    private addEdge(targetString: EdgeTarget, originComponent: DiagramComponent) {
 
         const cdkStackTree = originComponent.treeAncestorWithTag(ComponentTags.isCdkStack, "true")
 
-        let targetComponent = this.findTargetComponent(cdkStackTree, targetString)
+        if (cdkStackTree) {
+            let targetComponent = this.findTargetComponent(cdkStackTree, targetString)
 
-        if (targetComponent != null) {
-            originComponent.links.addLink(targetComponent)
+            if (targetComponent != null) {
+                originComponent.links.addLink(targetComponent)
+            }
         }
     }
 
+    private findTargetComponent(cdkStackTree: Component, targetString: EdgeTarget): Component | null {
 
-    private findTargetComponent(cdkStackTree, targetString: string) : Component | null {
+        if (targetString instanceof EdgeTargetSimpleString) {
+            // perfect match
+            const perfectMatch = cdkStackTree.subTreeFindComponent((component: Component) => {
+                const uniqueResourceId = this.findUniqueResourceId(component)
+                return targetString.value === uniqueResourceId
+            })
 
-        // perfect match
-        const perfectMatch = cdkStackTree.subTreeFindComponent((component: Component) => {
-            const uniqueResourceId = this.findUniqueResourceId(component)
-            return targetString === uniqueResourceId
-        })
+            if (perfectMatch != null)
+                return perfectMatch
 
-        if (perfectMatch != null)
-            return perfectMatch
+            // lowerCase match
+            return cdkStackTree.subTreeFindComponent((component: Component) => {
+                const uniqueResourceId = this.findUniqueResourceId(component)
+                return targetString.value.toLowerCase() === uniqueResourceId
+            })
+        }
 
-        // lowerCase match
-        return cdkStackTree.subTreeFindComponent((component: Component) => {
-            const uniqueResourceId = this.findUniqueResourceId(component)
-            return targetString.toLowerCase() === uniqueResourceId
-        })
+        if (targetString instanceof EdgeTargetStackExport) {
+            const treeRoot: RootComponent = cdkStackTree.treeRoot()
+
+            const exportingStack = treeRoot.subTreeFindComponent((component: Component) => {
+                return component.tags.get(ComponentTags.isCdkStack) && component.id == targetString.stackId
+            })
+
+            const targetComponentIdInTargetStack = exportingStack.stackExportsContainer.getExport(targetString)
+
+            return exportingStack.subTreeFindComponent(component => {
+                return this.findUniqueResourceId(component) == targetComponentIdInTargetStack
+            })
+        }
     }
 
     private findUniqueResourceId(component: Component): string | boolean {
@@ -73,80 +92,79 @@ export class AwsEdgeResolver {
         return makeUniqueId(pathParts)
     }
 
+
     /**
      * Returns all possible edge targets pointing from [node]
      */
-    private edgeTargets(node: cdk.Node): string[] {
+    private edgeTargets(node: cdk.Node): EdgeTarget[] {
 
         const props = node.attributes.get("aws:cdk:cloudformation:props")
         if (props == undefined)
-            return Array<string>()
+            return Array<EdgeTarget>()
 
-        const targets = Array.from(this.scrapePossibleEdgeTargets(props as string))
-
-        return targets.map(path => AwsDiagramGenerator.sanitizeComponentId(path))
+        return Array.from(this.scrapePossibleEdgeTargets(props as string))
     }
 
-    scrapePossibleEdgeTargets(object: null | string | Record<string, unknown>): Set<string> {
+    scrapePossibleEdgeTargets(object: null | string | Record<string, unknown>): Array<EdgeTarget> {
 
         if (object === null || typeof object === "string") // end recursion
-            return new Set<string>()
+            return new Array<EdgeTarget>()
 
-        const edgeTargets = new Set<string>()
+        const edgeTargets = new Array<EdgeTarget>()
 
         for (const key in object) {
             if (key === "Fn::GetAtt" && object[key][0] !== undefined) {
                 this.scrapeAllStrings(object[key]).forEach(it => {
-                edgeTargets.add(it)
-            }
-                )
-            }
-            if (key === "Ref" && (typeof object[key] === "string")) {
-                this.scrapeAllStrings(object[key]).forEach(
-                    it => {
-                        edgeTargets.add(it)
+                        edgeTargets.push(it)
                     }
                 )
             }
 
+            if (key === "Fn::ImportValue" && object[key] !== undefined) {
+                try {
+                    edgeTargets.push(EdgeTargetStackExport.fromFnImportValue(object[key] as string))
+                } catch (e) {}
+            }
+
+            if (key === "Ref" && (typeof object[key] === "string")) {
+                edgeTargets.push(new EdgeTargetSimpleString(object[key] as string))
+            }
+
             this.scrapePossibleEdgeTargets(object[key] as Record<string, unknown>).forEach(target => {
-                edgeTargets.add(target)
+                edgeTargets.push(target)
             })
         }
 
-        return edgeTargets
+        return _.uniqWith(edgeTargets, ((a: EdgeTarget, b: EdgeTarget) => a.isEqual(b)))
     }
 
-    scrapeAllStrings(object: any): Set<string> {
+    scrapeAllStrings(object: any): Set<EdgeTarget> {
 
         if (object === null || object === undefined) {
-            return new Set<string>()
+            return new Set<EdgeTarget>()
         }
 
         if (typeof object === "string") {
-            const set = new Set<string>()
-            set.add(object)
-            return set
-
+            return new Set<EdgeTarget>([new EdgeTargetSimpleString(object)])
         }
 
         if (Array.isArray(object)) {
-            const array = object.map(it => {
+            const array: EdgeTarget[][] = (object as Array<any>).map(it => {
                 return Array.from(this.scrapeAllStrings(it))
             })
-            const strings = _.flatten(array)
-            return new Set<string>(strings)
+            const strings: EdgeTarget[] = _.flatten(array)
+            return new Set<EdgeTarget>(strings)
         }
 
-        const edgeTargets = new Set<string>()
+        const edgeTargets = new Set<EdgeTarget>()
 
         if (typeof object === "object") {
             for (const key in object) {
                 if (key === "Fn::GetAtt" && object[key][0] !== undefined) {
-                    edgeTargets.add(object[key][0])
+                    edgeTargets.add(new EdgeTargetSimpleString(object[key][0]))
                 }
                 if (key === "Ref" && (typeof object[key] === "string")) {
-                    edgeTargets.add(object[key] as string)
+                    edgeTargets.add(new EdgeTargetSimpleString(object[key] as string))
                 }
 
                 this.scrapePossibleEdgeTargets(object[key] as Record<string, unknown>).forEach(target => {
@@ -157,5 +175,4 @@ export class AwsEdgeResolver {
 
         return edgeTargets
     }
-
 }

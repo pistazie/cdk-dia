@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagram JSON as expected src/test-fixtures/ - two-stack-with-a-relationship - collapsed-dontRemoveCrossStackEdges 1`] = `
+Object {
+  "_image": null,
+  "children": Array [
+    Object {
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Notification-Service_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [],
+          "id": "stack-with-topic/the-topic/Resource",
+          "isGroup": false,
+          "label": Array [
+            "SNS Topic",
+          ],
+        },
+      ],
+      "edges": Array [],
+      "id": "stack-with-topic",
+      "isGroup": true,
+      "label": Array [
+        "stack-with-topic",
+      ],
+    },
+    Object {
+      "_image": null,
+      "children": Array [
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [],
+              "id": "stack-with-function/the-queue/Resource",
+              "isGroup": false,
+              "label": Array [
+                "SQS Queue",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "stack-with-topic/the-topic/Resource",
+                "stack-with-function/the-queue/Resource",
+              ],
+              "id": "stack-with-function/the-queue/Policy/Resource",
+              "isGroup": false,
+              "label": Array [
+                "SQS QueuePolicy",
+              ],
+            },
+            Object {
+              "_image": null,
+              "children": Array [],
+              "edges": Array [
+                "stack-with-topic/the-topic/Resource",
+                "stack-with-function/the-queue/Resource",
+              ],
+              "id": "stack-with-function/the-queue/stackwithtopicthetopic5764FDE0/Resource",
+              "isGroup": false,
+              "label": Array [
+                "SNS",
+                "SUBSCRIPTION",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "stack-with-function/the-queue",
+          "isGroup": true,
+          "label": Array [
+            "the-queue",
+          ],
+        },
+        Object {
+          "_image": null,
+          "children": Array [
+            Object {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [
+                "stack-with-function/the-function/ServiceRole/Resource",
+                "stack-with-topic/the-topic/Resource",
+              ],
+              "id": "stack-with-function/the-function/Resource",
+              "isGroup": false,
+              "label": Array [
+                "Lambda Function",
+              ],
+            },
+            Object {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+              },
+              "children": Array [],
+              "edges": Array [],
+              "id": "stack-with-function/the-function/ServiceRole/Resource",
+              "isGroup": false,
+              "label": Array [
+                "IAM Role",
+              ],
+            },
+          ],
+          "edges": Array [],
+          "id": "stack-with-function/the-function",
+          "isGroup": true,
+          "label": Array [
+            "the-function",
+          ],
+        },
+      ],
+      "edges": Array [],
+      "id": "stack-with-function",
+      "isGroup": true,
+      "label": Array [
+        "stack-with-function",
+      ],
+    },
+  ],
+  "id": "App",
+  "isGroup": true,
+}
+`;

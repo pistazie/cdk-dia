@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cdk-tree parsing src/test-fixtures/ - 2_queues-are-subscribed-to-a-topic - non-collapsed 1`] = `
+Node {
+  "attributes": Map {},
+  "children": Map {
+    "Tree" => Node {
+      "attributes": Map {},
+      "children": Map {},
+      "constructInfoFqn": undefined,
+      "id": "Tree",
+      "path": "Tree",
+    },
+    "QueueIsSubscribedToTopicStack" => Node {
+      "attributes": Map {},
+      "children": Map {
+        "myTopic" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::SNS::Topic",
+                "aws:cdk:cloudformation:props" => Object {},
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "QueueIsSubscribedToTopicStack/myTopic/Resource",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "myTopic",
+          "path": "QueueIsSubscribedToTopicStack/myTopic",
+        },
+        "queue1" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::SQS::Queue",
+                "aws:cdk:cloudformation:props" => Object {},
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "QueueIsSubscribedToTopicStack/queue1/Resource",
+            },
+            "Policy" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::SQS::QueuePolicy",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "policyDocument": Object {
+                        "Statement": Array [
+                          Object {
+                            "Action": "sqs:SendMessage",
+                            "Condition": Object {
+                              "ArnEquals": Object {
+                                "aws:SourceArn": Object {
+                                  "Ref": "myTopicDE69997A",
+                                },
+                              },
+                            },
+                            "Effect": "Allow",
+                            "Principal": Object {
+                              "Service": "sns.amazonaws.com",
+                            },
+                            "Resource": Object {
+                              "Fn::GetAtt": Array [
+                                "queue1A6429D98",
+                                "Arn",
+                              ],
+                            },
+                          },
+                        ],
+                        "Version": "2012-10-17",
+                      },
+                      "queues": Array [
+                        Object {
+                          "Ref": "queue1A6429D98",
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "QueueIsSubscribedToTopicStack/queue1/Policy/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "Policy",
+              "path": "QueueIsSubscribedToTopicStack/queue1/Policy",
+            },
+            "QueueIsSubscribedToTopicStackmyTopicD9B86344" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::SNS::Subscription",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "endpoint": Object {
+                        "Fn::GetAtt": Array [
+                          "queue1A6429D98",
+                          "Arn",
+                        ],
+                      },
+                      "protocol": "sqs",
+                      "topicArn": Object {
+                        "Ref": "myTopicDE69997A",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "QueueIsSubscribedToTopicStack/queue1/QueueIsSubscribedToTopicStackmyTopicD9B86344/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "QueueIsSubscribedToTopicStackmyTopicD9B86344",
+              "path": "QueueIsSubscribedToTopicStack/queue1/QueueIsSubscribedToTopicStackmyTopicD9B86344",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "queue1",
+          "path": "QueueIsSubscribedToTopicStack/queue1",
+        },
+        "queue2" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::SQS::Queue",
+                "aws:cdk:cloudformation:props" => Object {},
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "QueueIsSubscribedToTopicStack/queue2/Resource",
+            },
+            "Policy" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::SQS::QueuePolicy",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "policyDocument": Object {
+                        "Statement": Array [
+                          Object {
+                            "Action": "sqs:SendMessage",
+                            "Condition": Object {
+                              "ArnEquals": Object {
+                                "aws:SourceArn": Object {
+                                  "Ref": "myTopicDE69997A",
+                                },
+                              },
+                            },
+                            "Effect": "Allow",
+                            "Principal": Object {
+                              "Service": "sns.amazonaws.com",
+                            },
+                            "Resource": Object {
+                              "Fn::GetAtt": Array [
+                                "queue20D18E0EC",
+                                "Arn",
+                              ],
+                            },
+                          },
+                        ],
+                        "Version": "2012-10-17",
+                      },
+                      "queues": Array [
+                        Object {
+                          "Ref": "queue20D18E0EC",
+                        },
+                      ],
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "QueueIsSubscribedToTopicStack/queue2/Policy/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "Policy",
+              "path": "QueueIsSubscribedToTopicStack/queue2/Policy",
+            },
+            "QueueIsSubscribedToTopicStackmyTopicD9B86344" => Node {
+              "attributes": Map {},
+              "children": Map {
+                "Resource" => Node {
+                  "attributes": Map {
+                    "aws:cdk:cloudformation:type" => "AWS::SNS::Subscription",
+                    "aws:cdk:cloudformation:props" => Object {
+                      "endpoint": Object {
+                        "Fn::GetAtt": Array [
+                          "queue20D18E0EC",
+                          "Arn",
+                        ],
+                      },
+                      "protocol": "sqs",
+                      "topicArn": Object {
+                        "Ref": "myTopicDE69997A",
+                      },
+                    },
+                  },
+                  "children": Map {},
+                  "constructInfoFqn": undefined,
+                  "id": "Resource",
+                  "path": "QueueIsSubscribedToTopicStack/queue2/QueueIsSubscribedToTopicStackmyTopicD9B86344/Resource",
+                },
+              },
+              "constructInfoFqn": undefined,
+              "id": "QueueIsSubscribedToTopicStackmyTopicD9B86344",
+              "path": "QueueIsSubscribedToTopicStack/queue2/QueueIsSubscribedToTopicStackmyTopicD9B86344",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "queue2",
+          "path": "QueueIsSubscribedToTopicStack/queue2",
+        },
+        "CDKMetadata" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Default" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Default",
+              "path": "QueueIsSubscribedToTopicStack/CDKMetadata/Default",
+            },
+            "Condition" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Condition",
+              "path": "QueueIsSubscribedToTopicStack/CDKMetadata/Condition",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "CDKMetadata",
+          "path": "QueueIsSubscribedToTopicStack/CDKMetadata",
+        },
+      },
+      "constructInfoFqn": undefined,
+      "id": "QueueIsSubscribedToTopicStack",
+      "path": "QueueIsSubscribedToTopicStack",
+    },
+  },
+  "constructInfoFqn": undefined,
+  "id": "App",
+  "path": "",
+}
+`;

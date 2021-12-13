@@ -1,10 +1,11 @@
 import * as _ from "lodash"
 import * as cdk from "../../cdk"
-import {CdkDia, ConstructInfoFqn} from "../../cdk"
+import {CdkDia} from "../../cdk"
 import {AwsEdgeResolver} from "./aws-edge-resolver"
 import {AwsIconSupplier, Component, ComponentTags, Diagram, DiagramComponent, DiagramGenerator, RootComponent} from ".."
 import {ComponentIcon} from "../component/icon"
 import {CollapseTypes, CollapssingCustomizer} from "../component/customizable-attribute"
+import {StackExportsContainer} from "./stack-exports-container"
 
 /**
  * Generates a Diagram from a CdkTree
@@ -104,11 +105,18 @@ export class AwsDiagramGenerator extends DiagramGenerator{
             component = new DiagramComponent(AwsDiagramGenerator.sanitizeComponentId(cdkNode.path), [cdkNode.id], parentComponent)
         }
 
-        if (cdkNode.constructInfoFqn === ConstructInfoFqn.STACK) {
+        if (cdkNode.constructInfoFqn && cdkNode.constructInfoFqn.typ === cdk.ConstructInfoFqnType.STACK) {
             component.tags.set(ComponentTags.isCdkStack, "true")
+
+            const exportsNode = cdkNode.children.get('Exports')
+            if (exportsNode) {
+                try {
+                    component.stackExportsContainer = StackExportsContainer.fromComponent(exportsNode)
+                } catch (e) {}
+            }
         }
 
-        if (cdkNode.constructInfoFqn === ConstructInfoFqn.STAGE) {
+        if (cdkNode.constructInfoFqn && cdkNode.constructInfoFqn.typ === cdk.ConstructInfoFqnType.STAGE) {
             component.tags.set(ComponentTags.isCdkStage, "true")
         }
 
@@ -210,7 +218,7 @@ export class AwsDiagramGenerator extends DiagramGenerator{
         }
 
 
-        if (tree.constructInfoFqn === ConstructInfoFqn.CUSTOM_RESOURCE) {
+        if (tree.constructInfoFqn && tree.constructInfoFqn.typ === cdk.ConstructInfoFqnType.CUSTOM_RESOURCE) {
             return AwsDiagramGenerator.generateCfnProps("AWS::CloudFormation::CustomResource")
         }
 
@@ -315,17 +323,17 @@ export class AwsDiagramGenerator extends DiagramGenerator{
             try {
                 const stackRootComponent = current.treeAncestorWithTag(ComponentTags.isCdkStack, "true")
 
-                current.links.getLinkedComponents().forEach(linkedComponent => {
-                    // check if linked component is in the same stack as current
-                    if (!stackRootComponent.componentIsInSubTree(linkedComponent)) {
-                        current.links.removeLink(linkedComponent)
+                    current.links.getLinkedComponents().forEach(linkedComponent => {
+                        // check if linked component is in the same stack as current
+                        if (!stackRootComponent.componentIsInSubTree(linkedComponent)) {
+                            current.links.removeLink(linkedComponent)
 
-                        // add a link between the stacks as a replacement to the many cross stack resource links
-                        if (linkedComponent instanceof DiagramComponent) {
+                            // add a link between the stacks as a replacement to the many cross stack resource links
+                            if (linkedComponent instanceof DiagramComponent) {
                             stackRootComponent.links.addLink(linkedComponent.treeAncestorWithTag(ComponentTags.isCdkStack, "true"))
+                            }
                         }
-                    }
-                })
+                    })
             } catch (e) {
                 console.log("CrossStackEdges removal failed " + e)
             }

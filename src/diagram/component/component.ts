@@ -3,6 +3,7 @@ import {ComponentLinks} from "../component-links"
 import {Link} from "./link"
 import {ComponentIcon} from "./icon"
 import {RootComponent} from "./root-component"
+import {StackExportsContainer} from "../aws/stack-exports-container"
 
 export type ComponentId = string
 
@@ -25,6 +26,8 @@ export abstract class Component {
      * A diagram-unique component ID
      */
     private _id: ComponentId
+
+    public stackExportsContainer: StackExportsContainer
 
     idPathParts = (): Array<string> => this.id.split("/")
 
@@ -247,10 +250,14 @@ export abstract class Component {
         return targets
     }
 
-    treeAncestorWithTag(tagKey: ComponentTags, tagVal: string): Component {
-         if (this.tags.get(tagKey) === tagVal) return this
+    treeAncestorWithTag(tagKey: ComponentTags, tagVal: string): Component | undefined {
+        if (this.tags.get(tagKey) === tagVal) return this
 
-        return this.parent().treeAncestorWithTag(tagKey,tagVal)
+        try {
+            return this.parent().treeAncestorWithTag(tagKey, tagVal)
+        } catch (e) {
+            return undefined
+        }
     }
 
     isAncestor(possibleAncestor: Component): boolean {
