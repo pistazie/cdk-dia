@@ -4,7 +4,7 @@ import {givenDiagram} from "../../../diagram/tests/generator.test"
 import {Cytoscape} from "../cytoscape"
 import {Stats} from "fs"
 
-jest.setTimeout(50000)
+jest.setTimeout(75000)
 
 const basePath = `${process.cwd()}/test-generated`
 
