@@ -74,11 +74,13 @@ export class AwsEdgeResolver {
                 return component.tags.get(ComponentTags.isCdkStack) && component.id == targetString.stackId
             })
 
-            const targetComponentIdInTargetStack = exportingStack.stackExportsContainer.getExport(targetString)
+            if (exportingStack && exportingStack.stackExportsContainer) {
+                const targetComponentIdInTargetStack = exportingStack.stackExportsContainer.getExport(targetString)
 
-            return exportingStack.subTreeFindComponent(component => {
-                return this.findUniqueResourceId(component) == targetComponentIdInTargetStack
-            })
+                return exportingStack.subTreeFindComponent(component => {
+                    return this.findUniqueResourceId(component) == targetComponentIdInTargetStack
+                })
+            }
         }
     }
 

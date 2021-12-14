@@ -34,7 +34,7 @@ describe('Cytoscape static website generated as expected', () => {
 
         const stylesJson = new File(`${filePath}/cy-styles.json`)
         expect(JSON.parse(stylesJson.body).length).toBeGreaterThanOrEqual(15)
-    }, 100000)
+    }, 120000)
 })
 
 class File {
