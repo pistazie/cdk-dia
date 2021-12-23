@@ -5,7 +5,7 @@
 
 # 🎡 CDK-Dia - Automated diagrams for CDK infrastructure
 
-_Cdk-dia diagrams your CDK provisioned infrastructure using the Graphviz dot lanuguage._
+_Cdk-dia diagrams your CDK provisioned infrastructure using the Graphviz dot language._
 
 ## Example
 
