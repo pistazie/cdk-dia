@@ -20,9 +20,15 @@ export class StackExportsContainer {
 
         exportsComponent.children.forEach( exportNode => {
 
-            const matches = exportNode.id.match( new RegExp('Output\{"Ref":"(.*)"\}'))
-            if (matches){
-                const refTargetId: string = matches[1]
+            const refMatches = exportNode.id.match( new RegExp('Output\{"Ref":"(.*)"\}'))
+            if (refMatches){
+                const refTargetId: string = refMatches[1]
+                container.exports.push(new StackExport(refTargetId, exportNode.id))
+            }
+
+            const getAttMatches = exportNode.id.match( new RegExp('Output{"Fn::GetAtt":\\["(.*)",".*"\\]}'))
+            if (getAttMatches){
+                const refTargetId: string = getAttMatches[1]
                 container.exports.push(new StackExport(refTargetId, exportNode.id))
             }
         })
