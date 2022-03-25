@@ -20,6 +20,19 @@ Object {
             "SNS Topic",
           ],
         },
+        Object {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+          },
+          "children": Array [],
+          "edges": Array [],
+          "id": "stack-with-topic/the-bucket/Resource",
+          "isGroup": false,
+          "label": Array [
+            "S3 Bucket",
+          ],
+        },
       ],
       "edges": Array [],
       "id": "stack-with-topic",
@@ -89,6 +102,46 @@ Object {
           "_image": null,
           "children": Array [
             Object {
+              "_image": null,
+              "children": Array [
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [],
+                  "id": "stack-with-function/the-function/ServiceRole/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Role",
+                  ],
+                },
+                Object {
+                  "_image": ComponentIcon {
+                    "format": "SMALLER",
+                    "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+                  },
+                  "children": Array [],
+                  "edges": Array [
+                    "stack-with-topic/the-bucket/Resource",
+                    "stack-with-function/the-function/ServiceRole/Resource",
+                  ],
+                  "id": "stack-with-function/the-function/ServiceRole/DefaultPolicy/Resource",
+                  "isGroup": false,
+                  "label": Array [
+                    "IAM Policy",
+                  ],
+                },
+              ],
+              "edges": Array [],
+              "id": "stack-with-function/the-function/ServiceRole",
+              "isGroup": true,
+              "label": Array [
+                "ServiceRole",
+              ],
+            },
+            Object {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
@@ -102,19 +155,6 @@ Object {
               "isGroup": false,
               "label": Array [
                 "Lambda Function",
-              ],
-            },
-            Object {
-              "_image": ComponentIcon {
-                "format": "SMALLER",
-                "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
-              },
-              "children": Array [],
-              "edges": Array [],
-              "id": "stack-with-function/the-function/ServiceRole/Resource",
-              "isGroup": false,
-              "label": Array [
-                "IAM Role",
               ],
             },
           ],

@@ -32,6 +32,31 @@ Node {
           "id": "the-topic",
           "path": "stack-with-topic/the-topic",
         },
+        "the-bucket" => Node {
+          "attributes": Map {},
+          "children": Map {
+            "Notifications" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Notifications",
+              "path": "stack-with-topic/the-bucket/Notifications",
+            },
+            "Resource" => Node {
+              "attributes": Map {
+                "aws:cdk:cloudformation:type" => "AWS::S3::Bucket",
+                "aws:cdk:cloudformation:props" => Object {},
+              },
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Resource",
+              "path": "stack-with-topic/the-bucket/Resource",
+            },
+          },
+          "constructInfoFqn": undefined,
+          "id": "the-bucket",
+          "path": "stack-with-topic/the-bucket",
+        },
         "CDKMetadata" => Node {
           "attributes": Map {},
           "children": Map {
@@ -63,6 +88,13 @@ Node {
               "constructInfoFqn": undefined,
               "id": "Output{\\"Ref\\":\\"thetopic9E1A294D\\"}",
               "path": "stack-with-topic/Exports/Output{\\"Ref\\":\\"thetopic9E1A294D\\"}",
+            },
+            "Output{\\"Fn::GetAtt\\":[\\"thebucket16E4B691\\",\\"Arn\\"]}" => Node {
+              "attributes": Map {},
+              "children": Map {},
+              "constructInfoFqn": undefined,
+              "id": "Output{\\"Fn::GetAtt\\":[\\"thebucket16E4B691\\",\\"Arn\\"]}",
+              "path": "stack-with-topic/Exports/Output{\\"Fn::GetAtt\\":[\\"thebucket16E4B691\\",\\"Arn\\"]}",
             },
           },
           "constructInfoFqn": undefined,
@@ -217,6 +249,60 @@ Node {
                   "constructInfoFqn": undefined,
                   "id": "Resource",
                   "path": "stack-with-function/the-function/ServiceRole/Resource",
+                },
+                "DefaultPolicy" => Node {
+                  "attributes": Map {},
+                  "children": Map {
+                    "Resource" => Node {
+                      "attributes": Map {
+                        "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
+                        "aws:cdk:cloudformation:props" => Object {
+                          "policyDocument": Object {
+                            "Statement": Array [
+                              Object {
+                                "Action": Array [
+                                  "s3:DeleteObject*",
+                                  "s3:PutObject",
+                                  "s3:Abort*",
+                                ],
+                                "Effect": "Allow",
+                                "Resource": Array [
+                                  Object {
+                                    "Fn::ImportValue": "stack-with-topic:ExportsOutputFnGetAttthebucket16E4B691Arn6E2565A9",
+                                  },
+                                  Object {
+                                    "Fn::Join": Array [
+                                      "",
+                                      Array [
+                                        Object {
+                                          "Fn::ImportValue": "stack-with-topic:ExportsOutputFnGetAttthebucket16E4B691Arn6E2565A9",
+                                        },
+                                        "/*",
+                                      ],
+                                    ],
+                                  },
+                                ],
+                              },
+                            ],
+                            "Version": "2012-10-17",
+                          },
+                          "policyName": "thefunctionServiceRoleDefaultPolicy43C74CF4",
+                          "roles": Array [
+                            Object {
+                              "Ref": "thefunctionServiceRoleE4CD77A9",
+                            },
+                          ],
+                        },
+                      },
+                      "children": Map {},
+                      "constructInfoFqn": undefined,
+                      "id": "Resource",
+                      "path": "stack-with-function/the-function/ServiceRole/DefaultPolicy/Resource",
+                    },
+                  },
+                  "constructInfoFqn": undefined,
+                  "id": "DefaultPolicy",
+                  "path": "stack-with-function/the-function/ServiceRole/DefaultPolicy",
                 },
               },
               "constructInfoFqn": undefined,

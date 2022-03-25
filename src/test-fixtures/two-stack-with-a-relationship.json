@@ -9,7 +9,7 @@
         "path": "Tree",
         "constructInfo": {
           "fqn": "constructs.Construct",
-          "version": "10.0.9"
+          "version": "10.0.94"
         }
       },
       "stack-with-topic": {
@@ -38,6 +38,36 @@
               "version": "2.0.0"
             }
           },
+          "the-bucket": {
+            "id": "the-bucket",
+            "path": "stack-with-topic/the-bucket",
+            "children": {
+              "Notifications": {
+                "id": "Notifications",
+                "path": "stack-with-topic/the-bucket/Notifications",
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.0.94"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "stack-with-topic/the-bucket/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {}
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                  "version": "2.0.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3.Bucket",
+              "version": "2.0.0"
+            }
+          },
           "CDKMetadata": {
             "id": "CDKMetadata",
             "path": "stack-with-topic/CDKMetadata",
@@ -61,7 +91,7 @@
             },
             "constructInfo": {
               "fqn": "constructs.Construct",
-              "version": "10.0.9"
+              "version": "10.0.94"
             }
           },
           "Exports": {
@@ -75,11 +105,19 @@
                   "fqn": "aws-cdk-lib.CfnOutput",
                   "version": "2.0.0"
                 }
+              },
+              "Output{\"Fn::GetAtt\":[\"thebucket16E4B691\",\"Arn\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"thebucket16E4B691\",\"Arn\"]}",
+                "path": "stack-with-topic/Exports/Output{\"Fn::GetAtt\":[\"thebucket16E4B691\",\"Arn\"]}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.0.0"
+                }
               }
             },
             "constructInfo": {
               "fqn": "constructs.Construct",
-              "version": "10.0.9"
+              "version": "10.0.94"
             }
           }
         },
@@ -246,6 +284,64 @@
                       "fqn": "aws-cdk-lib.aws_iam.CfnRole",
                       "version": "2.0.0"
                     }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "stack-with-function/the-function/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "stack-with-function/the-function/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "s3:DeleteObject*",
+                                    "s3:PutObject",
+                                    "s3:Abort*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::ImportValue": "stack-with-topic:ExportsOutputFnGetAttthebucket16E4B691Arn6E2565A9"
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::ImportValue": "stack-with-topic:ExportsOutputFnGetAttthebucket16E4B691Arn6E2565A9"
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "thefunctionServiceRoleDefaultPolicy43C74CF4",
+                            "roles": [
+                              {
+                                "Ref": "thefunctionServiceRoleE4CD77A9"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.0.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.0.0"
+                    }
                   }
                 },
                 "constructInfo": {
@@ -313,7 +409,7 @@
             },
             "constructInfo": {
               "fqn": "constructs.Construct",
-              "version": "10.0.9"
+              "version": "10.0.94"
             }
           }
         },
