@@ -20,7 +20,7 @@ export class StackExportsContainer {
 
         exportsComponent.children.forEach( exportNode => {
 
-            const refMatches = exportNode.id.match( new RegExp('Output\{"Ref":"(.*)"\}'))
+            const refMatches = exportNode.id.match( new RegExp('Output{"Ref":"(.*)"}'))
             if (refMatches){
                 const refTargetId: string = refMatches[1]
                 container.exports.push(new StackExport(refTargetId, exportNode.id))
