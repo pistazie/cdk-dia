@@ -4,9 +4,7 @@ import path, {dirname} from "path"
 import * as diagram from "../../diagram"
 import {DiagramRenderer, RenderingOutput} from "../diagram-renderer"
 import {CytoscapeGenerator} from "./cytoscape-generator"
-
-const ncp = require('ncp').ncp
-ncp.limit = 8
+import * as fs_extra  from 'fs-extra'
 
 export class CytoscapeJsOutput implements RenderingOutput {
     constructor(private staticFolderName: string, private staticSiteFullPath: string) {}
@@ -44,9 +42,9 @@ export class Cytoscape implements DiagramRenderer {
     private async renderToCytoscape(dia: diagram.Diagram, targetFolder: string, iconsPath: string) {
 
         // copy our Cytoscape base
-        await this.copyFolder(__dirname + '/base', targetFolder)
+        fs_extra.copySync(__dirname + '/base', targetFolder)
         // copy icons
-        await this.copyFolder(iconsPath + '/icons',  targetFolder+ '/icons')
+        fs_extra.copySync(iconsPath + '/icons',  targetFolder+ '/icons')
 
         // generate and publish this diagram's Cytoscape data
         const [cyElements, cyStyles] = CytoscapeGenerator.generate(dia)
@@ -54,16 +52,5 @@ export class Cytoscape implements DiagramRenderer {
         fs.writeFileSync(`${targetFolder}/cy-styles.json`, JSON.stringify(cyStyles))
     }
 
-    private copyFolder(src: string, dst: string): Promise<void> {
-        return new Promise<void>((resolve, reject) => {
-            ncp(src, dst, function (err) {
-                    if (err) {
-                        reject(err)
-                    }
-                    resolve(undefined);
-                }
-            )
-        })
-    }
 }
 
