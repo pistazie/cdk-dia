@@ -17,53 +17,53 @@ This Diagram was automatically generated from an AWS CDK stack
 ## Getting started - Typescript / Javascript
 Add cdk-dia to your CDK project
 ```sh
-$ npm install cdk-dia
+npm install cdk-dia
 ```
 
 Install Graphviz
 ```sh
-$ brew install graphviz
+brew install graphviz
 ```
 * If you don't use brew: Graphviz installation in many environments is [well documented](https://graphviz.org/download/).
 * make sure Graphviz's dot binary is available in your PATH.
   
 Synthesize your CDK application
 ```sh
-$ cdk synth
+cdk synth
 ```
 
 Generate a CDK-DIA diagram PNG
 ```sh
-$ npx cdk-dia
+npx cdk-dia
 ```
 
 Generate a CDK-DIA diagram as an interactive HTML (experimental)
 ```sh
-$ npx cdk-dia --rendering cytoscape-html
+npx cdk-dia --rendering cytoscape-html
 ```
 <br/>
 
 ## Getting started - any other CDK language
 Globally install cdk-dia
 ```sh
-$ npm install cdk-dia -g
+npm install cdk-dia -g
 ```
 
 Install Graphviz
 ```sh
-$ brew install graphviz
+brew install graphviz
 ```
 * If you don't use brew: Graphviz installation in many environments is [well documented](https://graphviz.org/download/).
 * make sure Graphviz's dot binary is available in your PATH.
 
 Synthesize your CDK application
 ```sh
-$ cdk synth
+cdk synth
 ```
 
 Generate a CDK-DIA diagram
 ```sh
-$ cdk-dia
+cdk-dia
 ```
 <br/>
 
