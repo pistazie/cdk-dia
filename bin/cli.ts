@@ -8,9 +8,10 @@ import * as rendering from "../src/render/index"
 async function initCli(): Promise<cdkDiaCliArgs> {
 
     return yargs(process.argv.slice(2)).options({
-        'cdk-tree-path': {type: 'string', alias: 'tree', default: 'cdk.out/tree.json', describe: 'Path of synthesized cdk cloud assembly'},
+        'cdk-tree-path': {type: 'string', alias: 'tree', default: 'cdk.out/tree.json', describe: 'Path of synthesized CDK cloud assembly'},
         'target-path': {type: 'string', alias: 'target', default: 'diagram.png', describe: 'Target path for rendered PNG'},
-        'collapse': {type: 'boolean', default: true, describe: 'Collapse CDK Constructs'},
+        'collapse': {type: 'boolean', default: true, describe: 'Collapse CDK constructs'},
+        'collapse-double-clusters': {type: 'boolean', default: true, describe: 'Collapse CDK constructs with one child that is a cluster itself'},
         'stacks': {type: 'array', describe: 'Stacks to include (if not specified all stacks are diagramed)'},
         'rendering': {type: 'string', choices:[ Renderers.GRAPHVIZ, Renderers.CYTOSCAPE],default: Renderers.GRAPHVIZ, describe: 'The rendering engine to use'}
     }).version(false).argv
@@ -31,6 +32,7 @@ async function generateDiagram(args: cdkDiaCliArgs) {
         args["cdk-tree-path"],
         args["target-path"],
         args.collapse,
+        args["collapse-double-clusters"],
         packageBasePath,
         includedStacks,
         args["rendering"])
@@ -71,6 +73,7 @@ interface cdkDiaCliArgs {
     'cdk-tree-path': string,
     'target-path': string,
     collapse: boolean,
+    'collapse-double-clusters': boolean,
     stacks: (string | number)[] | undefined,
     rendering: Renderers
 }
