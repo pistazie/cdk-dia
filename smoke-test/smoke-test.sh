@@ -48,6 +48,7 @@ smokeTest() {
 sudo apt install graphviz -y
 npm install -g typescript aws-cdk verdaccio
 verdaccio --config ./smoke-test/smoke-test-npm-local-repo-config.yml &
+cp smoke-test/.npmrc .
 
 # publish CDK-Dia to a locally running NPM registry for testing
 npm version 9.9.${GITHUB_RUN_NUMBER} --commit-hooks false --git-tag-version false
