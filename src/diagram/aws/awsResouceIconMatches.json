@@ -94,6 +94,8 @@
             "M5N": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M5n-Instance_48_Dark.png",
             "M6G": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_M6g-Instance_48_Dark.png",
             "MAC": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Mac-Instance_48_Dark.png",
+            "MAC1": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Mac-Instance_48_Dark.png",
+            "MAC2": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Mac-Instance_48_Dark.png",
             "P2": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_P2-Instance_48_Dark.png",
             "P3": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_P3-Instance_48_Dark.png",
             "P3DN": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_P3dn-Instance_48_Dark.png",
