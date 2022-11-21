@@ -21,7 +21,7 @@ export class AwsDiagramGenerator extends DiagramGenerator{
         this.iconSupplier = iconSupplier
     }
 
-    generate(cdkTree: cdk.Tree, collapse: boolean, includedStacks: string[] | false = false): Diagram {
+    generate(cdkTree: cdk.Tree, collapse: boolean, collapseDoubleClusters: boolean, includedStacks: string[] | false = false): Diagram {
 
         const diagram = new Diagram()
         const cdkRoot = cdkTree.tree
@@ -42,7 +42,7 @@ export class AwsDiagramGenerator extends DiagramGenerator{
         this.removeCdkAssets(diagram.root)
 
         // collapse "DoubleClusters" - components which have only one child which is a Cluster it self - prevents multiple frames
-        diagram.root = this.collapseDoubleClusters(diagram.root)
+        if (collapseDoubleClusters) diagram.root = this.collapseDoubleClusters(diagram.root)
 
         // remove cross-stack edges as they make diagrams very "loaded" and "verbose". should allow user to override this as in small CDK apps it does male sense to connect
         this.removeCrossStackEdges(diagram.root)

@@ -31,7 +31,8 @@ describe("setting specific Stacks works as expected", () => {
         id: `collapsed`,
         jsonTreeFile: "multiple-similar-stacks",
         cdkTreePath: "src/test-fixtures/",
-        collapsed: true
+        collapsed: true,
+        collapsedDoubleClusters: true
     }
 
     it(`it only diagrams the "microservice1" stack`, () => {
@@ -56,7 +57,8 @@ describe("setting specific Stacks works as expected", () => {
         id:`non-collapsed`,
             jsonTreeFile: "cdk_pipeline_with_stages_stacks_and_construct_infos",
         cdkTreePath: "src/test-fixtures/",
-        collapsed: false
+        collapsed: false,
+        collapsedDoubleClusters: true
     }
 
     it(`use can use a path of a stack which is nested`, () => {
@@ -179,5 +181,5 @@ export function givenDiagram(testConf: TestConf, includedStacks: string[] | fals
     const cdkTree = cdk.TreeJsonLoader.load(`${testConf.cdkTreePath}${testConf.jsonTreeFile}.json`)
 
     const generator = new diagrams.AwsDiagramGenerator(new AwsEdgeResolver(), new AwsIconSupplier(""))
-    return generator.generate(cdkTree, testConf.collapsed, includedStacks)
+    return generator.generate(cdkTree, testConf.collapsed, testConf.collapsedDoubleClusters, includedStacks)
 }
