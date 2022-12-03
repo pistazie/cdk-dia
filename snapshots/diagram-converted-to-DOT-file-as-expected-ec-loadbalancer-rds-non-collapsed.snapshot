@@ -432,7 +432,7 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - ec-loadb
         \\"QueueIsSubscribedToTopicStack/Web1/Resource\\" [
           label = \\" EC2 Instance\\",
           fontsize = 12,
-          image = \\"icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C5-Instance_48_Dark.png\\",
+          image = \\"icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Instance_48_Dark.png\\",
           imagescale = \\"true\\",
           imagepos = \\"tc\\",
           penwidth = \\"0\\",

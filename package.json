@@ -1,6 +1,6 @@
 {
   "name": "cdk-dia",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "🎡 Automated diagrams of CDK provisioned infrastructure",
   "scripts": {
     "build-watch": "tsc --watch",
