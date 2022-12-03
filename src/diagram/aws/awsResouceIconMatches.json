@@ -65,7 +65,7 @@
       },
       {
         "resourceType": "AWS::EC2::Instance",
-        "filePath": null,
+        "filePath": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Instance_48_Dark.png",
           "families": {
             "A1": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_A1-Instance_48_Dark.png",
             "C4": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C4-Instance_48_Dark.png",
