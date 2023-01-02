@@ -21,7 +21,7 @@ export class AwsDiagramGenerator extends DiagramGenerator{
         this.iconSupplier = iconSupplier
     }
 
-    generate(cdkTree: cdk.Tree, collapse: boolean, collapseDoubleClusters: boolean, includedStacks: string[] | false = false): Diagram {
+    generate(cdkTree: cdk.Tree, collapse: boolean, collapseDoubleClusters: boolean, includedStacks: string[] | false = false, excludedStacks: string[] | undefined = undefined): Diagram {
 
         const diagram = new Diagram()
         const cdkRoot = cdkTree.tree
@@ -29,8 +29,11 @@ export class AwsDiagramGenerator extends DiagramGenerator{
         // build diagram Components tree
         diagram.root = this.generateComponentsTree(cdkRoot)
 
-        // remove non requested includedStacks from the diagram
+        // remove non-requested Stacks from the diagram
         if (includedStacks !== false) this.removeNonIncludedDiagrams(diagram, includedStacks)
+
+        // remove excluded Stacks from the diagram
+        if (excludedStacks) this.removeExcludedStacks(diagram, excludedStacks)
 
         // add edges between Components
         this.edgeResolver.resolveEdges(cdkRoot, diagram)
@@ -132,7 +135,7 @@ export class AwsDiagramGenerator extends DiagramGenerator{
 
         diagram.root.subTreeApplyAllComponents( (component: Component) => {
             const isStack = this.isStack(component)
-            const idIncluded = this.idIncluded(includedStackIds, component)
+            const idIncluded = this.idInList(includedStackIds, component)
             if (isStack){
                 if (!idIncluded) {
                     excludedStacks.push(component)
@@ -149,8 +152,8 @@ export class AwsDiagramGenerator extends DiagramGenerator{
             const isStack = this.isStack(component)
             const isIncludedStack = excludedStacks.includes(component)
 
-            const containsIncludedStack = component.subTreeFindComponent( subComponent => {
-                return this.isStack(subComponent) && this.idIncluded(includedStackIds, subComponent)
+            const containsIncludedStack = component.subTreeFindComponent(subComponent => {
+                return this.isStack(subComponent) && this.idInList(includedStackIds, subComponent)
             })
 
 
@@ -162,11 +165,22 @@ export class AwsDiagramGenerator extends DiagramGenerator{
         })
     }
 
+    private removeExcludedStacks(diagram: Diagram, excludedStackIds: string[]) {
+
+        diagram.root.subTreeApplyAllComponents((component: Component) => {
+            const isStack = this.isStack(component)
+            const idExcluded = this.idInList(excludedStackIds, component)
+            if (isStack && idExcluded) {
+                component.destroyAndDetach()
+            }
+        })
+    }
+
     private isStack(component: Component) {
         return component.tags.get(ComponentTags.isCdkStack) == "true"
     }
 
-    private idIncluded(includedStacks: string[], component: Component) {
+    private idInList(includedStacks: string[], component: Component) {
         return includedStacks.map(it => it.toLowerCase()).includes(component.id.toLowerCase())
     }
 

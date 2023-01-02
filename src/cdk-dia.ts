@@ -17,6 +17,7 @@ export class CdkDia {
                           collapseDoubleClusters: boolean,
                           cdkBasePath: string = require.resolve('cdk-dia/package.json'),
                           includedStacks: string[] | false = false,
+                          excludedStacks: string[] | undefined = undefined,
                           renderer: Renderers) {
 
         // Parse tree.json
@@ -24,7 +25,7 @@ export class CdkDia {
 
         // Generate Diagram
         const generator = new diagrams.AwsDiagramGenerator(new diagrams.AwsEdgeResolver(), new diagrams.AwsIconSupplier(`${cdkBasePath}`))
-        const diagram = generator.generate(cdkTree, collapse, collapseDoubleClusters, includedStacks)
+        const diagram = generator.generate(cdkTree, collapse, collapseDoubleClusters, includedStacks, excludedStacks ?? undefined)
 
         // Render diagram using Graphviz
         switch (renderer) {

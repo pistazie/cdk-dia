@@ -80,6 +80,23 @@ describe("setting specific Stacks works as expected", () => {
     })
 })
 
+describe("excluding specific Stacks works as expected", () => {
+
+    const twoSimpleStacksTestCase = {
+        id: `collapsed`,
+        jsonTreeFile: "multiple-similar-stacks",
+        cdkTreePath: "src/test-fixtures/",
+        collapsed: true,
+        collapsedDoubleClusters: true
+    }
+
+    it(`it only diagrams the "microservice1" stack`, () => {
+        const diagram = givenDiagram(twoSimpleStacksTestCase, false, ["microservice1"])
+        const pathToSnap = path.resolve(process.cwd(), `./snapshots/excludingStacks_only_microservice1.snapshot`);
+        expect(diagram.toSimpleObject()).toMatchSpecificSnapshot(pathToSnap)
+    })
+})
+
 describe("All Components linked from the Tree are also part of the tree", () => {
 
    // const oneCase = [testCases[testCases.length -1 ]]
@@ -177,9 +194,9 @@ describe("All Links are bi-directional", () => {
     }
 })
 
-export function givenDiagram(testConf: TestConf, includedStacks: string[] | false = false): diagrams.Diagram{
+export function givenDiagram(testConf: TestConf, includedStacks: string[] | false = false, excludedStacks: string[] | undefined = undefined): diagrams.Diagram {
     const cdkTree = cdk.TreeJsonLoader.load(`${testConf.cdkTreePath}${testConf.jsonTreeFile}.json`)
 
     const generator = new diagrams.AwsDiagramGenerator(new AwsEdgeResolver(), new AwsIconSupplier(""))
-    return generator.generate(cdkTree, testConf.collapsed, testConf.collapsedDoubleClusters, includedStacks)
+    return generator.generate(cdkTree, testConf.collapsed, testConf.collapsedDoubleClusters, includedStacks, excludedStacks)
 }

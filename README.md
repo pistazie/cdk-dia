@@ -97,8 +97,9 @@ This results in a Diagram where the DB-Tier was not collapsed providing more det
 
 ## CLI arguments
 * ```npx cdk-dia --help``` - Get possible arguments
-* ```npx cdk-dia --stacks stackOne stackFour``` - only diagram chosen aws-cdk stacks
-    * ```npx cdk-dia --stacks pipelinestack/prod/database``` - choose stacks by path (nested stacks, pipeline stacks)
+* ```npx cdk-dia --include stackOne stackFour``` - only diagram chosen aws-cdk stacks
+* ```npx cdk-dia --include pipelinestack/prod/database``` - choose stacks by path (nested stacks, pipeline stacks)
+* ```npx cdk-dia --exclude stackOne``` - exclude chosen aws-cdk stacks from the diagram
 
 ## 🙏🏽 Contributing
 Contribution is covered in the [CONTRIBUTING.md](./CONTRIBUTING.md) markdown.
