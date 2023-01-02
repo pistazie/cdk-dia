@@ -12,7 +12,8 @@ async function initCli(): Promise<cdkDiaCliArgs> {
         'target-path': {type: 'string', alias: 'target', default: 'diagram.png', describe: 'Target path for rendered PNG'},
         'collapse': {type: 'boolean', default: true, describe: 'Collapse CDK constructs'},
         'collapse-double-clusters': {type: 'boolean', default: true, describe: 'Collapse CDK constructs with one child that is a cluster itself'},
-        'stacks': {type: 'array', describe: 'Stacks to include (if not specified all stacks are diagramed)'},
+        'include': {type: 'array', describe: 'Stacks to include (if not specified all stacks are diagramed)', alias: 'stacks'},
+        'exclude': {type: 'array', describe: 'Stacks to exclude'},
         'rendering': {type: 'string', choices:[ Renderers.GRAPHVIZ, Renderers.CYTOSCAPE],default: Renderers.GRAPHVIZ, describe: 'The rendering engine to use'}
     }).version(false).argv
 }
@@ -22,20 +23,18 @@ async function generateDiagram(args: cdkDiaCliArgs) {
     const cdkDia = new CdkDia()
 
     let includedStacks: string[] | false = false
-    if (args.stacks !== undefined) {
-        includedStacks = args.stacks.map(it => it.toString())
+    if (args.include !== undefined) {
+        includedStacks = args.include.map(it => it.toString())
+    }
+
+    let excludedStacks: string[] | undefined = undefined
+    if (args.exclude !== undefined) {
+        excludedStacks = args.exclude.map(it => it.toString())
     }
 
     const packageBasePath = path.dirname(require.resolve('../../package.json'))
 
-    cdkDia.generateDiagram(
-        args["cdk-tree-path"],
-        args["target-path"],
-        args.collapse,
-        args["collapse-double-clusters"],
-        packageBasePath,
-        includedStacks,
-        args["rendering"])
+    cdkDia.generateDiagram(args["cdk-tree-path"], args["target-path"], args.collapse, args["collapse-double-clusters"], packageBasePath, includedStacks, excludedStacks, args["rendering"])
         .then((output) => output.userOutput())
         .catch(e => {
             console.error(`Failed to generate diagram - ${e}`)
@@ -74,6 +73,7 @@ interface cdkDiaCliArgs {
     'target-path': string,
     collapse: boolean,
     'collapse-double-clusters': boolean,
-    stacks: (string | number)[] | undefined,
+    include: (string | number)[] | undefined,
+    exclude: (string | number)[] | undefined,
     rendering: Renderers
 }
