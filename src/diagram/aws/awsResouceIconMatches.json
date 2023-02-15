@@ -1937,7 +1937,7 @@
       },
       {
         "resourceType": "AWS::WAFv2::WebACL",
-        "filePath": null
+        "filePath": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-WAF_64@5x.png"
       }
     ]
   },
@@ -2793,7 +2793,7 @@
       },
       {
         "resourceType": "AWS::SSM::Parameter",
-        "filePath": null
+        "filePath": "icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_AWS-Systems-Manager_Parameter-Store_48_Dark.png"
       },
       {
         "resourceType": "AWS::SSM::ResourceDataSync",
