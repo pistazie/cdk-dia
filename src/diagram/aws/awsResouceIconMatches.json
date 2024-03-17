@@ -1518,6 +1518,16 @@
     ]
   },
   {
+    "resourcePrefix": "AWS::Lex",
+    "genericFilePath": "icons/aws/Service/Arch_Machine-Learning/64/Arch_Amazon-Lex_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Lex::Bot",
+        "filePath": "icons/aws/Service/Arch_Machine-Learning/64/Arch_Amazon-Lex_64@5x.png"
+      }
+    ]
+  },
+  {
     "resourcePrefix": "AWS::S3",
     "genericFilePath": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
     "specificResources": [
@@ -2291,6 +2301,16 @@
       {
         "resourceType": "AWS::Config::ConformancePack",
         "filePath": null
+      }
+    ]
+  },
+  {
+    "resourcePrefix": "AWS::Connect",
+    "genericFilePath": "icons/aws/Service/Arch_Business-Applications/64/Arch_Amazon-Connect_64@5x.png",
+    "specificResources": [
+      {
+        "resourceType": "AWS::Connect::Instance",
+        "filePath": "icons/aws/Service/Arch_Business-Applications/64/Arch_Amazon-Connect_64@5x.png"
       }
     ]
   },
