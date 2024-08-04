@@ -1,11 +1,11 @@
-import * as cdk from "@aws-cdk/core"
-import * as ec2 from "@aws-cdk/aws-ec2"
+import {Construct } from "constructs"
+import * as ec2 from "aws-cdk-lib/aws-ec2"
 
-export class WebTier extends cdk.Construct {
+export class WebTier extends Construct {
 
     readonly instances: ec2.Instance[] = []
 
-    constructor(scope: cdk.Construct, id: string, vpc: ec2.Vpc) {
+    constructor(scope: Construct, id: string, vpc: ec2.Vpc) {
         super(scope, id)
 
         this.instances.push(this.webInstance("Web1", vpc))

@@ -19,20 +19,6 @@ Object {
     },
     Object {
       "_image": ComponentIcon {
-        "format": "SMALLER",
-        "path": "icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-CloudFormation_64@5x.png",
-      },
-      "children": Array [],
-      "edges": Array [],
-      "id": "SoTsStack/custom-resource",
-      "isGroup": false,
-      "label": Array [
-        "CloudFormation CustomResource",
-        "custom-resource",
-      ],
-    },
-    Object {
-      "_image": ComponentIcon {
         "format": "NORMAL",
         "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
       },

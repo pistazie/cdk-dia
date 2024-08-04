@@ -75,9 +75,10 @@ you can use with your CDK constructs in order to tweak the diagram.
 ### Limitations:
 
 * Customization and decorators are currently only support for Typescript/Javascript CDK projects.
-* In order to customize you have to add cdk-dia as a npm project dependency (globally installing it using `npm i -g` won't allow you to use the `CdkDiaDecorator` class)
+* In order to customize you have to add cdk-dia as a npm project dependency (globally installing it using `npm i -g` won't allow you to use the `CdkDiaDecorator` class).
 
 ### Example:
+
 Consider the following diagram of a 3-Tier CDK Stack:
 <img src="docs/decorator_example_collapsed.png" />
 
@@ -100,6 +101,9 @@ This results in a Diagram where the DB-Tier was not collapsed providing more det
 * ```npx cdk-dia --include stackOne stackFour``` - only diagram chosen aws-cdk stacks
 * ```npx cdk-dia --include pipelinestack/prod/database``` - choose stacks by path (nested stacks, pipeline stacks)
 * ```npx cdk-dia --exclude stackOne``` - exclude chosen aws-cdk stacks from the diagram
+
+## AWS CDK V1 support
+* AWS-CDK V1 is only supported in `version<1.12.0`.
 
 ## 🙏🏽 Contributing
 Contribution is covered in the [CONTRIBUTING.md](./CONTRIBUTING.md) markdown.

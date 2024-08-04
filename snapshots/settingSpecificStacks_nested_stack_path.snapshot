@@ -3,48 +3,8 @@
 exports[`setting specific Stacks works as expected use can use a path of a stack which is nested 1`] = `
 Object {
   "_image": null,
-  "children": Array [
-    Object {
-      "_image": null,
-      "children": Array [
-        Object {
-          "_image": null,
-          "children": Array [
-            Object {
-              "_image": ComponentIcon {
-                "format": "NORMAL",
-                "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
-              },
-              "children": Array [],
-              "edges": Array [],
-              "id": "PipelineStack/Prod/Database/my-s3-db/Resource",
-              "isGroup": false,
-              "label": Array [
-                "S3 Bucket",
-              ],
-            },
-          ],
-          "edges": Array [],
-          "id": "PipelineStack/Prod/Database",
-          "isGroup": true,
-          "label": Array [
-            "Database",
-          ],
-        },
-      ],
-      "edges": Array [],
-      "id": "PipelineStack/Prod",
-      "isGroup": true,
-      "label": Array [
-        "Prod",
-      ],
-    },
-  ],
-  "edges": Array [],
-  "id": "PipelineStack",
-  "isGroup": true,
-  "label": Array [
-    "PipelineStack",
-  ],
+  "children": Array [],
+  "id": "App",
+  "isGroup": false,
 }
 `;

@@ -1734,16 +1734,12 @@ Node {
                   "path": "PipelineStack/Prod/Database/CheckBootstrapVersion",
                 },
               },
-              "constructInfoFqn": ConstructInfoFqn {
-                "typ": 0,
-              },
+              "constructInfoFqn": undefined,
               "id": "Database",
               "path": "PipelineStack/Prod/Database",
             },
           },
-          "constructInfoFqn": ConstructInfoFqn {
-            "typ": 1,
-          },
+          "constructInfoFqn": undefined,
           "id": "Prod",
           "path": "PipelineStack/Prod",
         },
@@ -1763,16 +1759,12 @@ Node {
           "path": "PipelineStack/CDKMetadata",
         },
       },
-      "constructInfoFqn": ConstructInfoFqn {
-        "typ": 0,
-      },
+      "constructInfoFqn": undefined,
       "id": "PipelineStack",
       "path": "PipelineStack",
     },
   },
-  "constructInfoFqn": ConstructInfoFqn {
-    "typ": 2,
-  },
+  "constructInfoFqn": undefined,
   "id": "App",
   "path": "",
 }

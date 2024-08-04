@@ -432,13 +432,16 @@ Object {
       ],
     },
     Object {
-      "_image": null,
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+      },
       "children": Array [],
       "edges": Array [],
-      "id": "PipelineStack/Prod",
+      "id": "PipelineStack/bucket/Resource",
       "isGroup": false,
       "label": Array [
-        "Prod",
+        "S3 Bucket",
       ],
     },
     Object {
@@ -448,7 +451,7 @@ Object {
       },
       "children": Array [],
       "edges": Array [],
-      "id": "PipelineStack/bucket/Resource",
+      "id": "PipelineStack/Prod/Database/my-s3-db/Resource",
       "isGroup": false,
       "label": Array [
         "S3 Bucket",
@@ -896,38 +899,16 @@ Object {
       ],
     },
     Object {
-      "_image": null,
-      "children": Array [
-        Object {
-          "_image": null,
-          "children": Array [
-            Object {
-              "_image": ComponentIcon {
-                "format": "NORMAL",
-                "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
-              },
-              "children": Array [],
-              "edges": Array [],
-              "id": "PipelineStack/Prod/Database/my-s3-db/Resource",
-              "isGroup": false,
-              "label": Array [
-                "S3 Bucket",
-              ],
-            },
-          ],
-          "edges": Array [],
-          "id": "PipelineStack/Prod/Database",
-          "isGroup": true,
-          "label": Array [
-            "Database",
-          ],
-        },
-      ],
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+      },
+      "children": Array [],
       "edges": Array [],
-      "id": "PipelineStack/Prod",
-      "isGroup": true,
+      "id": "PipelineStack/bucket/Resource",
+      "isGroup": false,
       "label": Array [
-        "Prod",
+        "S3 Bucket",
       ],
     },
     Object {
@@ -937,7 +918,7 @@ Object {
       },
       "children": Array [],
       "edges": Array [],
-      "id": "PipelineStack/bucket/Resource",
+      "id": "PipelineStack/Prod/Database/my-s3-db/Resource",
       "isGroup": false,
       "label": Array [
         "S3 Bucket",

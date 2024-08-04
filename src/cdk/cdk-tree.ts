@@ -23,19 +23,15 @@ export class ConstructInfoFqn {
     static of = (val: string): ConstructInfoFqn | undefined => {
 
         switch (val){
-            case "@aws-cdk/core.Stack":
             case "aws-cdk-lib.Stack":
                 return new ConstructInfoFqn(ConstructInfoFqnType.STACK)
 
-            case "@aws-cdk/core.Stage":
             case "aws-cdk-lib.Stage":
                 return new ConstructInfoFqn(ConstructInfoFqnType.STAGE)
 
-            case "@aws-cdk/core.App":
             case "aws-cdk-lib.App":
                 return new ConstructInfoFqn(ConstructInfoFqnType.APP)
 
-            case "@aws-cdk/core.CustomResource":
             case "aws-cdk-lib.CustomResource":
                 return new ConstructInfoFqn(ConstructInfoFqnType.CUSTOM_RESOURCE)
 

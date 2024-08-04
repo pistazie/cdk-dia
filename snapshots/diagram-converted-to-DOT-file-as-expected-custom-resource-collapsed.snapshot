@@ -56,19 +56,6 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - custom-r
         width = 2,
         height = 2.266,
       ];
-      \\"SoTsStack/custom-resource\\" [
-        label = \\" CloudFormation\\\\nCustomResource\\\\ncustom-resource\\",
-        fontsize = 12,
-        image = \\"icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-CloudFormation_64@5x.png\\",
-        imagescale = \\"true\\",
-        imagepos = \\"tc\\",
-        penwidth = \\"0\\",
-        shape = \\"node\\",
-        fixedsize = \\"true\\",
-        labelloc = \\"b\\",
-        width = 1.2,
-        height = 1.898,
-      ];
       \\"SoTsStack/custom-resource-provider/framework-onEvent\\" [
         label = \\" framework-onEvent\\",
         fontsize = 12,

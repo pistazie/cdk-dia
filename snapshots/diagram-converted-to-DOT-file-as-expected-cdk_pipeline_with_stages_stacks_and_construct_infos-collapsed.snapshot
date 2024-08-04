@@ -56,6 +56,19 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - cdk_pipe
         width = 2,
         height = 2.266,
       ];
+      \\"PipelineStack/Prod/Database/my-s3-db\\" [
+        label = \\" my-s3-db\\",
+        fontsize = 12,
+        image = \\"icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png\\",
+        imagescale = \\"true\\",
+        imagepos = \\"tc\\",
+        penwidth = \\"0\\",
+        shape = \\"node\\",
+        fixedsize = \\"true\\",
+        labelloc = \\"b\\",
+        width = 2,
+        height = 2.266,
+      ];
       subgraph \\"cluster-SubGraph.Pipeline\\" {
         graph [
           label = \\"Pipeline\\",
@@ -94,45 +107,6 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - cdk_pipe
           width = 1.2,
           height = 1.466,
         ];
-      }
-      subgraph \\"cluster-SubGraph.Prod\\" {
-        graph [
-          label = \\"Prod\\",
-          labelloc = \\"b\\",
-          labeljust = \\"l\\",
-          margin = \\"10\\",
-          fontsize = \\"16\\",
-          penwidth = \\"2\\",
-          pencolor = \\"#888888\\",
-          style = \\"filled,rounded\\",
-          fillcolor = \\"#d6d6d6\\",
-        ];
-        subgraph \\"cluster-SubGraph.Database\\" {
-          graph [
-            label = \\"Database\\",
-            labelloc = \\"b\\",
-            labeljust = \\"l\\",
-            margin = \\"10\\",
-            fontsize = \\"16\\",
-            penwidth = \\"2\\",
-            pencolor = \\"#888888\\",
-            style = \\"filled,rounded\\",
-            fillcolor = \\"#c7c7c7\\",
-          ];
-          \\"PipelineStack/Prod/Database/my-s3-db\\" [
-            label = \\" my-s3-db\\",
-            fontsize = 12,
-            image = \\"icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png\\",
-            imagescale = \\"true\\",
-            imagepos = \\"tc\\",
-            penwidth = \\"0\\",
-            shape = \\"node\\",
-            fixedsize = \\"true\\",
-            labelloc = \\"b\\",
-            width = 2,
-            height = 2.266,
-          ];
-        }
       }
     }
   }
