@@ -1,5 +1,5 @@
 import {CollapseTypes, CollapssingCustomizer} from "../diagram/component/customizable-attribute"
-import {TreeInspector} from "@aws-cdk/core"
+import {TreeInspector} from "aws-cdk-lib";
 
 export class CdkDia{
 
