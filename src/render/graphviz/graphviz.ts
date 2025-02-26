@@ -94,7 +94,7 @@ export class Graphviz implements DiagramRenderer {
     private static async dotToPng(sourceDotFile: string, targetPngFile: string) {
         const {stdout, stderr} = await execFile(Graphviz.GRAPHVIZ_BINARY, [
             Graphviz.sanitizeAndResolvePath(sourceDotFile),
-            `-T png`,
+            `-Tpng`,
             `>`,
             Graphviz.sanitizeAndResolvePath(targetPngFile)
         ])
