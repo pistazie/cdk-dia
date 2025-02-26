@@ -1,7 +1,7 @@
 import {AwsDiagramGenerator} from "./aws-diagram-generator"
 
 export abstract class EdgeTarget {
-    abstract isEqual(other: EdgeTarget)
+    abstract isEqual(other: EdgeTarget): boolean
 }
 
 export class EdgeTargetSimpleString extends EdgeTarget {
@@ -31,6 +31,9 @@ export class EdgeTargetStackExport extends EdgeTarget {
     }
 
     static fromFnImportValue(value: string) {
+        if (value.length > 1000) {
+            throw new Error("Input too long");
+        }
         const matches = value.match(/([^:]*):(.*)/)
 
         if (!matches) throw new Error(`FnImportValue not in expected form: ${value}`)
