@@ -1,12 +1,12 @@
 import * as fs from 'fs'
 import * as util from 'util'
-import * as hasbin from 'hasbin'
+import hasbin from 'hasbin'
 import {toDot} from "ts-graphviz"
 import childProcess from "child_process"
 import chalk from "chalk"
 import terminalLink from "terminal-link"
 
-const sanitizeFilename = require('sanitize-filename')
+import sanitizeFilename from 'sanitize-filename'
 const execFile = util.promisify(childProcess.execFile)
 
 import * as diagram from "../../diagram"
