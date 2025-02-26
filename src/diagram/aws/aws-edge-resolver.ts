@@ -8,6 +8,12 @@ import {DiagramComponent} from "../component/diagram-component"
 import {RootComponent} from "../component/root-component"
 import {EdgeTarget, EdgeTargetSimpleString, EdgeTargetStackExport} from "./edge-target"
 
+
+/**
+ * Resources with this ID are complete hidden from the logical ID calculation.
+ */
+const HIDDEN_ID = 'Default';
+
 /**
  * Finds references between nodes in AWS-CDK trees and converts them to Diagrams subComponent links
  */
@@ -85,10 +91,9 @@ export class AwsEdgeResolver {
     }
 
     private findUniqueResourceId(component: Component): string | boolean {
-
         const stackDepth = component.treeAncestorWithTag(ComponentTags.isCdkStack, "true")
-        const pathParts: string[] = component.idPathParts().slice(stackDepth.depth())
-
+        const pathParts: string[] = component.idPathParts().slice(stackDepth.depth()).filter(x => x !== HIDDEN_ID);
+        
         if (pathParts.length === 0) return false
 
         return makeUniqueId(pathParts)
