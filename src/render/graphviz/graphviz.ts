@@ -7,12 +7,14 @@ import chalk from "chalk"
 import terminalLink from "terminal-link"
 
 const sanitizeFilename = require('sanitize-filename')
-const exec = util.promisify(childProcess.exec)
+const execFile = util.promisify(childProcess.execFile)
 
 import * as diagram from "../../diagram"
 import {DiagramRenderer, RenderingOutput, RenderingProps, RenderingError} from "../diagram-renderer"
 import {GraphvizGenerator} from "./GraphvizGenerator"
 import * as path from "path"
+
+
 
 export class GraphvizRenderingProps extends RenderingProps {
     diagram: diagram.Diagram
@@ -90,16 +92,13 @@ export class Graphviz implements DiagramRenderer {
     }
 
     private static async dotToPng(sourceDotFile: string, targetPngFile: string) {
-
-        const cmdParts = [
-            Graphviz.GRAPHVIZ_BINARY,
+        const {stdout, stderr} = await execFile(Graphviz.GRAPHVIZ_BINARY, [
             Graphviz.sanitizeAndResolvePath(sourceDotFile),
             `-T png`,
             `>`,
             Graphviz.sanitizeAndResolvePath(targetPngFile)
-        ]
+        ])
 
-        const {stdout, stderr} = await exec(cmdParts.join(" "))
 
         const fileExists = fs.existsSync(targetPngFile)
         if (!fileExists) {
