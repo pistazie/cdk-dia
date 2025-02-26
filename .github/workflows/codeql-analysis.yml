@@ -19,6 +19,8 @@ on:
     branches: [ main ]
   schedule:
     - cron: '35 18 * * 6'
+  workflow_dispatch:
+    
 
 jobs:
   analyze:
