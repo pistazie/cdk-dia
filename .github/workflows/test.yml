@@ -10,8 +10,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
@@ -21,6 +21,7 @@ jobs:
 
       - name: Unit/Snapshot tests
         run: |
+            npx browserslist@latest --update-db --yes
             npm run test
             npx eslint . --ext .ts || true
 
