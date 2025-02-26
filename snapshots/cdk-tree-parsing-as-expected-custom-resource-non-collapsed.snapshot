@@ -329,9 +329,7 @@ Node {
               "path": "SoTsStack/custom-resource/Default",
             },
           },
-          "constructInfoFqn": ConstructInfoFqn {
-            "typ": 3,
-          },
+          "constructInfoFqn": undefined,
           "id": "custom-resource",
           "path": "SoTsStack/custom-resource",
         },
@@ -351,16 +349,12 @@ Node {
           "path": "SoTsStack/CDKMetadata",
         },
       },
-      "constructInfoFqn": ConstructInfoFqn {
-        "typ": 0,
-      },
+      "constructInfoFqn": undefined,
       "id": "SoTsStack",
       "path": "SoTsStack",
     },
   },
-  "constructInfoFqn": ConstructInfoFqn {
-    "typ": 2,
-  },
+  "constructInfoFqn": undefined,
   "id": "App",
   "path": "",
 }

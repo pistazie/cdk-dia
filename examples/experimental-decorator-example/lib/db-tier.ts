@@ -1,18 +1,18 @@
-import * as rds from "@aws-cdk/aws-rds"
-import * as cdk from "@aws-cdk/core"
-import * as ec2 from "@aws-cdk/aws-ec2"
+import {Construct } from "constructs"
+import * as rds from "aws-cdk-lib/aws-rds"
+import * as ec2 from "aws-cdk-lib/aws-ec2"
 
 import { DiagramOptions, CollapseTypes } from "cdk-dia"
 
 export class Db extends rds.DatabaseCluster {
-    constructor(scope: cdk.Construct, id: string, vpc: ec2.Vpc) {
+    constructor(scope: Construct, id: string, vpc: ec2.Vpc) {
         super(scope, id, dbProps(vpc));
     }
 }
 
 @DiagramOptions({ collapse: CollapseTypes.FORCE_NON_COLLAPSE })
 export class DbWithDiagramDecorator extends rds.DatabaseCluster {
-    constructor(scope: cdk.Construct, id: string, vpc: ec2.Vpc) {
+    constructor(scope: Construct, id: string, vpc: ec2.Vpc) {
         super(scope, id, dbProps(vpc));
     }
 }
