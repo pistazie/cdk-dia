@@ -1,6 +1,6 @@
 import {Diagram} from "../diagram"
 import * as cdk from "../../cdk"
-import * as _ from "lodash"
+import _ from "lodash"
 import {makeUniqueId} from "@aws-cdk/core/lib/private/uniqueid"
 import {Component, ComponentTags} from "../component/component"
 import {AwsDiagramGenerator} from "./aws-diagram-generator"
@@ -46,7 +46,7 @@ export class AwsEdgeResolver {
         const cdkStackTree = originComponent.treeAncestorWithTag(ComponentTags.isCdkStack, "true")
 
         if (cdkStackTree) {
-            let targetComponent = this.findTargetComponent(cdkStackTree, targetString)
+            const targetComponent = this.findTargetComponent(cdkStackTree, targetString)
 
             if (targetComponent != null) {
                 originComponent.links.addLink(targetComponent)
@@ -130,7 +130,9 @@ export class AwsEdgeResolver {
             if (key === "Fn::ImportValue" && object[key] !== undefined) {
                 try {
                     edgeTargets.push(EdgeTargetStackExport.fromFnImportValue(object[key] as string))
-                } catch (e) {}
+                } catch (error) {
+                    console.log("error parsing Fn::ImportValue: " + error);
+                }
             }
 
             if (key === "Ref" && (typeof object[key] === "string")) {
@@ -145,7 +147,7 @@ export class AwsEdgeResolver {
         return _.uniqWith(edgeTargets, ((a: EdgeTarget, b: EdgeTarget) => a.isEqual(b)))
     }
 
-    scrapeAllStrings(object: any): Set<EdgeTarget> {
+    scrapeAllStrings(object: null | String | Array<any> | object | unknown): Set<EdgeTarget> {
 
         if (object === null || object === undefined) {
             return new Set<EdgeTarget>()
