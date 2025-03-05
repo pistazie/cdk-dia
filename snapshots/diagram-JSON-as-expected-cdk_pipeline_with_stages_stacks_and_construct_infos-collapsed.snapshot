@@ -60,38 +60,16 @@ Object {
       ],
     },
     Object {
-      "_image": null,
-      "children": Array [
-        Object {
-          "_image": null,
-          "children": Array [
-            Object {
-              "_image": ComponentIcon {
-                "format": "NORMAL",
-                "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
-              },
-              "children": Array [],
-              "edges": Array [],
-              "id": "PipelineStack/Prod/Database/my-s3-db",
-              "isGroup": false,
-              "label": Array [
-                "my-s3-db",
-              ],
-            },
-          ],
-          "edges": Array [],
-          "id": "PipelineStack/Prod/Database",
-          "isGroup": true,
-          "label": Array [
-            "Database",
-          ],
-        },
-      ],
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+      },
+      "children": Array [],
       "edges": Array [],
-      "id": "PipelineStack/Prod",
-      "isGroup": true,
+      "id": "PipelineStack/Prod/Database/my-s3-db",
+      "isGroup": false,
       "label": Array [
-        "Prod",
+        "my-s3-db",
       ],
     },
   ],

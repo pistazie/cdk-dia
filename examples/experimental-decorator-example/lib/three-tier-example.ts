@@ -1,14 +1,15 @@
-import * as cdk from '@aws-cdk/core';
-import * as ec2 from "@aws-cdk/aws-ec2";
-import * as rds from "@aws-cdk/aws-rds";
-import * as lb from "@aws-cdk/aws-elasticloadbalancingv2";
-import * as lb_targets from "@aws-cdk/aws-elasticloadbalancingv2-targets";
+import {Construct } from "constructs"
+import * as rds from "aws-cdk-lib/aws-rds"
+import * as cdk from "aws-cdk-lib"
+import * as ec2 from "aws-cdk-lib/aws-ec2"
+import * as lb from "aws-cdk-lib/aws-elasticloadbalancingv2"
+import * as lb_targets from "aws-cdk-lib/aws-elasticloadbalancingv2-targets"
 
 import {WebTier} from "./web-tier"
 
 export class ThreeTierExample extends cdk.Stack {
 
-    constructor(scope: cdk.Construct, id: string, dbConstructor: new (context: cdk.Stack, name: string, arg2: ec2.Vpc) => rds.DatabaseCluster) {
+    constructor(scope: Construct, id: string, dbConstructor: new (context: cdk.Stack, name: string, arg2: ec2.Vpc) => rds.DatabaseCluster) {
         super(scope, id);
 
         const vpc = new ec2.Vpc(this, "Vpc");

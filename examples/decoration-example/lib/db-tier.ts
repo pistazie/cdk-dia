@@ -1,18 +1,19 @@
-import * as rds from "@aws-cdk/aws-rds"
-import * as cdk from "@aws-cdk/core"
-import * as ec2 from "@aws-cdk/aws-ec2"
+import {Construct } from "constructs"
+import * as rds from "aws-cdk-lib/aws-rds"
+import * as cdk from "aws-cdk-lib"
+import * as ec2 from "aws-cdk-lib/aws-ec2"
 
 import {CdkDia, CdkDiaDecorator, CollapseTypes} from "cdk-dia"
 
 export class Db extends rds.DatabaseCluster {
-    constructor(scope: cdk.Construct, id: string, vpc: ec2.Vpc) {
+    constructor(scope: Construct, id: string, vpc: ec2.Vpc) {
         super(scope, id, dbProps(vpc));
     }
 }
 
 export class DbWithDiagramDecorator extends rds.DatabaseCluster implements cdk.IInspectable {
 
-    constructor(scope: cdk.Construct, id: string, vpc: ec2.Vpc) {
+    constructor(scope: Construct, id: string, vpc: ec2.Vpc) {
         super(scope, id, dbProps(vpc));
     }
 
