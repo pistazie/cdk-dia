@@ -1,91 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`diagram converted to DOT file as expected src/test-fixtures/ - function-and-queue - collapsed 1`] = `
-"digraph \\"Diagram\\" {
-  splines = \\"ortho\\";
-  pad = \\"1.0\\";
-  nodesep = \\"0.60\\";
-  ranksep = \\"0.75\\";
-  fontname = \\"Sans-Serif\\";
-  fontsize = \\"15\\";
-  dpi = \\"200\\";
-  rankdir = \\"BT\\";
-  compound = \\"true\\";
-  fontcolor = \\"#222222\\";
+"digraph "Diagram" {
+  splines = "ortho";
+  pad = "1.0";
+  nodesep = "0.60";
+  ranksep = "0.75";
+  fontname = "Sans-Serif";
+  fontsize = "15";
+  dpi = "200";
+  rankdir = "BT";
+  compound = "true";
+  fontcolor = "#222222";
   edge [
-    color = \\"#D5871488\\",
+    color = "#D5871488",
     penwidth = 2,
-    arrowhead = \\"dot\\",
-    arrowtail = \\"dot\\",
+    arrowhead = "dot",
+    arrowtail = "dot",
   ];
   node [
-    shape = \\"box\\",
-    style = \\"rounded\\",
+    shape = "box",
+    style = "rounded",
     fixedsize = true,
     width = 1.7,
     height = 1.7,
-    labelloc = \\"c\\",
+    labelloc = "c",
     imagescale = true,
-    fontname = \\"Sans-Serif\\",
+    fontname = "Sans-Serif",
     fontsize = 8,
     margin = 8,
   ];
-  subgraph \\"CdkAutoDiagramPocStack\\" {
-    subgraph \\"cluster-SubGraph.CdkAutoDiagramPocStack\\" {
+  subgraph "CdkAutoDiagramPocStack" {
+    subgraph "cluster-SubGraph.CdkAutoDiagramPocStack" {
       graph [
-        label = \\"CdkAutoDiagramPocStack\\",
-        labelloc = \\"b\\",
-        labeljust = \\"l\\",
-        margin = \\"10\\",
-        fontsize = \\"16\\",
-        penwidth = \\"2\\",
-        pencolor = \\"#888888\\",
-        style = \\"filled,rounded\\",
-        fillcolor = \\"#e4e4e4\\",
+        label = "CdkAutoDiagramPocStack",
+        labelloc = "b",
+        labeljust = "l",
+        margin = "10",
+        fontsize = "16",
+        penwidth = "2",
+        pencolor = "#888888",
+        style = "filled,rounded",
+        fillcolor = "#e4e4e4",
       ];
-      subgraph \\"cluster-SubGraph.a-piece-of-the-diagram\\" {
+      subgraph "cluster-SubGraph.a-piece-of-the-diagram" {
         graph [
-          label = \\"a-piece-of-the-diagram\\",
-          labelloc = \\"b\\",
-          labeljust = \\"l\\",
-          margin = \\"10\\",
-          fontsize = \\"16\\",
-          penwidth = \\"2\\",
-          pencolor = \\"#888888\\",
-          style = \\"filled,rounded\\",
-          fillcolor = \\"#d6d6d6\\",
+          label = "a-piece-of-the-diagram",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#d6d6d6",
         ];
-        \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function\\" [
-          label = \\" my-function\\",
+        "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function" [
+          label = " my-function",
           fontsize = 12,
-          image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
+          image = "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
           width = 2,
           height = 2.266,
         ];
-        \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue\\" [
-          label = \\" my-queue\\",
+        "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue" [
+          label = " my-queue",
           fontsize = 12,
-          image = \\"icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
+          image = "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
           width = 2,
           height = 2.266,
         ];
       }
     }
   }
-  \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function\\" -> \\"CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue\\" [
-    dir = \\"both\\",
+  "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function" -> "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-queue" [
+    dir = "both",
   ];
 }"
 `;

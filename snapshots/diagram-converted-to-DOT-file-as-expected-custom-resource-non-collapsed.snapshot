@@ -1,160 +1,160 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`diagram converted to DOT file as expected src/test-fixtures/ - custom-resource - non-collapsed 1`] = `
-"digraph \\"Diagram\\" {
-  splines = \\"ortho\\";
-  pad = \\"1.0\\";
-  nodesep = \\"0.60\\";
-  ranksep = \\"0.75\\";
-  fontname = \\"Sans-Serif\\";
-  fontsize = \\"15\\";
-  dpi = \\"200\\";
-  rankdir = \\"BT\\";
-  compound = \\"true\\";
-  fontcolor = \\"#222222\\";
+"digraph "Diagram" {
+  splines = "ortho";
+  pad = "1.0";
+  nodesep = "0.60";
+  ranksep = "0.75";
+  fontname = "Sans-Serif";
+  fontsize = "15";
+  dpi = "200";
+  rankdir = "BT";
+  compound = "true";
+  fontcolor = "#222222";
   edge [
-    color = \\"#D5871488\\",
+    color = "#D5871488",
     penwidth = 2,
-    arrowhead = \\"dot\\",
-    arrowtail = \\"dot\\",
+    arrowhead = "dot",
+    arrowtail = "dot",
   ];
   node [
-    shape = \\"box\\",
-    style = \\"rounded\\",
+    shape = "box",
+    style = "rounded",
     fixedsize = true,
     width = 1.7,
     height = 1.7,
-    labelloc = \\"c\\",
+    labelloc = "c",
     imagescale = true,
-    fontname = \\"Sans-Serif\\",
+    fontname = "Sans-Serif",
     fontsize = 8,
     margin = 8,
   ];
-  subgraph \\"SoTsStack\\" {
-    subgraph \\"cluster-SubGraph.SoTsStack\\" {
+  subgraph "SoTsStack" {
+    subgraph "cluster-SubGraph.SoTsStack" {
       graph [
-        label = \\"SoTsStack\\",
-        labelloc = \\"b\\",
-        labeljust = \\"l\\",
-        margin = \\"10\\",
-        fontsize = \\"16\\",
-        penwidth = \\"2\\",
-        pencolor = \\"#888888\\",
-        style = \\"filled,rounded\\",
-        fillcolor = \\"#e4e4e4\\",
+        label = "SoTsStack",
+        labelloc = "b",
+        labeljust = "l",
+        margin = "10",
+        fontsize = "16",
+        penwidth = "2",
+        pencolor = "#888888",
+        style = "filled,rounded",
+        fillcolor = "#e4e4e4",
       ];
-      \\"SoTsStack/custom-resource\\" [
-        label = \\" CloudFormation\\\\nCustomResource\\\\ncustom-resource\\",
+      "SoTsStack/custom-resource" [
+        label = " CloudFormation\\nCustomResource\\ncustom-resource",
         fontsize = 12,
-        image = \\"icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-CloudFormation_64@5x.png\\",
-        imagescale = \\"true\\",
-        imagepos = \\"tc\\",
-        penwidth = \\"0\\",
-        shape = \\"node\\",
-        fixedsize = \\"true\\",
-        labelloc = \\"b\\",
+        image = "icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-CloudFormation_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
         width = 1.2,
         height = 1.898,
       ];
-      subgraph \\"cluster-SubGraph.on-event-handler\\" {
+      subgraph "cluster-SubGraph.on-event-handler" {
         graph [
-          label = \\"on-event-handler\\",
-          labelloc = \\"b\\",
-          labeljust = \\"l\\",
-          margin = \\"10\\",
-          fontsize = \\"16\\",
-          penwidth = \\"2\\",
-          pencolor = \\"#888888\\",
-          style = \\"filled,rounded\\",
-          fillcolor = \\"#d6d6d6\\",
+          label = "on-event-handler",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#d6d6d6",
         ];
-        \\"SoTsStack/on-event-handler/Resource\\" [
-          label = \\" Lambda Function\\",
+        "SoTsStack/on-event-handler/Resource" [
+          label = " Lambda Function",
           fontsize = 12,
-          image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
+          image = "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
           width = 2,
           height = 2.266,
         ];
-        \\"SoTsStack/on-event-handler/ServiceRole/Resource\\" [
-          label = \\" IAM Role\\",
+        "SoTsStack/on-event-handler/ServiceRole/Resource" [
+          label = " IAM Role",
           fontsize = 12,
-          image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
+          image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
           width = 1.2,
           height = 1.466,
         ];
       }
-      subgraph \\"cluster-SubGraph.framework-onEvent\\" {
+      subgraph "cluster-SubGraph.framework-onEvent" {
         graph [
-          label = \\"framework-onEvent\\",
-          labelloc = \\"b\\",
-          labeljust = \\"l\\",
-          margin = \\"10\\",
-          fontsize = \\"16\\",
-          penwidth = \\"2\\",
-          pencolor = \\"#888888\\",
-          style = \\"filled,rounded\\",
-          fillcolor = \\"#c7c7c7\\",
+          label = "framework-onEvent",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#c7c7c7",
         ];
-        \\"SoTsStack/custom-resource-provider/framework-onEvent/Resource\\" [
-          label = \\" Lambda Function\\",
+        "SoTsStack/custom-resource-provider/framework-onEvent/Resource" [
+          label = " Lambda Function",
           fontsize = 12,
-          image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
+          image = "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
           width = 2,
           height = 2.266,
         ];
-        subgraph \\"cluster-SubGraph.ServiceRole\\" {
+        subgraph "cluster-SubGraph.ServiceRole" {
           graph [
-            label = \\"ServiceRole\\",
-            labelloc = \\"b\\",
-            labeljust = \\"l\\",
-            margin = \\"10\\",
-            fontsize = \\"16\\",
-            penwidth = \\"2\\",
-            pencolor = \\"#888888\\",
-            style = \\"filled,rounded\\",
-            fillcolor = \\"#b9b9b9\\",
+            label = "ServiceRole",
+            labelloc = "b",
+            labeljust = "l",
+            margin = "10",
+            fontsize = "16",
+            penwidth = "2",
+            pencolor = "#888888",
+            style = "filled,rounded",
+            fillcolor = "#b9b9b9",
           ];
-          \\"SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/Resource\\" [
-            label = \\" IAM Role\\",
+          "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/Resource" [
+            label = " IAM Role",
             fontsize = 12,
-            image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
-            imagescale = \\"true\\",
-            imagepos = \\"tc\\",
-            penwidth = \\"0\\",
-            shape = \\"node\\",
-            fixedsize = \\"true\\",
-            labelloc = \\"b\\",
+            image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
             width = 1.2,
             height = 1.466,
           ];
-          \\"SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/DefaultPolicy/Resource\\" [
-            label = \\" IAM Policy\\",
+          "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/DefaultPolicy/Resource" [
+            label = " IAM Policy",
             fontsize = 12,
-            image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
-            imagescale = \\"true\\",
-            imagepos = \\"tc\\",
-            penwidth = \\"0\\",
-            shape = \\"node\\",
-            fixedsize = \\"true\\",
-            labelloc = \\"b\\",
+            image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
             width = 1.2,
             height = 1.466,
           ];
@@ -162,20 +162,20 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - custom-r
       }
     }
   }
-  \\"SoTsStack/on-event-handler/Resource\\" -> \\"SoTsStack/on-event-handler/ServiceRole/Resource\\" [
-    dir = \\"both\\",
+  "SoTsStack/on-event-handler/Resource" -> "SoTsStack/on-event-handler/ServiceRole/Resource" [
+    dir = "both",
   ];
-  \\"SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/DefaultPolicy/Resource\\" -> \\"SoTsStack/on-event-handler/Resource\\" [
-    dir = \\"both\\",
+  "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/DefaultPolicy/Resource" -> "SoTsStack/on-event-handler/Resource" [
+    dir = "both",
   ];
-  \\"SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/DefaultPolicy/Resource\\" -> \\"SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/Resource\\" [
-    dir = \\"both\\",
+  "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/DefaultPolicy/Resource" -> "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/Resource" [
+    dir = "both",
   ];
-  \\"SoTsStack/custom-resource-provider/framework-onEvent/Resource\\" -> \\"SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/Resource\\" [
-    dir = \\"both\\",
+  "SoTsStack/custom-resource-provider/framework-onEvent/Resource" -> "SoTsStack/custom-resource-provider/framework-onEvent/ServiceRole/Resource" [
+    dir = "both",
   ];
-  \\"SoTsStack/custom-resource-provider/framework-onEvent/Resource\\" -> \\"SoTsStack/on-event-handler/Resource\\" [
-    dir = \\"both\\",
+  "SoTsStack/custom-resource-provider/framework-onEvent/Resource" -> "SoTsStack/on-event-handler/Resource" [
+    dir = "both",
   ];
 }"
 `;

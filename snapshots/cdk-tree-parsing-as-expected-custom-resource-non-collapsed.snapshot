@@ -23,26 +23,26 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "assumeRolePolicyDocument": Object {
-                        "Statement": Array [
-                          Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "assumeRolePolicyDocument": {
+                        "Statement": [
+                          {
                             "Action": "sts:AssumeRole",
                             "Effect": "Allow",
-                            "Principal": Object {
+                            "Principal": {
                               "Service": "lambda.amazonaws.com",
                             },
                           },
                         ],
                         "Version": "2012-10-17",
                       },
-                      "managedPolicyArns": Array [
-                        Object {
-                          "Fn::Join": Array [
+                      "managedPolicyArns": [
+                        {
+                          "Fn::Join": [
                             "",
-                            Array [
+                            [
                               "arn:",
-                              Object {
+                              {
                                 "Ref": "AWS::Partition",
                               },
                               ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
@@ -65,13 +65,13 @@ Node {
             "Resource" => Node {
               "attributes": Map {
                 "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
-                "aws:cdk:cloudformation:props" => Object {
-                  "code": Object {
-                    "zipFile": "exports.handler = function(event, ctx, cb) { console.log(event);  return cb(null, \\"hi\\"); }",
+                "aws:cdk:cloudformation:props" => {
+                  "code": {
+                    "zipFile": "exports.handler = function(event, ctx, cb) { console.log(event);  return cb(null, "hi"); }",
                   },
                   "handler": "index.handler",
-                  "role": Object {
-                    "Fn::GetAtt": Array [
+                  "role": {
+                    "Fn::GetAtt": [
                       "oneventhandlerServiceRole13113A93",
                       "Arn",
                     ],
@@ -101,26 +101,26 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "assumeRolePolicyDocument": Object {
-                            "Statement": Array [
-                              Object {
+                        "aws:cdk:cloudformation:props" => {
+                          "assumeRolePolicyDocument": {
+                            "Statement": [
+                              {
                                 "Action": "sts:AssumeRole",
                                 "Effect": "Allow",
-                                "Principal": Object {
+                                "Principal": {
                                   "Service": "lambda.amazonaws.com",
                                 },
                               },
                             ],
                             "Version": "2012-10-17",
                           },
-                          "managedPolicyArns": Array [
-                            Object {
-                              "Fn::Join": Array [
+                          "managedPolicyArns": [
+                            {
+                              "Fn::Join": [
                                 "",
-                                Array [
+                                [
                                   "arn:",
-                                  Object {
+                                  {
                                     "Ref": "AWS::Partition",
                                   },
                                   ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
@@ -141,14 +141,14 @@ Node {
                         "Resource" => Node {
                           "attributes": Map {
                             "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
-                            "aws:cdk:cloudformation:props" => Object {
-                              "policyDocument": Object {
-                                "Statement": Array [
-                                  Object {
+                            "aws:cdk:cloudformation:props" => {
+                              "policyDocument": {
+                                "Statement": [
+                                  {
                                     "Action": "lambda:InvokeFunction",
                                     "Effect": "Allow",
-                                    "Resource": Object {
-                                      "Fn::GetAtt": Array [
+                                    "Resource": {
+                                      "Fn::GetAtt": [
                                         "oneventhandler6B374C77",
                                         "Arn",
                                       ],
@@ -158,8 +158,8 @@ Node {
                                 "Version": "2012-10-17",
                               },
                               "policyName": "customresourceproviderframeworkonEventServiceRoleDefaultPolicyDFA4A2F0",
-                              "roles": Array [
-                                Object {
+                              "roles": [
+                                {
                                   "Ref": "customresourceproviderframeworkonEventServiceRole070B62AA",
                                 },
                               ],
@@ -205,35 +205,35 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "code": Object {
-                        "s3Bucket": Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "code": {
+                        "s3Bucket": {
                           "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3BucketEAC9DD43",
                         },
-                        "s3Key": Object {
-                          "Fn::Join": Array [
+                        "s3Key": {
+                          "Fn::Join": [
                             "",
-                            Array [
-                              Object {
-                                "Fn::Select": Array [
+                            [
+                              {
+                                "Fn::Select": [
                                   0,
-                                  Object {
-                                    "Fn::Split": Array [
+                                  {
+                                    "Fn::Split": [
                                       "||",
-                                      Object {
+                                      {
                                         "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7",
                                       },
                                     ],
                                   },
                                 ],
                               },
-                              Object {
-                                "Fn::Select": Array [
+                              {
+                                "Fn::Select": [
                                   1,
-                                  Object {
-                                    "Fn::Split": Array [
+                                  {
+                                    "Fn::Split": [
                                       "||",
-                                      Object {
+                                      {
                                         "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7",
                                       },
                                     ],
@@ -245,10 +245,10 @@ Node {
                         },
                       },
                       "description": "AWS CDK resource provider framework - onEvent (SoTsStack/custom-resource-provider)",
-                      "environment": Object {
-                        "variables": Object {
-                          "USER_ON_EVENT_FUNCTION_ARN": Object {
-                            "Fn::GetAtt": Array [
+                      "environment": {
+                        "variables": {
+                          "USER_ON_EVENT_FUNCTION_ARN": {
+                            "Fn::GetAtt": [
                               "oneventhandler6B374C77",
                               "Arn",
                             ],
@@ -256,8 +256,8 @@ Node {
                         },
                       },
                       "handler": "framework.onEvent",
-                      "role": Object {
-                        "Fn::GetAtt": Array [
+                      "role": {
+                        "Fn::GetAtt": [
                           "customresourceproviderframeworkonEventServiceRole070B62AA",
                           "Arn",
                         ],

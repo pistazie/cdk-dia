@@ -1,49 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`setting specific Stacks works as expected use can use a path of a stack which is nested 1`] = `
-Object {
+{
   "_image": null,
-  "children": Array [
-    Object {
+  "children": [
+    {
       "_image": null,
-      "children": Array [
-        Object {
+      "children": [
+        {
           "_image": null,
-          "children": Array [
-            Object {
+          "children": [
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
               },
-              "children": Array [],
-              "edges": Array [],
+              "children": [],
+              "edges": [],
               "id": "PipelineStack/Prod/Database/my-s3-db/Resource",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "S3 Bucket",
               ],
             },
           ],
-          "edges": Array [],
+          "edges": [],
           "id": "PipelineStack/Prod/Database",
           "isGroup": true,
-          "label": Array [
+          "label": [
             "Database",
           ],
         },
       ],
-      "edges": Array [],
+      "edges": [],
       "id": "PipelineStack/Prod",
       "isGroup": true,
-      "label": Array [
+      "label": [
         "Prod",
       ],
     },
   ],
-  "edges": Array [],
+  "edges": [],
   "id": "PipelineStack",
   "isGroup": true,
-  "label": Array [
+  "label": [
     "PipelineStack",
   ],
 }

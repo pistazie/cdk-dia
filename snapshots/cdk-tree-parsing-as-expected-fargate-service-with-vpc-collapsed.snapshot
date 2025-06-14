@@ -20,13 +20,13 @@ Node {
             "Resource" => Node {
               "attributes": Map {
                 "aws:cdk:cloudformation:type" => "AWS::EC2::VPC",
-                "aws:cdk:cloudformation:props" => Object {
+                "aws:cdk:cloudformation:props" => {
                   "cidrBlock": "10.0.0.0/16",
                   "enableDnsHostnames": true,
                   "enableDnsSupport": true,
                   "instanceTenancy": "default",
-                  "tags": Array [
-                    Object {
+                  "tags": [
+                    {
                       "key": "Name",
                       "value": "QueueIsSubscribedToTopicStack/MyVpc",
                     },
@@ -44,32 +44,32 @@ Node {
                 "Subnet" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::Subnet",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "availabilityZone": Object {
-                        "Fn::Select": Array [
+                    "aws:cdk:cloudformation:props" => {
+                      "availabilityZone": {
+                        "Fn::Select": [
                           0,
-                          Object {
+                          {
                             "Fn::GetAZs": "",
                           },
                         ],
                       },
                       "cidrBlock": "10.0.0.0/18",
                       "mapPublicIpOnLaunch": true,
-                      "tags": Array [
-                        Object {
+                      "tags": [
+                        {
                           "key": "aws-cdk:subnet-name",
                           "value": "Public",
                         },
-                        Object {
+                        {
                           "key": "aws-cdk:subnet-type",
                           "value": "Public",
                         },
-                        Object {
+                        {
                           "key": "Name",
                           "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
                         },
                       ],
-                      "vpcId": Object {
+                      "vpcId": {
                         "Ref": "MyVpcF9F0CA6F",
                       },
                     },
@@ -89,14 +89,14 @@ Node {
                 "RouteTable" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::RouteTable",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "tags": Array [
-                        Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "tags": [
+                        {
                           "key": "Name",
                           "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
                         },
                       ],
-                      "vpcId": Object {
+                      "vpcId": {
                         "Ref": "MyVpcF9F0CA6F",
                       },
                     },
@@ -109,11 +109,11 @@ Node {
                 "RouteTableAssociation" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::SubnetRouteTableAssociation",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "routeTableId": Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "routeTableId": {
                         "Ref": "MyVpcPublicSubnet1RouteTableC46AB2F4",
                       },
-                      "subnetId": Object {
+                      "subnetId": {
                         "Ref": "MyVpcPublicSubnet1SubnetF6608456",
                       },
                     },
@@ -126,12 +126,12 @@ Node {
                 "DefaultRoute" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::Route",
-                    "aws:cdk:cloudformation:props" => Object {
+                    "aws:cdk:cloudformation:props" => {
                       "destinationCidrBlock": "0.0.0.0/0",
-                      "gatewayId": Object {
+                      "gatewayId": {
                         "Ref": "MyVpcIGW5C4A4F63",
                       },
-                      "routeTableId": Object {
+                      "routeTableId": {
                         "Ref": "MyVpcPublicSubnet1RouteTableC46AB2F4",
                       },
                     },
@@ -144,10 +144,10 @@ Node {
                 "EIP" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::EIP",
-                    "aws:cdk:cloudformation:props" => Object {
+                    "aws:cdk:cloudformation:props" => {
                       "domain": "vpc",
-                      "tags": Array [
-                        Object {
+                      "tags": [
+                        {
                           "key": "Name",
                           "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
                         },
@@ -162,18 +162,18 @@ Node {
                 "NATGateway" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::NatGateway",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "allocationId": Object {
-                        "Fn::GetAtt": Array [
+                    "aws:cdk:cloudformation:props" => {
+                      "allocationId": {
+                        "Fn::GetAtt": [
                           "MyVpcPublicSubnet1EIP096967CB",
                           "AllocationId",
                         ],
                       },
-                      "subnetId": Object {
+                      "subnetId": {
                         "Ref": "MyVpcPublicSubnet1SubnetF6608456",
                       },
-                      "tags": Array [
-                        Object {
+                      "tags": [
+                        {
                           "key": "Name",
                           "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet1",
                         },
@@ -196,32 +196,32 @@ Node {
                 "Subnet" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::Subnet",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "availabilityZone": Object {
-                        "Fn::Select": Array [
+                    "aws:cdk:cloudformation:props" => {
+                      "availabilityZone": {
+                        "Fn::Select": [
                           1,
-                          Object {
+                          {
                             "Fn::GetAZs": "",
                           },
                         ],
                       },
                       "cidrBlock": "10.0.64.0/18",
                       "mapPublicIpOnLaunch": true,
-                      "tags": Array [
-                        Object {
+                      "tags": [
+                        {
                           "key": "aws-cdk:subnet-name",
                           "value": "Public",
                         },
-                        Object {
+                        {
                           "key": "aws-cdk:subnet-type",
                           "value": "Public",
                         },
-                        Object {
+                        {
                           "key": "Name",
                           "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
                         },
                       ],
-                      "vpcId": Object {
+                      "vpcId": {
                         "Ref": "MyVpcF9F0CA6F",
                       },
                     },
@@ -241,14 +241,14 @@ Node {
                 "RouteTable" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::RouteTable",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "tags": Array [
-                        Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "tags": [
+                        {
                           "key": "Name",
                           "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
                         },
                       ],
-                      "vpcId": Object {
+                      "vpcId": {
                         "Ref": "MyVpcF9F0CA6F",
                       },
                     },
@@ -261,11 +261,11 @@ Node {
                 "RouteTableAssociation" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::SubnetRouteTableAssociation",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "routeTableId": Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "routeTableId": {
                         "Ref": "MyVpcPublicSubnet2RouteTable1DF17386",
                       },
-                      "subnetId": Object {
+                      "subnetId": {
                         "Ref": "MyVpcPublicSubnet2Subnet492B6BFB",
                       },
                     },
@@ -278,12 +278,12 @@ Node {
                 "DefaultRoute" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::Route",
-                    "aws:cdk:cloudformation:props" => Object {
+                    "aws:cdk:cloudformation:props" => {
                       "destinationCidrBlock": "0.0.0.0/0",
-                      "gatewayId": Object {
+                      "gatewayId": {
                         "Ref": "MyVpcIGW5C4A4F63",
                       },
-                      "routeTableId": Object {
+                      "routeTableId": {
                         "Ref": "MyVpcPublicSubnet2RouteTable1DF17386",
                       },
                     },
@@ -296,10 +296,10 @@ Node {
                 "EIP" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::EIP",
-                    "aws:cdk:cloudformation:props" => Object {
+                    "aws:cdk:cloudformation:props" => {
                       "domain": "vpc",
-                      "tags": Array [
-                        Object {
+                      "tags": [
+                        {
                           "key": "Name",
                           "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
                         },
@@ -314,18 +314,18 @@ Node {
                 "NATGateway" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::NatGateway",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "allocationId": Object {
-                        "Fn::GetAtt": Array [
+                    "aws:cdk:cloudformation:props" => {
+                      "allocationId": {
+                        "Fn::GetAtt": [
                           "MyVpcPublicSubnet2EIP8CCBA239",
                           "AllocationId",
                         ],
                       },
-                      "subnetId": Object {
+                      "subnetId": {
                         "Ref": "MyVpcPublicSubnet2Subnet492B6BFB",
                       },
-                      "tags": Array [
-                        Object {
+                      "tags": [
+                        {
                           "key": "Name",
                           "value": "QueueIsSubscribedToTopicStack/MyVpc/PublicSubnet2",
                         },
@@ -348,32 +348,32 @@ Node {
                 "Subnet" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::Subnet",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "availabilityZone": Object {
-                        "Fn::Select": Array [
+                    "aws:cdk:cloudformation:props" => {
+                      "availabilityZone": {
+                        "Fn::Select": [
                           0,
-                          Object {
+                          {
                             "Fn::GetAZs": "",
                           },
                         ],
                       },
                       "cidrBlock": "10.0.128.0/18",
                       "mapPublicIpOnLaunch": false,
-                      "tags": Array [
-                        Object {
+                      "tags": [
+                        {
                           "key": "aws-cdk:subnet-name",
                           "value": "Private",
                         },
-                        Object {
+                        {
                           "key": "aws-cdk:subnet-type",
                           "value": "Private",
                         },
-                        Object {
+                        {
                           "key": "Name",
                           "value": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1",
                         },
                       ],
-                      "vpcId": Object {
+                      "vpcId": {
                         "Ref": "MyVpcF9F0CA6F",
                       },
                     },
@@ -393,14 +393,14 @@ Node {
                 "RouteTable" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::RouteTable",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "tags": Array [
-                        Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "tags": [
+                        {
                           "key": "Name",
                           "value": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet1",
                         },
                       ],
-                      "vpcId": Object {
+                      "vpcId": {
                         "Ref": "MyVpcF9F0CA6F",
                       },
                     },
@@ -413,11 +413,11 @@ Node {
                 "RouteTableAssociation" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::SubnetRouteTableAssociation",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "routeTableId": Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "routeTableId": {
                         "Ref": "MyVpcPrivateSubnet1RouteTable8819E6E2",
                       },
-                      "subnetId": Object {
+                      "subnetId": {
                         "Ref": "MyVpcPrivateSubnet1Subnet5057CF7E",
                       },
                     },
@@ -430,12 +430,12 @@ Node {
                 "DefaultRoute" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::Route",
-                    "aws:cdk:cloudformation:props" => Object {
+                    "aws:cdk:cloudformation:props" => {
                       "destinationCidrBlock": "0.0.0.0/0",
-                      "natGatewayId": Object {
+                      "natGatewayId": {
                         "Ref": "MyVpcPublicSubnet1NATGatewayAD3400C1",
                       },
-                      "routeTableId": Object {
+                      "routeTableId": {
                         "Ref": "MyVpcPrivateSubnet1RouteTable8819E6E2",
                       },
                     },
@@ -456,32 +456,32 @@ Node {
                 "Subnet" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::Subnet",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "availabilityZone": Object {
-                        "Fn::Select": Array [
+                    "aws:cdk:cloudformation:props" => {
+                      "availabilityZone": {
+                        "Fn::Select": [
                           1,
-                          Object {
+                          {
                             "Fn::GetAZs": "",
                           },
                         ],
                       },
                       "cidrBlock": "10.0.192.0/18",
                       "mapPublicIpOnLaunch": false,
-                      "tags": Array [
-                        Object {
+                      "tags": [
+                        {
                           "key": "aws-cdk:subnet-name",
                           "value": "Private",
                         },
-                        Object {
+                        {
                           "key": "aws-cdk:subnet-type",
                           "value": "Private",
                         },
-                        Object {
+                        {
                           "key": "Name",
                           "value": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2",
                         },
                       ],
-                      "vpcId": Object {
+                      "vpcId": {
                         "Ref": "MyVpcF9F0CA6F",
                       },
                     },
@@ -501,14 +501,14 @@ Node {
                 "RouteTable" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::RouteTable",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "tags": Array [
-                        Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "tags": [
+                        {
                           "key": "Name",
                           "value": "QueueIsSubscribedToTopicStack/MyVpc/PrivateSubnet2",
                         },
                       ],
-                      "vpcId": Object {
+                      "vpcId": {
                         "Ref": "MyVpcF9F0CA6F",
                       },
                     },
@@ -521,11 +521,11 @@ Node {
                 "RouteTableAssociation" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::SubnetRouteTableAssociation",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "routeTableId": Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "routeTableId": {
                         "Ref": "MyVpcPrivateSubnet2RouteTableCEDCEECE",
                       },
-                      "subnetId": Object {
+                      "subnetId": {
                         "Ref": "MyVpcPrivateSubnet2Subnet0040C983",
                       },
                     },
@@ -538,12 +538,12 @@ Node {
                 "DefaultRoute" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::EC2::Route",
-                    "aws:cdk:cloudformation:props" => Object {
+                    "aws:cdk:cloudformation:props" => {
                       "destinationCidrBlock": "0.0.0.0/0",
-                      "natGatewayId": Object {
+                      "natGatewayId": {
                         "Ref": "MyVpcPublicSubnet2NATGateway91BFBEC9",
                       },
-                      "routeTableId": Object {
+                      "routeTableId": {
                         "Ref": "MyVpcPrivateSubnet2RouteTableCEDCEECE",
                       },
                     },
@@ -561,9 +561,9 @@ Node {
             "IGW" => Node {
               "attributes": Map {
                 "aws:cdk:cloudformation:type" => "AWS::EC2::InternetGateway",
-                "aws:cdk:cloudformation:props" => Object {
-                  "tags": Array [
-                    Object {
+                "aws:cdk:cloudformation:props" => {
+                  "tags": [
+                    {
                       "key": "Name",
                       "value": "QueueIsSubscribedToTopicStack/MyVpc",
                     },
@@ -578,11 +578,11 @@ Node {
             "VPCGW" => Node {
               "attributes": Map {
                 "aws:cdk:cloudformation:type" => "AWS::EC2::VPCGatewayAttachment",
-                "aws:cdk:cloudformation:props" => Object {
-                  "internetGatewayId": Object {
+                "aws:cdk:cloudformation:props" => {
+                  "internetGatewayId": {
                     "Ref": "MyVpcIGW5C4A4F63",
                   },
-                  "vpcId": Object {
+                  "vpcId": {
                     "Ref": "MyVpcF9F0CA6F",
                   },
                 },
@@ -603,7 +603,7 @@ Node {
             "Resource" => Node {
               "attributes": Map {
                 "aws:cdk:cloudformation:type" => "AWS::ECS::Cluster",
-                "aws:cdk:cloudformation:props" => Object {},
+                "aws:cdk:cloudformation:props" => {},
               },
               "children": Map {},
               "constructInfoFqn": undefined,
@@ -624,27 +624,27 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::ElasticLoadBalancingV2::LoadBalancer",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "loadBalancerAttributes": Array [
-                        Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "loadBalancerAttributes": [
+                        {
                           "key": "deletion_protection.enabled",
                           "value": "false",
                         },
                       ],
                       "scheme": "internet-facing",
-                      "securityGroups": Array [
-                        Object {
-                          "Fn::GetAtt": Array [
+                      "securityGroups": [
+                        {
+                          "Fn::GetAtt": [
                             "MyFargateServiceLBSecurityGroup6FBF16F1",
                             "GroupId",
                           ],
                         },
                       ],
-                      "subnets": Array [
-                        Object {
+                      "subnets": [
+                        {
                           "Ref": "MyVpcPublicSubnet1SubnetF6608456",
                         },
-                        Object {
+                        {
                           "Ref": "MyVpcPublicSubnet2Subnet492B6BFB",
                         },
                       ],
@@ -662,10 +662,10 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::EC2::SecurityGroup",
-                        "aws:cdk:cloudformation:props" => Object {
+                        "aws:cdk:cloudformation:props" => {
                           "groupDescription": "Automatically created Security Group for ELB QueueIsSubscribedToTopicStackMyFargateServiceLB409C97A6",
-                          "securityGroupIngress": Array [
-                            Object {
+                          "securityGroupIngress": [
+                            {
                               "cidrIp": "0.0.0.0/0",
                               "description": "Allow from anyone on port 80",
                               "fromPort": 80,
@@ -673,7 +673,7 @@ Node {
                               "toPort": 80,
                             },
                           ],
-                          "vpcId": Object {
+                          "vpcId": {
                             "Ref": "MyVpcF9F0CA6F",
                           },
                         },
@@ -686,17 +686,17 @@ Node {
                     "to QueueIsSubscribedToTopicStackMyFargateServiceSecurityGroupB3618F23:80" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::EC2::SecurityGroupEgress",
-                        "aws:cdk:cloudformation:props" => Object {
+                        "aws:cdk:cloudformation:props" => {
                           "description": "Load balancer to target",
-                          "destinationSecurityGroupId": Object {
-                            "Fn::GetAtt": Array [
+                          "destinationSecurityGroupId": {
+                            "Fn::GetAtt": [
                               "MyFargateServiceSecurityGroup7016792A",
                               "GroupId",
                             ],
                           },
                           "fromPort": 80,
-                          "groupId": Object {
-                            "Fn::GetAtt": Array [
+                          "groupId": {
+                            "Fn::GetAtt": [
                               "MyFargateServiceLBSecurityGroup6FBF16F1",
                               "GroupId",
                             ],
@@ -721,16 +721,16 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::ElasticLoadBalancingV2::Listener",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "defaultActions": Array [
-                            Object {
-                              "targetGroupArn": Object {
+                        "aws:cdk:cloudformation:props" => {
+                          "defaultActions": [
+                            {
+                              "targetGroupArn": {
                                 "Ref": "MyFargateServiceLBPublicListenerECSGroup4A3EDF05",
                               },
                               "type": "forward",
                             },
                           ],
-                          "loadBalancerArn": Object {
+                          "loadBalancerArn": {
                             "Ref": "MyFargateServiceLBDE830E97",
                           },
                           "port": 80,
@@ -748,11 +748,11 @@ Node {
                         "Resource" => Node {
                           "attributes": Map {
                             "aws:cdk:cloudformation:type" => "AWS::ElasticLoadBalancingV2::TargetGroup",
-                            "aws:cdk:cloudformation:props" => Object {
+                            "aws:cdk:cloudformation:props" => {
                               "port": 80,
                               "protocol": "HTTP",
                               "targetType": "ip",
-                              "vpcId": Object {
+                              "vpcId": {
                                 "Ref": "MyVpcF9F0CA6F",
                               },
                             },
@@ -800,13 +800,13 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "assumeRolePolicyDocument": Object {
-                            "Statement": Array [
-                              Object {
+                        "aws:cdk:cloudformation:props" => {
+                          "assumeRolePolicyDocument": {
+                            "Statement": [
+                              {
                                 "Action": "sts:AssumeRole",
                                 "Effect": "Allow",
-                                "Principal": Object {
+                                "Principal": {
                                   "Service": "ecs-tasks.amazonaws.com",
                                 },
                               },
@@ -828,26 +828,26 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::ECS::TaskDefinition",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "containerDefinitions": Array [
-                        Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "containerDefinitions": [
+                        {
                           "essential": true,
                           "image": "amazon/amazon-ecs-sample",
-                          "logConfiguration": Object {
+                          "logConfiguration": {
                             "logDriver": "awslogs",
-                            "options": Object {
-                              "awslogs-group": Object {
+                            "options": {
+                              "awslogs-group": {
                                 "Ref": "MyFargateServiceTaskDefwebLogGroup4A6C44E8",
                               },
-                              "awslogs-region": Object {
+                              "awslogs-region": {
                                 "Ref": "AWS::Region",
                               },
                               "awslogs-stream-prefix": "MyFargateService",
                             },
                           },
                           "name": "web",
-                          "portMappings": Array [
-                            Object {
+                          "portMappings": [
+                            {
                               "containerPort": 80,
                               "protocol": "tcp",
                             },
@@ -855,8 +855,8 @@ Node {
                         },
                       ],
                       "cpu": "512",
-                      "executionRoleArn": Object {
-                        "Fn::GetAtt": Array [
+                      "executionRoleArn": {
+                        "Fn::GetAtt": [
                           "MyFargateServiceTaskDefExecutionRoleD6305504",
                           "Arn",
                         ],
@@ -864,11 +864,11 @@ Node {
                       "family": "QueueIsSubscribedToTopicStackMyFargateServiceTaskDefFC34EE8E",
                       "memory": "2048",
                       "networkMode": "awsvpc",
-                      "requiresCompatibilities": Array [
+                      "requiresCompatibilities": [
                         "FARGATE",
                       ],
-                      "taskRoleArn": Object {
-                        "Fn::GetAtt": Array [
+                      "taskRoleArn": {
+                        "Fn::GetAtt": [
                           "MyFargateServiceTaskDefTaskRole62C7D397",
                           "Arn",
                         ],
@@ -889,7 +889,7 @@ Node {
                         "Resource" => Node {
                           "attributes": Map {
                             "aws:cdk:cloudformation:type" => "AWS::Logs::LogGroup",
-                            "aws:cdk:cloudformation:props" => Object {},
+                            "aws:cdk:cloudformation:props" => {},
                           },
                           "children": Map {},
                           "constructInfoFqn": undefined,
@@ -912,13 +912,13 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "assumeRolePolicyDocument": Object {
-                            "Statement": Array [
-                              Object {
+                        "aws:cdk:cloudformation:props" => {
+                          "assumeRolePolicyDocument": {
+                            "Statement": [
+                              {
                                 "Action": "sts:AssumeRole",
                                 "Effect": "Allow",
-                                "Principal": Object {
+                                "Principal": {
                                   "Service": "ecs-tasks.amazonaws.com",
                                 },
                               },
@@ -938,17 +938,17 @@ Node {
                         "Resource" => Node {
                           "attributes": Map {
                             "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
-                            "aws:cdk:cloudformation:props" => Object {
-                              "policyDocument": Object {
-                                "Statement": Array [
-                                  Object {
-                                    "Action": Array [
+                            "aws:cdk:cloudformation:props" => {
+                              "policyDocument": {
+                                "Statement": [
+                                  {
+                                    "Action": [
                                       "logs:CreateLogStream",
                                       "logs:PutLogEvents",
                                     ],
                                     "Effect": "Allow",
-                                    "Resource": Object {
-                                      "Fn::GetAtt": Array [
+                                    "Resource": {
+                                      "Fn::GetAtt": [
                                         "MyFargateServiceTaskDefwebLogGroup4A6C44E8",
                                         "Arn",
                                       ],
@@ -958,8 +958,8 @@ Node {
                                 "Version": "2012-10-17",
                               },
                               "policyName": "MyFargateServiceTaskDefExecutionRoleDefaultPolicyEC22B20F",
-                              "roles": Array [
-                                Object {
+                              "roles": [
+                                {
                                   "Ref": "MyFargateServiceTaskDefExecutionRoleD6305504",
                                 },
                               ],
@@ -991,11 +991,11 @@ Node {
                 "Service" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::ECS::Service",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "cluster": Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "cluster": {
                         "Ref": "MyCluster4C1BA579",
                       },
-                      "deploymentConfiguration": Object {
+                      "deploymentConfiguration": {
                         "maximumPercent": 200,
                         "minimumHealthyPercent": 50,
                       },
@@ -1003,37 +1003,37 @@ Node {
                       "enableEcsManagedTags": false,
                       "healthCheckGracePeriodSeconds": 60,
                       "launchType": "FARGATE",
-                      "loadBalancers": Array [
-                        Object {
+                      "loadBalancers": [
+                        {
                           "containerName": "web",
                           "containerPort": 80,
-                          "targetGroupArn": Object {
+                          "targetGroupArn": {
                             "Ref": "MyFargateServiceLBPublicListenerECSGroup4A3EDF05",
                           },
                         },
                       ],
-                      "networkConfiguration": Object {
-                        "awsvpcConfiguration": Object {
+                      "networkConfiguration": {
+                        "awsvpcConfiguration": {
                           "assignPublicIp": "DISABLED",
-                          "securityGroups": Array [
-                            Object {
-                              "Fn::GetAtt": Array [
+                          "securityGroups": [
+                            {
+                              "Fn::GetAtt": [
                                 "MyFargateServiceSecurityGroup7016792A",
                                 "GroupId",
                               ],
                             },
                           ],
-                          "subnets": Array [
-                            Object {
+                          "subnets": [
+                            {
                               "Ref": "MyVpcPrivateSubnet1Subnet5057CF7E",
                             },
-                            Object {
+                            {
                               "Ref": "MyVpcPrivateSubnet2Subnet0040C983",
                             },
                           ],
                         },
                       },
-                      "taskDefinition": Object {
+                      "taskDefinition": {
                         "Ref": "MyFargateServiceTaskDef5DA17B39",
                       },
                     },
@@ -1049,16 +1049,16 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::EC2::SecurityGroup",
-                        "aws:cdk:cloudformation:props" => Object {
+                        "aws:cdk:cloudformation:props" => {
                           "groupDescription": "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup",
-                          "securityGroupEgress": Array [
-                            Object {
+                          "securityGroupEgress": [
+                            {
                               "cidrIp": "0.0.0.0/0",
                               "description": "Allow all outbound traffic by default",
                               "ipProtocol": "-1",
                             },
                           ],
-                          "vpcId": Object {
+                          "vpcId": {
                             "Ref": "MyVpcF9F0CA6F",
                           },
                         },
@@ -1071,18 +1071,18 @@ Node {
                     "from QueueIsSubscribedToTopicStackMyFargateServiceLBSecurityGroupE6D6C06E:80" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::EC2::SecurityGroupIngress",
-                        "aws:cdk:cloudformation:props" => Object {
+                        "aws:cdk:cloudformation:props" => {
                           "description": "Load balancer to target",
                           "fromPort": 80,
-                          "groupId": Object {
-                            "Fn::GetAtt": Array [
+                          "groupId": {
+                            "Fn::GetAtt": [
                               "MyFargateServiceSecurityGroup7016792A",
                               "GroupId",
                             ],
                           },
                           "ipProtocol": "tcp",
-                          "sourceSecurityGroupId": Object {
-                            "Fn::GetAtt": Array [
+                          "sourceSecurityGroupId": {
+                            "Fn::GetAtt": [
                               "MyFargateServiceLBSecurityGroup6FBF16F1",
                               "GroupId",
                             ],

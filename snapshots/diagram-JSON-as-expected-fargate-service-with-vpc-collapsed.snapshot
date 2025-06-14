@@ -1,77 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`diagram JSON as expected src/test-fixtures/ - fargate-service-with-vpc - collapsed 1`] = `
-Object {
+{
   "_image": null,
-  "children": Array [
-    Object {
+  "children": [
+    {
       "_image": ComponentIcon {
         "format": "NORMAL",
         "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png",
       },
-      "children": Array [],
-      "edges": Array [],
+      "children": [],
+      "edges": [],
       "id": "QueueIsSubscribedToTopicStack/MyVpc",
       "isGroup": false,
-      "label": Array [
+      "label": [
         "MyVpc",
       ],
     },
-    Object {
+    {
       "_image": ComponentIcon {
         "format": "NORMAL",
         "path": "icons/aws/Service/Arch_Compute/64/Arch_Amazon-Elastic-Container-Service_64@5x.png",
       },
-      "children": Array [],
-      "edges": Array [],
+      "children": [],
+      "edges": [],
       "id": "QueueIsSubscribedToTopicStack/MyCluster",
       "isGroup": false,
-      "label": Array [
+      "label": [
         "MyCluster",
       ],
     },
-    Object {
+    {
       "_image": null,
-      "children": Array [
-        Object {
+      "children": [
+        {
           "_image": ComponentIcon {
             "format": "NORMAL",
             "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png",
           },
-          "children": Array [],
-          "edges": Array [
+          "children": [],
+          "edges": [
             "QueueIsSubscribedToTopicStack/MyVpc",
             "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup",
           ],
           "id": "QueueIsSubscribedToTopicStack/MyFargateService/LB",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "LB",
           ],
         },
-        Object {
+        {
           "_image": ComponentIcon {
             "format": "NORMAL",
             "path": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png",
           },
-          "children": Array [],
-          "edges": Array [],
+          "children": [],
+          "edges": [],
           "id": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "TaskDef",
           ],
         },
-        Object {
+        {
           "_image": null,
-          "children": Array [
-            Object {
+          "children": [
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Service_48_Dark_gen.png",
               },
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "QueueIsSubscribedToTopicStack/MyVpc",
                 "QueueIsSubscribedToTopicStack/MyCluster",
                 "QueueIsSubscribedToTopicStack/MyFargateService/LB",
@@ -80,48 +80,48 @@ Object {
               ],
               "id": "QueueIsSubscribedToTopicStack/MyFargateService/Service/Service",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "ECS Service",
                 "Service",
               ],
             },
-            Object {
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/security_group.png",
               },
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "QueueIsSubscribedToTopicStack/MyVpc",
                 "QueueIsSubscribedToTopicStack/MyFargateService/LB",
               ],
               "id": "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "SecurityGroup",
               ],
             },
           ],
-          "edges": Array [],
+          "edges": [],
           "id": "QueueIsSubscribedToTopicStack/MyFargateService/Service",
           "isGroup": true,
-          "label": Array [
+          "label": [
             "Service",
           ],
         },
       ],
-      "edges": Array [],
+      "edges": [],
       "id": "QueueIsSubscribedToTopicStack/MyFargateService",
       "isGroup": true,
-      "label": Array [
+      "label": [
         "MyFargateService",
       ],
     },
   ],
-  "edges": Array [],
+  "edges": [],
   "id": "QueueIsSubscribedToTopicStack",
   "isGroup": true,
-  "label": Array [
+  "label": [
     "QueueIsSubscribedToTopicStack",
   ],
 }

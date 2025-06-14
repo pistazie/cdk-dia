@@ -1,147 +1,147 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`diagram JSON as expected src/test-fixtures/ - the-eventbridge-etl - non-collapsed 1`] = `
-Object {
+{
   "_image": null,
-  "children": Array [
-    Object {
+  "children": [
+    {
       "_image": null,
-      "children": Array [
-        Object {
+      "children": [
+        {
           "_image": null,
-          "children": Array [
-            Object {
+          "children": [
+            {
               "_image": ComponentIcon {
                 "format": "SMALLER",
                 "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
               },
-              "children": Array [],
-              "edges": Array [],
+              "children": [],
+              "edges": [],
               "id": "TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/Resource",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "IAM Role",
               ],
             },
-            Object {
+            {
               "_image": ComponentIcon {
                 "format": "SMALLER",
                 "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
               },
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/Resource",
               ],
               "id": "TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/DefaultPolicy/Resource",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "IAM Policy",
               ],
             },
           ],
-          "edges": Array [],
+          "edges": [],
           "id": "TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole",
           "isGroup": true,
-          "label": Array [
+          "label": [
             "TaskRole",
           ],
         },
-        Object {
+        {
           "_image": ComponentIcon {
             "format": "NORMAL",
             "path": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png",
           },
-          "children": Array [],
-          "edges": Array [
+          "children": [],
+          "edges": [
             "TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/Resource",
           ],
           "id": "TheEventbridgeEtlStack/FargateTaskDefinition/Resource",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "ECS TaskDefinition",
           ],
         },
       ],
-      "edges": Array [],
+      "edges": [],
       "id": "TheEventbridgeEtlStack/FargateTaskDefinition",
       "isGroup": true,
-      "label": Array [
+      "label": [
         "FargateTaskDefinition",
       ],
     },
-    Object {
+    {
       "_image": null,
-      "children": Array [
-        Object {
+      "children": [
+        {
           "_image": null,
-          "children": Array [
-            Object {
+          "children": [
+            {
               "_image": ComponentIcon {
                 "format": "SMALLER",
                 "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
               },
-              "children": Array [],
-              "edges": Array [],
+              "children": [],
+              "edges": [],
               "id": "TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/Resource",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "IAM Role",
               ],
             },
-            Object {
+            {
               "_image": ComponentIcon {
                 "format": "SMALLER",
                 "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
               },
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "TheEventbridgeEtlStack/FargateTaskDefinition/Resource",
                 "TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/Resource",
                 "TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/Resource",
               ],
               "id": "TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/DefaultPolicy/Resource",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "IAM Policy",
               ],
             },
           ],
-          "edges": Array [],
+          "edges": [],
           "id": "TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole",
           "isGroup": true,
-          "label": Array [
+          "label": [
             "ServiceRole",
           ],
         },
-        Object {
+        {
           "_image": ComponentIcon {
             "format": "NORMAL",
             "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
           },
-          "children": Array [],
-          "edges": Array [
+          "children": [],
+          "edges": [
             "TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/Resource",
             "TheEventbridgeEtlStack/FargateTaskDefinition/Resource",
           ],
           "id": "TheEventbridgeEtlStack/extractLambdaHandler/Resource",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "Lambda Function",
           ],
         },
       ],
-      "edges": Array [],
+      "edges": [],
       "id": "TheEventbridgeEtlStack/extractLambdaHandler",
       "isGroup": true,
-      "label": Array [
+      "label": [
         "extractLambdaHandler",
       ],
     },
   ],
-  "edges": Array [],
+  "edges": [],
   "id": "TheEventbridgeEtlStack",
   "isGroup": true,
-  "label": Array [
+  "label": [
     "TheEventbridgeEtlStack",
   ],
 }

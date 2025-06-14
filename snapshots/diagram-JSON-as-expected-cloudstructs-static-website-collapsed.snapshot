@@ -1,244 +1,244 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`diagram JSON as expected src/test-fixtures/ - cloudstructs-static-website - collapsed 1`] = `
-Object {
+{
   "_image": null,
-  "children": Array [
-    Object {
+  "children": [
+    {
       "_image": ComponentIcon {
         "format": "NORMAL",
         "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png",
       },
-      "children": Array [],
-      "edges": Array [],
+      "children": [],
+      "edges": [],
       "id": "StaticWebSite/dns",
       "isGroup": false,
-      "label": Array [
+      "label": [
         "dns",
       ],
     },
-    Object {
+    {
       "_image": null,
-      "children": Array [
-        Object {
+      "children": [
+        {
           "_image": ComponentIcon {
             "format": "NORMAL",
             "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
           },
-          "children": Array [],
-          "edges": Array [
+          "children": [],
+          "edges": [
             "StaticWebSite/StaticWebsite/Distribution",
           ],
           "id": "StaticWebSite/StaticWebsite/Bucket",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "Bucket",
           ],
         },
-        Object {
+        {
           "_image": ComponentIcon {
             "format": "NORMAL",
             "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-CloudFront_64@5x.png",
           },
-          "children": Array [],
-          "edges": Array [
+          "children": [],
+          "edges": [
             "StaticWebSite/StaticWebsite/Bucket",
           ],
           "id": "StaticWebSite/StaticWebsite/Distribution",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "Distribution",
           ],
         },
-        Object {
+        {
           "_image": ComponentIcon {
             "format": "SMALLER",
             "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png",
           },
-          "children": Array [],
-          "edges": Array [
+          "children": [],
+          "edges": [
             "StaticWebSite/dns",
             "StaticWebSite/StaticWebsite/Distribution",
           ],
           "id": "StaticWebSite/StaticWebsite/ARecord",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "ARecord",
           ],
         },
-        Object {
+        {
           "_image": ComponentIcon {
             "format": "SMALLER",
             "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png",
           },
-          "children": Array [],
-          "edges": Array [
+          "children": [],
+          "edges": [
             "StaticWebSite/dns",
             "StaticWebSite/StaticWebsite/Distribution",
           ],
           "id": "StaticWebSite/StaticWebsite/AaaaRecord",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "AaaaRecord",
           ],
         },
-        Object {
+        {
           "_image": null,
-          "children": Array [
-            Object {
+          "children": [
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
               },
-              "children": Array [],
-              "edges": Array [],
+              "children": [],
+              "edges": [],
               "id": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectBucket",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "RedirectBucket",
               ],
             },
-            Object {
+            {
               "_image": ComponentIcon {
                 "format": "SMALLER",
                 "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png",
               },
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution",
                 "StaticWebSite/dns",
               ],
               "id": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecord2591f3",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "RedirectAliasRecord2591f3",
               ],
             },
-            Object {
+            {
               "_image": ComponentIcon {
                 "format": "SMALLER",
                 "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png",
               },
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution",
                 "StaticWebSite/dns",
               ],
               "id": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecordSix2591f3",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "RedirectAliasRecordSix2591f3",
               ],
             },
-            Object {
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
               },
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "StaticWebSite/dns",
               ],
               "id": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "CertificateRequestorFunction",
               ],
             },
-            Object {
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-CloudFront_64@5x.png",
               },
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectBucket",
               ],
               "id": "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "CloudFront Distribution",
                 "CFDistribution",
               ],
             },
           ],
-          "edges": Array [],
+          "edges": [],
           "id": "StaticWebSite/StaticWebsite/HttpsRedirect",
           "isGroup": true,
-          "label": Array [
+          "label": [
             "HttpsRedirect",
           ],
         },
-        Object {
+        {
           "_image": ComponentIcon {
             "format": "NORMAL",
             "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
           },
-          "children": Array [],
-          "edges": Array [
+          "children": [],
+          "edges": [
             "StaticWebSite/dns",
           ],
           "id": "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "CertificateRequestorFunction",
           ],
         },
-        Object {
+        {
           "_image": ComponentIcon {
             "format": "SMALLER",
             "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
           },
-          "children": Array [],
-          "edges": Array [
+          "children": [],
+          "edges": [
             "StaticWebSite/StaticWebsite/Bucket",
             "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287",
           ],
           "id": "StaticWebSite/StaticWebsite/PutConfig/CustomResourcePolicy",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "CustomResourcePolicy",
           ],
         },
       ],
-      "edges": Array [],
+      "edges": [],
       "id": "StaticWebSite/StaticWebsite",
       "isGroup": true,
-      "label": Array [
+      "label": [
         "StaticWebsite",
       ],
     },
-    Object {
+    {
       "_image": ComponentIcon {
         "format": "NORMAL",
         "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
       },
-      "children": Array [],
-      "edges": Array [],
+      "children": [],
+      "edges": [],
       "id": "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287",
       "isGroup": false,
-      "label": Array [
+      "label": [
         "AWS679f53fac002430cb0da5b7982bd2287",
       ],
     },
-    Object {
+    {
       "_image": ComponentIcon {
         "format": "NORMAL",
         "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
       },
-      "children": Array [],
-      "edges": Array [],
+      "children": [],
+      "edges": [],
       "id": "StaticWebSite/Custom__CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C",
       "isGroup": false,
-      "label": Array [
+      "label": [
         "Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C",
       ],
     },
   ],
-  "edges": Array [],
+  "edges": [],
   "id": "StaticWebSite",
   "isGroup": true,
-  "label": Array [
+  "label": [
     "StaticWebSite",
   ],
 }

@@ -1,134 +1,134 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`diagram converted to DOT file as expected src/test-fixtures/ - cdk_pipeline_with_stages_stacks_and_construct_infos - collapsed 1`] = `
-"digraph \\"Diagram\\" {
-  splines = \\"ortho\\";
-  pad = \\"1.0\\";
-  nodesep = \\"0.60\\";
-  ranksep = \\"0.75\\";
-  fontname = \\"Sans-Serif\\";
-  fontsize = \\"15\\";
-  dpi = \\"200\\";
-  rankdir = \\"BT\\";
-  compound = \\"true\\";
-  fontcolor = \\"#222222\\";
+"digraph "Diagram" {
+  splines = "ortho";
+  pad = "1.0";
+  nodesep = "0.60";
+  ranksep = "0.75";
+  fontname = "Sans-Serif";
+  fontsize = "15";
+  dpi = "200";
+  rankdir = "BT";
+  compound = "true";
+  fontcolor = "#222222";
   edge [
-    color = \\"#D5871488\\",
+    color = "#D5871488",
     penwidth = 2,
-    arrowhead = \\"dot\\",
-    arrowtail = \\"dot\\",
+    arrowhead = "dot",
+    arrowtail = "dot",
   ];
   node [
-    shape = \\"box\\",
-    style = \\"rounded\\",
+    shape = "box",
+    style = "rounded",
     fixedsize = true,
     width = 1.7,
     height = 1.7,
-    labelloc = \\"c\\",
+    labelloc = "c",
     imagescale = true,
-    fontname = \\"Sans-Serif\\",
+    fontname = "Sans-Serif",
     fontsize = 8,
     margin = 8,
   ];
-  subgraph \\"PipelineStack\\" {
-    subgraph \\"cluster-SubGraph.PipelineStack\\" {
+  subgraph "PipelineStack" {
+    subgraph "cluster-SubGraph.PipelineStack" {
       graph [
-        label = \\"PipelineStack\\",
-        labelloc = \\"b\\",
-        labeljust = \\"l\\",
-        margin = \\"10\\",
-        fontsize = \\"16\\",
-        penwidth = \\"2\\",
-        pencolor = \\"#888888\\",
-        style = \\"filled,rounded\\",
-        fillcolor = \\"#e4e4e4\\",
+        label = "PipelineStack",
+        labelloc = "b",
+        labeljust = "l",
+        margin = "10",
+        fontsize = "16",
+        penwidth = "2",
+        pencolor = "#888888",
+        style = "filled,rounded",
+        fillcolor = "#e4e4e4",
       ];
-      \\"PipelineStack/bucket\\" [
-        label = \\" bucket\\",
+      "PipelineStack/bucket" [
+        label = " bucket",
         fontsize = 12,
-        image = \\"icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png\\",
-        imagescale = \\"true\\",
-        imagepos = \\"tc\\",
-        penwidth = \\"0\\",
-        shape = \\"node\\",
-        fixedsize = \\"true\\",
-        labelloc = \\"b\\",
+        image = "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
         width = 2,
         height = 2.266,
       ];
-      subgraph \\"cluster-SubGraph.Pipeline\\" {
+      subgraph "cluster-SubGraph.Pipeline" {
         graph [
-          label = \\"Pipeline\\",
-          labelloc = \\"b\\",
-          labeljust = \\"l\\",
-          margin = \\"10\\",
-          fontsize = \\"16\\",
-          penwidth = \\"2\\",
-          pencolor = \\"#888888\\",
-          style = \\"filled,rounded\\",
-          fillcolor = \\"#d6d6d6\\",
+          label = "Pipeline",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#d6d6d6",
         ];
-        \\"PipelineStack/Pipeline/Pipeline\\" [
-          label = \\" Pipeline\\",
+        "PipelineStack/Pipeline/Pipeline" [
+          label = " Pipeline",
           fontsize = 12,
-          image = \\"icons/aws/Service/Arch_Developer- Tools/64/Arch_AWS-CodePipeline_64@5x.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
+          image = "icons/aws/Service/Arch_Developer- Tools/64/Arch_AWS-CodePipeline_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
           width = 1.2,
           height = 1.466,
         ];
-        \\"PipelineStack/Pipeline/UpdatePipeline/SelfMutation\\" [
-          label = \\" SelfMutation\\",
+        "PipelineStack/Pipeline/UpdatePipeline/SelfMutation" [
+          label = " SelfMutation",
           fontsize = 12,
-          image = \\"icons/aws/Service/Arch_Developer- Tools/64/Arch_Amazon-CodeBuild_64@5x.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
+          image = "icons/aws/Service/Arch_Developer- Tools/64/Arch_Amazon-CodeBuild_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
           width = 1.2,
           height = 1.466,
         ];
       }
-      subgraph \\"cluster-SubGraph.Prod\\" {
+      subgraph "cluster-SubGraph.Prod" {
         graph [
-          label = \\"Prod\\",
-          labelloc = \\"b\\",
-          labeljust = \\"l\\",
-          margin = \\"10\\",
-          fontsize = \\"16\\",
-          penwidth = \\"2\\",
-          pencolor = \\"#888888\\",
-          style = \\"filled,rounded\\",
-          fillcolor = \\"#d6d6d6\\",
+          label = "Prod",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#d6d6d6",
         ];
-        subgraph \\"cluster-SubGraph.Database\\" {
+        subgraph "cluster-SubGraph.Database" {
           graph [
-            label = \\"Database\\",
-            labelloc = \\"b\\",
-            labeljust = \\"l\\",
-            margin = \\"10\\",
-            fontsize = \\"16\\",
-            penwidth = \\"2\\",
-            pencolor = \\"#888888\\",
-            style = \\"filled,rounded\\",
-            fillcolor = \\"#c7c7c7\\",
+            label = "Database",
+            labelloc = "b",
+            labeljust = "l",
+            margin = "10",
+            fontsize = "16",
+            penwidth = "2",
+            pencolor = "#888888",
+            style = "filled,rounded",
+            fillcolor = "#c7c7c7",
           ];
-          \\"PipelineStack/Prod/Database/my-s3-db\\" [
-            label = \\" my-s3-db\\",
+          "PipelineStack/Prod/Database/my-s3-db" [
+            label = " my-s3-db",
             fontsize = 12,
-            image = \\"icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png\\",
-            imagescale = \\"true\\",
-            imagepos = \\"tc\\",
-            penwidth = \\"0\\",
-            shape = \\"node\\",
-            fixedsize = \\"true\\",
-            labelloc = \\"b\\",
+            image = "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
             width = 2,
             height = 2.266,
           ];
@@ -136,14 +136,14 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - cdk_pipe
       }
     }
   }
-  \\"PipelineStack/Pipeline/Pipeline\\" -> \\"PipelineStack/bucket\\" [
-    dir = \\"both\\",
+  "PipelineStack/Pipeline/Pipeline" -> "PipelineStack/bucket" [
+    dir = "both",
   ];
-  \\"PipelineStack/Pipeline/Pipeline\\" -> \\"PipelineStack/Pipeline/UpdatePipeline/SelfMutation\\" [
-    dir = \\"both\\",
+  "PipelineStack/Pipeline/Pipeline" -> "PipelineStack/Pipeline/UpdatePipeline/SelfMutation" [
+    dir = "both",
   ];
-  \\"PipelineStack/Pipeline/UpdatePipeline/SelfMutation\\" -> \\"PipelineStack/Pipeline/Pipeline\\" [
-    dir = \\"both\\",
+  "PipelineStack/Pipeline/UpdatePipeline/SelfMutation" -> "PipelineStack/Pipeline/Pipeline" [
+    dir = "both",
   ];
 }"
 `;
