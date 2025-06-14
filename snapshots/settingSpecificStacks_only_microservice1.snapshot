@@ -1,77 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`setting specific Stacks works as expected it only diagrams the "microservice1" stack 1`] = `
-Object {
+{
   "_image": null,
-  "children": Array [
-    Object {
+  "children": [
+    {
       "_image": ComponentIcon {
         "format": "NORMAL",
         "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png",
       },
-      "children": Array [],
-      "edges": Array [],
+      "children": [],
+      "edges": [],
       "id": "Microservice1/Vpc",
       "isGroup": false,
-      "label": Array [
+      "label": [
         "Vpc",
       ],
     },
-    Object {
+    {
       "_image": ComponentIcon {
         "format": "NORMAL",
         "path": "icons/aws/Service/Arch_Compute/64/Arch_Amazon-Elastic-Container-Service_64@5x.png",
       },
-      "children": Array [],
-      "edges": Array [],
+      "children": [],
+      "edges": [],
       "id": "Microservice1/Cluster",
       "isGroup": false,
-      "label": Array [
+      "label": [
         "Cluster",
       ],
     },
-    Object {
+    {
       "_image": null,
-      "children": Array [
-        Object {
+      "children": [
+        {
           "_image": ComponentIcon {
             "format": "NORMAL",
             "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png",
           },
-          "children": Array [],
-          "edges": Array [
+          "children": [],
+          "edges": [
             "Microservice1/Vpc",
             "Microservice1/FargateService/Service/SecurityGroup",
           ],
           "id": "Microservice1/FargateService/LB",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "LB",
           ],
         },
-        Object {
+        {
           "_image": ComponentIcon {
             "format": "NORMAL",
             "path": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png",
           },
-          "children": Array [],
-          "edges": Array [],
+          "children": [],
+          "edges": [],
           "id": "Microservice1/FargateService/TaskDef",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "TaskDef",
           ],
         },
-        Object {
+        {
           "_image": null,
-          "children": Array [
-            Object {
+          "children": [
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Service_48_Dark_gen.png",
               },
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "Microservice1/Vpc",
                 "Microservice1/Cluster",
                 "Microservice1/FargateService/LB",
@@ -80,48 +80,48 @@ Object {
               ],
               "id": "Microservice1/FargateService/Service/Service",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "ECS Service",
                 "Service",
               ],
             },
-            Object {
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/security_group.png",
               },
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "Microservice1/Vpc",
                 "Microservice1/FargateService/LB",
               ],
               "id": "Microservice1/FargateService/Service/SecurityGroup",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "SecurityGroup",
               ],
             },
           ],
-          "edges": Array [],
+          "edges": [],
           "id": "Microservice1/FargateService/Service",
           "isGroup": true,
-          "label": Array [
+          "label": [
             "Service",
           ],
         },
       ],
-      "edges": Array [],
+      "edges": [],
       "id": "Microservice1/FargateService",
       "isGroup": true,
-      "label": Array [
+      "label": [
         "FargateService",
       ],
     },
   ],
-  "edges": Array [],
+  "edges": [],
   "id": "Microservice1",
   "isGroup": true,
-  "label": Array [
+  "label": [
     "Microservice1",
   ],
 }

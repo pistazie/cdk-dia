@@ -23,13 +23,13 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "assumeRolePolicyDocument": Object {
-                        "Statement": Array [
-                          Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "assumeRolePolicyDocument": {
+                        "Statement": [
+                          {
                             "Action": "sts:AssumeRole",
                             "Effect": "Allow",
-                            "Principal": Object {
+                            "Principal": {
                               "Service": "ecs-tasks.amazonaws.com",
                             },
                           },
@@ -49,34 +49,34 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "policyDocument": Object {
-                            "Statement": Array [
-                              Object {
+                        "aws:cdk:cloudformation:props" => {
+                          "policyDocument": {
+                            "Statement": [
+                              {
                                 "Action": "events:PutEvents",
                                 "Effect": "Allow",
                                 "Resource": "*",
                               },
-                              Object {
-                                "Action": Array [
+                              {
+                                "Action": [
                                   "s3:GetObject*",
                                   "s3:GetBucket*",
                                   "s3:List*",
                                 ],
                                 "Effect": "Allow",
-                                "Resource": Array [
-                                  Object {
-                                    "Fn::GetAtt": Array [
+                                "Resource": [
+                                  {
+                                    "Fn::GetAtt": [
                                       "LandingBucket23FE90FB",
                                       "Arn",
                                     ],
                                   },
-                                  Object {
-                                    "Fn::Join": Array [
+                                  {
+                                    "Fn::Join": [
                                       "",
-                                      Array [
-                                        Object {
-                                          "Fn::GetAtt": Array [
+                                      [
+                                        {
+                                          "Fn::GetAtt": [
                                             "LandingBucket23FE90FB",
                                             "Arn",
                                           ],
@@ -91,8 +91,8 @@ Node {
                             "Version": "2012-10-17",
                           },
                           "policyName": "FargateTaskDefinitionTaskRoleDefaultPolicy798E9D9D",
-                          "roles": Array [
-                            Object {
+                          "roles": [
+                            {
                               "Ref": "FargateTaskDefinitionTaskRoleE3C2BCAA",
                             },
                           ],
@@ -116,48 +116,48 @@ Node {
             "Resource" => Node {
               "attributes": Map {
                 "aws:cdk:cloudformation:type" => "AWS::ECS::TaskDefinition",
-                "aws:cdk:cloudformation:props" => Object {
-                  "containerDefinitions": Array [
-                    Object {
-                      "environment": Array [
-                        Object {
+                "aws:cdk:cloudformation:props" => {
+                  "containerDefinitions": [
+                    {
+                      "environment": [
+                        {
                           "name": "S3_BUCKET_NAME",
-                          "value": Object {
+                          "value": {
                             "Ref": "LandingBucket23FE90FB",
                           },
                         },
-                        Object {
+                        {
                           "name": "S3_OBJECT_KEY",
                           "value": "",
                         },
                       ],
                       "essential": true,
-                      "image": Object {
-                        "Fn::Join": Array [
+                      "image": {
+                        "Fn::Join": [
                           "",
-                          Array [
-                            Object {
+                          [
+                            {
                               "Ref": "AWS::AccountId",
                             },
                             ".dkr.ecr.",
-                            Object {
+                            {
                               "Ref": "AWS::Region",
                             },
                             ".",
-                            Object {
+                            {
                               "Ref": "AWS::URLSuffix",
                             },
                             "/aws-cdk/assets:560897947b94fad9a935f11ac1c8ac1789c1712e6724316cb4f73732c1d771e0",
                           ],
                         ],
                       },
-                      "logConfiguration": Object {
+                      "logConfiguration": {
                         "logDriver": "awslogs",
-                        "options": Object {
-                          "awslogs-group": Object {
+                        "options": {
+                          "awslogs-group": {
                             "Ref": "FargateTaskDefinitionAppContainerLogGroup20407D7C",
                           },
-                          "awslogs-region": Object {
+                          "awslogs-region": {
                             "Ref": "AWS::Region",
                           },
                           "awslogs-stream-prefix": "TheEventBridgeETL",
@@ -167,8 +167,8 @@ Node {
                     },
                   ],
                   "cpu": "256",
-                  "executionRoleArn": Object {
-                    "Fn::GetAtt": Array [
+                  "executionRoleArn": {
+                    "Fn::GetAtt": [
                       "FargateTaskDefinitionExecutionRoleE69A8E33",
                       "Arn",
                     ],
@@ -176,11 +176,11 @@ Node {
                   "family": "TheEventbridgeEtlStackFargateTaskDefinitionE442270B",
                   "memory": "512",
                   "networkMode": "awsvpc",
-                  "requiresCompatibilities": Array [
+                  "requiresCompatibilities": [
                     "FARGATE",
                   ],
-                  "taskRoleArn": Object {
-                    "Fn::GetAtt": Array [
+                  "taskRoleArn": {
+                    "Fn::GetAtt": [
                       "FargateTaskDefinitionTaskRoleE3C2BCAA",
                       "Arn",
                     ],
@@ -206,26 +206,26 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "assumeRolePolicyDocument": Object {
-                        "Statement": Array [
-                          Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "assumeRolePolicyDocument": {
+                        "Statement": [
+                          {
                             "Action": "sts:AssumeRole",
                             "Effect": "Allow",
-                            "Principal": Object {
+                            "Principal": {
                               "Service": "lambda.amazonaws.com",
                             },
                           },
                         ],
                         "Version": "2012-10-17",
                       },
-                      "managedPolicyArns": Array [
-                        Object {
-                          "Fn::Join": Array [
+                      "managedPolicyArns": [
+                        {
+                          "Fn::Join": [
                             "",
-                            Array [
+                            [
                               "arn:",
-                              Object {
+                              {
                                 "Ref": "AWS::Partition",
                               },
                               ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
@@ -246,11 +246,11 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "policyDocument": Object {
-                            "Statement": Array [
-                              Object {
-                                "Action": Array [
+                        "aws:cdk:cloudformation:props" => {
+                          "policyDocument": {
+                            "Statement": [
+                              {
+                                "Action": [
                                   "sqs:ReceiveMessage",
                                   "sqs:ChangeMessageVisibility",
                                   "sqs:GetQueueUrl",
@@ -258,37 +258,37 @@ Node {
                                   "sqs:GetQueueAttributes",
                                 ],
                                 "Effect": "Allow",
-                                "Resource": Object {
-                                  "Fn::GetAtt": Array [
+                                "Resource": {
+                                  "Fn::GetAtt": [
                                     "newObjectInLandingBucketEventQueue67CBE2F2",
                                     "Arn",
                                   ],
                                 },
                               },
-                              Object {
+                              {
                                 "Action": "events:PutEvents",
                                 "Effect": "Allow",
                                 "Resource": "*",
                               },
-                              Object {
+                              {
                                 "Action": "ecs:RunTask",
                                 "Effect": "Allow",
-                                "Resource": Object {
+                                "Resource": {
                                   "Ref": "FargateTaskDefinition8E3B365E",
                                 },
                               },
-                              Object {
+                              {
                                 "Action": "iam:PassRole",
                                 "Effect": "Allow",
-                                "Resource": Array [
-                                  Object {
-                                    "Fn::GetAtt": Array [
+                                "Resource": [
+                                  {
+                                    "Fn::GetAtt": [
                                       "FargateTaskDefinitionExecutionRoleE69A8E33",
                                       "Arn",
                                     ],
                                   },
-                                  Object {
-                                    "Fn::GetAtt": Array [
+                                  {
+                                    "Fn::GetAtt": [
                                       "FargateTaskDefinitionTaskRoleE3C2BCAA",
                                       "Arn",
                                     ],
@@ -299,8 +299,8 @@ Node {
                             "Version": "2012-10-17",
                           },
                           "policyName": "extractLambdaHandlerServiceRoleDefaultPolicyB880CB8F",
-                          "roles": Array [
-                            Object {
+                          "roles": [
+                            {
                               "Ref": "extractLambdaHandlerServiceRole8A50F829",
                             },
                           ],
@@ -324,35 +324,35 @@ Node {
             "Resource" => Node {
               "attributes": Map {
                 "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
-                "aws:cdk:cloudformation:props" => Object {
-                  "code": Object {
-                    "s3Bucket": Object {
+                "aws:cdk:cloudformation:props" => {
+                  "code": {
+                    "s3Bucket": {
                       "Ref": "AssetParameters63e74618e2833e3346e7223ed172c961dfc5f22e47a02bfd8e38e313b20b30dfS3Bucket575DCC3D",
                     },
-                    "s3Key": Object {
-                      "Fn::Join": Array [
+                    "s3Key": {
+                      "Fn::Join": [
                         "",
-                        Array [
-                          Object {
-                            "Fn::Select": Array [
+                        [
+                          {
+                            "Fn::Select": [
                               0,
-                              Object {
-                                "Fn::Split": Array [
+                              {
+                                "Fn::Split": [
                                   "||",
-                                  Object {
+                                  {
                                     "Ref": "AssetParameters63e74618e2833e3346e7223ed172c961dfc5f22e47a02bfd8e38e313b20b30dfS3VersionKey505BA43C",
                                   },
                                 ],
                               },
                             ],
                           },
-                          Object {
-                            "Fn::Select": Array [
+                          {
+                            "Fn::Select": [
                               1,
-                              Object {
-                                "Fn::Split": Array [
+                              {
+                                "Fn::Split": [
                                   "||",
-                                  Object {
+                                  {
                                     "Ref": "AssetParameters63e74618e2833e3346e7223ed172c961dfc5f22e47a02bfd8e38e313b20b30dfS3VersionKey505BA43C",
                                   },
                                 ],
@@ -363,37 +363,37 @@ Node {
                       ],
                     },
                   },
-                  "environment": Object {
-                    "variables": Object {
-                      "CLUSTER_NAME": Object {
+                  "environment": {
+                    "variables": {
+                      "CLUSTER_NAME": {
                         "Ref": "Ec2ClusterEE43E89D",
                       },
                       "CONTAINER_NAME": "AppContainer",
-                      "SUBNETS": Object {
-                        "Fn::Join": Array [
+                      "SUBNETS": {
+                        "Fn::Join": [
                           "",
-                          Array [
-                            "[\\"",
-                            Object {
+                          [
+                            "["",
+                            {
                               "Ref": "VpcPrivateSubnet1Subnet536B997A",
                             },
-                            "\\",\\"",
-                            Object {
+                            "","",
+                            {
                               "Ref": "VpcPrivateSubnet2Subnet3788AAA1",
                             },
-                            "\\"]",
+                            ""]",
                           ],
                         ],
                       },
-                      "TASK_DEFINITION": Object {
+                      "TASK_DEFINITION": {
                         "Ref": "FargateTaskDefinition8E3B365E",
                       },
                     },
                   },
                   "handler": "s3SqsEventConsumer.handler",
                   "reservedConcurrentExecutions": 2,
-                  "role": Object {
-                    "Fn::GetAtt": Array [
+                  "role": {
+                    "Fn::GetAtt": [
                       "extractLambdaHandlerServiceRole8A50F829",
                       "Arn",
                     ],

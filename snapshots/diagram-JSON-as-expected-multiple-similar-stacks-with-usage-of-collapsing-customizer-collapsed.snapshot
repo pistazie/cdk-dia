@@ -1,510 +1,510 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`diagram JSON as expected src/test-fixtures/ - multiple-similar-stacks-with-usage-of-collapsing-customizer - collapsed 1`] = `
-Object {
+{
   "_image": null,
-  "children": Array [
-    Object {
+  "children": [
+    {
       "_image": null,
-      "children": Array [
-        Object {
+      "children": [
+        {
           "_image": ComponentIcon {
             "format": "NORMAL",
             "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png",
           },
-          "children": Array [],
-          "edges": Array [],
+          "children": [],
+          "edges": [],
           "id": "Microservice1/Vpc",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "Vpc",
           ],
         },
-        Object {
+        {
           "_image": ComponentIcon {
             "format": "NORMAL",
             "path": "icons/aws/Service/Arch_Compute/64/Arch_Amazon-Elastic-Container-Service_64@5x.png",
           },
-          "children": Array [],
-          "edges": Array [],
+          "children": [],
+          "edges": [],
           "id": "Microservice1/Cluster",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "Cluster",
           ],
         },
-        Object {
+        {
           "_image": null,
-          "children": Array [],
-          "edges": Array [
+          "children": [],
+          "edges": [
             "Microservice1/Vpc",
             "Microservice1/Cluster",
           ],
           "id": "Microservice1/FargateService",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "FargateService",
           ],
         },
       ],
-      "edges": Array [],
+      "edges": [],
       "id": "Microservice1",
       "isGroup": true,
-      "label": Array [
+      "label": [
         "Microservice1",
       ],
     },
-    Object {
+    {
       "_image": null,
-      "children": Array [
-        Object {
+      "children": [
+        {
           "_image": null,
-          "children": Array [
-            Object {
+          "children": [
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png",
               },
-              "children": Array [],
-              "edges": Array [],
+              "children": [],
+              "edges": [],
               "id": "Microservice2/Vpc/Resource",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "EC2 VPC",
               ],
             },
-            Object {
+            {
               "_image": null,
-              "children": Array [
-                Object {
+              "children": [
+                {
                   "_image": ComponentIcon {
                     "format": "NORMAL",
                     "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/Resource",
                   ],
                   "id": "Microservice2/Vpc/PublicSubnet1/Subnet",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 Subnet",
                     "Subnet",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "NORMAL",
                     "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/Resource",
                   ],
                   "id": "Microservice2/Vpc/PublicSubnet1/RouteTable",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 RouteTable",
                     "RouteTable",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "SMALLER",
                     "path": null,
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/PublicSubnet1/RouteTable",
                     "Microservice2/Vpc/PublicSubnet1/Subnet",
                   ],
                   "id": "Microservice2/Vpc/PublicSubnet1/RouteTableAssociation",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 SubnetRouteTableAssociation",
                     "RouteTableAssociation",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "NORMAL",
                     "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/PublicSubnet1/RouteTable",
                     "Microservice2/Vpc/IGW",
                   ],
                   "id": "Microservice2/Vpc/PublicSubnet1/DefaultRoute",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 Route",
                     "DefaultRoute",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "SMALLER",
                     "path": null,
                   },
-                  "children": Array [],
-                  "edges": Array [],
+                  "children": [],
+                  "edges": [],
                   "id": "Microservice2/Vpc/PublicSubnet1/EIP",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 EIP",
                     "EIP",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "SMALLER",
                     "path": null,
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/PublicSubnet1/EIP",
                     "Microservice2/Vpc/PublicSubnet1/Subnet",
                   ],
                   "id": "Microservice2/Vpc/PublicSubnet1/NATGateway",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 NatGateway",
                     "NATGateway",
                   ],
                 },
               ],
-              "edges": Array [],
+              "edges": [],
               "id": "Microservice2/Vpc/PublicSubnet1",
               "isGroup": true,
-              "label": Array [
+              "label": [
                 "PublicSubnet1",
               ],
             },
-            Object {
+            {
               "_image": null,
-              "children": Array [
-                Object {
+              "children": [
+                {
                   "_image": ComponentIcon {
                     "format": "NORMAL",
                     "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/Resource",
                   ],
                   "id": "Microservice2/Vpc/PublicSubnet2/Subnet",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 Subnet",
                     "Subnet",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "NORMAL",
                     "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/Resource",
                   ],
                   "id": "Microservice2/Vpc/PublicSubnet2/RouteTable",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 RouteTable",
                     "RouteTable",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "SMALLER",
                     "path": null,
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/PublicSubnet2/RouteTable",
                     "Microservice2/Vpc/PublicSubnet2/Subnet",
                   ],
                   "id": "Microservice2/Vpc/PublicSubnet2/RouteTableAssociation",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 SubnetRouteTableAssociation",
                     "RouteTableAssociation",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "NORMAL",
                     "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/PublicSubnet2/RouteTable",
                     "Microservice2/Vpc/IGW",
                   ],
                   "id": "Microservice2/Vpc/PublicSubnet2/DefaultRoute",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 Route",
                     "DefaultRoute",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "SMALLER",
                     "path": null,
                   },
-                  "children": Array [],
-                  "edges": Array [],
+                  "children": [],
+                  "edges": [],
                   "id": "Microservice2/Vpc/PublicSubnet2/EIP",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 EIP",
                     "EIP",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "SMALLER",
                     "path": null,
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/PublicSubnet2/EIP",
                     "Microservice2/Vpc/PublicSubnet2/Subnet",
                   ],
                   "id": "Microservice2/Vpc/PublicSubnet2/NATGateway",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 NatGateway",
                     "NATGateway",
                   ],
                 },
               ],
-              "edges": Array [],
+              "edges": [],
               "id": "Microservice2/Vpc/PublicSubnet2",
               "isGroup": true,
-              "label": Array [
+              "label": [
                 "PublicSubnet2",
               ],
             },
-            Object {
+            {
               "_image": null,
-              "children": Array [
-                Object {
+              "children": [
+                {
                   "_image": ComponentIcon {
                     "format": "NORMAL",
                     "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/Resource",
                   ],
                   "id": "Microservice2/Vpc/PrivateSubnet1/Subnet",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 Subnet",
                     "Subnet",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "NORMAL",
                     "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/Resource",
                   ],
                   "id": "Microservice2/Vpc/PrivateSubnet1/RouteTable",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 RouteTable",
                     "RouteTable",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "SMALLER",
                     "path": null,
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/PrivateSubnet1/RouteTable",
                     "Microservice2/Vpc/PrivateSubnet1/Subnet",
                   ],
                   "id": "Microservice2/Vpc/PrivateSubnet1/RouteTableAssociation",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 SubnetRouteTableAssociation",
                     "RouteTableAssociation",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "NORMAL",
                     "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/PrivateSubnet1/RouteTable",
                     "Microservice2/Vpc/PublicSubnet1/NATGateway",
                   ],
                   "id": "Microservice2/Vpc/PrivateSubnet1/DefaultRoute",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 Route",
                     "DefaultRoute",
                   ],
                 },
               ],
-              "edges": Array [],
+              "edges": [],
               "id": "Microservice2/Vpc/PrivateSubnet1",
               "isGroup": true,
-              "label": Array [
+              "label": [
                 "PrivateSubnet1",
               ],
             },
-            Object {
+            {
               "_image": null,
-              "children": Array [
-                Object {
+              "children": [
+                {
                   "_image": ComponentIcon {
                     "format": "NORMAL",
                     "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/Resource",
                   ],
                   "id": "Microservice2/Vpc/PrivateSubnet2/Subnet",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 Subnet",
                     "Subnet",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "NORMAL",
                     "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/Resource",
                   ],
                   "id": "Microservice2/Vpc/PrivateSubnet2/RouteTable",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 RouteTable",
                     "RouteTable",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "SMALLER",
                     "path": null,
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/PrivateSubnet2/RouteTable",
                     "Microservice2/Vpc/PrivateSubnet2/Subnet",
                   ],
                   "id": "Microservice2/Vpc/PrivateSubnet2/RouteTableAssociation",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 SubnetRouteTableAssociation",
                     "RouteTableAssociation",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "NORMAL",
                     "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53_Route-Table_48_Dark_gen.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/PrivateSubnet2/RouteTable",
                     "Microservice2/Vpc/PublicSubnet2/NATGateway",
                   ],
                   "id": "Microservice2/Vpc/PrivateSubnet2/DefaultRoute",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "EC2 Route",
                     "DefaultRoute",
                   ],
                 },
               ],
-              "edges": Array [],
+              "edges": [],
               "id": "Microservice2/Vpc/PrivateSubnet2",
               "isGroup": true,
-              "label": Array [
+              "label": [
                 "PrivateSubnet2",
               ],
             },
-            Object {
+            {
               "_image": ComponentIcon {
                 "format": "SMALLER",
                 "path": null,
               },
-              "children": Array [],
-              "edges": Array [],
+              "children": [],
+              "edges": [],
               "id": "Microservice2/Vpc/IGW",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "EC2 InternetGateway",
                 "IGW",
               ],
             },
-            Object {
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-VPC_Customer-Gateway_48_Dark_gen.png",
               },
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "Microservice2/Vpc/Resource",
                 "Microservice2/Vpc/IGW",
               ],
               "id": "Microservice2/Vpc/VPCGW",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "EC2 VPCGatewayAttachment",
                 "VPCGW",
               ],
             },
           ],
-          "edges": Array [],
+          "edges": [],
           "id": "Microservice2/Vpc",
           "isGroup": true,
-          "label": Array [
+          "label": [
             "Vpc",
           ],
         },
-        Object {
+        {
           "_image": ComponentIcon {
             "format": "NORMAL",
             "path": "icons/aws/Service/Arch_Compute/64/Arch_Amazon-Elastic-Container-Service_64@5x.png",
           },
-          "children": Array [],
-          "edges": Array [],
+          "children": [],
+          "edges": [],
           "id": "Microservice2/Cluster",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "Cluster",
           ],
         },
-        Object {
+        {
           "_image": null,
-          "children": Array [
-            Object {
+          "children": [
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png",
               },
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "Microservice2/Vpc/PublicSubnet1/Subnet",
                 "Microservice2/Vpc/PublicSubnet2/Subnet",
                 "Microservice2/Vpc/Resource",
@@ -512,33 +512,33 @@ Object {
               ],
               "id": "Microservice2/FargateService/LB",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "LB",
               ],
             },
-            Object {
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png",
               },
-              "children": Array [],
-              "edges": Array [],
+              "children": [],
+              "edges": [],
               "id": "Microservice2/FargateService/TaskDef",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "TaskDef",
               ],
             },
-            Object {
+            {
               "_image": null,
-              "children": Array [
-                Object {
+              "children": [
+                {
                   "_image": ComponentIcon {
                     "format": "NORMAL",
                     "path": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Service_48_Dark_gen.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/PrivateSubnet1/Subnet",
                     "Microservice2/Vpc/PrivateSubnet2/Subnet",
                     "Microservice2/Cluster",
@@ -548,48 +548,48 @@ Object {
                   ],
                   "id": "Microservice2/FargateService/Service/Service",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "ECS Service",
                     "Service",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "NORMAL",
                     "path": "icons/aws/security_group.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "Microservice2/Vpc/Resource",
                     "Microservice2/FargateService/LB",
                   ],
                   "id": "Microservice2/FargateService/Service/SecurityGroup",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "SecurityGroup",
                   ],
                 },
               ],
-              "edges": Array [],
+              "edges": [],
               "id": "Microservice2/FargateService/Service",
               "isGroup": true,
-              "label": Array [
+              "label": [
                 "Service",
               ],
             },
           ],
-          "edges": Array [],
+          "edges": [],
           "id": "Microservice2/FargateService",
           "isGroup": true,
-          "label": Array [
+          "label": [
             "FargateService",
           ],
         },
       ],
-      "edges": Array [],
+      "edges": [],
       "id": "Microservice2",
       "isGroup": true,
-      "label": Array [
+      "label": [
         "Microservice2",
       ],
     },

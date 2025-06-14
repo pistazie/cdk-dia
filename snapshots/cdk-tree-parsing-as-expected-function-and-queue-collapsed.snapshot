@@ -28,26 +28,26 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "assumeRolePolicyDocument": Object {
-                            "Statement": Array [
-                              Object {
+                        "aws:cdk:cloudformation:props" => {
+                          "assumeRolePolicyDocument": {
+                            "Statement": [
+                              {
                                 "Action": "sts:AssumeRole",
                                 "Effect": "Allow",
-                                "Principal": Object {
+                                "Principal": {
                                   "Service": "lambda.amazonaws.com",
                                 },
                               },
                             ],
                             "Version": "2012-10-17",
                           },
-                          "managedPolicyArns": Array [
-                            Object {
-                              "Fn::Join": Array [
+                          "managedPolicyArns": [
+                            {
+                              "Fn::Join": [
                                 "",
-                                Array [
+                                [
                                   "arn:",
-                                  Object {
+                                  {
                                     "Ref": "AWS::Partition",
                                   },
                                   ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
@@ -68,11 +68,11 @@ Node {
                         "Resource" => Node {
                           "attributes": Map {
                             "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
-                            "aws:cdk:cloudformation:props" => Object {
-                              "policyDocument": Object {
-                                "Statement": Array [
-                                  Object {
-                                    "Action": Array [
+                            "aws:cdk:cloudformation:props" => {
+                              "policyDocument": {
+                                "Statement": [
+                                  {
+                                    "Action": [
                                       "sqs:ReceiveMessage",
                                       "sqs:ChangeMessageVisibility",
                                       "sqs:GetQueueUrl",
@@ -80,8 +80,8 @@ Node {
                                       "sqs:GetQueueAttributes",
                                     ],
                                     "Effect": "Allow",
-                                    "Resource": Object {
-                                      "Fn::GetAtt": Array [
+                                    "Resource": {
+                                      "Fn::GetAtt": [
                                         "apieceofthediagrammyqueueEFDA1578",
                                         "Arn",
                                       ],
@@ -91,8 +91,8 @@ Node {
                                 "Version": "2012-10-17",
                               },
                               "policyName": "apieceofthediagrammyfunctionServiceRoleDefaultPolicy09E64E08",
-                              "roles": Array [
-                                Object {
+                              "roles": [
+                                {
                                   "Ref": "apieceofthediagrammyfunctionServiceRole337AA7F2",
                                 },
                               ],
@@ -116,13 +116,13 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "code": Object {
-                        "zipFile": "exports.handler = function(event, ctx, cb) { console.log(\\"Consumed! \\" + JSON.stringify(event)); return cb(null, \\"done\\"); }",
+                    "aws:cdk:cloudformation:props" => {
+                      "code": {
+                        "zipFile": "exports.handler = function(event, ctx, cb) { console.log("Consumed! " + JSON.stringify(event)); return cb(null, "done"); }",
                       },
                       "handler": "index.handler",
-                      "role": Object {
-                        "Fn::GetAtt": Array [
+                      "role": {
+                        "Fn::GetAtt": [
                           "apieceofthediagrammyfunctionServiceRole337AA7F2",
                           "Arn",
                         ],
@@ -141,15 +141,15 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::Lambda::EventSourceMapping",
-                        "aws:cdk:cloudformation:props" => Object {
+                        "aws:cdk:cloudformation:props" => {
                           "batchSize": 1,
-                          "eventSourceArn": Object {
-                            "Fn::GetAtt": Array [
+                          "eventSourceArn": {
+                            "Fn::GetAtt": [
                               "apieceofthediagrammyqueueEFDA1578",
                               "Arn",
                             ],
                           },
-                          "functionName": Object {
+                          "functionName": {
                             "Ref": "apieceofthediagrammyfunction3788534F",
                           },
                         },
@@ -175,7 +175,7 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::SQS::Queue",
-                    "aws:cdk:cloudformation:props" => Object {},
+                    "aws:cdk:cloudformation:props" => {},
                   },
                   "children": Map {},
                   "constructInfoFqn": undefined,

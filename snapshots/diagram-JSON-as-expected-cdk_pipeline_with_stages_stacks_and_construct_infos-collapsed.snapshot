@@ -1,104 +1,104 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`diagram JSON as expected src/test-fixtures/ - cdk_pipeline_with_stages_stacks_and_construct_infos - collapsed 1`] = `
-Object {
+{
   "_image": null,
-  "children": Array [
-    Object {
+  "children": [
+    {
       "_image": ComponentIcon {
         "format": "NORMAL",
         "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
       },
-      "children": Array [],
-      "edges": Array [],
+      "children": [],
+      "edges": [],
       "id": "PipelineStack/bucket",
       "isGroup": false,
-      "label": Array [
+      "label": [
         "bucket",
       ],
     },
-    Object {
+    {
       "_image": null,
-      "children": Array [
-        Object {
+      "children": [
+        {
           "_image": ComponentIcon {
             "format": "SMALLER",
             "path": "icons/aws/Service/Arch_Developer- Tools/64/Arch_AWS-CodePipeline_64@5x.png",
           },
-          "children": Array [],
-          "edges": Array [
+          "children": [],
+          "edges": [
             "PipelineStack/bucket",
             "PipelineStack/Pipeline/UpdatePipeline/SelfMutation",
           ],
           "id": "PipelineStack/Pipeline/Pipeline",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "Pipeline",
           ],
         },
-        Object {
+        {
           "_image": ComponentIcon {
             "format": "SMALLER",
             "path": "icons/aws/Service/Arch_Developer- Tools/64/Arch_Amazon-CodeBuild_64@5x.png",
           },
-          "children": Array [],
-          "edges": Array [
+          "children": [],
+          "edges": [
             "PipelineStack/Pipeline/Pipeline",
           ],
           "id": "PipelineStack/Pipeline/UpdatePipeline/SelfMutation",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "SelfMutation",
           ],
         },
       ],
-      "edges": Array [],
+      "edges": [],
       "id": "PipelineStack/Pipeline",
       "isGroup": true,
-      "label": Array [
+      "label": [
         "Pipeline",
       ],
     },
-    Object {
+    {
       "_image": null,
-      "children": Array [
-        Object {
+      "children": [
+        {
           "_image": null,
-          "children": Array [
-            Object {
+          "children": [
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
               },
-              "children": Array [],
-              "edges": Array [],
+              "children": [],
+              "edges": [],
               "id": "PipelineStack/Prod/Database/my-s3-db",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "my-s3-db",
               ],
             },
           ],
-          "edges": Array [],
+          "edges": [],
           "id": "PipelineStack/Prod/Database",
           "isGroup": true,
-          "label": Array [
+          "label": [
             "Database",
           ],
         },
       ],
-      "edges": Array [],
+      "edges": [],
       "id": "PipelineStack/Prod",
       "isGroup": true,
-      "label": Array [
+      "label": [
         "Prod",
       ],
     },
   ],
-  "edges": Array [],
+  "edges": [],
   "id": "PipelineStack",
   "isGroup": true,
-  "label": Array [
+  "label": [
     "PipelineStack",
   ],
 }
