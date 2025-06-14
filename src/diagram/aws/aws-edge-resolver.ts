@@ -1,7 +1,7 @@
 import {Diagram} from "../diagram"
 import * as cdk from "../../cdk"
 import * as _ from "lodash"
-import {makeUniqueId} from "@aws-cdk/core/lib/private/uniqueid"
+import {makeUniqueId} from "../../utils/uniqueid"
 import {Component, ComponentTags} from "../component/component"
 import {AwsDiagramGenerator} from "./aws-diagram-generator"
 import {DiagramComponent} from "../component/diagram-component"
