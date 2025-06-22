@@ -1,19 +1,19 @@
-import {Graph, INode, ISubgraph} from "ts-graphviz"
+import {NodeModel, RootGraphModel, SubgraphModel} from "ts-graphviz"
 import {ComponentIcon, ComponentIconFormat} from "../../diagram/component/icon"
 import {ColorPalette} from "../styling"
 
-export function applyBaseGraphStyling(graph: Graph): void {
+export function applyBaseGraphStyling(graph: RootGraphModel): void {
 
     // Graph
     graph.set("splines", "ortho")
-    graph.set("pad", "1.0")
-    graph.set("nodesep", "0.60")
-    graph.set("ranksep", "0.75")
+    graph.set("pad", 1.0)
+    graph.set("nodesep", 0.60)
+    graph.set("ranksep", 0.75)
     graph.set("fontname", "Sans-Serif")
-    graph.set("fontsize", "15")
-    graph.set("dpi", "200")
+    graph.set("fontsize", 15)
+    graph.set("dpi", 200)
     graph.set("rankdir", "BT")
-    graph.set("compound", "true")
+    graph.set("compound", true)
     graph.set("fontcolor", "#222222")
 
     // nodes
@@ -35,31 +35,31 @@ export function applyBaseGraphStyling(graph: Graph): void {
     graph.attributes.edge.set("arrowtail", "dot")
 }
 
-export function applyClusterStyling(subGraph: ISubgraph, depth: number): void {
+export function applyClusterStyling(subGraph: SubgraphModel, depth: number): void {
 
     subGraph.attributes.graph.set("labelloc", "b")
     subGraph.attributes.graph.set("labeljust", "l")
-    subGraph.attributes.graph.set("margin", "10")
-    subGraph.attributes.graph.set("fontsize", "16")
+    subGraph.attributes.graph.set("margin", 10)
+    subGraph.attributes.graph.set("fontsize", 16)
     //subGraph.attributes.edge.set("constraint", "false")
-    subGraph.attributes.graph.set("penwidth", "2")
+    subGraph.attributes.graph.set("penwidth", 2)
     subGraph.attributes.graph.set("pencolor", "#888888")
     subGraph.attributes.graph.set("style", "filled,rounded")
     subGraph.attributes.graph.set("fillcolor", ColorPalette.byInd(depth))
 }
 
-export function applyBasicNodeStyling(gnode: INode, labelFontSize: number): void {
+export function applyBasicNodeStyling(gnode: NodeModel, labelFontSize: number): void {
     gnode.attributes.set("fontsize", labelFontSize)
 }
 
-export function applyNodeWithIconStyling(node: INode, icon: ComponentIcon, labelFontSize: number, labelLinesCount: number): void {
+export function applyNodeWithIconStyling(node: NodeModel, icon: ComponentIcon, labelFontSize: number, labelLinesCount: number): void {
 
     const baseImgSize = 2
 
     node.attributes.set("image", icon.path)
     node.attributes.set("imagescale", "true")
     node.attributes.set("imagepos", "tc")
-    node.attributes.set("penwidth", "0")
+    node.attributes.set("penwidth", 0)
     node.attributes.set("shape", "node")
     node.attributes.set("fixedsize", "true")
     node.attributes.set("labelloc", "b")

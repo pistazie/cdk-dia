@@ -3,76 +3,76 @@
 exports[`diagram converted to DOT file as expected src/test-fixtures/ - the-eventbridge-etl - collapsed 1`] = `
 "digraph "Diagram" {
   splines = "ortho";
-  pad = "1.0";
-  nodesep = "0.60";
-  ranksep = "0.75";
+  pad = 1;
+  nodesep = 0.6;
+  ranksep = 0.75;
   fontname = "Sans-Serif";
-  fontsize = "15";
-  dpi = "200";
+  fontsize = 15;
+  dpi = 200;
   rankdir = "BT";
-  compound = "true";
+  compound = true;
   fontcolor = "#222222";
   edge [
-    color = "#D5871488",
-    penwidth = 2,
-    arrowhead = "dot",
-    arrowtail = "dot",
+    color = "#D5871488";
+    penwidth = 2;
+    arrowhead = "dot";
+    arrowtail = "dot";
   ];
   node [
-    shape = "box",
-    style = "rounded",
-    fixedsize = true,
-    width = 1.7,
-    height = 1.7,
-    labelloc = "c",
-    imagescale = true,
-    fontname = "Sans-Serif",
-    fontsize = 8,
-    margin = 8,
+    shape = "box";
+    style = "rounded";
+    fixedsize = true;
+    width = 1.7;
+    height = 1.7;
+    labelloc = "c";
+    imagescale = true;
+    fontname = "Sans-Serif";
+    fontsize = 8;
+    margin = 8;
   ];
   subgraph "TheEventbridgeEtlStack" {
     subgraph "cluster-SubGraph.TheEventbridgeEtlStack" {
       graph [
-        label = "TheEventbridgeEtlStack",
-        labelloc = "b",
-        labeljust = "l",
-        margin = "10",
-        fontsize = "16",
-        penwidth = "2",
-        pencolor = "#888888",
-        style = "filled,rounded",
-        fillcolor = "#e4e4e4",
+        label = "TheEventbridgeEtlStack";
+        labelloc = "b";
+        labeljust = "l";
+        margin = 10;
+        fontsize = 16;
+        penwidth = 2;
+        pencolor = "#888888";
+        style = "filled,rounded";
+        fillcolor = "#e4e4e4";
       ];
       "TheEventbridgeEtlStack/FargateTaskDefinition" [
-        label = "\\nFargateTaskDefinition",
-        fontsize = 12,
-        image = "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png",
-        imagescale = "true",
-        imagepos = "tc",
-        penwidth = "0",
-        shape = "node",
-        fixedsize = "true",
-        labelloc = "b",
-        width = 2,
-        height = 2.4819999999999998,
+        label = "\\nFargateTaskDefinition";
+        fontsize = 12;
+        image = "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png";
+        imagescale = "true";
+        imagepos = "tc";
+        penwidth = 0;
+        shape = "node";
+        fixedsize = "true";
+        labelloc = "b";
+        width = 2;
+        height = 2.4819999999999998;
       ];
       "TheEventbridgeEtlStack/extractLambdaHandler" [
-        label = " extractLambdaHandler",
-        fontsize = 12,
-        image = "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
-        imagescale = "true",
-        imagepos = "tc",
-        penwidth = "0",
-        shape = "node",
-        fixedsize = "true",
-        labelloc = "b",
-        width = 2,
-        height = 2.266,
+        label = " extractLambdaHandler";
+        fontsize = 12;
+        image = "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+        imagescale = "true";
+        imagepos = "tc";
+        penwidth = 0;
+        shape = "node";
+        fixedsize = "true";
+        labelloc = "b";
+        width = 2;
+        height = 2.266;
       ];
     }
   }
   "TheEventbridgeEtlStack/extractLambdaHandler" -> "TheEventbridgeEtlStack/FargateTaskDefinition" [
-    dir = "both",
+    dir = "both";
   ];
 }"
 `;

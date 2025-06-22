@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`excluding specific Stacks works as expected it only diagrams the "microservice1" stack 1`] = `
+{
+  "_image": null,
+  "children": [
+    {
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png",
+      },
+      "children": [],
+      "edges": [],
+      "id": "Microservice2/Vpc",
+      "isGroup": false,
+      "label": [
+        "Vpc",
+      ],
+    },
+    {
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Service/Arch_Compute/64/Arch_Amazon-Elastic-Container-Service_64@5x.png",
+      },
+      "children": [],
+      "edges": [],
+      "id": "Microservice2/Cluster",
+      "isGroup": false,
+      "label": [
+        "Cluster",
+      ],
+    },
+    {
+      "_image": null,
+      "children": [
+        {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png",
+          },
+          "children": [],
+          "edges": [
+            "Microservice2/Vpc",
+            "Microservice2/FargateService/Service/SecurityGroup",
+          ],
+          "id": "Microservice2/FargateService/LB",
+          "isGroup": false,
+          "label": [
+            "LB",
+          ],
+        },
+        {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png",
+          },
+          "children": [],
+          "edges": [],
+          "id": "Microservice2/FargateService/TaskDef",
+          "isGroup": false,
+          "label": [
+            "TaskDef",
+          ],
+        },
+        {
+          "_image": null,
+          "children": [
+            {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Service_48_Dark_gen.png",
+              },
+              "children": [],
+              "edges": [
+                "Microservice2/Vpc",
+                "Microservice2/Cluster",
+                "Microservice2/FargateService/LB",
+                "Microservice2/FargateService/TaskDef",
+                "Microservice2/FargateService/Service/SecurityGroup",
+              ],
+              "id": "Microservice2/FargateService/Service/Service",
+              "isGroup": false,
+              "label": [
+                "ECS Service",
+                "Service",
+              ],
+            },
+            {
+              "_image": ComponentIcon {
+                "format": "NORMAL",
+                "path": "icons/aws/security_group.png",
+              },
+              "children": [],
+              "edges": [
+                "Microservice2/Vpc",
+                "Microservice2/FargateService/LB",
+              ],
+              "id": "Microservice2/FargateService/Service/SecurityGroup",
+              "isGroup": false,
+              "label": [
+                "SecurityGroup",
+              ],
+            },
+          ],
+          "edges": [],
+          "id": "Microservice2/FargateService/Service",
+          "isGroup": true,
+          "label": [
+            "Service",
+          ],
+        },
+      ],
+      "edges": [],
+      "id": "Microservice2/FargateService",
+      "isGroup": true,
+      "label": [
+        "FargateService",
+      ],
+    },
+  ],
+  "edges": [],
+  "id": "Microservice2",
+  "isGroup": true,
+  "label": [
+    "Microservice2",
+  ],
+}
+`;

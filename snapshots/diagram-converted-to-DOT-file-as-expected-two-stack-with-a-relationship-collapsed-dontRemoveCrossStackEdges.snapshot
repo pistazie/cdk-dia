@@ -3,202 +3,202 @@
 exports[`diagram converted to DOT file as expected src/test-fixtures/ - two-stack-with-a-relationship - collapsed-dontRemoveCrossStackEdges 1`] = `
 "digraph "Diagram" {
   splines = "ortho";
-  pad = "1.0";
-  nodesep = "0.60";
-  ranksep = "0.75";
+  pad = 1;
+  nodesep = 0.6;
+  ranksep = 0.75;
   fontname = "Sans-Serif";
-  fontsize = "15";
-  dpi = "200";
+  fontsize = 15;
+  dpi = 200;
   rankdir = "BT";
-  compound = "true";
+  compound = true;
   fontcolor = "#222222";
   edge [
-    color = "#D5871488",
-    penwidth = 2,
-    arrowhead = "dot",
-    arrowtail = "dot",
+    color = "#D5871488";
+    penwidth = 2;
+    arrowhead = "dot";
+    arrowtail = "dot";
   ];
   node [
-    shape = "box",
-    style = "rounded",
-    fixedsize = true,
-    width = 1.7,
-    height = 1.7,
-    labelloc = "c",
-    imagescale = true,
-    fontname = "Sans-Serif",
-    fontsize = 8,
-    margin = 8,
+    shape = "box";
+    style = "rounded";
+    fixedsize = true;
+    width = 1.7;
+    height = 1.7;
+    labelloc = "c";
+    imagescale = true;
+    fontname = "Sans-Serif";
+    fontsize = 8;
+    margin = 8;
   ];
   subgraph "App" {
     subgraph "cluster-SubGraph.App" {
       graph [
-        label = "App",
-        labelloc = "b",
-        labeljust = "l",
-        margin = "10",
-        fontsize = "16",
-        penwidth = "2",
-        pencolor = "#888888",
-        style = "filled,rounded",
-        fillcolor = "#f3f3f3",
+        label = "App";
+        labelloc = "b";
+        labeljust = "l";
+        margin = 10;
+        fontsize = 16;
+        penwidth = 2;
+        pencolor = "#888888";
+        style = "filled,rounded";
+        fillcolor = "#f3f3f3";
       ];
       subgraph "cluster-SubGraph.stack-with-topic" {
         graph [
-          label = "stack-with-topic",
-          labelloc = "b",
-          labeljust = "l",
-          margin = "10",
-          fontsize = "16",
-          penwidth = "2",
-          pencolor = "#888888",
-          style = "filled,rounded",
-          fillcolor = "#e4e4e4",
+          label = "stack-with-topic";
+          labelloc = "b";
+          labeljust = "l";
+          margin = 10;
+          fontsize = 16;
+          penwidth = 2;
+          pencolor = "#888888";
+          style = "filled,rounded";
+          fillcolor = "#e4e4e4";
         ];
         "stack-with-topic/the-topic/Resource" [
-          label = " SNS Topic",
-          fontsize = 12,
-          image = "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Notification-Service_64@5x.png",
-          imagescale = "true",
-          imagepos = "tc",
-          penwidth = "0",
-          shape = "node",
-          fixedsize = "true",
-          labelloc = "b",
-          width = 2,
-          height = 2.266,
+          label = " SNS Topic";
+          fontsize = 12;
+          image = "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Notification-Service_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
         ];
         "stack-with-topic/the-bucket/Resource" [
-          label = " S3 Bucket",
-          fontsize = 12,
-          image = "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
-          imagescale = "true",
-          imagepos = "tc",
-          penwidth = "0",
-          shape = "node",
-          fixedsize = "true",
-          labelloc = "b",
-          width = 2,
-          height = 2.266,
+          label = " S3 Bucket";
+          fontsize = 12;
+          image = "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
         ];
       }
       subgraph "cluster-SubGraph.stack-with-function" {
         graph [
-          label = "stack-with-function",
-          labelloc = "b",
-          labeljust = "l",
-          margin = "10",
-          fontsize = "16",
-          penwidth = "2",
-          pencolor = "#888888",
-          style = "filled,rounded",
-          fillcolor = "#e4e4e4",
+          label = "stack-with-function";
+          labelloc = "b";
+          labeljust = "l";
+          margin = 10;
+          fontsize = 16;
+          penwidth = 2;
+          pencolor = "#888888";
+          style = "filled,rounded";
+          fillcolor = "#e4e4e4";
         ];
         subgraph "cluster-SubGraph.the-queue" {
           graph [
-            label = "the-queue",
-            labelloc = "b",
-            labeljust = "l",
-            margin = "10",
-            fontsize = "16",
-            penwidth = "2",
-            pencolor = "#888888",
-            style = "filled,rounded",
-            fillcolor = "#d6d6d6",
+            label = "the-queue";
+            labelloc = "b";
+            labeljust = "l";
+            margin = 10;
+            fontsize = 16;
+            penwidth = 2;
+            pencolor = "#888888";
+            style = "filled,rounded";
+            fillcolor = "#d6d6d6";
           ];
           "stack-with-function/the-queue/Resource" [
-            label = " SQS Queue",
-            fontsize = 12,
-            image = "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
-            imagescale = "true",
-            imagepos = "tc",
-            penwidth = "0",
-            shape = "node",
-            fixedsize = "true",
-            labelloc = "b",
-            width = 2,
-            height = 2.266,
+            label = " SQS Queue";
+            fontsize = 12;
+            image = "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png";
+            imagescale = "true";
+            imagepos = "tc";
+            penwidth = 0;
+            shape = "node";
+            fixedsize = "true";
+            labelloc = "b";
+            width = 2;
+            height = 2.266;
           ];
           "stack-with-function/the-queue/Policy/Resource" [
-            label = " SQS QueuePolicy",
-            fontsize = 12,
-            image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
-            imagescale = "true",
-            imagepos = "tc",
-            penwidth = "0",
-            shape = "node",
-            fixedsize = "true",
-            labelloc = "b",
-            width = 2,
-            height = 2.266,
+            label = " SQS QueuePolicy";
+            fontsize = 12;
+            image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png";
+            imagescale = "true";
+            imagepos = "tc";
+            penwidth = 0;
+            shape = "node";
+            fixedsize = "true";
+            labelloc = "b";
+            width = 2;
+            height = 2.266;
           ];
           "stack-with-function/the-queue/stackwithtopicthetopic5764FDE0/Resource" [
-            label = " SNS SUBSCRIPTION",
-            fontsize = 12,
+            label = " SNS SUBSCRIPTION";
+            fontsize = 12;
           ];
         }
         subgraph "cluster-SubGraph.the-function" {
           graph [
-            label = "the-function",
-            labelloc = "b",
-            labeljust = "l",
-            margin = "10",
-            fontsize = "16",
-            penwidth = "2",
-            pencolor = "#888888",
-            style = "filled,rounded",
-            fillcolor = "#d6d6d6",
+            label = "the-function";
+            labelloc = "b";
+            labeljust = "l";
+            margin = 10;
+            fontsize = 16;
+            penwidth = 2;
+            pencolor = "#888888";
+            style = "filled,rounded";
+            fillcolor = "#d6d6d6";
           ];
           "stack-with-function/the-function/Resource" [
-            label = " Lambda Function",
-            fontsize = 12,
-            image = "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
-            imagescale = "true",
-            imagepos = "tc",
-            penwidth = "0",
-            shape = "node",
-            fixedsize = "true",
-            labelloc = "b",
-            width = 2,
-            height = 2.266,
+            label = " Lambda Function";
+            fontsize = 12;
+            image = "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+            imagescale = "true";
+            imagepos = "tc";
+            penwidth = 0;
+            shape = "node";
+            fixedsize = "true";
+            labelloc = "b";
+            width = 2;
+            height = 2.266;
           ];
           subgraph "cluster-SubGraph.ServiceRole" {
             graph [
-              label = "ServiceRole",
-              labelloc = "b",
-              labeljust = "l",
-              margin = "10",
-              fontsize = "16",
-              penwidth = "2",
-              pencolor = "#888888",
-              style = "filled,rounded",
-              fillcolor = "#c7c7c7",
+              label = "ServiceRole";
+              labelloc = "b";
+              labeljust = "l";
+              margin = 10;
+              fontsize = 16;
+              penwidth = 2;
+              pencolor = "#888888";
+              style = "filled,rounded";
+              fillcolor = "#c7c7c7";
             ];
             "stack-with-function/the-function/ServiceRole/Resource" [
-              label = " IAM Role",
-              fontsize = 12,
-              image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
-              imagescale = "true",
-              imagepos = "tc",
-              penwidth = "0",
-              shape = "node",
-              fixedsize = "true",
-              labelloc = "b",
-              width = 1.2,
-              height = 1.466,
+              label = " IAM Role";
+              fontsize = 12;
+              image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png";
+              imagescale = "true";
+              imagepos = "tc";
+              penwidth = 0;
+              shape = "node";
+              fixedsize = "true";
+              labelloc = "b";
+              width = 1.2;
+              height = 1.466;
             ];
             "stack-with-function/the-function/ServiceRole/DefaultPolicy/Resource" [
-              label = " IAM Policy",
-              fontsize = 12,
-              image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
-              imagescale = "true",
-              imagepos = "tc",
-              penwidth = "0",
-              shape = "node",
-              fixedsize = "true",
-              labelloc = "b",
-              width = 1.2,
-              height = 1.466,
+              label = " IAM Policy";
+              fontsize = 12;
+              image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png";
+              imagescale = "true";
+              imagepos = "tc";
+              penwidth = 0;
+              shape = "node";
+              fixedsize = "true";
+              labelloc = "b";
+              width = 1.2;
+              height = 1.466;
             ];
           }
         }
@@ -206,28 +206,28 @@ exports[`diagram converted to DOT file as expected src/test-fixtures/ - two-stac
     }
   }
   "stack-with-function/the-queue/Policy/Resource" -> "stack-with-topic/the-topic/Resource" [
-    dir = "both",
+    dir = "both";
   ];
   "stack-with-function/the-queue/Policy/Resource" -> "stack-with-function/the-queue/Resource" [
-    dir = "both",
+    dir = "both";
   ];
   "stack-with-function/the-queue/stackwithtopicthetopic5764FDE0/Resource" -> "stack-with-topic/the-topic/Resource" [
-    dir = "both",
+    dir = "both";
   ];
   "stack-with-function/the-queue/stackwithtopicthetopic5764FDE0/Resource" -> "stack-with-function/the-queue/Resource" [
-    dir = "both",
+    dir = "both";
   ];
   "stack-with-function/the-function/ServiceRole/DefaultPolicy/Resource" -> "stack-with-topic/the-bucket/Resource" [
-    dir = "both",
+    dir = "both";
   ];
   "stack-with-function/the-function/ServiceRole/DefaultPolicy/Resource" -> "stack-with-function/the-function/ServiceRole/Resource" [
-    dir = "both",
+    dir = "both";
   ];
   "stack-with-function/the-function/Resource" -> "stack-with-function/the-function/ServiceRole/Resource" [
-    dir = "both",
+    dir = "both";
   ];
   "stack-with-function/the-function/Resource" -> "stack-with-topic/the-topic/Resource" [
-    dir = "both",
+    dir = "both";
   ];
 }"
 `;

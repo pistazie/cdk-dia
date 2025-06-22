@@ -3,170 +3,170 @@
 exports[`diagram converted to DOT file as expected src/test-fixtures/ - 2_queues-are-subscribed-to-a-topic - non-collapsed 1`] = `
 "digraph "Diagram" {
   splines = "ortho";
-  pad = "1.0";
-  nodesep = "0.60";
-  ranksep = "0.75";
+  pad = 1;
+  nodesep = 0.6;
+  ranksep = 0.75;
   fontname = "Sans-Serif";
-  fontsize = "15";
-  dpi = "200";
+  fontsize = 15;
+  dpi = 200;
   rankdir = "BT";
-  compound = "true";
+  compound = true;
   fontcolor = "#222222";
   edge [
-    color = "#D5871488",
-    penwidth = 2,
-    arrowhead = "dot",
-    arrowtail = "dot",
+    color = "#D5871488";
+    penwidth = 2;
+    arrowhead = "dot";
+    arrowtail = "dot";
   ];
   node [
-    shape = "box",
-    style = "rounded",
-    fixedsize = true,
-    width = 1.7,
-    height = 1.7,
-    labelloc = "c",
-    imagescale = true,
-    fontname = "Sans-Serif",
-    fontsize = 8,
-    margin = 8,
+    shape = "box";
+    style = "rounded";
+    fixedsize = true;
+    width = 1.7;
+    height = 1.7;
+    labelloc = "c";
+    imagescale = true;
+    fontname = "Sans-Serif";
+    fontsize = 8;
+    margin = 8;
   ];
   subgraph "QueueIsSubscribedToTopicStack" {
     subgraph "cluster-SubGraph.QueueIsSubscribedToTopicStack" {
       graph [
-        label = "QueueIsSubscribedToTopicStack",
-        labelloc = "b",
-        labeljust = "l",
-        margin = "10",
-        fontsize = "16",
-        penwidth = "2",
-        pencolor = "#888888",
-        style = "filled,rounded",
-        fillcolor = "#e4e4e4",
+        label = "QueueIsSubscribedToTopicStack";
+        labelloc = "b";
+        labeljust = "l";
+        margin = 10;
+        fontsize = 16;
+        penwidth = 2;
+        pencolor = "#888888";
+        style = "filled,rounded";
+        fillcolor = "#e4e4e4";
       ];
       "QueueIsSubscribedToTopicStack/myTopic/Resource" [
-        label = " SNS Topic",
-        fontsize = 12,
-        image = "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Notification-Service_64@5x.png",
-        imagescale = "true",
-        imagepos = "tc",
-        penwidth = "0",
-        shape = "node",
-        fixedsize = "true",
-        labelloc = "b",
-        width = 2,
-        height = 2.266,
+        label = " SNS Topic";
+        fontsize = 12;
+        image = "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Notification-Service_64@5x.png";
+        imagescale = "true";
+        imagepos = "tc";
+        penwidth = 0;
+        shape = "node";
+        fixedsize = "true";
+        labelloc = "b";
+        width = 2;
+        height = 2.266;
       ];
       subgraph "cluster-SubGraph.queue1" {
         graph [
-          label = "queue1",
-          labelloc = "b",
-          labeljust = "l",
-          margin = "10",
-          fontsize = "16",
-          penwidth = "2",
-          pencolor = "#888888",
-          style = "filled,rounded",
-          fillcolor = "#d6d6d6",
+          label = "queue1";
+          labelloc = "b";
+          labeljust = "l";
+          margin = 10;
+          fontsize = 16;
+          penwidth = 2;
+          pencolor = "#888888";
+          style = "filled,rounded";
+          fillcolor = "#d6d6d6";
         ];
         "QueueIsSubscribedToTopicStack/queue1/Resource" [
-          label = " SQS Queue",
-          fontsize = 12,
-          image = "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
-          imagescale = "true",
-          imagepos = "tc",
-          penwidth = "0",
-          shape = "node",
-          fixedsize = "true",
-          labelloc = "b",
-          width = 2,
-          height = 2.266,
+          label = " SQS Queue";
+          fontsize = 12;
+          image = "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
         ];
         "QueueIsSubscribedToTopicStack/queue1/Policy/Resource" [
-          label = " SQS QueuePolicy",
-          fontsize = 12,
-          image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
-          imagescale = "true",
-          imagepos = "tc",
-          penwidth = "0",
-          shape = "node",
-          fixedsize = "true",
-          labelloc = "b",
-          width = 2,
-          height = 2.266,
+          label = " SQS QueuePolicy";
+          fontsize = 12;
+          image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
         ];
         "QueueIsSubscribedToTopicStack/queue1/QueueIsSubscribedToTopicStackmyTopicD9B86344/Resource" [
-          label = " SNS SUBSCRIPTION",
-          fontsize = 12,
+          label = " SNS SUBSCRIPTION";
+          fontsize = 12;
         ];
       }
       subgraph "cluster-SubGraph.queue2" {
         graph [
-          label = "queue2",
-          labelloc = "b",
-          labeljust = "l",
-          margin = "10",
-          fontsize = "16",
-          penwidth = "2",
-          pencolor = "#888888",
-          style = "filled,rounded",
-          fillcolor = "#d6d6d6",
+          label = "queue2";
+          labelloc = "b";
+          labeljust = "l";
+          margin = 10;
+          fontsize = 16;
+          penwidth = 2;
+          pencolor = "#888888";
+          style = "filled,rounded";
+          fillcolor = "#d6d6d6";
         ];
         "QueueIsSubscribedToTopicStack/queue2/Resource" [
-          label = " SQS Queue",
-          fontsize = 12,
-          image = "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
-          imagescale = "true",
-          imagepos = "tc",
-          penwidth = "0",
-          shape = "node",
-          fixedsize = "true",
-          labelloc = "b",
-          width = 2,
-          height = 2.266,
+          label = " SQS Queue";
+          fontsize = 12;
+          image = "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
         ];
         "QueueIsSubscribedToTopicStack/queue2/Policy/Resource" [
-          label = " SQS QueuePolicy",
-          fontsize = 12,
-          image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
-          imagescale = "true",
-          imagepos = "tc",
-          penwidth = "0",
-          shape = "node",
-          fixedsize = "true",
-          labelloc = "b",
-          width = 2,
-          height = 2.266,
+          label = " SQS QueuePolicy";
+          fontsize = 12;
+          image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
         ];
         "QueueIsSubscribedToTopicStack/queue2/QueueIsSubscribedToTopicStackmyTopicD9B86344/Resource" [
-          label = " SNS SUBSCRIPTION",
-          fontsize = 12,
+          label = " SNS SUBSCRIPTION";
+          fontsize = 12;
         ];
       }
     }
   }
   "QueueIsSubscribedToTopicStack/queue1/Policy/Resource" -> "QueueIsSubscribedToTopicStack/myTopic/Resource" [
-    dir = "both",
+    dir = "both";
   ];
   "QueueIsSubscribedToTopicStack/queue1/Policy/Resource" -> "QueueIsSubscribedToTopicStack/queue1/Resource" [
-    dir = "both",
+    dir = "both";
   ];
   "QueueIsSubscribedToTopicStack/queue1/QueueIsSubscribedToTopicStackmyTopicD9B86344/Resource" -> "QueueIsSubscribedToTopicStack/myTopic/Resource" [
-    dir = "both",
+    dir = "both";
   ];
   "QueueIsSubscribedToTopicStack/queue1/QueueIsSubscribedToTopicStackmyTopicD9B86344/Resource" -> "QueueIsSubscribedToTopicStack/queue1/Resource" [
-    dir = "both",
+    dir = "both";
   ];
   "QueueIsSubscribedToTopicStack/queue2/Policy/Resource" -> "QueueIsSubscribedToTopicStack/myTopic/Resource" [
-    dir = "both",
+    dir = "both";
   ];
   "QueueIsSubscribedToTopicStack/queue2/Policy/Resource" -> "QueueIsSubscribedToTopicStack/queue2/Resource" [
-    dir = "both",
+    dir = "both";
   ];
   "QueueIsSubscribedToTopicStack/queue2/QueueIsSubscribedToTopicStackmyTopicD9B86344/Resource" -> "QueueIsSubscribedToTopicStack/myTopic/Resource" [
-    dir = "both",
+    dir = "both";
   ];
   "QueueIsSubscribedToTopicStack/queue2/QueueIsSubscribedToTopicStackmyTopicD9B86344/Resource" -> "QueueIsSubscribedToTopicStack/queue2/Resource" [
-    dir = "both",
+    dir = "both";
   ];
 }"
 `;
