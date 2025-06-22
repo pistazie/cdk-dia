@@ -20,7 +20,7 @@ Node {
             "Resource" => Node {
               "attributes": Map {
                 "aws:cdk:cloudformation:type" => "AWS::SNS::Topic",
-                "aws:cdk:cloudformation:props" => Object {},
+                "aws:cdk:cloudformation:props" => {},
               },
               "children": Map {},
               "constructInfoFqn": undefined,
@@ -38,7 +38,7 @@ Node {
             "Resource" => Node {
               "attributes": Map {
                 "aws:cdk:cloudformation:type" => "AWS::SQS::Queue",
-                "aws:cdk:cloudformation:props" => Object {},
+                "aws:cdk:cloudformation:props" => {},
               },
               "children": Map {},
               "constructInfoFqn": undefined,
@@ -51,24 +51,24 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::SQS::QueuePolicy",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "policyDocument": Object {
-                        "Statement": Array [
-                          Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "policyDocument": {
+                        "Statement": [
+                          {
                             "Action": "sqs:SendMessage",
-                            "Condition": Object {
-                              "ArnEquals": Object {
-                                "aws:SourceArn": Object {
+                            "Condition": {
+                              "ArnEquals": {
+                                "aws:SourceArn": {
                                   "Ref": "myTopicDE69997A",
                                 },
                               },
                             },
                             "Effect": "Allow",
-                            "Principal": Object {
+                            "Principal": {
                               "Service": "sns.amazonaws.com",
                             },
-                            "Resource": Object {
-                              "Fn::GetAtt": Array [
+                            "Resource": {
+                              "Fn::GetAtt": [
                                 "queue1A6429D98",
                                 "Arn",
                               ],
@@ -77,8 +77,8 @@ Node {
                         ],
                         "Version": "2012-10-17",
                       },
-                      "queues": Array [
-                        Object {
+                      "queues": [
+                        {
                           "Ref": "queue1A6429D98",
                         },
                       ],
@@ -100,15 +100,15 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::SNS::Subscription",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "endpoint": Object {
-                        "Fn::GetAtt": Array [
+                    "aws:cdk:cloudformation:props" => {
+                      "endpoint": {
+                        "Fn::GetAtt": [
                           "queue1A6429D98",
                           "Arn",
                         ],
                       },
                       "protocol": "sqs",
-                      "topicArn": Object {
+                      "topicArn": {
                         "Ref": "myTopicDE69997A",
                       },
                     },
@@ -134,7 +134,7 @@ Node {
             "Resource" => Node {
               "attributes": Map {
                 "aws:cdk:cloudformation:type" => "AWS::SQS::Queue",
-                "aws:cdk:cloudformation:props" => Object {},
+                "aws:cdk:cloudformation:props" => {},
               },
               "children": Map {},
               "constructInfoFqn": undefined,
@@ -147,24 +147,24 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::SQS::QueuePolicy",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "policyDocument": Object {
-                        "Statement": Array [
-                          Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "policyDocument": {
+                        "Statement": [
+                          {
                             "Action": "sqs:SendMessage",
-                            "Condition": Object {
-                              "ArnEquals": Object {
-                                "aws:SourceArn": Object {
+                            "Condition": {
+                              "ArnEquals": {
+                                "aws:SourceArn": {
                                   "Ref": "myTopicDE69997A",
                                 },
                               },
                             },
                             "Effect": "Allow",
-                            "Principal": Object {
+                            "Principal": {
                               "Service": "sns.amazonaws.com",
                             },
-                            "Resource": Object {
-                              "Fn::GetAtt": Array [
+                            "Resource": {
+                              "Fn::GetAtt": [
                                 "queue20D18E0EC",
                                 "Arn",
                               ],
@@ -173,8 +173,8 @@ Node {
                         ],
                         "Version": "2012-10-17",
                       },
-                      "queues": Array [
-                        Object {
+                      "queues": [
+                        {
                           "Ref": "queue20D18E0EC",
                         },
                       ],
@@ -196,15 +196,15 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::SNS::Subscription",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "endpoint": Object {
-                        "Fn::GetAtt": Array [
+                    "aws:cdk:cloudformation:props" => {
+                      "endpoint": {
+                        "Fn::GetAtt": [
                           "queue20D18E0EC",
                           "Arn",
                         ],
                       },
                       "protocol": "sqs",
-                      "topicArn": Object {
+                      "topicArn": {
                         "Ref": "myTopicDE69997A",
                       },
                     },

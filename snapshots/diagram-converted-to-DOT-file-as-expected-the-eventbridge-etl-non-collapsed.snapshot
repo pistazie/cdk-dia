@@ -1,200 +1,200 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`diagram converted to DOT file as expected src/test-fixtures/ - the-eventbridge-etl - non-collapsed 1`] = `
-"digraph \\"Diagram\\" {
-  splines = \\"ortho\\";
-  pad = \\"1.0\\";
-  nodesep = \\"0.60\\";
-  ranksep = \\"0.75\\";
-  fontname = \\"Sans-Serif\\";
-  fontsize = \\"15\\";
-  dpi = \\"200\\";
-  rankdir = \\"BT\\";
-  compound = \\"true\\";
-  fontcolor = \\"#222222\\";
+"digraph "Diagram" {
+  splines = "ortho";
+  pad = 1;
+  nodesep = 0.6;
+  ranksep = 0.75;
+  fontname = "Sans-Serif";
+  fontsize = 15;
+  dpi = 200;
+  rankdir = "BT";
+  compound = true;
+  fontcolor = "#222222";
   edge [
-    color = \\"#D5871488\\",
-    penwidth = 2,
-    arrowhead = \\"dot\\",
-    arrowtail = \\"dot\\",
+    color = "#D5871488";
+    penwidth = 2;
+    arrowhead = "dot";
+    arrowtail = "dot";
   ];
   node [
-    shape = \\"box\\",
-    style = \\"rounded\\",
-    fixedsize = true,
-    width = 1.7,
-    height = 1.7,
-    labelloc = \\"c\\",
-    imagescale = true,
-    fontname = \\"Sans-Serif\\",
-    fontsize = 8,
-    margin = 8,
+    shape = "box";
+    style = "rounded";
+    fixedsize = true;
+    width = 1.7;
+    height = 1.7;
+    labelloc = "c";
+    imagescale = true;
+    fontname = "Sans-Serif";
+    fontsize = 8;
+    margin = 8;
   ];
-  subgraph \\"TheEventbridgeEtlStack\\" {
-    subgraph \\"cluster-SubGraph.TheEventbridgeEtlStack\\" {
+  subgraph "TheEventbridgeEtlStack" {
+    subgraph "cluster-SubGraph.TheEventbridgeEtlStack" {
       graph [
-        label = \\"TheEventbridgeEtlStack\\",
-        labelloc = \\"b\\",
-        labeljust = \\"l\\",
-        margin = \\"10\\",
-        fontsize = \\"16\\",
-        penwidth = \\"2\\",
-        pencolor = \\"#888888\\",
-        style = \\"filled,rounded\\",
-        fillcolor = \\"#e4e4e4\\",
+        label = "TheEventbridgeEtlStack";
+        labelloc = "b";
+        labeljust = "l";
+        margin = 10;
+        fontsize = 16;
+        penwidth = 2;
+        pencolor = "#888888";
+        style = "filled,rounded";
+        fillcolor = "#e4e4e4";
       ];
-      subgraph \\"cluster-SubGraph.FargateTaskDefinition\\" {
+      subgraph "cluster-SubGraph.FargateTaskDefinition" {
         graph [
-          label = \\"FargateTaskDefinition\\",
-          labelloc = \\"b\\",
-          labeljust = \\"l\\",
-          margin = \\"10\\",
-          fontsize = \\"16\\",
-          penwidth = \\"2\\",
-          pencolor = \\"#888888\\",
-          style = \\"filled,rounded\\",
-          fillcolor = \\"#d6d6d6\\",
+          label = "FargateTaskDefinition";
+          labelloc = "b";
+          labeljust = "l";
+          margin = 10;
+          fontsize = 16;
+          penwidth = 2;
+          pencolor = "#888888";
+          style = "filled,rounded";
+          fillcolor = "#d6d6d6";
         ];
-        \\"TheEventbridgeEtlStack/FargateTaskDefinition/Resource\\" [
-          label = \\" ECS TaskDefinition\\",
-          fontsize = 12,
-          image = \\"icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
-          width = 2,
-          height = 2.266,
+        "TheEventbridgeEtlStack/FargateTaskDefinition/Resource" [
+          label = " ECS TaskDefinition";
+          fontsize = 12;
+          image = "icons/aws/Resource/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_Task_48_Dark_gen.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
         ];
-        subgraph \\"cluster-SubGraph.TaskRole\\" {
+        subgraph "cluster-SubGraph.TaskRole" {
           graph [
-            label = \\"TaskRole\\",
-            labelloc = \\"b\\",
-            labeljust = \\"l\\",
-            margin = \\"10\\",
-            fontsize = \\"16\\",
-            penwidth = \\"2\\",
-            pencolor = \\"#888888\\",
-            style = \\"filled,rounded\\",
-            fillcolor = \\"#c7c7c7\\",
+            label = "TaskRole";
+            labelloc = "b";
+            labeljust = "l";
+            margin = 10;
+            fontsize = 16;
+            penwidth = 2;
+            pencolor = "#888888";
+            style = "filled,rounded";
+            fillcolor = "#c7c7c7";
           ];
-          \\"TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/Resource\\" [
-            label = \\" IAM Role\\",
-            fontsize = 12,
-            image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
-            imagescale = \\"true\\",
-            imagepos = \\"tc\\",
-            penwidth = \\"0\\",
-            shape = \\"node\\",
-            fixedsize = \\"true\\",
-            labelloc = \\"b\\",
-            width = 1.2,
-            height = 1.466,
+          "TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/Resource" [
+            label = " IAM Role";
+            fontsize = 12;
+            image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png";
+            imagescale = "true";
+            imagepos = "tc";
+            penwidth = 0;
+            shape = "node";
+            fixedsize = "true";
+            labelloc = "b";
+            width = 1.2;
+            height = 1.466;
           ];
-          \\"TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/DefaultPolicy/Resource\\" [
-            label = \\" IAM Policy\\",
-            fontsize = 12,
-            image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
-            imagescale = \\"true\\",
-            imagepos = \\"tc\\",
-            penwidth = \\"0\\",
-            shape = \\"node\\",
-            fixedsize = \\"true\\",
-            labelloc = \\"b\\",
-            width = 1.2,
-            height = 1.466,
+          "TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/DefaultPolicy/Resource" [
+            label = " IAM Policy";
+            fontsize = 12;
+            image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png";
+            imagescale = "true";
+            imagepos = "tc";
+            penwidth = 0;
+            shape = "node";
+            fixedsize = "true";
+            labelloc = "b";
+            width = 1.2;
+            height = 1.466;
           ];
         }
       }
-      subgraph \\"cluster-SubGraph.extractLambdaHandler\\" {
+      subgraph "cluster-SubGraph.extractLambdaHandler" {
         graph [
-          label = \\"extractLambdaHandler\\",
-          labelloc = \\"b\\",
-          labeljust = \\"l\\",
-          margin = \\"10\\",
-          fontsize = \\"16\\",
-          penwidth = \\"2\\",
-          pencolor = \\"#888888\\",
-          style = \\"filled,rounded\\",
-          fillcolor = \\"#d6d6d6\\",
+          label = "extractLambdaHandler";
+          labelloc = "b";
+          labeljust = "l";
+          margin = 10;
+          fontsize = 16;
+          penwidth = 2;
+          pencolor = "#888888";
+          style = "filled,rounded";
+          fillcolor = "#d6d6d6";
         ];
-        \\"TheEventbridgeEtlStack/extractLambdaHandler/Resource\\" [
-          label = \\" Lambda Function\\",
-          fontsize = 12,
-          image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
-          width = 2,
-          height = 2.266,
+        "TheEventbridgeEtlStack/extractLambdaHandler/Resource" [
+          label = " Lambda Function";
+          fontsize = 12;
+          image = "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
         ];
-        subgraph \\"cluster-SubGraph.ServiceRole\\" {
+        subgraph "cluster-SubGraph.ServiceRole" {
           graph [
-            label = \\"ServiceRole\\",
-            labelloc = \\"b\\",
-            labeljust = \\"l\\",
-            margin = \\"10\\",
-            fontsize = \\"16\\",
-            penwidth = \\"2\\",
-            pencolor = \\"#888888\\",
-            style = \\"filled,rounded\\",
-            fillcolor = \\"#c7c7c7\\",
+            label = "ServiceRole";
+            labelloc = "b";
+            labeljust = "l";
+            margin = 10;
+            fontsize = 16;
+            penwidth = 2;
+            pencolor = "#888888";
+            style = "filled,rounded";
+            fillcolor = "#c7c7c7";
           ];
-          \\"TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/Resource\\" [
-            label = \\" IAM Role\\",
-            fontsize = 12,
-            image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
-            imagescale = \\"true\\",
-            imagepos = \\"tc\\",
-            penwidth = \\"0\\",
-            shape = \\"node\\",
-            fixedsize = \\"true\\",
-            labelloc = \\"b\\",
-            width = 1.2,
-            height = 1.466,
+          "TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/Resource" [
+            label = " IAM Role";
+            fontsize = 12;
+            image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png";
+            imagescale = "true";
+            imagepos = "tc";
+            penwidth = 0;
+            shape = "node";
+            fixedsize = "true";
+            labelloc = "b";
+            width = 1.2;
+            height = 1.466;
           ];
-          \\"TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/DefaultPolicy/Resource\\" [
-            label = \\" IAM Policy\\",
-            fontsize = 12,
-            image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
-            imagescale = \\"true\\",
-            imagepos = \\"tc\\",
-            penwidth = \\"0\\",
-            shape = \\"node\\",
-            fixedsize = \\"true\\",
-            labelloc = \\"b\\",
-            width = 1.2,
-            height = 1.466,
+          "TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/DefaultPolicy/Resource" [
+            label = " IAM Policy";
+            fontsize = 12;
+            image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png";
+            imagescale = "true";
+            imagepos = "tc";
+            penwidth = 0;
+            shape = "node";
+            fixedsize = "true";
+            labelloc = "b";
+            width = 1.2;
+            height = 1.466;
           ];
         }
       }
     }
   }
-  \\"TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/DefaultPolicy/Resource\\" -> \\"TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/Resource\\" [
-    dir = \\"both\\",
+  "TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/DefaultPolicy/Resource" -> "TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/Resource" [
+    dir = "both";
   ];
-  \\"TheEventbridgeEtlStack/FargateTaskDefinition/Resource\\" -> \\"TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/Resource\\" [
-    dir = \\"both\\",
+  "TheEventbridgeEtlStack/FargateTaskDefinition/Resource" -> "TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/Resource" [
+    dir = "both";
   ];
-  \\"TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/DefaultPolicy/Resource\\" -> \\"TheEventbridgeEtlStack/FargateTaskDefinition/Resource\\" [
-    dir = \\"both\\",
+  "TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/DefaultPolicy/Resource" -> "TheEventbridgeEtlStack/FargateTaskDefinition/Resource" [
+    dir = "both";
   ];
-  \\"TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/DefaultPolicy/Resource\\" -> \\"TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/Resource\\" [
-    dir = \\"both\\",
+  "TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/DefaultPolicy/Resource" -> "TheEventbridgeEtlStack/FargateTaskDefinition/TaskRole/Resource" [
+    dir = "both";
   ];
-  \\"TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/DefaultPolicy/Resource\\" -> \\"TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/Resource\\" [
-    dir = \\"both\\",
+  "TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/DefaultPolicy/Resource" -> "TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/Resource" [
+    dir = "both";
   ];
-  \\"TheEventbridgeEtlStack/extractLambdaHandler/Resource\\" -> \\"TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/Resource\\" [
-    dir = \\"both\\",
+  "TheEventbridgeEtlStack/extractLambdaHandler/Resource" -> "TheEventbridgeEtlStack/extractLambdaHandler/ServiceRole/Resource" [
+    dir = "both";
   ];
-  \\"TheEventbridgeEtlStack/extractLambdaHandler/Resource\\" -> \\"TheEventbridgeEtlStack/FargateTaskDefinition/Resource\\" [
-    dir = \\"both\\",
+  "TheEventbridgeEtlStack/extractLambdaHandler/Resource" -> "TheEventbridgeEtlStack/FargateTaskDefinition/Resource" [
+    dir = "both";
   ];
 }"
 `;

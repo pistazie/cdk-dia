@@ -1,302 +1,302 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`diagram converted to DOT file as expected src/test-fixtures/ - cloudstructs-static-website - collapsed 1`] = `
-"digraph \\"Diagram\\" {
-  splines = \\"ortho\\";
-  pad = \\"1.0\\";
-  nodesep = \\"0.60\\";
-  ranksep = \\"0.75\\";
-  fontname = \\"Sans-Serif\\";
-  fontsize = \\"15\\";
-  dpi = \\"200\\";
-  rankdir = \\"BT\\";
-  compound = \\"true\\";
-  fontcolor = \\"#222222\\";
+"digraph "Diagram" {
+  splines = "ortho";
+  pad = 1;
+  nodesep = 0.6;
+  ranksep = 0.75;
+  fontname = "Sans-Serif";
+  fontsize = 15;
+  dpi = 200;
+  rankdir = "BT";
+  compound = true;
+  fontcolor = "#222222";
   edge [
-    color = \\"#D5871488\\",
-    penwidth = 2,
-    arrowhead = \\"dot\\",
-    arrowtail = \\"dot\\",
+    color = "#D5871488";
+    penwidth = 2;
+    arrowhead = "dot";
+    arrowtail = "dot";
   ];
   node [
-    shape = \\"box\\",
-    style = \\"rounded\\",
-    fixedsize = true,
-    width = 1.7,
-    height = 1.7,
-    labelloc = \\"c\\",
-    imagescale = true,
-    fontname = \\"Sans-Serif\\",
-    fontsize = 8,
-    margin = 8,
+    shape = "box";
+    style = "rounded";
+    fixedsize = true;
+    width = 1.7;
+    height = 1.7;
+    labelloc = "c";
+    imagescale = true;
+    fontname = "Sans-Serif";
+    fontsize = 8;
+    margin = 8;
   ];
-  subgraph \\"StaticWebSite\\" {
-    subgraph \\"cluster-SubGraph.StaticWebSite\\" {
+  subgraph "StaticWebSite" {
+    subgraph "cluster-SubGraph.StaticWebSite" {
       graph [
-        label = \\"StaticWebSite\\",
-        labelloc = \\"b\\",
-        labeljust = \\"l\\",
-        margin = \\"10\\",
-        fontsize = \\"16\\",
-        penwidth = \\"2\\",
-        pencolor = \\"#888888\\",
-        style = \\"filled,rounded\\",
-        fillcolor = \\"#e4e4e4\\",
+        label = "StaticWebSite";
+        labelloc = "b";
+        labeljust = "l";
+        margin = 10;
+        fontsize = 16;
+        penwidth = 2;
+        pencolor = "#888888";
+        style = "filled,rounded";
+        fillcolor = "#e4e4e4";
       ];
-      \\"StaticWebSite/dns\\" [
-        label = \\" dns\\",
-        fontsize = 12,
-        image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png\\",
-        imagescale = \\"true\\",
-        imagepos = \\"tc\\",
-        penwidth = \\"0\\",
-        shape = \\"node\\",
-        fixedsize = \\"true\\",
-        labelloc = \\"b\\",
-        width = 2,
-        height = 2.266,
+      "StaticWebSite/dns" [
+        label = " dns";
+        fontsize = 12;
+        image = "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png";
+        imagescale = "true";
+        imagepos = "tc";
+        penwidth = 0;
+        shape = "node";
+        fixedsize = "true";
+        labelloc = "b";
+        width = 2;
+        height = 2.266;
       ];
-      \\"StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287\\" [
-        label = \\"\\\\nAWS679f53fac002430cb0\\",
-        fontsize = 12,
-        image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
-        imagescale = \\"true\\",
-        imagepos = \\"tc\\",
-        penwidth = \\"0\\",
-        shape = \\"node\\",
-        fixedsize = \\"true\\",
-        labelloc = \\"b\\",
-        width = 2,
-        height = 2.4819999999999998,
+      "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287" [
+        label = "\\nAWS679f53fac002430cb0";
+        fontsize = 12;
+        image = "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+        imagescale = "true";
+        imagepos = "tc";
+        penwidth = 0;
+        shape = "node";
+        fixedsize = "true";
+        labelloc = "b";
+        width = 2;
+        height = 2.4819999999999998;
       ];
-      \\"StaticWebSite/Custom__CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C\\" [
-        label = \\" Custom \\\\nCDKBucketDeployment86\\",
-        fontsize = 12,
-        image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
-        imagescale = \\"true\\",
-        imagepos = \\"tc\\",
-        penwidth = \\"0\\",
-        shape = \\"node\\",
-        fixedsize = \\"true\\",
-        labelloc = \\"b\\",
-        width = 2,
-        height = 2.4819999999999998,
+      "StaticWebSite/Custom__CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C" [
+        label = " Custom \\nCDKBucketDeployment86";
+        fontsize = 12;
+        image = "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+        imagescale = "true";
+        imagepos = "tc";
+        penwidth = 0;
+        shape = "node";
+        fixedsize = "true";
+        labelloc = "b";
+        width = 2;
+        height = 2.4819999999999998;
       ];
-      subgraph \\"cluster-SubGraph.StaticWebsite\\" {
+      subgraph "cluster-SubGraph.StaticWebsite" {
         graph [
-          label = \\"StaticWebsite\\",
-          labelloc = \\"b\\",
-          labeljust = \\"l\\",
-          margin = \\"10\\",
-          fontsize = \\"16\\",
-          penwidth = \\"2\\",
-          pencolor = \\"#888888\\",
-          style = \\"filled,rounded\\",
-          fillcolor = \\"#d6d6d6\\",
+          label = "StaticWebsite";
+          labelloc = "b";
+          labeljust = "l";
+          margin = 10;
+          fontsize = 16;
+          penwidth = 2;
+          pencolor = "#888888";
+          style = "filled,rounded";
+          fillcolor = "#d6d6d6";
         ];
-        \\"StaticWebSite/StaticWebsite/Bucket\\" [
-          label = \\" Bucket\\",
-          fontsize = 12,
-          image = \\"icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
-          width = 2,
-          height = 2.266,
+        "StaticWebSite/StaticWebsite/Bucket" [
+          label = " Bucket";
+          fontsize = 12;
+          image = "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
         ];
-        \\"StaticWebSite/StaticWebsite/Distribution\\" [
-          label = \\" Distribution\\",
-          fontsize = 12,
-          image = \\"icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-CloudFront_64@5x.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
-          width = 2,
-          height = 2.266,
+        "StaticWebSite/StaticWebsite/Distribution" [
+          label = " Distribution";
+          fontsize = 12;
+          image = "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-CloudFront_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
         ];
-        \\"StaticWebSite/StaticWebsite/ARecord\\" [
-          label = \\" ARecord\\",
-          fontsize = 12,
-          image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
-          width = 1.2,
-          height = 1.466,
+        "StaticWebSite/StaticWebsite/ARecord" [
+          label = " ARecord";
+          fontsize = 12;
+          image = "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 1.2;
+          height = 1.466;
         ];
-        \\"StaticWebSite/StaticWebsite/AaaaRecord\\" [
-          label = \\" AaaaRecord\\",
-          fontsize = 12,
-          image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
-          width = 1.2,
-          height = 1.466,
+        "StaticWebSite/StaticWebsite/AaaaRecord" [
+          label = " AaaaRecord";
+          fontsize = 12;
+          image = "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 1.2;
+          height = 1.466;
         ];
-        \\"StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction\\" [
-          label = \\"\\\\nCertificateRequestorF\\",
-          fontsize = 12,
-          image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
-          width = 2,
-          height = 2.4819999999999998,
+        "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction" [
+          label = "\\nCertificateRequestorF";
+          fontsize = 12;
+          image = "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.4819999999999998;
         ];
-        \\"StaticWebSite/StaticWebsite/PutConfig/CustomResourcePolicy\\" [
-          label = \\" CustomResourcePolicy\\",
-          fontsize = 12,
-          image = \\"icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png\\",
-          imagescale = \\"true\\",
-          imagepos = \\"tc\\",
-          penwidth = \\"0\\",
-          shape = \\"node\\",
-          fixedsize = \\"true\\",
-          labelloc = \\"b\\",
-          width = 1.2,
-          height = 1.466,
+        "StaticWebSite/StaticWebsite/PutConfig/CustomResourcePolicy" [
+          label = " CustomResourcePolicy";
+          fontsize = 12;
+          image = "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 1.2;
+          height = 1.466;
         ];
-        subgraph \\"cluster-SubGraph.HttpsRedirect\\" {
+        subgraph "cluster-SubGraph.HttpsRedirect" {
           graph [
-            label = \\"HttpsRedirect\\",
-            labelloc = \\"b\\",
-            labeljust = \\"l\\",
-            margin = \\"10\\",
-            fontsize = \\"16\\",
-            penwidth = \\"2\\",
-            pencolor = \\"#888888\\",
-            style = \\"filled,rounded\\",
-            fillcolor = \\"#c7c7c7\\",
+            label = "HttpsRedirect";
+            labelloc = "b";
+            labeljust = "l";
+            margin = 10;
+            fontsize = 16;
+            penwidth = 2;
+            pencolor = "#888888";
+            style = "filled,rounded";
+            fillcolor = "#c7c7c7";
           ];
-          \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectBucket\\" [
-            label = \\" RedirectBucket\\",
-            fontsize = 12,
-            image = \\"icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png\\",
-            imagescale = \\"true\\",
-            imagepos = \\"tc\\",
-            penwidth = \\"0\\",
-            shape = \\"node\\",
-            fixedsize = \\"true\\",
-            labelloc = \\"b\\",
-            width = 2,
-            height = 2.266,
+          "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectBucket" [
+            label = " RedirectBucket";
+            fontsize = 12;
+            image = "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png";
+            imagescale = "true";
+            imagepos = "tc";
+            penwidth = 0;
+            shape = "node";
+            fixedsize = "true";
+            labelloc = "b";
+            width = 2;
+            height = 2.266;
           ];
-          \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecord2591f3\\" [
-            label = \\"\\\\nRedirectAliasRecord25\\",
-            fontsize = 12,
-            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png\\",
-            imagescale = \\"true\\",
-            imagepos = \\"tc\\",
-            penwidth = \\"0\\",
-            shape = \\"node\\",
-            fixedsize = \\"true\\",
-            labelloc = \\"b\\",
-            width = 1.2,
-            height = 1.682,
+          "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecord2591f3" [
+            label = "\\nRedirectAliasRecord25";
+            fontsize = 12;
+            image = "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png";
+            imagescale = "true";
+            imagepos = "tc";
+            penwidth = 0;
+            shape = "node";
+            fixedsize = "true";
+            labelloc = "b";
+            width = 1.2;
+            height = 1.682;
           ];
-          \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecordSix2591f3\\" [
-            label = \\"\\\\nRedirectAliasRecordSi\\",
-            fontsize = 12,
-            image = \\"icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png\\",
-            imagescale = \\"true\\",
-            imagepos = \\"tc\\",
-            penwidth = \\"0\\",
-            shape = \\"node\\",
-            fixedsize = \\"true\\",
-            labelloc = \\"b\\",
-            width = 1.2,
-            height = 1.682,
+          "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecordSix2591f3" [
+            label = "\\nRedirectAliasRecordSi";
+            fontsize = 12;
+            image = "icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png";
+            imagescale = "true";
+            imagepos = "tc";
+            penwidth = 0;
+            shape = "node";
+            fixedsize = "true";
+            labelloc = "b";
+            width = 1.2;
+            height = 1.682;
           ];
-          \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction\\" [
-            label = \\"\\\\nCertificateRequestorF\\",
-            fontsize = 12,
-            image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
-            imagescale = \\"true\\",
-            imagepos = \\"tc\\",
-            penwidth = \\"0\\",
-            shape = \\"node\\",
-            fixedsize = \\"true\\",
-            labelloc = \\"b\\",
-            width = 2,
-            height = 2.4819999999999998,
+          "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction" [
+            label = "\\nCertificateRequestorF";
+            fontsize = 12;
+            image = "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+            imagescale = "true";
+            imagepos = "tc";
+            penwidth = 0;
+            shape = "node";
+            fixedsize = "true";
+            labelloc = "b";
+            width = 2;
+            height = 2.4819999999999998;
           ];
-          \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution\\" [
-            label = \\" CloudFront\\\\nDistribution\\\\nCFDistribution\\",
-            fontsize = 12,
-            image = \\"icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-CloudFront_64@5x.png\\",
-            imagescale = \\"true\\",
-            imagepos = \\"tc\\",
-            penwidth = \\"0\\",
-            shape = \\"node\\",
-            fixedsize = \\"true\\",
-            labelloc = \\"b\\",
-            width = 2,
-            height = 2.6979999999999995,
+          "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution" [
+            label = " CloudFront\\nDistribution\\nCFDistribution";
+            fontsize = 12;
+            image = "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-CloudFront_64@5x.png";
+            imagescale = "true";
+            imagepos = "tc";
+            penwidth = 0;
+            shape = "node";
+            fixedsize = "true";
+            labelloc = "b";
+            width = 2;
+            height = 2.6979999999999995;
           ];
         }
       }
     }
   }
-  \\"StaticWebSite/StaticWebsite/Bucket\\" -> \\"StaticWebSite/StaticWebsite/Distribution\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/Bucket" -> "StaticWebSite/StaticWebsite/Distribution" [
+    dir = "both";
   ];
-  \\"StaticWebSite/StaticWebsite/Distribution\\" -> \\"StaticWebSite/StaticWebsite/Bucket\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/Distribution" -> "StaticWebSite/StaticWebsite/Bucket" [
+    dir = "both";
   ];
-  \\"StaticWebSite/StaticWebsite/ARecord\\" -> \\"StaticWebSite/dns\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/ARecord" -> "StaticWebSite/dns" [
+    dir = "both";
   ];
-  \\"StaticWebSite/StaticWebsite/ARecord\\" -> \\"StaticWebSite/StaticWebsite/Distribution\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/ARecord" -> "StaticWebSite/StaticWebsite/Distribution" [
+    dir = "both";
   ];
-  \\"StaticWebSite/StaticWebsite/AaaaRecord\\" -> \\"StaticWebSite/dns\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/AaaaRecord" -> "StaticWebSite/dns" [
+    dir = "both";
   ];
-  \\"StaticWebSite/StaticWebsite/AaaaRecord\\" -> \\"StaticWebSite/StaticWebsite/Distribution\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/AaaaRecord" -> "StaticWebSite/StaticWebsite/Distribution" [
+    dir = "both";
   ];
-  \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecord2591f3\\" -> \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecord2591f3" -> "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution" [
+    dir = "both";
   ];
-  \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecord2591f3\\" -> \\"StaticWebSite/dns\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecord2591f3" -> "StaticWebSite/dns" [
+    dir = "both";
   ];
-  \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecordSix2591f3\\" -> \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecordSix2591f3" -> "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution" [
+    dir = "both";
   ];
-  \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecordSix2591f3\\" -> \\"StaticWebSite/dns\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectAliasRecordSix2591f3" -> "StaticWebSite/dns" [
+    dir = "both";
   ];
-  \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction\\" -> \\"StaticWebSite/dns\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectCertificate/CertificateRequestorFunction" -> "StaticWebSite/dns" [
+    dir = "both";
   ];
-  \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution\\" -> \\"StaticWebSite/StaticWebsite/HttpsRedirect/RedirectBucket\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectDistribution/CFDistribution" -> "StaticWebSite/StaticWebsite/HttpsRedirect/RedirectBucket" [
+    dir = "both";
   ];
-  \\"StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction\\" -> \\"StaticWebSite/dns\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/Certificate/CertificateRequestorFunction" -> "StaticWebSite/dns" [
+    dir = "both";
   ];
-  \\"StaticWebSite/StaticWebsite/PutConfig/CustomResourcePolicy\\" -> \\"StaticWebSite/StaticWebsite/Bucket\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/PutConfig/CustomResourcePolicy" -> "StaticWebSite/StaticWebsite/Bucket" [
+    dir = "both";
   ];
-  \\"StaticWebSite/StaticWebsite/PutConfig/CustomResourcePolicy\\" -> \\"StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287\\" [
-    dir = \\"both\\",
+  "StaticWebSite/StaticWebsite/PutConfig/CustomResourcePolicy" -> "StaticWebSite/AWS679f53fac002430cb0da5b7982bd2287" [
+    dir = "both";
   ];
 }"
 `;

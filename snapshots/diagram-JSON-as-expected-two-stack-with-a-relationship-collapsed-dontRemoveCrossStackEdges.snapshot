@@ -1,175 +1,175 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`diagram JSON as expected src/test-fixtures/ - two-stack-with-a-relationship - collapsed-dontRemoveCrossStackEdges 1`] = `
-Object {
+{
   "_image": null,
-  "children": Array [
-    Object {
+  "children": [
+    {
       "_image": null,
-      "children": Array [
-        Object {
+      "children": [
+        {
           "_image": ComponentIcon {
             "format": "NORMAL",
             "path": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Notification-Service_64@5x.png",
           },
-          "children": Array [],
-          "edges": Array [],
+          "children": [],
+          "edges": [],
           "id": "stack-with-topic/the-topic/Resource",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "SNS Topic",
           ],
         },
-        Object {
+        {
           "_image": ComponentIcon {
             "format": "NORMAL",
             "path": "icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
           },
-          "children": Array [],
-          "edges": Array [],
+          "children": [],
+          "edges": [],
           "id": "stack-with-topic/the-bucket/Resource",
           "isGroup": false,
-          "label": Array [
+          "label": [
             "S3 Bucket",
           ],
         },
       ],
-      "edges": Array [],
+      "edges": [],
       "id": "stack-with-topic",
       "isGroup": true,
-      "label": Array [
+      "label": [
         "stack-with-topic",
       ],
     },
-    Object {
+    {
       "_image": null,
-      "children": Array [
-        Object {
+      "children": [
+        {
           "_image": null,
-          "children": Array [
-            Object {
+          "children": [
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
               },
-              "children": Array [],
-              "edges": Array [],
+              "children": [],
+              "edges": [],
               "id": "stack-with-function/the-queue/Resource",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "SQS Queue",
               ],
             },
-            Object {
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
               },
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "stack-with-topic/the-topic/Resource",
                 "stack-with-function/the-queue/Resource",
               ],
               "id": "stack-with-function/the-queue/Policy/Resource",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "SQS QueuePolicy",
               ],
             },
-            Object {
+            {
               "_image": null,
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "stack-with-topic/the-topic/Resource",
                 "stack-with-function/the-queue/Resource",
               ],
               "id": "stack-with-function/the-queue/stackwithtopicthetopic5764FDE0/Resource",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "SNS",
                 "SUBSCRIPTION",
               ],
             },
           ],
-          "edges": Array [],
+          "edges": [],
           "id": "stack-with-function/the-queue",
           "isGroup": true,
-          "label": Array [
+          "label": [
             "the-queue",
           ],
         },
-        Object {
+        {
           "_image": null,
-          "children": Array [
-            Object {
+          "children": [
+            {
               "_image": null,
-              "children": Array [
-                Object {
+              "children": [
+                {
                   "_image": ComponentIcon {
                     "format": "SMALLER",
                     "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
                   },
-                  "children": Array [],
-                  "edges": Array [],
+                  "children": [],
+                  "edges": [],
                   "id": "stack-with-function/the-function/ServiceRole/Resource",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "IAM Role",
                   ],
                 },
-                Object {
+                {
                   "_image": ComponentIcon {
                     "format": "SMALLER",
                     "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
                   },
-                  "children": Array [],
-                  "edges": Array [
+                  "children": [],
+                  "edges": [
                     "stack-with-topic/the-bucket/Resource",
                     "stack-with-function/the-function/ServiceRole/Resource",
                   ],
                   "id": "stack-with-function/the-function/ServiceRole/DefaultPolicy/Resource",
                   "isGroup": false,
-                  "label": Array [
+                  "label": [
                     "IAM Policy",
                   ],
                 },
               ],
-              "edges": Array [],
+              "edges": [],
               "id": "stack-with-function/the-function/ServiceRole",
               "isGroup": true,
-              "label": Array [
+              "label": [
                 "ServiceRole",
               ],
             },
-            Object {
+            {
               "_image": ComponentIcon {
                 "format": "NORMAL",
                 "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
               },
-              "children": Array [],
-              "edges": Array [
+              "children": [],
+              "edges": [
                 "stack-with-function/the-function/ServiceRole/Resource",
                 "stack-with-topic/the-topic/Resource",
               ],
               "id": "stack-with-function/the-function/Resource",
               "isGroup": false,
-              "label": Array [
+              "label": [
                 "Lambda Function",
               ],
             },
           ],
-          "edges": Array [],
+          "edges": [],
           "id": "stack-with-function/the-function",
           "isGroup": true,
-          "label": Array [
+          "label": [
             "the-function",
           ],
         },
       ],
-      "edges": Array [],
+      "edges": [],
       "id": "stack-with-function",
       "isGroup": true,
-      "label": Array [
+      "label": [
         "stack-with-function",
       ],
     },

@@ -1,4 +1,4 @@
-import {Digraph, digraph, Graph, ISubgraph} from "ts-graphviz"
+import {digraph, RootGraphModel, SubgraphModel} from "ts-graphviz"
 import * as diagram from "../../diagram"
 import * as styling from "./styling"
 import * as _ from "lodash"
@@ -9,7 +9,7 @@ export class GraphvizGenerator {
     /**
      * Generates a ts-graphviz repersentation of a Diagram
      */
-    generate(dia: diagram.Diagram): Digraph{
+    generate(dia: diagram.Diagram): RootGraphModel{
 
         const rootGraph = digraph('Diagram')
         styling.applyBaseGraphStyling(rootGraph)
@@ -75,16 +75,16 @@ export class GraphvizGenerator {
         return words
     }
 
-    private diagramGraph(rootGraph: Digraph, diagram1: diagram.Diagram) {
+    private diagramGraph(rootGraph: RootGraphModel, diagram1: diagram.Diagram) {
 
-        const root = rootGraph.createSubgraph(diagram1.root.id)
+        const root: SubgraphModel = rootGraph.createSubgraph(diagram1.root.id)
 
         this.addToGraph(root, diagram1.root)
 
         this.addEdges(rootGraph, diagram1.root)
     }
 
-    private addToGraph(g: ISubgraph, node: diagram.Component) {
+    private addToGraph(g: SubgraphModel, node: diagram.Component) {
 
         const labelFontSize = 12
         const charsPerLine = labelFontSize * 1.8
@@ -114,7 +114,7 @@ export class GraphvizGenerator {
         }
     }
 
-    private addEdges(g: Graph, node: diagram.Component) {
+    private addEdges(g: RootGraphModel, node: diagram.Component) {
 
         node.links.getLinkedComponents().forEach(edgeNode => {
 

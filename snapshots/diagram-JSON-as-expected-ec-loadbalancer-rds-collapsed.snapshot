@@ -1,91 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`diagram JSON as expected src/test-fixtures/ - ec-loadbalancer-rds - collapsed 1`] = `
-Object {
+{
   "_image": null,
-  "children": Array [
-    Object {
+  "children": [
+    {
       "_image": ComponentIcon {
         "format": "NORMAL",
         "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png",
       },
-      "children": Array [],
-      "edges": Array [],
+      "children": [],
+      "edges": [],
       "id": "QueueIsSubscribedToTopicStack/MyVpc",
       "isGroup": false,
-      "label": Array [
+      "label": [
         "MyVpc",
       ],
     },
-    Object {
+    {
       "_image": ComponentIcon {
         "format": "NORMAL",
         "path": "icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png",
       },
-      "children": Array [],
-      "edges": Array [
+      "children": [],
+      "edges": [
         "QueueIsSubscribedToTopicStack/MyVpc",
         "QueueIsSubscribedToTopicStack/Web1",
         "QueueIsSubscribedToTopicStack/Web2",
       ],
       "id": "QueueIsSubscribedToTopicStack/MyLoadbalancer",
       "isGroup": false,
-      "label": Array [
+      "label": [
         "MyLoadbalancer",
       ],
     },
-    Object {
+    {
       "_image": ComponentIcon {
         "format": "NORMAL",
         "path": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_Instance_48_Dark.png",
       },
-      "children": Array [],
-      "edges": Array [
+      "children": [],
+      "edges": [
         "QueueIsSubscribedToTopicStack/MyVpc",
         "QueueIsSubscribedToTopicStack/Database",
       ],
       "id": "QueueIsSubscribedToTopicStack/Web1",
       "isGroup": false,
-      "label": Array [
+      "label": [
         "Web1",
       ],
     },
-    Object {
+    {
       "_image": ComponentIcon {
         "format": "NORMAL",
         "path": "icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_C5-Instance_48_Dark.png",
       },
-      "children": Array [],
-      "edges": Array [
+      "children": [],
+      "edges": [
         "QueueIsSubscribedToTopicStack/MyVpc",
         "QueueIsSubscribedToTopicStack/Database",
       ],
       "id": "QueueIsSubscribedToTopicStack/Web2",
       "isGroup": false,
-      "label": Array [
+      "label": [
         "Web2",
       ],
     },
-    Object {
+    {
       "_image": ComponentIcon {
         "format": "NORMAL",
         "path": "icons/aws/Service/Arch_Database/64/Arch_Amazon-RDS_64@5x.png",
       },
-      "children": Array [],
-      "edges": Array [
+      "children": [],
+      "edges": [
         "QueueIsSubscribedToTopicStack/MyVpc",
       ],
       "id": "QueueIsSubscribedToTopicStack/Database",
       "isGroup": false,
-      "label": Array [
+      "label": [
         "Database",
       ],
     },
   ],
-  "edges": Array [],
+  "edges": [],
   "id": "QueueIsSubscribedToTopicStack",
   "isGroup": true,
-  "label": Array [
+  "label": [
     "QueueIsSubscribedToTopicStack",
   ],
 }

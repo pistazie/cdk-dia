@@ -1,91 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`diagram converted to DOT file as expected src/test-fixtures/ - custom-resource - collapsed 1`] = `
-"digraph \\"Diagram\\" {
-  splines = \\"ortho\\";
-  pad = \\"1.0\\";
-  nodesep = \\"0.60\\";
-  ranksep = \\"0.75\\";
-  fontname = \\"Sans-Serif\\";
-  fontsize = \\"15\\";
-  dpi = \\"200\\";
-  rankdir = \\"BT\\";
-  compound = \\"true\\";
-  fontcolor = \\"#222222\\";
+"digraph "Diagram" {
+  splines = "ortho";
+  pad = 1;
+  nodesep = 0.6;
+  ranksep = 0.75;
+  fontname = "Sans-Serif";
+  fontsize = 15;
+  dpi = 200;
+  rankdir = "BT";
+  compound = true;
+  fontcolor = "#222222";
   edge [
-    color = \\"#D5871488\\",
-    penwidth = 2,
-    arrowhead = \\"dot\\",
-    arrowtail = \\"dot\\",
+    color = "#D5871488";
+    penwidth = 2;
+    arrowhead = "dot";
+    arrowtail = "dot";
   ];
   node [
-    shape = \\"box\\",
-    style = \\"rounded\\",
-    fixedsize = true,
-    width = 1.7,
-    height = 1.7,
-    labelloc = \\"c\\",
-    imagescale = true,
-    fontname = \\"Sans-Serif\\",
-    fontsize = 8,
-    margin = 8,
+    shape = "box";
+    style = "rounded";
+    fixedsize = true;
+    width = 1.7;
+    height = 1.7;
+    labelloc = "c";
+    imagescale = true;
+    fontname = "Sans-Serif";
+    fontsize = 8;
+    margin = 8;
   ];
-  subgraph \\"SoTsStack\\" {
-    subgraph \\"cluster-SubGraph.SoTsStack\\" {
+  subgraph "SoTsStack" {
+    subgraph "cluster-SubGraph.SoTsStack" {
       graph [
-        label = \\"SoTsStack\\",
-        labelloc = \\"b\\",
-        labeljust = \\"l\\",
-        margin = \\"10\\",
-        fontsize = \\"16\\",
-        penwidth = \\"2\\",
-        pencolor = \\"#888888\\",
-        style = \\"filled,rounded\\",
-        fillcolor = \\"#e4e4e4\\",
+        label = "SoTsStack";
+        labelloc = "b";
+        labeljust = "l";
+        margin = 10;
+        fontsize = 16;
+        penwidth = 2;
+        pencolor = "#888888";
+        style = "filled,rounded";
+        fillcolor = "#e4e4e4";
       ];
-      \\"SoTsStack/on-event-handler\\" [
-        label = \\" on-event-handler\\",
-        fontsize = 12,
-        image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
-        imagescale = \\"true\\",
-        imagepos = \\"tc\\",
-        penwidth = \\"0\\",
-        shape = \\"node\\",
-        fixedsize = \\"true\\",
-        labelloc = \\"b\\",
-        width = 2,
-        height = 2.266,
+      "SoTsStack/on-event-handler" [
+        label = " on-event-handler";
+        fontsize = 12;
+        image = "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+        imagescale = "true";
+        imagepos = "tc";
+        penwidth = 0;
+        shape = "node";
+        fixedsize = "true";
+        labelloc = "b";
+        width = 2;
+        height = 2.266;
       ];
-      \\"SoTsStack/custom-resource\\" [
-        label = \\" CloudFormation\\\\nCustomResource\\\\ncustom-resource\\",
-        fontsize = 12,
-        image = \\"icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-CloudFormation_64@5x.png\\",
-        imagescale = \\"true\\",
-        imagepos = \\"tc\\",
-        penwidth = \\"0\\",
-        shape = \\"node\\",
-        fixedsize = \\"true\\",
-        labelloc = \\"b\\",
-        width = 1.2,
-        height = 1.898,
+      "SoTsStack/custom-resource" [
+        label = " CloudFormation\\nCustomResource\\ncustom-resource";
+        fontsize = 12;
+        image = "icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-CloudFormation_64@5x.png";
+        imagescale = "true";
+        imagepos = "tc";
+        penwidth = 0;
+        shape = "node";
+        fixedsize = "true";
+        labelloc = "b";
+        width = 1.2;
+        height = 1.898;
       ];
-      \\"SoTsStack/custom-resource-provider/framework-onEvent\\" [
-        label = \\" framework-onEvent\\",
-        fontsize = 12,
-        image = \\"icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png\\",
-        imagescale = \\"true\\",
-        imagepos = \\"tc\\",
-        penwidth = \\"0\\",
-        shape = \\"node\\",
-        fixedsize = \\"true\\",
-        labelloc = \\"b\\",
-        width = 2,
-        height = 2.266,
+      "SoTsStack/custom-resource-provider/framework-onEvent" [
+        label = " framework-onEvent";
+        fontsize = 12;
+        image = "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+        imagescale = "true";
+        imagepos = "tc";
+        penwidth = 0;
+        shape = "node";
+        fixedsize = "true";
+        labelloc = "b";
+        width = 2;
+        height = 2.266;
       ];
     }
   }
-  \\"SoTsStack/custom-resource-provider/framework-onEvent\\" -> \\"SoTsStack/on-event-handler\\" [
-    dir = \\"both\\",
+  "SoTsStack/custom-resource-provider/framework-onEvent" -> "SoTsStack/on-event-handler" [
+    dir = "both";
   ];
 }"
 `;

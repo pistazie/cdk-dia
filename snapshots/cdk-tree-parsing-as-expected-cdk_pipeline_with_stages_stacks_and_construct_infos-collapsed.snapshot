@@ -20,7 +20,7 @@ Node {
             "Resource" => Node {
               "attributes": Map {
                 "aws:cdk:cloudformation:type" => "AWS::S3::Bucket",
-                "aws:cdk:cloudformation:props" => Object {},
+                "aws:cdk:cloudformation:props" => {},
               },
               "children": Map {},
               "constructInfoFqn": undefined,
@@ -51,19 +51,19 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::KMS::Key",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "keyPolicy": Object {
-                            "Statement": Array [
-                              Object {
+                        "aws:cdk:cloudformation:props" => {
+                          "keyPolicy": {
+                            "Statement": [
+                              {
                                 "Action": "kms:*",
                                 "Effect": "Allow",
-                                "Principal": Object {
-                                  "AWS": Object {
-                                    "Fn::Join": Array [
+                                "Principal": {
+                                  "AWS": {
+                                    "Fn::Join": [
                                       "",
-                                      Array [
+                                      [
                                         "arn:",
-                                        Object {
+                                        {
                                           "Ref": "AWS::Partition",
                                         },
                                         ":iam::111111111111:root",
@@ -73,31 +73,31 @@ Node {
                                 },
                                 "Resource": "*",
                               },
-                              Object {
-                                "Action": Array [
+                              {
+                                "Action": [
                                   "kms:Decrypt",
                                   "kms:DescribeKey",
                                 ],
                                 "Effect": "Allow",
-                                "Principal": Object {
-                                  "AWS": Object {
-                                    "Fn::Join": Array [
+                                "Principal": {
+                                  "AWS": {
+                                    "Fn::Join": [
                                       "",
-                                      Array [
+                                      [
                                         "arn:",
-                                        Object {
+                                        {
                                           "Ref": "AWS::Partition",
                                         },
                                         ":iam::",
-                                        Object {
+                                        {
                                           "Ref": "AWS::AccountId",
                                         },
                                         ":role/cdk-hnb659fds-deploy-role-",
-                                        Object {
+                                        {
                                           "Ref": "AWS::AccountId",
                                         },
                                         "-",
-                                        Object {
+                                        {
                                           "Ref": "AWS::Region",
                                         },
                                       ],
@@ -127,10 +127,10 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::KMS::Alias",
-                        "aws:cdk:cloudformation:props" => Object {
+                        "aws:cdk:cloudformation:props" => {
                           "aliasName": "alias/codepipeline-pipelinestackpipelinee95eedaa",
-                          "targetKeyId": Object {
-                            "Fn::GetAtt": Array [
+                          "targetKeyId": {
+                            "Fn::GetAtt": [
                               "PipelineArtifactsBucketEncryptionKeyF5BF0670",
                               "Arn",
                             ],
@@ -153,13 +153,13 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::S3::Bucket",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "bucketEncryption": Object {
-                            "serverSideEncryptionConfiguration": Array [
-                              Object {
-                                "serverSideEncryptionByDefault": Object {
-                                  "kmsMasterKeyId": Object {
-                                    "Fn::GetAtt": Array [
+                        "aws:cdk:cloudformation:props" => {
+                          "bucketEncryption": {
+                            "serverSideEncryptionConfiguration": [
+                              {
+                                "serverSideEncryptionByDefault": {
+                                  "kmsMasterKeyId": {
+                                    "Fn::GetAtt": [
                                       "PipelineArtifactsBucketEncryptionKeyF5BF0670",
                                       "Arn",
                                     ],
@@ -169,7 +169,7 @@ Node {
                               },
                             ],
                           },
-                          "publicAccessBlockConfiguration": Object {
+                          "publicAccessBlockConfiguration": {
                             "blockPublicAcls": true,
                             "blockPublicPolicy": true,
                             "ignorePublicAcls": true,
@@ -195,57 +195,57 @@ Node {
                         "Resource" => Node {
                           "attributes": Map {
                             "aws:cdk:cloudformation:type" => "AWS::S3::BucketPolicy",
-                            "aws:cdk:cloudformation:props" => Object {
-                              "bucket": Object {
+                            "aws:cdk:cloudformation:props" => {
+                              "bucket": {
                                 "Ref": "PipelineArtifactsBucketAEA9A052",
                               },
-                              "policyDocument": Object {
-                                "Statement": Array [
-                                  Object {
-                                    "Action": Array [
+                              "policyDocument": {
+                                "Statement": [
+                                  {
+                                    "Action": [
                                       "s3:GetObject*",
                                       "s3:GetBucket*",
                                       "s3:List*",
                                     ],
                                     "Effect": "Allow",
-                                    "Principal": Object {
-                                      "AWS": Object {
-                                        "Fn::Join": Array [
+                                    "Principal": {
+                                      "AWS": {
+                                        "Fn::Join": [
                                           "",
-                                          Array [
+                                          [
                                             "arn:",
-                                            Object {
+                                            {
                                               "Ref": "AWS::Partition",
                                             },
                                             ":iam::",
-                                            Object {
+                                            {
                                               "Ref": "AWS::AccountId",
                                             },
                                             ":role/cdk-hnb659fds-deploy-role-",
-                                            Object {
+                                            {
                                               "Ref": "AWS::AccountId",
                                             },
                                             "-",
-                                            Object {
+                                            {
                                               "Ref": "AWS::Region",
                                             },
                                           ],
                                         ],
                                       },
                                     },
-                                    "Resource": Array [
-                                      Object {
-                                        "Fn::GetAtt": Array [
+                                    "Resource": [
+                                      {
+                                        "Fn::GetAtt": [
                                           "PipelineArtifactsBucketAEA9A052",
                                           "Arn",
                                         ],
                                       },
-                                      Object {
-                                        "Fn::Join": Array [
+                                      {
+                                        "Fn::Join": [
                                           "",
-                                          Array [
-                                            Object {
-                                              "Fn::GetAtt": Array [
+                                          [
+                                            {
+                                              "Fn::GetAtt": [
                                                 "PipelineArtifactsBucketAEA9A052",
                                                 "Arn",
                                               ],
@@ -282,13 +282,13 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "assumeRolePolicyDocument": Object {
-                            "Statement": Array [
-                              Object {
+                        "aws:cdk:cloudformation:props" => {
+                          "assumeRolePolicyDocument": {
+                            "Statement": [
+                              {
                                 "Action": "sts:AssumeRole",
                                 "Effect": "Allow",
-                                "Principal": Object {
+                                "Principal": {
                                   "Service": "codepipeline.amazonaws.com",
                                 },
                               },
@@ -308,11 +308,11 @@ Node {
                         "Resource" => Node {
                           "attributes": Map {
                             "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
-                            "aws:cdk:cloudformation:props" => Object {
-                              "policyDocument": Object {
-                                "Statement": Array [
-                                  Object {
-                                    "Action": Array [
+                            "aws:cdk:cloudformation:props" => {
+                              "policyDocument": {
+                                "Statement": [
+                                  {
+                                    "Action": [
                                       "s3:GetObject*",
                                       "s3:GetBucket*",
                                       "s3:List*",
@@ -321,19 +321,19 @@ Node {
                                       "s3:Abort*",
                                     ],
                                     "Effect": "Allow",
-                                    "Resource": Array [
-                                      Object {
-                                        "Fn::GetAtt": Array [
+                                    "Resource": [
+                                      {
+                                        "Fn::GetAtt": [
                                           "PipelineArtifactsBucketAEA9A052",
                                           "Arn",
                                         ],
                                       },
-                                      Object {
-                                        "Fn::Join": Array [
+                                      {
+                                        "Fn::Join": [
                                           "",
-                                          Array [
-                                            Object {
-                                              "Fn::GetAtt": Array [
+                                          [
+                                            {
+                                              "Fn::GetAtt": [
                                                 "PipelineArtifactsBucketAEA9A052",
                                                 "Arn",
                                               ],
@@ -344,8 +344,8 @@ Node {
                                       },
                                     ],
                                   },
-                                  Object {
-                                    "Action": Array [
+                                  {
+                                    "Action": [
                                       "kms:Decrypt",
                                       "kms:DescribeKey",
                                       "kms:Encrypt",
@@ -353,64 +353,64 @@ Node {
                                       "kms:GenerateDataKey*",
                                     ],
                                     "Effect": "Allow",
-                                    "Resource": Object {
-                                      "Fn::GetAtt": Array [
+                                    "Resource": {
+                                      "Fn::GetAtt": [
                                         "PipelineArtifactsBucketEncryptionKeyF5BF0670",
                                         "Arn",
                                       ],
                                     },
                                   },
-                                  Object {
+                                  {
                                     "Action": "sts:AssumeRole",
                                     "Effect": "Allow",
-                                    "Resource": Object {
-                                      "Fn::GetAtt": Array [
+                                    "Resource": {
+                                      "Fn::GetAtt": [
                                         "PipelineSourcesddsCodePipelineActionRoleBBE9D58E",
                                         "Arn",
                                       ],
                                     },
                                   },
-                                  Object {
+                                  {
                                     "Action": "sts:AssumeRole",
                                     "Effect": "Allow",
-                                    "Resource": Object {
-                                      "Fn::GetAtt": Array [
+                                    "Resource": {
+                                      "Fn::GetAtt": [
                                         "PipelineBuildSynthCodePipelineActionRole4E7A6C97",
                                         "Arn",
                                       ],
                                     },
                                   },
-                                  Object {
+                                  {
                                     "Action": "sts:AssumeRole",
                                     "Effect": "Allow",
-                                    "Resource": Object {
-                                      "Fn::GetAtt": Array [
+                                    "Resource": {
+                                      "Fn::GetAtt": [
                                         "PipelineUpdatePipelineSelfMutateCodePipelineActionRoleD6D4E5CF",
                                         "Arn",
                                       ],
                                     },
                                   },
-                                  Object {
+                                  {
                                     "Action": "sts:AssumeRole",
                                     "Effect": "Allow",
-                                    "Resource": Object {
-                                      "Fn::Join": Array [
+                                    "Resource": {
+                                      "Fn::Join": [
                                         "",
-                                        Array [
+                                        [
                                           "arn:",
-                                          Object {
+                                          {
                                             "Ref": "AWS::Partition",
                                           },
                                           ":iam::",
-                                          Object {
+                                          {
                                             "Ref": "AWS::AccountId",
                                           },
                                           ":role/cdk-hnb659fds-deploy-role-",
-                                          Object {
+                                          {
                                             "Ref": "AWS::AccountId",
                                           },
                                           "-",
-                                          Object {
+                                          {
                                             "Ref": "AWS::Region",
                                           },
                                         ],
@@ -421,8 +421,8 @@ Node {
                                 "Version": "2012-10-17",
                               },
                               "policyName": "PipelineRoleDefaultPolicy7BDC1ABB",
-                              "roles": Array [
-                                Object {
+                              "roles": [
+                                {
                                   "Ref": "PipelineRoleB27FAA37",
                                 },
                               ],
@@ -446,54 +446,54 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::CodePipeline::Pipeline",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "artifactStore": Object {
-                        "encryptionKey": Object {
-                          "id": Object {
-                            "Fn::GetAtt": Array [
+                    "aws:cdk:cloudformation:props" => {
+                      "artifactStore": {
+                        "encryptionKey": {
+                          "id": {
+                            "Fn::GetAtt": [
                               "PipelineArtifactsBucketEncryptionKeyF5BF0670",
                               "Arn",
                             ],
                           },
                           "type": "KMS",
                         },
-                        "location": Object {
+                        "location": {
                           "Ref": "PipelineArtifactsBucketAEA9A052",
                         },
                         "type": "S3",
                       },
                       "name": "MyAppPipeline",
                       "restartExecutionOnUpdate": true,
-                      "roleArn": Object {
-                        "Fn::GetAtt": Array [
+                      "roleArn": {
+                        "Fn::GetAtt": [
                           "PipelineRoleB27FAA37",
                           "Arn",
                         ],
                       },
-                      "stages": Array [
-                        Object {
-                          "actions": Array [
-                            Object {
-                              "actionTypeId": Object {
+                      "stages": [
+                        {
+                          "actions": [
+                            {
+                              "actionTypeId": {
                                 "category": "Source",
                                 "owner": "AWS",
                                 "provider": "S3",
                                 "version": "1",
                               },
-                              "configuration": Object {
-                                "S3Bucket": Object {
+                              "configuration": {
+                                "S3Bucket": {
                                   "Ref": "bucket43879C71",
                                 },
                                 "S3ObjectKey": "fff",
                               },
                               "name": "sdds",
-                              "outputArtifacts": Array [
-                                Object {
+                              "outputArtifacts": [
+                                {
                                   "name": "Artifact_Source_sdds",
                                 },
                               ],
-                              "roleArn": Object {
-                                "Fn::GetAtt": Array [
+                              "roleArn": {
+                                "Fn::GetAtt": [
                                   "PipelineSourcesddsCodePipelineActionRoleBBE9D58E",
                                   "Arn",
                                 ],
@@ -503,34 +503,34 @@ Node {
                           ],
                           "name": "Source",
                         },
-                        Object {
-                          "actions": Array [
-                            Object {
-                              "actionTypeId": Object {
+                        {
+                          "actions": [
+                            {
+                              "actionTypeId": {
                                 "category": "Build",
                                 "owner": "AWS",
                                 "provider": "CodeBuild",
                                 "version": "1",
                               },
-                              "configuration": Object {
-                                "EnvironmentVariables": "[{\\"name\\":\\"_PROJECT_CONFIG_HASH\\",\\"type\\":\\"PLAINTEXT\\",\\"value\\":\\"a538b65d98bd10c25e6763c03a1adc9c15b75ac2bb8618fcebd0d316497c20b9\\"}]",
-                                "ProjectName": Object {
+                              "configuration": {
+                                "EnvironmentVariables": "[{"name":"_PROJECT_CONFIG_HASH","type":"PLAINTEXT","value":"a538b65d98bd10c25e6763c03a1adc9c15b75ac2bb8618fcebd0d316497c20b9"}]",
+                                "ProjectName": {
                                   "Ref": "PipelineBuildSynthCdkBuildProject6BEFA8E6",
                                 },
                               },
-                              "inputArtifacts": Array [
-                                Object {
+                              "inputArtifacts": [
+                                {
                                   "name": "Artifact_Source_sdds",
                                 },
                               ],
                               "name": "Synth",
-                              "outputArtifacts": Array [
-                                Object {
+                              "outputArtifacts": [
+                                {
                                   "name": "Artifact_Build_Synth",
                                 },
                               ],
-                              "roleArn": Object {
-                                "Fn::GetAtt": Array [
+                              "roleArn": {
+                                "Fn::GetAtt": [
                                   "PipelineBuildSynthCodePipelineActionRole4E7A6C97",
                                   "Arn",
                                 ],
@@ -540,28 +540,28 @@ Node {
                           ],
                           "name": "Build",
                         },
-                        Object {
-                          "actions": Array [
-                            Object {
-                              "actionTypeId": Object {
+                        {
+                          "actions": [
+                            {
+                              "actionTypeId": {
                                 "category": "Build",
                                 "owner": "AWS",
                                 "provider": "CodeBuild",
                                 "version": "1",
                               },
-                              "configuration": Object {
-                                "ProjectName": Object {
+                              "configuration": {
+                                "ProjectName": {
                                   "Ref": "PipelineUpdatePipelineSelfMutationDAA41400",
                                 },
                               },
-                              "inputArtifacts": Array [
-                                Object {
+                              "inputArtifacts": [
+                                {
                                   "name": "Artifact_Build_Synth",
                                 },
                               ],
                               "name": "SelfMutate",
-                              "roleArn": Object {
-                                "Fn::GetAtt": Array [
+                              "roleArn": {
+                                "Fn::GetAtt": [
                                   "PipelineUpdatePipelineSelfMutateCodePipelineActionRoleD6D4E5CF",
                                   "Arn",
                                 ],
@@ -571,37 +571,37 @@ Node {
                           ],
                           "name": "UpdatePipeline",
                         },
-                        Object {
-                          "actions": Array [
-                            Object {
-                              "actionTypeId": Object {
+                        {
+                          "actions": [
+                            {
+                              "actionTypeId": {
                                 "category": "Deploy",
                                 "owner": "AWS",
                                 "provider": "CloudFormation",
                                 "version": "1",
                               },
-                              "configuration": Object {
+                              "configuration": {
                                 "ActionMode": "CHANGE_SET_REPLACE",
                                 "Capabilities": "CAPABILITY_NAMED_IAM,CAPABILITY_AUTO_EXPAND",
                                 "ChangeSetName": "PipelineChange",
-                                "RoleArn": Object {
-                                  "Fn::Join": Array [
+                                "RoleArn": {
+                                  "Fn::Join": [
                                     "",
-                                    Array [
+                                    [
                                       "arn:",
-                                      Object {
+                                      {
                                         "Ref": "AWS::Partition",
                                       },
                                       ":iam::",
-                                      Object {
+                                      {
                                         "Ref": "AWS::AccountId",
                                       },
                                       ":role/cdk-hnb659fds-cfn-exec-role-",
-                                      Object {
+                                      {
                                         "Ref": "AWS::AccountId",
                                       },
                                       "-",
-                                      Object {
+                                      {
                                         "Ref": "AWS::Region",
                                       },
                                     ],
@@ -610,30 +610,30 @@ Node {
                                 "StackName": "Prod-Database",
                                 "TemplatePath": "Artifact_Build_Synth::assembly-PipelineStack-Prod/PipelineStackProdDatabase0B1DBF19.template.json",
                               },
-                              "inputArtifacts": Array [
-                                Object {
+                              "inputArtifacts": [
+                                {
                                   "name": "Artifact_Build_Synth",
                                 },
                               ],
                               "name": "Database.Prepare",
-                              "roleArn": Object {
-                                "Fn::Join": Array [
+                              "roleArn": {
+                                "Fn::Join": [
                                   "",
-                                  Array [
+                                  [
                                     "arn:",
-                                    Object {
+                                    {
                                       "Ref": "AWS::Partition",
                                     },
                                     ":iam::",
-                                    Object {
+                                    {
                                       "Ref": "AWS::AccountId",
                                     },
                                     ":role/cdk-hnb659fds-deploy-role-",
-                                    Object {
+                                    {
                                       "Ref": "AWS::AccountId",
                                     },
                                     "-",
-                                    Object {
+                                    {
                                       "Ref": "AWS::Region",
                                     },
                                   ],
@@ -641,37 +641,37 @@ Node {
                               },
                               "runOrder": 1,
                             },
-                            Object {
-                              "actionTypeId": Object {
+                            {
+                              "actionTypeId": {
                                 "category": "Deploy",
                                 "owner": "AWS",
                                 "provider": "CloudFormation",
                                 "version": "1",
                               },
-                              "configuration": Object {
+                              "configuration": {
                                 "ActionMode": "CHANGE_SET_EXECUTE",
                                 "ChangeSetName": "PipelineChange",
                                 "StackName": "Prod-Database",
                               },
                               "name": "Database.Deploy",
-                              "roleArn": Object {
-                                "Fn::Join": Array [
+                              "roleArn": {
+                                "Fn::Join": [
                                   "",
-                                  Array [
+                                  [
                                     "arn:",
-                                    Object {
+                                    {
                                       "Ref": "AWS::Partition",
                                     },
                                     ":iam::",
-                                    Object {
+                                    {
                                       "Ref": "AWS::AccountId",
                                     },
                                     ":role/cdk-hnb659fds-deploy-role-",
-                                    Object {
+                                    {
                                       "Ref": "AWS::AccountId",
                                     },
                                     "-",
-                                    Object {
+                                    {
                                       "Ref": "AWS::Region",
                                     },
                                   ],
@@ -702,19 +702,19 @@ Node {
                             "Resource" => Node {
                               "attributes": Map {
                                 "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                                "aws:cdk:cloudformation:props" => Object {
-                                  "assumeRolePolicyDocument": Object {
-                                    "Statement": Array [
-                                      Object {
+                                "aws:cdk:cloudformation:props" => {
+                                  "assumeRolePolicyDocument": {
+                                    "Statement": [
+                                      {
                                         "Action": "sts:AssumeRole",
                                         "Effect": "Allow",
-                                        "Principal": Object {
-                                          "AWS": Object {
-                                            "Fn::Join": Array [
+                                        "Principal": {
+                                          "AWS": {
+                                            "Fn::Join": [
                                               "",
-                                              Array [
+                                              [
                                                 "arn:",
-                                                Object {
+                                                {
                                                   "Ref": "AWS::Partition",
                                                 },
                                                 ":iam::111111111111:root",
@@ -739,29 +739,29 @@ Node {
                                 "Resource" => Node {
                                   "attributes": Map {
                                     "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
-                                    "aws:cdk:cloudformation:props" => Object {
-                                      "policyDocument": Object {
-                                        "Statement": Array [
-                                          Object {
-                                            "Action": Array [
+                                    "aws:cdk:cloudformation:props" => {
+                                      "policyDocument": {
+                                        "Statement": [
+                                          {
+                                            "Action": [
                                               "s3:GetObject*",
                                               "s3:GetBucket*",
                                               "s3:List*",
                                             ],
                                             "Effect": "Allow",
-                                            "Resource": Array [
-                                              Object {
-                                                "Fn::GetAtt": Array [
+                                            "Resource": [
+                                              {
+                                                "Fn::GetAtt": [
                                                   "bucket43879C71",
                                                   "Arn",
                                                 ],
                                               },
-                                              Object {
-                                                "Fn::Join": Array [
+                                              {
+                                                "Fn::Join": [
                                                   "",
-                                                  Array [
-                                                    Object {
-                                                      "Fn::GetAtt": Array [
+                                                  [
+                                                    {
+                                                      "Fn::GetAtt": [
                                                         "bucket43879C71",
                                                         "Arn",
                                                       ],
@@ -772,26 +772,26 @@ Node {
                                               },
                                             ],
                                           },
-                                          Object {
-                                            "Action": Array [
+                                          {
+                                            "Action": [
                                               "s3:DeleteObject*",
                                               "s3:PutObject",
                                               "s3:Abort*",
                                             ],
                                             "Effect": "Allow",
-                                            "Resource": Array [
-                                              Object {
-                                                "Fn::GetAtt": Array [
+                                            "Resource": [
+                                              {
+                                                "Fn::GetAtt": [
                                                   "PipelineArtifactsBucketAEA9A052",
                                                   "Arn",
                                                 ],
                                               },
-                                              Object {
-                                                "Fn::Join": Array [
+                                              {
+                                                "Fn::Join": [
                                                   "",
-                                                  Array [
-                                                    Object {
-                                                      "Fn::GetAtt": Array [
+                                                  [
+                                                    {
+                                                      "Fn::GetAtt": [
                                                         "PipelineArtifactsBucketAEA9A052",
                                                         "Arn",
                                                       ],
@@ -802,16 +802,16 @@ Node {
                                               },
                                             ],
                                           },
-                                          Object {
-                                            "Action": Array [
+                                          {
+                                            "Action": [
                                               "kms:Encrypt",
                                               "kms:ReEncrypt*",
                                               "kms:GenerateDataKey*",
                                               "kms:Decrypt",
                                             ],
                                             "Effect": "Allow",
-                                            "Resource": Object {
-                                              "Fn::GetAtt": Array [
+                                            "Resource": {
+                                              "Fn::GetAtt": [
                                                 "PipelineArtifactsBucketEncryptionKeyF5BF0670",
                                                 "Arn",
                                               ],
@@ -821,8 +821,8 @@ Node {
                                         "Version": "2012-10-17",
                                       },
                                       "policyName": "PipelineSourcesddsCodePipelineActionRoleDefaultPolicy43D854ED",
-                                      "roles": Array [
-                                        Object {
+                                      "roles": [
+                                        {
                                           "Ref": "PipelineSourcesddsCodePipelineActionRoleBBE9D58E",
                                         },
                                       ],
@@ -865,19 +865,19 @@ Node {
                             "Resource" => Node {
                               "attributes": Map {
                                 "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                                "aws:cdk:cloudformation:props" => Object {
-                                  "assumeRolePolicyDocument": Object {
-                                    "Statement": Array [
-                                      Object {
+                                "aws:cdk:cloudformation:props" => {
+                                  "assumeRolePolicyDocument": {
+                                    "Statement": [
+                                      {
                                         "Action": "sts:AssumeRole",
                                         "Effect": "Allow",
-                                        "Principal": Object {
-                                          "AWS": Object {
-                                            "Fn::Join": Array [
+                                        "Principal": {
+                                          "AWS": {
+                                            "Fn::Join": [
                                               "",
-                                              Array [
+                                              [
                                                 "arn:",
-                                                Object {
+                                                {
                                                   "Ref": "AWS::Partition",
                                                 },
                                                 ":iam::111111111111:root",
@@ -902,18 +902,18 @@ Node {
                                 "Resource" => Node {
                                   "attributes": Map {
                                     "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
-                                    "aws:cdk:cloudformation:props" => Object {
-                                      "policyDocument": Object {
-                                        "Statement": Array [
-                                          Object {
-                                            "Action": Array [
+                                    "aws:cdk:cloudformation:props" => {
+                                      "policyDocument": {
+                                        "Statement": [
+                                          {
+                                            "Action": [
                                               "codebuild:BatchGetBuilds",
                                               "codebuild:StartBuild",
                                               "codebuild:StopBuild",
                                             ],
                                             "Effect": "Allow",
-                                            "Resource": Object {
-                                              "Fn::GetAtt": Array [
+                                            "Resource": {
+                                              "Fn::GetAtt": [
                                                 "PipelineBuildSynthCdkBuildProject6BEFA8E6",
                                                 "Arn",
                                               ],
@@ -923,8 +923,8 @@ Node {
                                         "Version": "2012-10-17",
                                       },
                                       "policyName": "PipelineBuildSynthCodePipelineActionRoleDefaultPolicy92C90290",
-                                      "roles": Array [
-                                        Object {
+                                      "roles": [
+                                        {
                                           "Ref": "PipelineBuildSynthCodePipelineActionRole4E7A6C97",
                                         },
                                       ],
@@ -954,13 +954,13 @@ Node {
                                 "Resource" => Node {
                                   "attributes": Map {
                                     "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                                    "aws:cdk:cloudformation:props" => Object {
-                                      "assumeRolePolicyDocument": Object {
-                                        "Statement": Array [
-                                          Object {
+                                    "aws:cdk:cloudformation:props" => {
+                                      "assumeRolePolicyDocument": {
+                                        "Statement": [
+                                          {
                                             "Action": "sts:AssumeRole",
                                             "Effect": "Allow",
-                                            "Principal": Object {
+                                            "Principal": {
                                               "Service": "codebuild.amazonaws.com",
                                             },
                                           },
@@ -980,42 +980,42 @@ Node {
                                     "Resource" => Node {
                                       "attributes": Map {
                                         "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
-                                        "aws:cdk:cloudformation:props" => Object {
-                                          "policyDocument": Object {
-                                            "Statement": Array [
-                                              Object {
-                                                "Action": Array [
+                                        "aws:cdk:cloudformation:props" => {
+                                          "policyDocument": {
+                                            "Statement": [
+                                              {
+                                                "Action": [
                                                   "logs:CreateLogGroup",
                                                   "logs:CreateLogStream",
                                                   "logs:PutLogEvents",
                                                 ],
                                                 "Effect": "Allow",
-                                                "Resource": Array [
-                                                  Object {
-                                                    "Fn::Join": Array [
+                                                "Resource": [
+                                                  {
+                                                    "Fn::Join": [
                                                       "",
-                                                      Array [
+                                                      [
                                                         "arn:",
-                                                        Object {
+                                                        {
                                                           "Ref": "AWS::Partition",
                                                         },
                                                         ":logs:eu-west-1:111111111111:log-group:/aws/codebuild/",
-                                                        Object {
+                                                        {
                                                           "Ref": "PipelineBuildSynthCdkBuildProject6BEFA8E6",
                                                         },
                                                       ],
                                                     ],
                                                   },
-                                                  Object {
-                                                    "Fn::Join": Array [
+                                                  {
+                                                    "Fn::Join": [
                                                       "",
-                                                      Array [
+                                                      [
                                                         "arn:",
-                                                        Object {
+                                                        {
                                                           "Ref": "AWS::Partition",
                                                         },
                                                         ":logs:eu-west-1:111111111111:log-group:/aws/codebuild/",
-                                                        Object {
+                                                        {
                                                           "Ref": "PipelineBuildSynthCdkBuildProject6BEFA8E6",
                                                         },
                                                         ":*",
@@ -1024,8 +1024,8 @@ Node {
                                                   },
                                                 ],
                                               },
-                                              Object {
-                                                "Action": Array [
+                                              {
+                                                "Action": [
                                                   "codebuild:CreateReportGroup",
                                                   "codebuild:CreateReport",
                                                   "codebuild:UpdateReport",
@@ -1033,16 +1033,16 @@ Node {
                                                   "codebuild:BatchPutCodeCoverages",
                                                 ],
                                                 "Effect": "Allow",
-                                                "Resource": Object {
-                                                  "Fn::Join": Array [
+                                                "Resource": {
+                                                  "Fn::Join": [
                                                     "",
-                                                    Array [
+                                                    [
                                                       "arn:",
-                                                      Object {
+                                                      {
                                                         "Ref": "AWS::Partition",
                                                       },
                                                       ":codebuild:eu-west-1:111111111111:report-group/",
-                                                      Object {
+                                                      {
                                                         "Ref": "PipelineBuildSynthCdkBuildProject6BEFA8E6",
                                                       },
                                                       "-*",
@@ -1050,8 +1050,8 @@ Node {
                                                   ],
                                                 },
                                               },
-                                              Object {
-                                                "Action": Array [
+                                              {
+                                                "Action": [
                                                   "s3:GetObject*",
                                                   "s3:GetBucket*",
                                                   "s3:List*",
@@ -1060,19 +1060,19 @@ Node {
                                                   "s3:Abort*",
                                                 ],
                                                 "Effect": "Allow",
-                                                "Resource": Array [
-                                                  Object {
-                                                    "Fn::GetAtt": Array [
+                                                "Resource": [
+                                                  {
+                                                    "Fn::GetAtt": [
                                                       "PipelineArtifactsBucketAEA9A052",
                                                       "Arn",
                                                     ],
                                                   },
-                                                  Object {
-                                                    "Fn::Join": Array [
+                                                  {
+                                                    "Fn::Join": [
                                                       "",
-                                                      Array [
-                                                        Object {
-                                                          "Fn::GetAtt": Array [
+                                                      [
+                                                        {
+                                                          "Fn::GetAtt": [
                                                             "PipelineArtifactsBucketAEA9A052",
                                                             "Arn",
                                                           ],
@@ -1083,8 +1083,8 @@ Node {
                                                   },
                                                 ],
                                               },
-                                              Object {
-                                                "Action": Array [
+                                              {
+                                                "Action": [
                                                   "kms:Decrypt",
                                                   "kms:DescribeKey",
                                                   "kms:Encrypt",
@@ -1092,23 +1092,23 @@ Node {
                                                   "kms:GenerateDataKey*",
                                                 ],
                                                 "Effect": "Allow",
-                                                "Resource": Object {
-                                                  "Fn::GetAtt": Array [
+                                                "Resource": {
+                                                  "Fn::GetAtt": [
                                                     "PipelineArtifactsBucketEncryptionKeyF5BF0670",
                                                     "Arn",
                                                   ],
                                                 },
                                               },
-                                              Object {
-                                                "Action": Array [
+                                              {
+                                                "Action": [
                                                   "kms:Decrypt",
                                                   "kms:Encrypt",
                                                   "kms:ReEncrypt*",
                                                   "kms:GenerateDataKey*",
                                                 ],
                                                 "Effect": "Allow",
-                                                "Resource": Object {
-                                                  "Fn::GetAtt": Array [
+                                                "Resource": {
+                                                  "Fn::GetAtt": [
                                                     "PipelineArtifactsBucketEncryptionKeyF5BF0670",
                                                     "Arn",
                                                   ],
@@ -1118,8 +1118,8 @@ Node {
                                             "Version": "2012-10-17",
                                           },
                                           "policyName": "PipelineBuildSynthCdkBuildProjectRoleDefaultPolicyFB6C941C",
-                                          "roles": Array [
-                                            Object {
+                                          "roles": [
+                                            {
                                               "Ref": "PipelineBuildSynthCdkBuildProjectRole231EEA2A",
                                             },
                                           ],
@@ -1143,48 +1143,48 @@ Node {
                             "Resource" => Node {
                               "attributes": Map {
                                 "aws:cdk:cloudformation:type" => "AWS::CodeBuild::Project",
-                                "aws:cdk:cloudformation:props" => Object {
-                                  "artifacts": Object {
+                                "aws:cdk:cloudformation:props" => {
+                                  "artifacts": {
                                     "type": "CODEPIPELINE",
                                   },
-                                  "encryptionKey": Object {
-                                    "Fn::GetAtt": Array [
+                                  "encryptionKey": {
+                                    "Fn::GetAtt": [
                                       "PipelineArtifactsBucketEncryptionKeyF5BF0670",
                                       "Arn",
                                     ],
                                   },
-                                  "environment": Object {
+                                  "environment": {
                                     "computeType": "BUILD_GENERAL1_SMALL",
                                     "image": "aws/codebuild/standard:4.0",
                                     "imagePullCredentialsType": "CODEBUILD",
                                     "privilegedMode": false,
                                     "type": "LINUX_CONTAINER",
                                   },
-                                  "serviceRole": Object {
-                                    "Fn::GetAtt": Array [
+                                  "serviceRole": {
+                                    "Fn::GetAtt": [
                                       "PipelineBuildSynthCdkBuildProjectRole231EEA2A",
                                       "Arn",
                                     ],
                                   },
-                                  "source": Object {
+                                  "source": {
                                     "buildSpec": "{
-  \\"version\\": \\"0.2\\",
-  \\"phases\\": {
-    \\"pre_build\\": {
-      \\"commands\\": [
-        \\"npm ci\\"
+  "version": "0.2",
+  "phases": {
+    "pre_build": {
+      "commands": [
+        "npm ci"
       ]
     },
-    \\"build\\": {
-      \\"commands\\": [
-        \\"npm run build\\",
-        \\"npx cdk synth\\"
+    "build": {
+      "commands": [
+        "npm run build",
+        "npx cdk synth"
       ]
     }
   },
-  \\"artifacts\\": {
-    \\"base-directory\\": \\"cdk.out\\",
-    \\"files\\": \\"**/*\\"
+  "artifacts": {
+    "base-directory": "cdk.out",
+    "files": "**/*"
   }
 }",
                                     "type": "CODEPIPELINE",
@@ -1223,19 +1223,19 @@ Node {
                             "Resource" => Node {
                               "attributes": Map {
                                 "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                                "aws:cdk:cloudformation:props" => Object {
-                                  "assumeRolePolicyDocument": Object {
-                                    "Statement": Array [
-                                      Object {
+                                "aws:cdk:cloudformation:props" => {
+                                  "assumeRolePolicyDocument": {
+                                    "Statement": [
+                                      {
                                         "Action": "sts:AssumeRole",
                                         "Effect": "Allow",
-                                        "Principal": Object {
-                                          "AWS": Object {
-                                            "Fn::Join": Array [
+                                        "Principal": {
+                                          "AWS": {
+                                            "Fn::Join": [
                                               "",
-                                              Array [
+                                              [
                                                 "arn:",
-                                                Object {
+                                                {
                                                   "Ref": "AWS::Partition",
                                                 },
                                                 ":iam::111111111111:root",
@@ -1260,18 +1260,18 @@ Node {
                                 "Resource" => Node {
                                   "attributes": Map {
                                     "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
-                                    "aws:cdk:cloudformation:props" => Object {
-                                      "policyDocument": Object {
-                                        "Statement": Array [
-                                          Object {
-                                            "Action": Array [
+                                    "aws:cdk:cloudformation:props" => {
+                                      "policyDocument": {
+                                        "Statement": [
+                                          {
+                                            "Action": [
                                               "codebuild:BatchGetBuilds",
                                               "codebuild:StartBuild",
                                               "codebuild:StopBuild",
                                             ],
                                             "Effect": "Allow",
-                                            "Resource": Object {
-                                              "Fn::GetAtt": Array [
+                                            "Resource": {
+                                              "Fn::GetAtt": [
                                                 "PipelineUpdatePipelineSelfMutationDAA41400",
                                                 "Arn",
                                               ],
@@ -1281,8 +1281,8 @@ Node {
                                         "Version": "2012-10-17",
                                       },
                                       "policyName": "PipelineUpdatePipelineSelfMutateCodePipelineActionRoleDefaultPolicyE626265B",
-                                      "roles": Array [
-                                        Object {
+                                      "roles": [
+                                        {
                                           "Ref": "PipelineUpdatePipelineSelfMutateCodePipelineActionRoleD6D4E5CF",
                                         },
                                       ],
@@ -1352,13 +1352,13 @@ Node {
                         "Resource" => Node {
                           "attributes": Map {
                             "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                            "aws:cdk:cloudformation:props" => Object {
-                              "assumeRolePolicyDocument": Object {
-                                "Statement": Array [
-                                  Object {
+                            "aws:cdk:cloudformation:props" => {
+                              "assumeRolePolicyDocument": {
+                                "Statement": [
+                                  {
                                     "Action": "sts:AssumeRole",
                                     "Effect": "Allow",
-                                    "Principal": Object {
+                                    "Principal": {
                                       "Service": "codebuild.amazonaws.com",
                                     },
                                   },
@@ -1378,42 +1378,42 @@ Node {
                             "Resource" => Node {
                               "attributes": Map {
                                 "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
-                                "aws:cdk:cloudformation:props" => Object {
-                                  "policyDocument": Object {
-                                    "Statement": Array [
-                                      Object {
-                                        "Action": Array [
+                                "aws:cdk:cloudformation:props" => {
+                                  "policyDocument": {
+                                    "Statement": [
+                                      {
+                                        "Action": [
                                           "logs:CreateLogGroup",
                                           "logs:CreateLogStream",
                                           "logs:PutLogEvents",
                                         ],
                                         "Effect": "Allow",
-                                        "Resource": Array [
-                                          Object {
-                                            "Fn::Join": Array [
+                                        "Resource": [
+                                          {
+                                            "Fn::Join": [
                                               "",
-                                              Array [
+                                              [
                                                 "arn:",
-                                                Object {
+                                                {
                                                   "Ref": "AWS::Partition",
                                                 },
                                                 ":logs:eu-west-1:111111111111:log-group:/aws/codebuild/",
-                                                Object {
+                                                {
                                                   "Ref": "PipelineUpdatePipelineSelfMutationDAA41400",
                                                 },
                                               ],
                                             ],
                                           },
-                                          Object {
-                                            "Fn::Join": Array [
+                                          {
+                                            "Fn::Join": [
                                               "",
-                                              Array [
+                                              [
                                                 "arn:",
-                                                Object {
+                                                {
                                                   "Ref": "AWS::Partition",
                                                 },
                                                 ":logs:eu-west-1:111111111111:log-group:/aws/codebuild/",
-                                                Object {
+                                                {
                                                   "Ref": "PipelineUpdatePipelineSelfMutationDAA41400",
                                                 },
                                                 ":*",
@@ -1422,8 +1422,8 @@ Node {
                                           },
                                         ],
                                       },
-                                      Object {
-                                        "Action": Array [
+                                      {
+                                        "Action": [
                                           "codebuild:CreateReportGroup",
                                           "codebuild:CreateReport",
                                           "codebuild:UpdateReport",
@@ -1431,16 +1431,16 @@ Node {
                                           "codebuild:BatchPutCodeCoverages",
                                         ],
                                         "Effect": "Allow",
-                                        "Resource": Object {
-                                          "Fn::Join": Array [
+                                        "Resource": {
+                                          "Fn::Join": [
                                             "",
-                                            Array [
+                                            [
                                               "arn:",
-                                              Object {
+                                              {
                                                 "Ref": "AWS::Partition",
                                               },
                                               ":codebuild:eu-west-1:111111111111:report-group/",
-                                              Object {
+                                              {
                                                 "Ref": "PipelineUpdatePipelineSelfMutationDAA41400",
                                               },
                                               "-*",
@@ -1448,44 +1448,44 @@ Node {
                                           ],
                                         },
                                       },
-                                      Object {
+                                      {
                                         "Action": "sts:AssumeRole",
                                         "Effect": "Allow",
-                                        "Resource": Array [
+                                        "Resource": [
                                           "arn:*:iam::*:role/*-deploy-role-*",
                                           "arn:*:iam::*:role/*-publishing-role-*",
                                         ],
                                       },
-                                      Object {
+                                      {
                                         "Action": "cloudformation:DescribeStacks",
                                         "Effect": "Allow",
                                         "Resource": "*",
                                       },
-                                      Object {
+                                      {
                                         "Action": "s3:ListBucket",
                                         "Effect": "Allow",
                                         "Resource": "*",
                                       },
-                                      Object {
-                                        "Action": Array [
+                                      {
+                                        "Action": [
                                           "s3:GetObject*",
                                           "s3:GetBucket*",
                                           "s3:List*",
                                         ],
                                         "Effect": "Allow",
-                                        "Resource": Array [
-                                          Object {
-                                            "Fn::GetAtt": Array [
+                                        "Resource": [
+                                          {
+                                            "Fn::GetAtt": [
                                               "PipelineArtifactsBucketAEA9A052",
                                               "Arn",
                                             ],
                                           },
-                                          Object {
-                                            "Fn::Join": Array [
+                                          {
+                                            "Fn::Join": [
                                               "",
-                                              Array [
-                                                Object {
-                                                  "Fn::GetAtt": Array [
+                                              [
+                                                {
+                                                  "Fn::GetAtt": [
                                                     "PipelineArtifactsBucketAEA9A052",
                                                     "Arn",
                                                   ],
@@ -1496,29 +1496,29 @@ Node {
                                           },
                                         ],
                                       },
-                                      Object {
-                                        "Action": Array [
+                                      {
+                                        "Action": [
                                           "kms:Decrypt",
                                           "kms:DescribeKey",
                                         ],
                                         "Effect": "Allow",
-                                        "Resource": Object {
-                                          "Fn::GetAtt": Array [
+                                        "Resource": {
+                                          "Fn::GetAtt": [
                                             "PipelineArtifactsBucketEncryptionKeyF5BF0670",
                                             "Arn",
                                           ],
                                         },
                                       },
-                                      Object {
-                                        "Action": Array [
+                                      {
+                                        "Action": [
                                           "kms:Decrypt",
                                           "kms:Encrypt",
                                           "kms:ReEncrypt*",
                                           "kms:GenerateDataKey*",
                                         ],
                                         "Effect": "Allow",
-                                        "Resource": Object {
-                                          "Fn::GetAtt": Array [
+                                        "Resource": {
+                                          "Fn::GetAtt": [
                                             "PipelineArtifactsBucketEncryptionKeyF5BF0670",
                                             "Arn",
                                           ],
@@ -1528,8 +1528,8 @@ Node {
                                     "Version": "2012-10-17",
                                   },
                                   "policyName": "PipelineUpdatePipelineSelfMutationRoleDefaultPolicyA225DA4E",
-                                  "roles": Array [
-                                    Object {
+                                  "roles": [
+                                    {
                                       "Ref": "PipelineUpdatePipelineSelfMutationRole57E559E8",
                                     },
                                   ],
@@ -1553,17 +1553,17 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::CodeBuild::Project",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "artifacts": Object {
+                        "aws:cdk:cloudformation:props" => {
+                          "artifacts": {
                             "type": "CODEPIPELINE",
                           },
-                          "encryptionKey": Object {
-                            "Fn::GetAtt": Array [
+                          "encryptionKey": {
+                            "Fn::GetAtt": [
                               "PipelineArtifactsBucketEncryptionKeyF5BF0670",
                               "Arn",
                             ],
                           },
-                          "environment": Object {
+                          "environment": {
                             "computeType": "BUILD_GENERAL1_SMALL",
                             "image": "aws/codebuild/standard:4.0",
                             "imagePullCredentialsType": "CODEBUILD",
@@ -1571,22 +1571,22 @@ Node {
                             "type": "LINUX_CONTAINER",
                           },
                           "name": "MyAppPipeline-selfupdate",
-                          "serviceRole": Object {
-                            "Fn::GetAtt": Array [
+                          "serviceRole": {
+                            "Fn::GetAtt": [
                               "PipelineUpdatePipelineSelfMutationRole57E559E8",
                               "Arn",
                             ],
                           },
-                          "source": Object {
+                          "source": {
                             "buildSpec": "{
-  \\"version\\": \\"0.2\\",
-  \\"phases\\": {
-    \\"install\\": {
-      \\"commands\\": \\"npm install -g aws-cdk\\"
+  "version": "0.2",
+  "phases": {
+    "install": {
+      "commands": "npm install -g aws-cdk"
     },
-    \\"build\\": {
-      \\"commands\\": [
-        \\"cdk -a . deploy PipelineStack --require-approval=never --verbose\\"
+    "build": {
+      "commands": [
+        "cdk -a . deploy PipelineStack --require-approval=never --verbose"
       ]
     }
   }
@@ -1678,7 +1678,7 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::S3::Bucket",
-                        "aws:cdk:cloudformation:props" => Object {},
+                        "aws:cdk:cloudformation:props" => {},
                       },
                       "children": Map {},
                       "constructInfoFqn": undefined,

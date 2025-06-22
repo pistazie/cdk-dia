@@ -20,7 +20,7 @@ Node {
             "Resource" => Node {
               "attributes": Map {
                 "aws:cdk:cloudformation:type" => "AWS::Route53::HostedZone",
-                "aws:cdk:cloudformation:props" => Object {
+                "aws:cdk:cloudformation:props" => {
                   "name": "my-site.com.",
                 },
               },
@@ -43,8 +43,8 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::S3::Bucket",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "publicAccessBlockConfiguration": Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "publicAccessBlockConfiguration": {
                         "blockPublicAcls": true,
                         "blockPublicPolicy": true,
                         "ignorePublicAcls": true,
@@ -70,40 +70,40 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::S3::BucketPolicy",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "bucket": Object {
+                        "aws:cdk:cloudformation:props" => {
+                          "bucket": {
                             "Ref": "StaticWebsiteBucket0E92E0FC",
                           },
-                          "policyDocument": Object {
-                            "Statement": Array [
-                              Object {
-                                "Action": Array [
+                          "policyDocument": {
+                            "Statement": [
+                              {
+                                "Action": [
                                   "s3:GetObject*",
                                   "s3:GetBucket*",
                                   "s3:List*",
                                 ],
                                 "Effect": "Allow",
-                                "Principal": Object {
-                                  "CanonicalUser": Object {
-                                    "Fn::GetAtt": Array [
+                                "Principal": {
+                                  "CanonicalUser": {
+                                    "Fn::GetAtt": [
                                       "StaticWebsiteDistributionOrigin1S3Origin3045572F",
                                       "S3CanonicalUserId",
                                     ],
                                   },
                                 },
-                                "Resource": Array [
-                                  Object {
-                                    "Fn::GetAtt": Array [
+                                "Resource": [
+                                  {
+                                    "Fn::GetAtt": [
                                       "StaticWebsiteBucket0E92E0FC",
                                       "Arn",
                                     ],
                                   },
-                                  Object {
-                                    "Fn::Join": Array [
+                                  {
+                                    "Fn::Join": [
                                       "",
-                                      Array [
-                                        Object {
-                                          "Fn::GetAtt": Array [
+                                      [
+                                        {
+                                          "Fn::GetAtt": [
                                             "StaticWebsiteBucket0E92E0FC",
                                             "Arn",
                                           ],
@@ -146,26 +146,26 @@ Node {
                         "Resource" => Node {
                           "attributes": Map {
                             "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                            "aws:cdk:cloudformation:props" => Object {
-                              "assumeRolePolicyDocument": Object {
-                                "Statement": Array [
-                                  Object {
+                            "aws:cdk:cloudformation:props" => {
+                              "assumeRolePolicyDocument": {
+                                "Statement": [
+                                  {
                                     "Action": "sts:AssumeRole",
                                     "Effect": "Allow",
-                                    "Principal": Object {
+                                    "Principal": {
                                       "Service": "lambda.amazonaws.com",
                                     },
                                   },
                                 ],
                                 "Version": "2012-10-17",
                               },
-                              "managedPolicyArns": Array [
-                                Object {
-                                  "Fn::Join": Array [
+                              "managedPolicyArns": [
+                                {
+                                  "Fn::Join": [
                                     "",
-                                    Array [
+                                    [
                                       "arn:",
-                                      Object {
+                                      {
                                         "Ref": "AWS::Partition",
                                       },
                                       ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
@@ -186,11 +186,11 @@ Node {
                             "Resource" => Node {
                               "attributes": Map {
                                 "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
-                                "aws:cdk:cloudformation:props" => Object {
-                                  "policyDocument": Object {
-                                    "Statement": Array [
-                                      Object {
-                                        "Action": Array [
+                                "aws:cdk:cloudformation:props" => {
+                                  "policyDocument": {
+                                    "Statement": [
+                                      {
+                                        "Action": [
                                           "acm:RequestCertificate",
                                           "acm:DescribeCertificate",
                                           "acm:DeleteCertificate",
@@ -198,24 +198,24 @@ Node {
                                         "Effect": "Allow",
                                         "Resource": "*",
                                       },
-                                      Object {
+                                      {
                                         "Action": "route53:GetChange",
                                         "Effect": "Allow",
                                         "Resource": "*",
                                       },
-                                      Object {
+                                      {
                                         "Action": "route53:changeResourceRecordSets",
                                         "Effect": "Allow",
-                                        "Resource": Object {
-                                          "Fn::Join": Array [
+                                        "Resource": {
+                                          "Fn::Join": [
                                             "",
-                                            Array [
+                                            [
                                               "arn:",
-                                              Object {
+                                              {
                                                 "Ref": "AWS::Partition",
                                               },
                                               ":route53:::hostedzone/",
-                                              Object {
+                                              {
                                                 "Ref": "dnsB8C63060",
                                               },
                                             ],
@@ -226,8 +226,8 @@ Node {
                                     "Version": "2012-10-17",
                                   },
                                   "policyName": "StaticWebsiteCertificateCertificateRequestorFunctionServiceRoleDefaultPolicyBBEC5BA3",
-                                  "roles": Array [
-                                    Object {
+                                  "roles": [
+                                    {
                                       "Ref": "StaticWebsiteCertificateCertificateRequestorFunctionServiceRoleC558C69B",
                                     },
                                   ],
@@ -273,35 +273,35 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "code": Object {
-                            "s3Bucket": Object {
+                        "aws:cdk:cloudformation:props" => {
+                          "code": {
+                            "s3Bucket": {
                               "Ref": "AssetParameters19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2S3BucketFCCD3A76",
                             },
-                            "s3Key": Object {
-                              "Fn::Join": Array [
+                            "s3Key": {
+                              "Fn::Join": [
                                 "",
-                                Array [
-                                  Object {
-                                    "Fn::Select": Array [
+                                [
+                                  {
+                                    "Fn::Select": [
                                       0,
-                                      Object {
-                                        "Fn::Split": Array [
+                                      {
+                                        "Fn::Split": [
                                           "||",
-                                          Object {
+                                          {
                                             "Ref": "AssetParameters19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2S3VersionKey07AF06B6",
                                           },
                                         ],
                                       },
                                     ],
                                   },
-                                  Object {
-                                    "Fn::Select": Array [
+                                  {
+                                    "Fn::Select": [
                                       1,
-                                      Object {
-                                        "Fn::Split": Array [
+                                      {
+                                        "Fn::Split": [
                                           "||",
-                                          Object {
+                                          {
                                             "Ref": "AssetParameters19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2S3VersionKey07AF06B6",
                                           },
                                         ],
@@ -313,8 +313,8 @@ Node {
                             },
                           },
                           "handler": "index.certificateRequestHandler",
-                          "role": Object {
-                            "Fn::GetAtt": Array [
+                          "role": {
+                            "Fn::GetAtt": [
                               "StaticWebsiteCertificateCertificateRequestorFunctionServiceRoleC558C69B",
                               "Arn",
                             ],
@@ -365,8 +365,8 @@ Node {
                         "Resource" => Node {
                           "attributes": Map {
                             "aws:cdk:cloudformation:type" => "AWS::CloudFront::CloudFrontOriginAccessIdentity",
-                            "aws:cdk:cloudformation:props" => Object {
-                              "cloudFrontOriginAccessIdentityConfig": Object {
+                            "aws:cdk:cloudformation:props" => {
+                              "cloudFrontOriginAccessIdentityConfig": {
                                 "comment": "Identity for StaticWebSiteStaticWebsiteDistributionOrigin1F10ED96A",
                               },
                             },
@@ -389,19 +389,19 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::CloudFront::Distribution",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "distributionConfig": Object {
-                        "aliases": Array [
+                    "aws:cdk:cloudformation:props" => {
+                      "distributionConfig": {
+                        "aliases": [
                           "www.my-site.com",
                         ],
-                        "customErrorResponses": Array [
-                          Object {
+                        "customErrorResponses": [
+                          {
                             "errorCode": 404,
                             "responseCode": 200,
                             "responsePagePath": "/index.html",
                           },
                         ],
-                        "defaultCacheBehavior": Object {
+                        "defaultCacheBehavior": {
                           "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
                           "compress": true,
                           "pathPattern": "*",
@@ -412,22 +412,22 @@ Node {
                         "enabled": true,
                         "httpVersion": "http2",
                         "ipv6Enabled": true,
-                        "origins": Array [
-                          Object {
-                            "domainName": Object {
-                              "Fn::GetAtt": Array [
+                        "origins": [
+                          {
+                            "domainName": {
+                              "Fn::GetAtt": [
                                 "StaticWebsiteBucket0E92E0FC",
                                 "RegionalDomainName",
                               ],
                             },
                             "id": "StaticWebSiteStaticWebsiteDistributionOrigin1F10ED96A",
-                            "s3OriginConfig": Object {
-                              "originAccessIdentity": Object {
-                                "Fn::Join": Array [
+                            "s3OriginConfig": {
+                              "originAccessIdentity": {
+                                "Fn::Join": [
                                   "",
-                                  Array [
+                                  [
                                     "origin-access-identity/cloudfront/",
-                                    Object {
+                                    {
                                       "Ref": "StaticWebsiteDistributionOrigin1S3Origin3045572F",
                                     },
                                   ],
@@ -436,9 +436,9 @@ Node {
                             },
                           },
                         ],
-                        "viewerCertificate": Object {
-                          "acmCertificateArn": Object {
-                            "Fn::GetAtt": Array [
+                        "viewerCertificate": {
+                          "acmCertificateArn": {
+                            "Fn::GetAtt": [
                               "StaticWebsiteCertificateCertificateRequestorResource7C29CEF3",
                               "Arn",
                             ],
@@ -465,25 +465,25 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::Route53::RecordSet",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "aliasTarget": Object {
-                        "dnsName": Object {
-                          "Fn::GetAtt": Array [
+                    "aws:cdk:cloudformation:props" => {
+                      "aliasTarget": {
+                        "dnsName": {
+                          "Fn::GetAtt": [
                             "StaticWebsiteDistributionBAD21F75",
                             "DomainName",
                           ],
                         },
-                        "hostedZoneId": Object {
-                          "Fn::FindInMap": Array [
+                        "hostedZoneId": {
+                          "Fn::FindInMap": [
                             "AWSCloudFrontPartitionHostedZoneIdMap",
-                            Object {
+                            {
                               "Ref": "AWS::Partition",
                             },
                             "zoneId",
                           ],
                         },
                       },
-                      "hostedZoneId": Object {
+                      "hostedZoneId": {
                         "Ref": "dnsB8C63060",
                       },
                       "name": "www.my-site.com.",
@@ -506,25 +506,25 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::Route53::RecordSet",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "aliasTarget": Object {
-                        "dnsName": Object {
-                          "Fn::GetAtt": Array [
+                    "aws:cdk:cloudformation:props" => {
+                      "aliasTarget": {
+                        "dnsName": {
+                          "Fn::GetAtt": [
                             "StaticWebsiteDistributionBAD21F75",
                             "DomainName",
                           ],
                         },
-                        "hostedZoneId": Object {
-                          "Fn::FindInMap": Array [
+                        "hostedZoneId": {
+                          "Fn::FindInMap": [
                             "AWSCloudFrontPartitionHostedZoneIdMap",
-                            Object {
+                            {
                               "Ref": "AWS::Partition",
                             },
                             "zoneId",
                           ],
                         },
                       },
-                      "hostedZoneId": Object {
+                      "hostedZoneId": {
                         "Ref": "dnsB8C63060",
                       },
                       "name": "www.my-site.com.",
@@ -557,18 +557,18 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "policyDocument": Object {
-                            "Statement": Array [
-                              Object {
+                        "aws:cdk:cloudformation:props" => {
+                          "policyDocument": {
+                            "Statement": [
+                              {
                                 "Action": "s3:PutObject",
                                 "Effect": "Allow",
-                                "Resource": Object {
-                                  "Fn::Join": Array [
+                                "Resource": {
+                                  "Fn::Join": [
                                     "",
-                                    Array [
-                                      Object {
-                                        "Fn::GetAtt": Array [
+                                    [
+                                      {
+                                        "Fn::GetAtt": [
                                           "StaticWebsiteBucket0E92E0FC",
                                           "Arn",
                                         ],
@@ -582,8 +582,8 @@ Node {
                             "Version": "2012-10-17",
                           },
                           "policyName": "StaticWebsitePutConfigCustomResourcePolicy54D08151",
-                          "roles": Array [
-                            Object {
+                          "roles": [
+                            {
                               "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
                             },
                           ],
@@ -634,26 +634,26 @@ Node {
                             "Resource" => Node {
                               "attributes": Map {
                                 "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                                "aws:cdk:cloudformation:props" => Object {
-                                  "assumeRolePolicyDocument": Object {
-                                    "Statement": Array [
-                                      Object {
+                                "aws:cdk:cloudformation:props" => {
+                                  "assumeRolePolicyDocument": {
+                                    "Statement": [
+                                      {
                                         "Action": "sts:AssumeRole",
                                         "Effect": "Allow",
-                                        "Principal": Object {
+                                        "Principal": {
                                           "Service": "lambda.amazonaws.com",
                                         },
                                       },
                                     ],
                                     "Version": "2012-10-17",
                                   },
-                                  "managedPolicyArns": Array [
-                                    Object {
-                                      "Fn::Join": Array [
+                                  "managedPolicyArns": [
+                                    {
+                                      "Fn::Join": [
                                         "",
-                                        Array [
+                                        [
                                           "arn:",
-                                          Object {
+                                          {
                                             "Ref": "AWS::Partition",
                                           },
                                           ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
@@ -674,11 +674,11 @@ Node {
                                 "Resource" => Node {
                                   "attributes": Map {
                                     "aws:cdk:cloudformation:type" => "AWS::IAM::Policy",
-                                    "aws:cdk:cloudformation:props" => Object {
-                                      "policyDocument": Object {
-                                        "Statement": Array [
-                                          Object {
-                                            "Action": Array [
+                                    "aws:cdk:cloudformation:props" => {
+                                      "policyDocument": {
+                                        "Statement": [
+                                          {
+                                            "Action": [
                                               "acm:RequestCertificate",
                                               "acm:DescribeCertificate",
                                               "acm:DeleteCertificate",
@@ -686,24 +686,24 @@ Node {
                                             "Effect": "Allow",
                                             "Resource": "*",
                                           },
-                                          Object {
+                                          {
                                             "Action": "route53:GetChange",
                                             "Effect": "Allow",
                                             "Resource": "*",
                                           },
-                                          Object {
+                                          {
                                             "Action": "route53:changeResourceRecordSets",
                                             "Effect": "Allow",
-                                            "Resource": Object {
-                                              "Fn::Join": Array [
+                                            "Resource": {
+                                              "Fn::Join": [
                                                 "",
-                                                Array [
+                                                [
                                                   "arn:",
-                                                  Object {
+                                                  {
                                                     "Ref": "AWS::Partition",
                                                   },
                                                   ":route53:::hostedzone/",
-                                                  Object {
+                                                  {
                                                     "Ref": "dnsB8C63060",
                                                   },
                                                 ],
@@ -714,8 +714,8 @@ Node {
                                         "Version": "2012-10-17",
                                       },
                                       "policyName": "StaticWebsiteHttpsRedirectRedirectCertificateCertificateRequestorFunctionServiceRoleDefaultPolicy81FC4515",
-                                      "roles": Array [
-                                        Object {
+                                      "roles": [
+                                        {
                                           "Ref": "StaticWebsiteHttpsRedirectRedirectCertificateCertificateRequestorFunctionServiceRole08DAF404",
                                         },
                                       ],
@@ -761,35 +761,35 @@ Node {
                         "Resource" => Node {
                           "attributes": Map {
                             "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
-                            "aws:cdk:cloudformation:props" => Object {
-                              "code": Object {
-                                "s3Bucket": Object {
+                            "aws:cdk:cloudformation:props" => {
+                              "code": {
+                                "s3Bucket": {
                                   "Ref": "AssetParameters19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2S3BucketFCCD3A76",
                                 },
-                                "s3Key": Object {
-                                  "Fn::Join": Array [
+                                "s3Key": {
+                                  "Fn::Join": [
                                     "",
-                                    Array [
-                                      Object {
-                                        "Fn::Select": Array [
+                                    [
+                                      {
+                                        "Fn::Select": [
                                           0,
-                                          Object {
-                                            "Fn::Split": Array [
+                                          {
+                                            "Fn::Split": [
                                               "||",
-                                              Object {
+                                              {
                                                 "Ref": "AssetParameters19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2S3VersionKey07AF06B6",
                                               },
                                             ],
                                           },
                                         ],
                                       },
-                                      Object {
-                                        "Fn::Select": Array [
+                                      {
+                                        "Fn::Select": [
                                           1,
-                                          Object {
-                                            "Fn::Split": Array [
+                                          {
+                                            "Fn::Split": [
                                               "||",
-                                              Object {
+                                              {
                                                 "Ref": "AssetParameters19e461d2ff1a5b90438fed6ceee4c197d7efee8712a6f76d85b501ab20bfb1a2S3VersionKey07AF06B6",
                                               },
                                             ],
@@ -801,8 +801,8 @@ Node {
                                 },
                               },
                               "handler": "index.certificateRequestHandler",
-                              "role": Object {
-                                "Fn::GetAtt": Array [
+                              "role": {
+                                "Fn::GetAtt": [
                                   "StaticWebsiteHttpsRedirectRedirectCertificateCertificateRequestorFunctionServiceRole08DAF404",
                                   "Arn",
                                 ],
@@ -847,15 +847,15 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::S3::Bucket",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "publicAccessBlockConfiguration": Object {
+                        "aws:cdk:cloudformation:props" => {
+                          "publicAccessBlockConfiguration": {
                             "blockPublicAcls": true,
                             "blockPublicPolicy": true,
                             "ignorePublicAcls": true,
                             "restrictPublicBuckets": true,
                           },
-                          "websiteConfiguration": Object {
-                            "redirectAllRequestsTo": Object {
+                          "websiteConfiguration": {
+                            "redirectAllRequestsTo": {
                               "hostName": "www.my-site.com",
                               "protocol": "https",
                             },
@@ -892,24 +892,24 @@ Node {
                     "CFDistribution" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::CloudFront::Distribution",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "distributionConfig": Object {
-                            "aliases": Array [
+                        "aws:cdk:cloudformation:props" => {
+                          "distributionConfig": {
+                            "aliases": [
                               "my-site.com",
                             ],
                             "comment": "Redirect to www.my-site.com from my-site.com",
-                            "defaultCacheBehavior": Object {
-                              "allowedMethods": Array [
+                            "defaultCacheBehavior": {
+                              "allowedMethods": [
                                 "GET",
                                 "HEAD",
                               ],
-                              "cachedMethods": Array [
+                              "cachedMethods": [
                                 "GET",
                                 "HEAD",
                               ],
                               "compress": true,
-                              "forwardedValues": Object {
-                                "cookies": Object {
+                              "forwardedValues": {
+                                "cookies": {
                                   "forward": "none",
                                 },
                                 "queryString": false,
@@ -921,28 +921,28 @@ Node {
                             "enabled": true,
                             "httpVersion": "http2",
                             "ipv6Enabled": true,
-                            "origins": Array [
-                              Object {
+                            "origins": [
+                              {
                                 "connectionAttempts": 3,
                                 "connectionTimeout": 10,
-                                "customOriginConfig": Object {
+                                "customOriginConfig": {
                                   "httpPort": 80,
                                   "httpsPort": 443,
                                   "originKeepaliveTimeout": 5,
                                   "originProtocolPolicy": "http-only",
                                   "originReadTimeout": 30,
-                                  "originSslProtocols": Array [
+                                  "originSslProtocols": [
                                     "TLSv1.2",
                                   ],
                                 },
-                                "domainName": Object {
-                                  "Fn::Select": Array [
+                                "domainName": {
+                                  "Fn::Select": [
                                     2,
-                                    Object {
-                                      "Fn::Split": Array [
+                                    {
+                                      "Fn::Split": [
                                         "/",
-                                        Object {
-                                          "Fn::GetAtt": Array [
+                                        {
+                                          "Fn::GetAtt": [
                                             "StaticWebsiteHttpsRedirectRedirectBucket45BA11C9",
                                             "WebsiteURL",
                                           ],
@@ -955,9 +955,9 @@ Node {
                               },
                             ],
                             "priceClass": "PriceClass_All",
-                            "viewerCertificate": Object {
-                              "acmCertificateArn": Object {
-                                "Fn::GetAtt": Array [
+                            "viewerCertificate": {
+                              "acmCertificateArn": {
+                                "Fn::GetAtt": [
                                   "StaticWebsiteHttpsRedirectRedirectCertificateCertificateRequestorResource692E38D9",
                                   "Arn",
                                 ],
@@ -983,25 +983,25 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::Route53::RecordSet",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "aliasTarget": Object {
-                            "dnsName": Object {
-                              "Fn::GetAtt": Array [
+                        "aws:cdk:cloudformation:props" => {
+                          "aliasTarget": {
+                            "dnsName": {
+                              "Fn::GetAtt": [
                                 "StaticWebsiteHttpsRedirectRedirectDistributionCFDistributionF7ADE06F",
                                 "DomainName",
                               ],
                             },
-                            "hostedZoneId": Object {
-                              "Fn::FindInMap": Array [
+                            "hostedZoneId": {
+                              "Fn::FindInMap": [
                                 "AWSCloudFrontPartitionHostedZoneIdMap",
-                                Object {
+                                {
                                   "Ref": "AWS::Partition",
                                 },
                                 "zoneId",
                               ],
                             },
                           },
-                          "hostedZoneId": Object {
+                          "hostedZoneId": {
                             "Ref": "dnsB8C63060",
                           },
                           "name": "my-site.com.",
@@ -1024,25 +1024,25 @@ Node {
                     "Resource" => Node {
                       "attributes": Map {
                         "aws:cdk:cloudformation:type" => "AWS::Route53::RecordSet",
-                        "aws:cdk:cloudformation:props" => Object {
-                          "aliasTarget": Object {
-                            "dnsName": Object {
-                              "Fn::GetAtt": Array [
+                        "aws:cdk:cloudformation:props" => {
+                          "aliasTarget": {
+                            "dnsName": {
+                              "Fn::GetAtt": [
                                 "StaticWebsiteHttpsRedirectRedirectDistributionCFDistributionF7ADE06F",
                                 "DomainName",
                               ],
                             },
-                            "hostedZoneId": Object {
-                              "Fn::FindInMap": Array [
+                            "hostedZoneId": {
+                              "Fn::FindInMap": [
                                 "AWSCloudFrontPartitionHostedZoneIdMap",
-                                Object {
+                                {
                                   "Ref": "AWS::Partition",
                                 },
                                 "zoneId",
                               ],
                             },
                           },
-                          "hostedZoneId": Object {
+                          "hostedZoneId": {
                             "Ref": "dnsB8C63060",
                           },
                           "name": "my-site.com.",
@@ -1180,26 +1180,26 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "assumeRolePolicyDocument": Object {
-                        "Statement": Array [
-                          Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "assumeRolePolicyDocument": {
+                        "Statement": [
+                          {
                             "Action": "sts:AssumeRole",
                             "Effect": "Allow",
-                            "Principal": Object {
+                            "Principal": {
                               "Service": "lambda.amazonaws.com",
                             },
                           },
                         ],
                         "Version": "2012-10-17",
                       },
-                      "managedPolicyArns": Array [
-                        Object {
-                          "Fn::Join": Array [
+                      "managedPolicyArns": [
+                        {
+                          "Fn::Join": [
                             "",
-                            Array [
+                            [
                               "arn:",
-                              Object {
+                              {
                                 "Ref": "AWS::Partition",
                               },
                               ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
@@ -1244,35 +1244,35 @@ Node {
             "Resource" => Node {
               "attributes": Map {
                 "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
-                "aws:cdk:cloudformation:props" => Object {
-                  "code": Object {
-                    "s3Bucket": Object {
+                "aws:cdk:cloudformation:props" => {
+                  "code": {
+                    "s3Bucket": {
                       "Ref": "AssetParameters4a3609ad912843e581892f37ae9d6fb0fa1648b547693aaa562b0119452b8956S3Bucket72B03BC9",
                     },
-                    "s3Key": Object {
-                      "Fn::Join": Array [
+                    "s3Key": {
+                      "Fn::Join": [
                         "",
-                        Array [
-                          Object {
-                            "Fn::Select": Array [
+                        [
+                          {
+                            "Fn::Select": [
                               0,
-                              Object {
-                                "Fn::Split": Array [
+                              {
+                                "Fn::Split": [
                                   "||",
-                                  Object {
+                                  {
                                     "Ref": "AssetParameters4a3609ad912843e581892f37ae9d6fb0fa1648b547693aaa562b0119452b8956S3VersionKey520B7554",
                                   },
                                 ],
                               },
                             ],
                           },
-                          Object {
-                            "Fn::Select": Array [
+                          {
+                            "Fn::Select": [
                               1,
-                              Object {
-                                "Fn::Split": Array [
+                              {
+                                "Fn::Split": [
                                   "||",
-                                  Object {
+                                  {
                                     "Ref": "AssetParameters4a3609ad912843e581892f37ae9d6fb0fa1648b547693aaa562b0119452b8956S3VersionKey520B7554",
                                   },
                                 ],
@@ -1284,8 +1284,8 @@ Node {
                     },
                   },
                   "handler": "index.handler",
-                  "role": Object {
-                    "Fn::GetAtt": Array [
+                  "role": {
+                    "Fn::GetAtt": [
                       "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
                       "Arn",
                     ],
@@ -1343,26 +1343,26 @@ Node {
                 "Resource" => Node {
                   "attributes": Map {
                     "aws:cdk:cloudformation:type" => "AWS::IAM::Role",
-                    "aws:cdk:cloudformation:props" => Object {
-                      "assumeRolePolicyDocument": Object {
-                        "Statement": Array [
-                          Object {
+                    "aws:cdk:cloudformation:props" => {
+                      "assumeRolePolicyDocument": {
+                        "Statement": [
+                          {
                             "Action": "sts:AssumeRole",
                             "Effect": "Allow",
-                            "Principal": Object {
+                            "Principal": {
                               "Service": "lambda.amazonaws.com",
                             },
                           },
                         ],
                         "Version": "2012-10-17",
                       },
-                      "managedPolicyArns": Array [
-                        Object {
-                          "Fn::Join": Array [
+                      "managedPolicyArns": [
+                        {
+                          "Fn::Join": [
                             "",
-                            Array [
+                            [
                               "arn:",
-                              Object {
+                              {
                                 "Ref": "AWS::Partition",
                               },
                               ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
@@ -1407,35 +1407,35 @@ Node {
             "Resource" => Node {
               "attributes": Map {
                 "aws:cdk:cloudformation:type" => "AWS::Lambda::Function",
-                "aws:cdk:cloudformation:props" => Object {
-                  "code": Object {
-                    "s3Bucket": Object {
+                "aws:cdk:cloudformation:props" => {
+                  "code": {
+                    "s3Bucket": {
                       "Ref": "AssetParametersc9ac4b3b65f3510a2088b7fd003de23d2aefac424025eb168725ce6769e3c176S3Bucket77147E20",
                     },
-                    "s3Key": Object {
-                      "Fn::Join": Array [
+                    "s3Key": {
+                      "Fn::Join": [
                         "",
-                        Array [
-                          Object {
-                            "Fn::Select": Array [
+                        [
+                          {
+                            "Fn::Select": [
                               0,
-                              Object {
-                                "Fn::Split": Array [
+                              {
+                                "Fn::Split": [
                                   "||",
-                                  Object {
+                                  {
                                     "Ref": "AssetParametersc9ac4b3b65f3510a2088b7fd003de23d2aefac424025eb168725ce6769e3c176S3VersionKey4253216F",
                                   },
                                 ],
                               },
                             ],
                           },
-                          Object {
-                            "Fn::Select": Array [
+                          {
+                            "Fn::Select": [
                               1,
-                              Object {
-                                "Fn::Split": Array [
+                              {
+                                "Fn::Split": [
                                   "||",
-                                  Object {
+                                  {
                                     "Ref": "AssetParametersc9ac4b3b65f3510a2088b7fd003de23d2aefac424025eb168725ce6769e3c176S3VersionKey4253216F",
                                   },
                                 ],
@@ -1447,8 +1447,8 @@ Node {
                     },
                   },
                   "handler": "index.handler",
-                  "role": Object {
-                    "Fn::GetAtt": Array [
+                  "role": {
+                    "Fn::GetAtt": [
                       "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
                       "Arn",
                     ],

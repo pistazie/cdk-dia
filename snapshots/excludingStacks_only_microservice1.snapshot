@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`diagram JSON as expected src/test-fixtures/ - fargate-service-with-vpc - collapsed 1`] = `
+exports[`excluding specific Stacks works as expected it only diagrams the "microservice1" stack 1`] = `
 {
   "_image": null,
   "children": [
@@ -11,10 +11,10 @@ exports[`diagram JSON as expected src/test-fixtures/ - fargate-service-with-vpc 
       },
       "children": [],
       "edges": [],
-      "id": "QueueIsSubscribedToTopicStack/MyVpc",
+      "id": "Microservice2/Vpc",
       "isGroup": false,
       "label": [
-        "MyVpc",
+        "Vpc",
       ],
     },
     {
@@ -24,10 +24,10 @@ exports[`diagram JSON as expected src/test-fixtures/ - fargate-service-with-vpc 
       },
       "children": [],
       "edges": [],
-      "id": "QueueIsSubscribedToTopicStack/MyCluster",
+      "id": "Microservice2/Cluster",
       "isGroup": false,
       "label": [
-        "MyCluster",
+        "Cluster",
       ],
     },
     {
@@ -40,10 +40,10 @@ exports[`diagram JSON as expected src/test-fixtures/ - fargate-service-with-vpc 
           },
           "children": [],
           "edges": [
-            "QueueIsSubscribedToTopicStack/MyVpc",
-            "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup",
+            "Microservice2/Vpc",
+            "Microservice2/FargateService/Service/SecurityGroup",
           ],
-          "id": "QueueIsSubscribedToTopicStack/MyFargateService/LB",
+          "id": "Microservice2/FargateService/LB",
           "isGroup": false,
           "label": [
             "LB",
@@ -56,7 +56,7 @@ exports[`diagram JSON as expected src/test-fixtures/ - fargate-service-with-vpc 
           },
           "children": [],
           "edges": [],
-          "id": "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef",
+          "id": "Microservice2/FargateService/TaskDef",
           "isGroup": false,
           "label": [
             "TaskDef",
@@ -72,13 +72,13 @@ exports[`diagram JSON as expected src/test-fixtures/ - fargate-service-with-vpc 
               },
               "children": [],
               "edges": [
-                "QueueIsSubscribedToTopicStack/MyVpc",
-                "QueueIsSubscribedToTopicStack/MyCluster",
-                "QueueIsSubscribedToTopicStack/MyFargateService/LB",
-                "QueueIsSubscribedToTopicStack/MyFargateService/TaskDef",
-                "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup",
+                "Microservice2/Vpc",
+                "Microservice2/Cluster",
+                "Microservice2/FargateService/LB",
+                "Microservice2/FargateService/TaskDef",
+                "Microservice2/FargateService/Service/SecurityGroup",
               ],
-              "id": "QueueIsSubscribedToTopicStack/MyFargateService/Service/Service",
+              "id": "Microservice2/FargateService/Service/Service",
               "isGroup": false,
               "label": [
                 "ECS Service",
@@ -92,10 +92,10 @@ exports[`diagram JSON as expected src/test-fixtures/ - fargate-service-with-vpc 
               },
               "children": [],
               "edges": [
-                "QueueIsSubscribedToTopicStack/MyVpc",
-                "QueueIsSubscribedToTopicStack/MyFargateService/LB",
+                "Microservice2/Vpc",
+                "Microservice2/FargateService/LB",
               ],
-              "id": "QueueIsSubscribedToTopicStack/MyFargateService/Service/SecurityGroup",
+              "id": "Microservice2/FargateService/Service/SecurityGroup",
               "isGroup": false,
               "label": [
                 "SecurityGroup",
@@ -103,7 +103,7 @@ exports[`diagram JSON as expected src/test-fixtures/ - fargate-service-with-vpc 
             },
           ],
           "edges": [],
-          "id": "QueueIsSubscribedToTopicStack/MyFargateService/Service",
+          "id": "Microservice2/FargateService/Service",
           "isGroup": true,
           "label": [
             "Service",
@@ -111,18 +111,18 @@ exports[`diagram JSON as expected src/test-fixtures/ - fargate-service-with-vpc 
         },
       ],
       "edges": [],
-      "id": "QueueIsSubscribedToTopicStack/MyFargateService",
+      "id": "Microservice2/FargateService",
       "isGroup": true,
       "label": [
-        "MyFargateService",
+        "FargateService",
       ],
     },
   ],
   "edges": [],
-  "id": "QueueIsSubscribedToTopicStack",
+  "id": "Microservice2",
   "isGroup": true,
   "label": [
-    "QueueIsSubscribedToTopicStack",
+    "Microservice2",
   ],
 }
 `;
