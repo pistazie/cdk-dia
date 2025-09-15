@@ -25,6 +25,66 @@ describe("diagram JSON as expected", () => {
     })
 })
 
+describe("ignore functionality", () => {
+
+    it("ignores nodes with cdk-dia:ignore metadata annotation", () => {
+        // Create a simple CDK tree with an ignored node
+        const mockTree = cdk.Tree.fromObject({
+            version: "tree-0.1",
+            tree: {
+                id: "App",
+                path: "",
+                children: {
+                    TestStack: {
+                        id: "TestStack",
+                        path: "TestStack",
+                        children: {
+                            NormalResource: {
+                                id: "NormalResource",
+                                path: "TestStack/NormalResource",
+                                attributes: {
+                                    "aws:cdk:cloudformation:type": "AWS::S3::Bucket"
+                                }
+                            },
+                            IgnoredResource: {
+                                id: "IgnoredResource",
+                                path: "TestStack/IgnoredResource",
+                                metadata: {
+                                    "aws:cdk:info": ["cdk-dia:ignore"]
+                                },
+                                attributes: {
+                                    "aws:cdk:cloudformation:type": "AWS::CloudWatch::Alarm"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        })
+
+        const generator = new diagrams.AwsDiagramGenerator(new AwsEdgeResolver(), new AwsIconSupplier(""))
+        const diagram = generator.generate(mockTree, false, false)
+
+        // The diagram should contain the NormalResource but not the IgnoredResource
+        const diagramJson = diagram.toSimpleObject() as any
+        
+        // Collect all component IDs recursively
+        const flattenedComponents: any[] = []
+        const collectAllComponents = (component: any) => {
+            flattenedComponents.push(component)
+            if (component.children && Array.isArray(component.children)) {
+                component.children.forEach(collectAllComponents)
+            }
+        }
+        collectAllComponents(diagramJson)
+        
+        // Check that some component contains NormalResource but not IgnoredResource
+        const allComponentIds = flattenedComponents.map((c: any) => c.id)
+        expect(allComponentIds.some((id: string) => id.includes("NormalResource"))).toBe(true)
+        expect(allComponentIds.some((id: string) => id.includes("IgnoredResource"))).toBe(false)
+    })
+})
+
 describe("setting specific Stacks works as expected", () => {
 
     const twoSimpleStacksTestCase = {

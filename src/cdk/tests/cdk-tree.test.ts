@@ -43,4 +43,49 @@ describe('cdk-tree', () => {
 
        expect(exportsNode.id).toEqual("Exports")
     })
+
+    it('shouldBeIgnored() - returns true for metadata annotation', () => {
+        const ignoredNode = cdk.Node.fromObject({
+            "id": "IgnoredResource",
+            "path": "stack/IgnoredResource",
+            "metadata": {
+                "aws:cdk:info": ["cdk-dia:ignore"]
+            }
+        })
+
+        expect(ignoredNode.shouldBeIgnored()).toBe(true)
+    })
+
+    it('shouldBeIgnored() - returns true for attribute annotation', () => {
+        const ignoredNode = cdk.Node.fromObject({
+            "id": "IgnoredResource",
+            "path": "stack/IgnoredResource",
+            "attributes": {
+                "CDK-DIA_ignore": "true"
+            }
+        })
+
+        expect(ignoredNode.shouldBeIgnored()).toBe(true)
+    })
+
+    it('shouldBeIgnored() - returns false for non-ignored node', () => {
+        const normalNode = cdk.Node.fromObject({
+            "id": "NormalResource",
+            "path": "stack/NormalResource"
+        })
+
+        expect(normalNode.shouldBeIgnored()).toBe(false)
+    })
+
+    it('shouldBeIgnored() - returns false for other info annotations', () => {
+        const nodeWithOtherInfo = cdk.Node.fromObject({
+            "id": "ResourceWithInfo",
+            "path": "stack/ResourceWithInfo",
+            "metadata": {
+                "aws:cdk:info": ["some-other-info"]
+            }
+        })
+
+        expect(nodeWithOtherInfo.shouldBeIgnored()).toBe(false)
+    })
 })

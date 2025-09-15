@@ -76,6 +76,11 @@ export class AwsDiagramGenerator extends DiagramGenerator{
 
     private generateSubTree(cdkNode: cdk.Node, parentComponent: Component): Component | null {
 
+        // Check if this node should be ignored
+        if (cdkNode.shouldBeIgnored()) {
+            return null
+        }
+
         const component = this.generateComponent(cdkNode,parentComponent)
 
         if (component == null) return null
@@ -191,6 +196,9 @@ export class AwsDiagramGenerator extends DiagramGenerator{
                 switch (key.substr(CdkDia.attrPrefix.length)){
                     case CollapssingCustomizer.name:
                         CollapssingCustomizer.fromAttributeValue(value).customize(component)
+                        break;
+                    case "ignore":
+                        // Ignore attribute is handled during node processing, not component customization
                         break;
                     default:
                         throw new Error(`Unknown customizer ${key}`)
