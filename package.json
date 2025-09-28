@@ -32,7 +32,7 @@
     "ts-graphviz": "^2.1.6",
     "values.js": "^2.1.1",
     "word-wrap": "^1.2.5",
-    "yargs": "^18.0.0"
+    "yargs": "^17.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.27.2",
