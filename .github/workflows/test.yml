@@ -26,3 +26,23 @@ jobs:
 
       - name: Package and CLI usage in a CDK Project - Smoke Test
         run: ./smoke-test/smoke-test.sh
+
+  test-legacy-node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Unit/Snapshot tests
+        run: |
+          npm run test
+          npx eslint . --ext .ts || true
+
+      - name: Package and CLI usage in a CDK Project - Smoke Test
+        run: ./smoke-test/smoke-test.sh
