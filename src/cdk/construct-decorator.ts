@@ -22,6 +22,11 @@ export class CdkDiaDecorator {
         return this
     }
 
+    ignore() : CdkDiaDecorator{
+        this.attributes["ignore"] = "true"
+        return this
+    }
+
     build(): {[key: string]: string}{
         return this.attributes
     }

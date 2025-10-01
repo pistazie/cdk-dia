@@ -56,9 +56,10 @@ export class Node {
     path: string
     children: Map<string, Node>
     attributes: Map<string, string | Node | Record<string, string>>
+    metadata: Map<string, unknown[]> | undefined = undefined
     constructInfoFqn: ConstructInfoFqn | undefined = undefined
 
-    findInSubTree(predicate: (Node) => boolean): Node | null {
+    findInSubTree(predicate: (node: Node) => boolean): Node | null {
         if (predicate(this)) return this
 
         const childrenArr: [string, Node][] = Array.from(this.children)
@@ -68,6 +69,26 @@ export class Node {
         }
 
         return null
+    }
+
+    shouldBeIgnored(): boolean {
+        // Check metadata for CDK annotations (Annotations.of(construct).addInfo("cdk-dia:ignore"))
+        if (this.metadata) {
+            const infoAnnotations = this.metadata.get("aws:cdk:info")
+            if (infoAnnotations && Array.isArray(infoAnnotations)) {
+                return infoAnnotations.some(annotation => 
+                    typeof annotation === "string" && annotation === "cdk-dia:ignore"
+                )
+            }
+        }
+
+        // Check attributes for cdk-dia decorator system (legacy support)
+        const ignoreAttr = this.attributes.get("CDK-DIA_ignore")
+        if (ignoreAttr === "true") {
+            return true
+        }
+
+        return false
     }
 
     static fromObject(object: Record<string, unknown | Record<string, string>>): Node {
@@ -86,6 +107,13 @@ export class Node {
         if (object['attributes'] != undefined) {
             for (const attrKey in object['attributes'] as Record<string, string>) {
                 node.attributes.set(attrKey, object['attributes'][attrKey])
+            }
+        }
+
+        if (object['metadata'] != undefined) {
+            node.metadata = new Map<string, unknown[]>()
+            for (const metaKey in object['metadata'] as Record<string, unknown[]>) {
+                node.metadata.set(metaKey, object['metadata'][metaKey])
             }
         }
 

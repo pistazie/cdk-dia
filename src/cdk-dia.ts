@@ -20,8 +20,8 @@ export class CdkDia {
                           excludedStacks: string[] | undefined = undefined,
                           renderer: Renderers) {
 
-        // Parse tree.json
-        const cdkTree = cdk.TreeJsonLoader.load(path.isAbsolute(treeJsonPath) ? treeJsonPath : path.join(process.cwd(), treeJsonPath))
+        // Parse tree.json with enhanced manifest support
+        const cdkTree = cdk.EnhancedTreeLoader.load(path.isAbsolute(treeJsonPath) ? treeJsonPath : path.join(process.cwd(), treeJsonPath))
 
         // Generate Diagram
         const generator = new diagrams.AwsDiagramGenerator(new diagrams.AwsEdgeResolver(), new diagrams.AwsIconSupplier(`${cdkBasePath}`))

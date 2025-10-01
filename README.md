@@ -95,6 +95,50 @@ This results in a Diagram where the DB-Tier was not collapsed providing more det
 
 * a full example or the above can be found at [examples/decoration-example](examples/decoration-example)
 
+### Ignoring resources
+
+Sometimes you want to exclude certain resources from your diagrams (e.g., CloudWatch alarms, monitoring dashboards, etc.). CDK-DIA supports two ways to ignore resources:
+
+#### Method 1: CDK Annotations (Recommended)
+
+Use CDK's built-in annotation system to mark resources for exclusion:
+
+```typescript
+import { Annotations } from 'aws-cdk-lib';
+
+// Mark a specific resource to be ignored
+const alarm = new cloudwatch.Alarm(this, 'MyAlarm', {
+  // ... alarm configuration
+});
+Annotations.of(alarm).addInfo('cdk-dia:ignore');
+
+// Or mark an entire construct to be ignored
+const dashboard = new cloudwatch.Dashboard(this, 'MonitoringDashboard', {
+  // ... dashboard configuration
+});
+Annotations.of(dashboard).addInfo('cdk-dia:ignore');
+```
+
+#### Method 2: CdkDia Decorator API
+
+Use CDK-DIA's decorator system:
+
+```typescript
+import { CdkDia, CdkDiaDecorator } from 'cdk-dia';
+
+export class MyConstruct extends Construct implements IInspectable {
+  // ... construct implementation
+  
+  inspect(inspector: TreeInspector): void {
+    CdkDia.decorate(inspector, new CdkDiaDecorator().ignore());
+  }
+}
+```
+
+Both methods will completely exclude the marked resources and their children from the generated diagrams.
+
+* a full example or the above can be found at [examples/decoration-example](examples/decoration-example)
+
 ## CLI arguments
 * ```npx cdk-dia --help``` - Get possible arguments
 * ```npx cdk-dia --include stackOne stackFour``` - only diagram chosen aws-cdk stacks
