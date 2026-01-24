@@ -1,6 +1,6 @@
 {
   "name": "cdk-dia",
-  "version": "0.12.1",
+  "version": "0.12.2",
   "description": "🎡 Automated diagrams of CDK provisioned infrastructure",
   "scripts": {
     "build-watch": "tsc --watch",
@@ -21,7 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "aws-cdk-lib": "^2.201.0",
-    "constructs": "^10.4.2",
+    "constructs": "^10.4.5",
     "chalk": "^4.1.2",
     "colors": "^1.4.0",
     "fs-extra": "^11.3.0",
@@ -37,7 +37,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.27.2",
     "@babel/preset-typescript": "^7.27.1",
-    "@types/glob": "^8.1.0",
+    "@types/glob": "^9.0.0",
     "@types/hasbin": "^1.2.2",
     "@types/jest": "^29.5.14",
     "@types/jest-specific-snapshot": "^0.5.9",
@@ -48,12 +48,12 @@
     "@typescript-eslint/parser": "^8.34.0",
     "eslint": "^9.29.0",
     "fast-glob": "^3.3.3",
-    "glob": "^11.0.3",
+    "glob": "^11.1.0",
     "jest": "^29.4.3",
     "jest-file-snapshot": "^0.7.0",
     "jest-junit": "^16.0.0",
     "jest-specific-snapshot": "^8.0.0",
-    "ts-jest": "^29.4.0",
+    "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
