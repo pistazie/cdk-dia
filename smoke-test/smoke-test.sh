@@ -27,7 +27,7 @@ executeSmokeTestAssertions() {
   export SMOKE_TEST_BASE_PATH=$DIAGRAMS_PATH # used by the following Jest test suite
   cd $TEST_SUITE_PATH
   npm i
-  npm run test -- --testPathPattern $ASSERTIONS
+  npm run test -- --testPathPatterns $ASSERTIONS
 }
 
 # Execute smoke test-case
