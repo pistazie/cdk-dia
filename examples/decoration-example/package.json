@@ -15,17 +15,14 @@
     "unlink": "npm unlink --no-save cdk-dia"
   },
   "devDependencies": {
-    "@types/node": "10.17.27",
-    "@aws-cdk/aws-ec2": "1.92.0",
-    "@aws-cdk/aws-elasticloadbalancingv2": "1.92.0",
-    "@aws-cdk/aws-elasticloadbalancingv2-targets": "1.92.0",
-    "@aws-cdk/aws-rds": "1.92.0",
-    "@aws-cdk/core": "1.92.0",
-    "aws-cdk": "1.92.0",
-    "ts-node": "^9.0.0",
-    "typescript": "4.2.3",
-    "source-map-support": "^0.5.16",
-    "cdk-dia": "0.0.2"
+    "@types/node": "25.0.10",
+    "aws-cdk": "2.1103.0",
+    "aws-cdk-lib": "2.236.0",
+    "constructs": "10.4.5",
+    "ts-node": "10.9.2",
+    "typescript": "5.9.3",
+    "source-map-support": "0.5.21",
+    "cdk-dia": "0.12.2"
   },
   "dependencies": {}
 }

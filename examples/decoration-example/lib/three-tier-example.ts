@@ -3,13 +3,14 @@ import * as ec2 from "aws-cdk-lib/aws-ec2";
 import * as rds from "aws-cdk-lib/aws-rds";
 import * as lb from "aws-cdk-lib/aws-elasticloadbalancingv2";
 import * as lb_targets from "aws-cdk-lib/aws-elasticloadbalancingv2-targets";
+import { Construct } from 'constructs';
 
 import {WebTier} from "./web-tier"
 import {Db, DbWithDiagramDecorator} from "./db-tier"
 
 export class ThreeTierExample extends cdk.Stack {
 
-    constructor(scope: cdk.Construct, id: string, dbDiagramCollapsed: boolean = false) {
+    constructor(scope: Construct, id: string, dbDiagramCollapsed: boolean = false) {
         super(scope, id);
 
         const vpc = new ec2.Vpc(this, "Vpc");
