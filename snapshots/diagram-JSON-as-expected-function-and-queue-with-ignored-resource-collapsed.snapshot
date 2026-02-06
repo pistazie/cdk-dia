@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagram JSON as expected src/test-fixtures/ - function-and-queue-with-ignored-resource - collapsed 1`] = `
+{
+  "_image": null,
+  "children": [
+    {
+      "_image": ComponentIcon {
+        "format": "NORMAL",
+        "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+      },
+      "children": [],
+      "edges": [],
+      "id": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function",
+      "isGroup": false,
+      "label": [
+        "my-function",
+      ],
+    },
+  ],
+  "edges": [],
+  "id": "CdkAutoDiagramPocStack",
+  "isGroup": true,
+  "label": [
+    "CdkAutoDiagramPocStack",
+  ],
+}
+`;

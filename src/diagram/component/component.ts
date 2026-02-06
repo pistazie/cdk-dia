@@ -10,7 +10,8 @@ export type ComponentId = string
 export enum ComponentTags{
     isCdkStack = "isCdkStack",
     isCdkStage = "isCdkStage",
-    collapssingOverride = "collapssingOverride"
+    collapssingOverride = "collapssingOverride",
+    ignore = "ignore"
 }
 
 /**

@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagram JSON as expected src/test-fixtures/ - function-and-queue-with-ignored-resource - non-collapsed 1`] = `
+{
+  "_image": null,
+  "children": [
+    {
+      "_image": null,
+      "children": [
+        {
+          "_image": null,
+          "children": [
+            {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+              },
+              "children": [],
+              "edges": [],
+              "id": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole/Resource",
+              "isGroup": false,
+              "label": [
+                "IAM Role",
+              ],
+            },
+            {
+              "_image": ComponentIcon {
+                "format": "SMALLER",
+                "path": "icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+              },
+              "children": [],
+              "edges": [
+                "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole/Resource",
+              ],
+              "id": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole/DefaultPolicy/Resource",
+              "isGroup": false,
+              "label": [
+                "IAM Policy",
+              ],
+            },
+          ],
+          "edges": [],
+          "id": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole",
+          "isGroup": true,
+          "label": [
+            "ServiceRole",
+          ],
+        },
+        {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          },
+          "children": [],
+          "edges": [
+            "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/ServiceRole/Resource",
+          ],
+          "id": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/Resource",
+          "isGroup": false,
+          "label": [
+            "Lambda Function",
+          ],
+        },
+        {
+          "_image": ComponentIcon {
+            "format": "NORMAL",
+            "path": "icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          },
+          "children": [],
+          "edges": [
+            "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/Resource",
+          ],
+          "id": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function/SqsEventSource_CdkAutoDiagramPocStackapieceofthediagrammyqueue89326209/Resource",
+          "isGroup": false,
+          "label": [
+            "Lambda EventSourceMapping",
+          ],
+        },
+      ],
+      "edges": [],
+      "id": "CdkAutoDiagramPocStack/a-piece-of-the-diagram/my-function",
+      "isGroup": true,
+      "label": [
+        "my-function",
+      ],
+    },
+  ],
+  "edges": [],
+  "id": "CdkAutoDiagramPocStack",
+  "isGroup": true,
+  "label": [
+    "CdkAutoDiagramPocStack",
+  ],
+}
+`;

@@ -28,3 +28,19 @@ export enum CollapseTypes {
     FORCE_NON_COLLAPSE = "FORCE_NON_COLLAPSE",
     FORCE_NON_COLLAPSE_RECURSIVE = "FORCE_NON_COLLAPSE_RECURSIVE"
 }
+
+export class IgnoreCustomizer extends CustomizableAttribute{
+
+    private constructor() {
+        super()
+    }
+
+    static fromAttributeValue(value: string): CustomizableAttribute{
+        if (value !== "true") throw Error (value + " is not a valid value for IgnoreCustomizer")
+        return new IgnoreCustomizer()
+    }
+
+    customize(component: Component) {
+        component.tags.set(ComponentTags.ignore, "true")
+    }
+}

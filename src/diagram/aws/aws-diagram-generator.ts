@@ -4,7 +4,7 @@ import {CdkDia} from "../../cdk"
 import {AwsEdgeResolver} from "./aws-edge-resolver"
 import {AwsIconSupplier, Component, ComponentTags, Diagram, DiagramComponent, DiagramGenerator, RootComponent} from ".."
 import {ComponentIcon} from "../component/icon"
-import {CollapseTypes, CollapssingCustomizer} from "../component/customizable-attribute"
+import {CollapseTypes, CollapssingCustomizer, IgnoreCustomizer} from "../component/customizable-attribute"
 import {StackExportsContainer} from "./stack-exports-container"
 
 /**
@@ -34,6 +34,9 @@ export class AwsDiagramGenerator extends DiagramGenerator{
 
         // remove excluded Stacks from the diagram
         if (excludedStacks) this.removeExcludedStacks(diagram, excludedStacks)
+
+        // remove components marked as ignored via CDK-DIA decorator
+        this.removeIgnoredComponents(diagram.root)
 
         // add edges between Components
         this.edgeResolver.resolveEdges(cdkRoot, diagram)
@@ -192,10 +195,29 @@ export class AwsDiagramGenerator extends DiagramGenerator{
                     case CollapssingCustomizer.name:
                         CollapssingCustomizer.fromAttributeValue(value).customize(component)
                         break;
+                    case IgnoreCustomizer.name:
+                        IgnoreCustomizer.fromAttributeValue(value).customize(component)
+                        break;
                     default:
                         throw new Error(`Unknown customizer ${key}`)
                 }
             }
+        })
+    }
+
+    private removeIgnoredComponents(node: Component) {
+        // collect first, then remove — avoids mutating during iteration
+        const toRemove: Component[] = []
+        node.subComponents().forEach(sub => {
+            if (sub.tags.get(ComponentTags.ignore) === "true") {
+                toRemove.push(sub)
+            } else {
+                this.removeIgnoredComponents(sub)
+            }
+        })
+        toRemove.forEach(sub => {
+            sub.removeAndDestroyAllSubComponents()
+            node.removeSubComponent(sub)
         })
     }
 

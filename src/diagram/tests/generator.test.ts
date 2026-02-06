@@ -97,6 +97,70 @@ describe("excluding specific Stacks works as expected", () => {
     })
 })
 
+describe("ignoring resources works as expected", () => {
+
+    const ignoredResourceTestCase = {
+        id: `collapsed`,
+        jsonTreeFile: "function-and-queue-with-ignored-resource",
+        cdkTreePath: "src/test-fixtures/",
+        collapsed: true,
+        collapsedDoubleClusters: true
+    }
+
+    const baselineTestCase = {
+        id: `collapsed`,
+        jsonTreeFile: "function-and-queue",
+        cdkTreePath: "src/test-fixtures/",
+        collapsed: true,
+        collapsedDoubleClusters: true
+    }
+
+    it(`ignored resource (my-queue) is not present in diagram`, () => {
+        const diagram = givenDiagram(ignoredResourceTestCase)
+
+        const allComponentIds: string[] = []
+        diagram.root.subTreeApplyAllComponents((component) => {
+            allComponentIds.push(component.id)
+        })
+
+        expect(allComponentIds.find(id => id.includes("my-queue"))).toBeUndefined()
+    })
+
+    it(`non-ignored resources are still present in diagram`, () => {
+        const diagram = givenDiagram(ignoredResourceTestCase)
+
+        const allComponentIds: string[] = []
+        diagram.root.subTreeApplyAllComponents((component) => {
+            allComponentIds.push(component.id)
+        })
+
+        expect(allComponentIds.find(id => id.includes("my-function"))).toBeDefined()
+    })
+
+    it(`baseline without ignore has the queue present`, () => {
+        const diagram = givenDiagram(baselineTestCase)
+
+        const allComponentIds: string[] = []
+        diagram.root.subTreeApplyAllComponents((component) => {
+            allComponentIds.push(component.id)
+        })
+
+        expect(allComponentIds.find(id => id.includes("my-queue"))).toBeDefined()
+    })
+
+    it(`ignored diagram has fewer components than baseline`, () => {
+        const ignoredDiagram = givenDiagram(ignoredResourceTestCase)
+        const baselineDiagram = givenDiagram(baselineTestCase)
+
+        const ignoredCount = { n: 0 }
+        const baselineCount = { n: 0 }
+        ignoredDiagram.root.subTreeApplyAllComponents(() => { ignoredCount.n++ })
+        baselineDiagram.root.subTreeApplyAllComponents(() => { baselineCount.n++ })
+
+        expect(ignoredCount.n).toBeLessThan(baselineCount.n)
+    })
+})
+
 describe("All Components linked from the Tree are also part of the tree", () => {
 
    // const oneCase = [testCases[testCases.length -1 ]]

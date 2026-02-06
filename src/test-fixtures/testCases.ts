@@ -140,6 +140,20 @@ export const testCases: TestConf[] = [
         collapsed: false,
         collapsedDoubleClusters: true
     },
+    {
+        id:`collapsed`,
+        jsonTreeFile: "function-and-queue-with-ignored-resource",
+        cdkTreePath: "src/test-fixtures/",
+        collapsed: true,
+        collapsedDoubleClusters: true
+    },
+    {
+        id:`non-collapsed`,
+        jsonTreeFile: "function-and-queue-with-ignored-resource",
+        cdkTreePath: "src/test-fixtures/",
+        collapsed: false,
+        collapsedDoubleClusters: true
+    },
 ]
 
 export interface TestConf {
