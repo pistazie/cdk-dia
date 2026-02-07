@@ -95,6 +95,41 @@ This results in a Diagram where the DB-Tier was not collapsed providing more det
 
 * a full example or the above can be found at [examples/decoration-example](examples/decoration-example)
 
+### Ignoring Resources
+
+You can exclude specific resources from the diagram using the `ignore` option. This is useful when certain constructs add noise to your diagram without providing meaningful architectural insight.
+
+**Using the `@DiagramOptions` class decorator (experimental):**
+```ts
+import { DiagramOptions } from "cdk-dia"
+
+@DiagramOptions({ ignore: true })
+export class InternalBucket extends s3.Bucket {
+    constructor(scope: Construct, id: string) {
+        super(scope, id);
+    }
+}
+```
+
+**Using `CdkDiaDecorator` directly (implementing `IInspectable`):**
+```ts
+import { CdkDia, CdkDiaDecorator } from "cdk-dia"
+import * as cdk from "aws-cdk-lib"
+
+export class InternalBucket extends s3.Bucket implements cdk.IInspectable {
+    constructor(scope: Construct, id: string) {
+        super(scope, id);
+    }
+
+    inspect(inspector: cdk.TreeInspector): void {
+        const decorator = new CdkDiaDecorator().ignore()
+        CdkDia.decorate(inspector, decorator)
+    }
+}
+```
+
+When a resource is ignored, it and all its children are removed from the diagram entirely.
+
 ## CLI arguments
 * ```npx cdk-dia --help``` - Get possible arguments
 * ```npx cdk-dia --include stackOne stackFour``` - only diagram chosen aws-cdk stacks
