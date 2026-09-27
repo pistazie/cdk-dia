@@ -5,10 +5,10 @@ export enum ComponentIconFormat {
 }
 
 export class ComponentIcon {
-    path: string
+    path: string | null
     format: ComponentIconFormat
 
-    constructor(path: string, format: ComponentIconFormat = ComponentIconFormat.NORMAL) {
+    constructor(path: string | null, format: ComponentIconFormat = ComponentIconFormat.NORMAL) {
         this.path = path
         this.format = format
     }

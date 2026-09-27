@@ -71,7 +71,7 @@ export class AwsEdgeResolver {
             const treeRoot: RootComponent = cdkStackTree.treeRoot()
 
             const exportingStack = treeRoot.subTreeFindComponent((component: Component) => {
-                return component.tags.get(ComponentTags.isCdkStack) && component.id == targetString.stackId
+                return !!component.tags.get(ComponentTags.isCdkStack) && component.id == targetString.stackId
             })
 
             if (exportingStack && exportingStack.stackExportsContainer) {
@@ -82,11 +82,15 @@ export class AwsEdgeResolver {
                 })
             }
         }
+
+        return null
     }
 
     private findUniqueResourceId(component: Component): string | boolean {
 
         const stackDepth = component.treeAncestorWithTag(ComponentTags.isCdkStack, "true")
+        if (stackDepth === undefined) return false
+
         const pathParts: string[] = component.idPathParts().slice(stackDepth.depth())
 
         if (pathParts.length === 0) return false
@@ -115,7 +119,7 @@ export class AwsEdgeResolver {
         const edgeTargets = new Array<EdgeTarget>()
 
         for (const key in object) {
-            if (key === "Fn::GetAtt" && object[key][0] !== undefined) {
+            if (key === "Fn::GetAtt" && (object[key] as unknown[])[0] !== undefined) {
                 this.scrapeAllStrings(object[key]).forEach(it => {
                         edgeTargets.push(it)
                     }

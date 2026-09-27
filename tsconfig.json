@@ -9,6 +9,7 @@
     "esModuleInterop": true,
     "declaration": true,
     "experimentalDecorators": true,
+    "types": ["node", "jest", "jest-specific-snapshot"],
     "outDir": "./dist"
   },
   "include": [

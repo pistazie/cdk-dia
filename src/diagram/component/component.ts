@@ -26,9 +26,9 @@ export abstract class Component {
     /**
      * A diagram-unique component ID
      */
-    private _id: ComponentId
+    private _id!: ComponentId
 
-    public stackExportsContainer: StackExportsContainer
+    public stackExportsContainer: StackExportsContainer | undefined
 
     idPathParts = (): Array<string> => this.id.split("/")
 
@@ -40,7 +40,7 @@ export abstract class Component {
         this._id = value
     }
 
-    label: string[]
+    label!: string[]
     public icon: ComponentIcon | null = null
 
     tags: Map<string,string> = new Map<string, string>()
@@ -165,11 +165,11 @@ export abstract class Component {
         return (component !== undefined)
     }
 
-    subTreeApplyAllComponents(lambda: (Component) => void) :void{
+    subTreeApplyAllComponents(lambda: (component: Component) => void) :void{
         this.applyAllComponentsRec(this, lambda)
     }
 
-    private applyAllComponentsRec(subTree: Component, lambda: (Component) => void) {
+    private applyAllComponentsRec(subTree: Component, lambda: (component: Component) => void) {
         lambda(subTree)
         subTree.subComponents().forEach(sub => this.applyAllComponentsRec(sub, lambda))
     }
@@ -180,11 +180,11 @@ export abstract class Component {
         })
     }
 
-    subTreeFindComponent(predicate: (Component) => boolean): Component | null {
+    subTreeFindComponent(predicate: (component: Component) => boolean): Component | null {
         return this.subTreeFindComponentRec(this, predicate)
     }
 
-    private subTreeFindComponentRec(subTree: Component, predicate: (Component) => boolean): Component | null {
+    private subTreeFindComponentRec(subTree: Component, predicate: (component: Component) => boolean): Component | null {
 
         if (predicate(subTree)) return subTree
 
@@ -192,7 +192,7 @@ export abstract class Component {
             return it.subTreeFindComponent(predicate)
         }).find(it => {
             return it != null
-        })
+        }) ?? null
     }
 
     private subTreeComponents(): Component[] {

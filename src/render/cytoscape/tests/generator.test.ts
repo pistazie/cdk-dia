@@ -39,7 +39,7 @@ describe('Cytoscape static website generated as expected', () => {
 
 class File {
     stats: Stats
-    body: string
+    body!: string
 
     constructor(path: string) {
         this.stats = fs.statSync(path)

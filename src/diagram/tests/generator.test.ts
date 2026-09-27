@@ -5,11 +5,6 @@ import {AwsEdgeResolver} from ".."
 import {testCases, TestConf} from "../../test-fixtures/testCases"
 import {AwsIconSupplier} from "../aws/aws-icon-supplier"
 
-if (global['jest-specific-init'] == undefined) {
-    global['jest-specific-init'] = true
-    require("jest-specific-snapshot")
-}
-
 describe("diagram JSON as expected", () => {
 
     //const oneCase = [testCases[11]]
@@ -175,7 +170,7 @@ describe("All Components linked from the Tree are also part of the tree", () => 
         })
     })
 
-    function testAllLinksInDiagram(root, node): boolean {
+    function testAllLinksInDiagram(root: diagrams.Component, node: diagrams.Component): boolean {
 
         node.links.getLinkedComponents().forEach(target => {
             if (! root.componentIsInSubTree(target)) {
@@ -210,7 +205,7 @@ describe("All Sub-Components are also part of the tree", () => {
         })
     })
 
-    function testAllSubComponentsInDiagram(node, root): boolean {
+    function testAllSubComponentsInDiagram(node: diagrams.Component, root: diagrams.Component): boolean {
 
         if (! root.componentIsInSubTree(node)) throw Error(`not looking good node not in ${node.id}`)
 
@@ -239,7 +234,7 @@ describe("All Links are bi-directional", () => {
         })
     })
 
-    function testLinks(node): boolean {
+    function testLinks(node: diagrams.Component): boolean {
 
         // check each link to me has a rev-link to me
         node.links.getLinkedComponents().forEach( target =>{
