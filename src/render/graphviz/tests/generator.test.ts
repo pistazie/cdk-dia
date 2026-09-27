@@ -4,11 +4,6 @@ import {testCases} from "../../../test-fixtures/testCases"
 import {givenDiagram} from "../../../diagram/tests/generator.test"
 import * as path from "path"
 
-if (global['jest-specific-init'] == undefined) {
-     global['jest-specific-init'] = true
-     require("jest-specific-snapshot")
-}
-
 jest.setTimeout(3000000)
 
 const basePath = `${process.cwd()}/test-generated`

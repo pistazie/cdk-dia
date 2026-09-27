@@ -1,6 +1,6 @@
 export class Tree {
-    version: string
-    tree: Node
+    version!: string
+    tree!: Node
 
     static fromObject(object: Record<string, unknown>): Tree {
         const tree = new Tree()
@@ -52,13 +52,13 @@ export class ConstructInfoFqn {
 }
 
 export class Node {
-    id: string
-    path: string
-    children: Map<string, Node>
-    attributes: Map<string, string | Node | Record<string, string>>
+    id!: string
+    path!: string
+    children!: Map<string, Node>
+    attributes!: Map<string, string | Node | Record<string, string>>
     constructInfoFqn: ConstructInfoFqn | undefined = undefined
 
-    findInSubTree(predicate: (Node) => boolean): Node | null {
+    findInSubTree(predicate: (node: Node) => boolean): Node | null {
         if (predicate(this)) return this
 
         const childrenArr: [string, Node][] = Array.from(this.children)
@@ -70,27 +70,30 @@ export class Node {
         return null
     }
 
-    static fromObject(object: Record<string, unknown | Record<string, string>>): Node {
+    static fromObject(object: Record<string, unknown>): Node {
         const node = new Node()
         node.id = object['id'] as string
         node.path = object['path'] as string
 
         node.children = new Map<string, Node>()
-        if (object['children'] != undefined) {
-            for (const childKey in object['children'] as Record<string, string>) {
-                node.children.set(childKey, Node.fromObject(object['children'][childKey]))
+        const children = object['children'] as Record<string, Record<string, unknown>> | undefined
+        if (children != undefined) {
+            for (const childKey in children) {
+                node.children.set(childKey, Node.fromObject(children[childKey]))
             }
         }
 
-        node.attributes = new Map<string, Node>()
-        if (object['attributes'] != undefined) {
-            for (const attrKey in object['attributes'] as Record<string, string>) {
-                node.attributes.set(attrKey, object['attributes'][attrKey])
+        node.attributes = new Map<string, string | Node | Record<string, string>>()
+        const attributes = object['attributes'] as Record<string, string | Node | Record<string, string>> | undefined
+        if (attributes != undefined) {
+            for (const attrKey in attributes) {
+                node.attributes.set(attrKey, attributes[attrKey])
             }
         }
 
-        if (object['constructInfo'] != undefined && object['constructInfo']['fqn'] != undefined) {
-            node.constructInfoFqn = ConstructInfoFqn.of(object['constructInfo']['fqn'])
+        const constructInfo = object['constructInfo'] as Record<string, string> | undefined
+        if (constructInfo != undefined && constructInfo['fqn'] != undefined) {
+            node.constructInfoFqn = ConstructInfoFqn.of(constructInfo['fqn'])
         }
         return node
     }

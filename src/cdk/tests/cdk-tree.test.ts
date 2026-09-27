@@ -3,11 +3,6 @@ import {testCases} from "../../test-fixtures/testCases"
 import {TreeJsonLoader} from "../tree-json-loader"
 import path from "path"
 
-if (global['jest-specific-init'] == undefined) {
-    global['jest-specific-init'] = true
-    require("jest-specific-snapshot")
-}
-
 describe("cdk-tree parsing", () => {
     testCases.forEach(test => {
 

@@ -188,7 +188,8 @@ export class AwsDiagramGenerator extends DiagramGenerator{
     }
 
     private applyAttributeSetCustomizers(tree: cdk.Node,component: Component) {
-        tree.attributes.forEach( (value: string, key: string) => {
+        tree.attributes.forEach( (attributeValue, key: string) => {
+            const value = attributeValue as string
 
             if (key.startsWith(CdkDia.attrPrefix)){
                 switch (key.substr(CdkDia.attrPrefix.length)){
@@ -228,7 +229,7 @@ export class AwsDiagramGenerator extends DiagramGenerator{
             AwsDiagramGenerator.cleanLabel([cleanedResource, node.id]),
             parent)
 
-        const icon: ComponentIcon = this.iconSupplier.matchIcon(cfnType, node.attributes.get("aws:cdk:cloudformation:props") as Record<string, string>)
+        const icon: ComponentIcon | null = this.iconSupplier.matchIcon(cfnType, node.attributes.get("aws:cdk:cloudformation:props") as Record<string, string>)
 
         if (icon !== null) {
             component.setIcon(icon)
@@ -245,7 +246,7 @@ export class AwsDiagramGenerator extends DiagramGenerator{
         return component
     }
 
-    private static cfnProps(tree: cdk.Node): { cfnType: string | null; label: string | null } {
+    private static cfnProps(tree: cdk.Node): { cfnType: string; label: string } | { cfnType: null; label: null } {
 
         const cfnTypeAttr = tree.attributes.get("aws:cdk:cloudformation:type")
 
@@ -359,17 +360,21 @@ export class AwsDiagramGenerator extends DiagramGenerator{
             try {
                 const stackRootComponent = current.treeAncestorWithTag(ComponentTags.isCdkStack, "true")
 
+                if (stackRootComponent !== undefined) {
                     current.links.getLinkedComponents().forEach(linkedComponent => {
                         // check if linked component is in the same stack as current
                         if (!stackRootComponent.componentIsInSubTree(linkedComponent)) {
                             current.links.removeLink(linkedComponent)
 
                             // add a link between the stacks as a replacement to the many cross stack resource links
-                            if (linkedComponent instanceof DiagramComponent) {
-                            stackRootComponent.links.addLink(linkedComponent.treeAncestorWithTag(ComponentTags.isCdkStack, "true"))
+                            const linkedStack = linkedComponent instanceof DiagramComponent ?
+                                linkedComponent.treeAncestorWithTag(ComponentTags.isCdkStack, "true") : undefined
+                            if (linkedStack !== undefined) {
+                                stackRootComponent.links.addLink(linkedStack)
                             }
                         }
                     })
+                }
             } catch (e) {
                 console.log("CrossStackEdges removal failed " + e)
             }

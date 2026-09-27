@@ -42,11 +42,11 @@ async function generateDiagram(args: cdkDiaCliArgs) {
         })
 }
 
-function printError(e) {
+function printError(e: unknown) {
     if (e instanceof rendering.RenderingError) {
         notifyRenderingError(e)
     } else {
-        notifyRenderingError(new rendering.RenderingError(`Unexpected error occurred: ${e.message}`))
+        notifyRenderingError(new rendering.RenderingError(`Unexpected error occurred: ${e instanceof Error ? e.message : e}`))
     }
 }
 

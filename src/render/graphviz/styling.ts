@@ -54,6 +54,8 @@ export function applyBasicNodeStyling(gnode: NodeModel, labelFontSize: number): 
 
 export function applyNodeWithIconStyling(node: NodeModel, icon: ComponentIcon, labelFontSize: number, labelLinesCount: number): void {
 
+    if (icon.path === null) return
+
     const baseImgSize = 2
 
     node.attributes.set("image", icon.path)

@@ -1,7 +1,7 @@
 import {Component, ComponentTags} from "./component"
 
 abstract class CustomizableAttribute {
-    abstract customize(component: Component)
+    abstract customize(component: Component): void
 }
 
 export class CollapssingCustomizer extends CustomizableAttribute{
@@ -15,10 +15,10 @@ export class CollapssingCustomizer extends CustomizableAttribute{
 
     static fromAttributeValue(value: string): CustomizableAttribute{
         if ( !(value in CollapseTypes)) throw Error (value + " is not a valid enum value")
-        return new CollapssingCustomizer(CollapseTypes[value])
+        return new CollapssingCustomizer(CollapseTypes[value as keyof typeof CollapseTypes])
     }
 
-    customize(component: Component) {
+    customize(component: Component): void {
         component.tags.set(ComponentTags.collapssingOverride ,this.type)
     }
 }
@@ -40,7 +40,7 @@ export class IgnoreCustomizer extends CustomizableAttribute{
         return new IgnoreCustomizer()
     }
 
-    customize(component: Component) {
+    customize(component: Component): void {
         component.tags.set(ComponentTags.ignore, "true")
     }
 }

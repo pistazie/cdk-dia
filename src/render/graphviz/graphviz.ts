@@ -15,8 +15,8 @@ import {GraphvizGenerator} from "./GraphvizGenerator"
 import * as path from "path"
 
 export class GraphvizRenderingProps extends RenderingProps {
-    diagram: diagram.Diagram
-    path: string
+    diagram!: diagram.Diagram
+    path!: string
 }
 
 export class GraphvizRenderingOutput implements RenderingOutput {
@@ -77,7 +77,7 @@ export class Graphviz implements DiagramRenderer {
                 if (e instanceof RenderingError) {
                     throw e
                 } else {
-                    throw new RenderingError(e.message)
+                    throw new RenderingError((e as Error).message)
                 }
             }
         }

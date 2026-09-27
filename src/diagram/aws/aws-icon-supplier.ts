@@ -58,22 +58,25 @@ export class AwsIconSupplier {
         instanceTypeAttribute: string,
         instanceTypeParts: number,
         instanceTypeFamilyPartInd: number,
-        props: Record<string, string>) {
+        props: Record<string, string>): ComponentIcon {
 
         const parentInstanceIconsNode = this.resourceToImageMapping.find(mapping => {
             return mapping.resourcePrefix == cfnResource.split("::").slice(0, 2).join("::")
         })
 
-        const instanceIconsNode = parentInstanceIconsNode.specificResources.find(mapping => {
+        const instanceIconsNode = parentInstanceIconsNode?.specificResources.find(mapping => {
             return mapping.resourceType == cfnResource
         })
+
+        if (instanceIconsNode === undefined) throw new Error(`No icon mapping found for ${cfnResource}`)
 
         if (props[instanceTypeAttribute] !== undefined && props[instanceTypeAttribute].split(".").length == instanceTypeParts) {
 
             const instanceFamily = (props[instanceTypeAttribute].split("."))[instanceTypeFamilyPartInd]
 
-            if (instanceIconsNode["families"][instanceFamily.toUpperCase()] !== undefined) {
-                return new ComponentIcon(path.join(this.iconsBasePath, instanceIconsNode["families"][instanceFamily.toUpperCase()]))
+            const familyIconPath = instanceIconsNode.families?.[instanceFamily.toUpperCase()]
+            if (familyIconPath !== undefined) {
+                return new ComponentIcon(path.join(this.iconsBasePath, familyIconPath))
             }
         }
 
@@ -83,10 +86,11 @@ export class AwsIconSupplier {
 
 export interface IResourceToImageMapping {
     resourcePrefix: string
-    genericFilePath: string
+    genericFilePath?: string | null
     specificResources: IResourceToImageMappingSpecificResource[]
 }
 export interface IResourceToImageMappingSpecificResource {
     resourceType: string
     filePath: string
+    families?: Record<string, string>
 }

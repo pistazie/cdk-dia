@@ -2,7 +2,7 @@ import {Component} from "."
 
 export class Diagram {
 
-    root: Component
+    root!: Component
     toSimpleObject = (): Record<string, unknown> => this.root.toSimpleObject()
 }
 

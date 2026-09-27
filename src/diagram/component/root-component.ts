@@ -24,10 +24,6 @@ export class RootComponent extends Component {
 
     depth = (): number => 0
 
-    selfAndAllSubcomponentIds(): Set<ComponentId> {
-        return undefined;
-    }
-
     toSimpleObject(): Record<string, unknown> {
         return {
             id: this.id,

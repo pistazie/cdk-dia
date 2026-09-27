@@ -5,10 +5,10 @@ export interface DiagramRenderer {
 }
 
 export abstract class RenderingProps {
-    diagram: diagram.Diagram
+    diagram!: diagram.Diagram
 }
 export interface RenderingOutput {
-    userOutput()
+    userOutput(): void
 }
 
 export class RenderingError extends Error {

@@ -1,7 +1,7 @@
 import {AwsDiagramGenerator} from "./aws-diagram-generator"
 
 export abstract class EdgeTarget {
-    abstract isEqual(other: EdgeTarget)
+    abstract isEqual(other: EdgeTarget): boolean
 }
 
 export class EdgeTargetSimpleString extends EdgeTarget {
@@ -12,7 +12,7 @@ export class EdgeTargetSimpleString extends EdgeTarget {
         this.value = AwsDiagramGenerator.sanitizeComponentId(value)
     }
 
-    isEqual(other: EdgeTarget) {
+    isEqual(other: EdgeTarget): boolean {
         if (!(other instanceof  EdgeTargetSimpleString)) return false
 
         return this.value == other.value
@@ -38,7 +38,7 @@ export class EdgeTargetStackExport extends EdgeTarget {
         return new EdgeTargetStackExport(matches[1], matches[2])
     }
 
-    isEqual(other: EdgeTarget) {
+    isEqual(other: EdgeTarget): boolean {
         if (!(other instanceof  EdgeTargetStackExport)) return false
 
         return this.exportValue == other.exportValue && this.stackId == other.stackId
